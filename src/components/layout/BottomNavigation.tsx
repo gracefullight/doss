@@ -28,7 +28,7 @@ export default function BottomNavigation() {
           onClick={() => void router.push(link.href)}
         >
           <link.Icon className="w-6" />
-          <span className="btm-nav-label">{link.label}</span>
+          <span className="btm-nav-label text-sm">{link.label}</span>
         </button>
       ))}
     </div>
