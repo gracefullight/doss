@@ -1,5 +1,9 @@
 # Doss
 
+Duplicated version of Toss application
+
+![demo](./public/demo.jpg)
+
 ## server
 
 ```bash
@@ -7,7 +11,7 @@ pnpm install
 pnpm dev
 ```
 
-### db
+## db
 
 1. Download [Rancher desktop](https://rancherdesktop.io/)
 2. Run
