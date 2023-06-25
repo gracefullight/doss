@@ -31,9 +31,7 @@ export default function Brand() {
         <ul className="mt-8 flex flex-col gap-6">
           {brands.map((item, index) => (
             <li key={index} className="flex items-center space-x-3">
-              <span className="px-2 font-medium text-blue-500">
-                {index + 1}
-              </span>
+              <span className="px-2 font-medium text-info">{index + 1}</span>
               <div className="placeholder avatar">
                 <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
                   <span>1</span>

@@ -13,14 +13,14 @@ import { formatNumber } from "~/utils/number";
 
 export default function Voucher() {
   const voucherCategories = [
-    { Icon: StarIcon, label: "추천", color: "yellow" },
-    { Icon: BeakerIcon, label: "카페", color: "green" },
-    { Icon: TicketIcon, label: "상품권", color: "pink" },
-    { Icon: FingerPrintIcon, label: "치킨", color: "orange" },
-    { Icon: InboxIcon, label: "피자·버거", color: "amber" },
-    { Icon: HomeIcon, label: "편의점", color: "blue" },
-    { Icon: InboxStackIcon, label: "외식", color: "stone" },
-    { Icon: CakeIcon, label: "디저트", color: null },
+    { Icon: StarIcon, label: "추천", color: "text-primary" },
+    { Icon: BeakerIcon, label: "카페", color: "text-accent" },
+    { Icon: TicketIcon, label: "상품권", color: "text-secondary" },
+    { Icon: FingerPrintIcon, label: "치킨", color: "text-warning" },
+    { Icon: InboxIcon, label: "피자·버거", color: "text-primary-focus" },
+    { Icon: HomeIcon, label: "편의점", color: "text-info" },
+    { Icon: InboxStackIcon, label: "외식", color: "text-secondary-content" },
+    { Icon: CakeIcon, label: "디저트", color: "text-base-content" },
   ];
 
   const vouchers = [
@@ -46,19 +46,14 @@ export default function Voucher() {
   return (
     <div className="bg-neutral-800 px-8 pb-4 pt-8">
       <h2 className="text-xl font-medium text-neutral-200">기프티콘</h2>
-      <span className=" text-blue-500">살 때마다 포인트 3% 적립</span>
+      <span className="text-info">살 때마다 포인트 3% 적립</span>
       <div className="my-6 grid grid-cols-4 gap-y-6">
         {voucherCategories.map((item, index) => (
           <div
             key={index}
             className="flex cursor-pointer flex-col items-center space-y-2"
           >
-            <item.Icon
-              className={clsx(
-                "w-8",
-                item.color ? `text-${item.color}-500` : "text-neutral-300"
-              )}
-            />
+            <item.Icon className={clsx("w-8", item.color)} />
             <span className="text-neutral-200">{item.label}</span>
           </div>
         ))}
@@ -80,7 +75,7 @@ export default function Voucher() {
                 </span>
               </div>
             </div>
-            <div className="badge badge-md border-none bg-blue-500 bg-opacity-20 py-3 text-blue-500">
+            <div className="badge badge-md border-none bg-info bg-opacity-20 py-3 text-info ">
               {formatNumber(item.point)}원 적립
             </div>
           </li>

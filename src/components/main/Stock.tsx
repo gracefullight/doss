@@ -15,7 +15,7 @@ export default function Stock() {
               <span className="text-sm text-neutral-400">주식</span>
               <div className="flex flex-row space-x-2">
                 <span className="text-lg font-medium">20,000,000원</span>
-                <span className="text-lg font-medium text-red-700">+10.1%</span>
+                <span className="text-lg font-medium text-error">+10.1%</span>
               </div>
             </div>
           </div>

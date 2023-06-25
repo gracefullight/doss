@@ -44,7 +44,7 @@ export default function Countdown() {
   return (
     <div className="flex flex-col gap-1">
       <h2 className="text-xl font-medium text-neutral-200">도스 공동구매</h2>
-      <span className="text-red-500">
+      <span className="text-error">
         할인 종료까지{" "}
         <span className="countdown font-mono">
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -71,10 +71,10 @@ export default function Countdown() {
             times: [0, 0.5, 1],
           }}
         >
-          <QuestionMarkCircleIcon className="fill-blue-500" />
+          <QuestionMarkCircleIcon className="fill-info" />
         </motion.div>
       </div>
-      <button className="btn-info btn-block btn-lg btn mt-4 rounded-2xl bg-blue-500">
+      <button className="btn-info btn-block btn-lg btn mt-4 rounded-2xl">
         보러 가기
       </button>
     </div>

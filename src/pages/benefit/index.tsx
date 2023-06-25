@@ -89,7 +89,7 @@ export default function Benefit() {
         <div className="mb-10 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button className="btn-ghost btn-md btn text-lg">
-            <CurrencyDollarIcon className="w-6 fill-blue-500" />
+            <CurrencyDollarIcon className="w-6 fill-info" />
             {formatNumber(1000)} 원
             <ChevronRightIcon className="w-4" />
           </button>
@@ -104,19 +104,19 @@ export default function Benefit() {
                 <div
                   className={clsx(
                     `relative flex items-center justify-center rounded-full border-2 bg-neutral-700 p-3`,
-                    item.isDone ? `border-green-500` : `border-neutral-700`
+                    item.isDone ? `border-accent` : `border-neutral-700`
                   )}
                 >
                   <item.Icon className="w-8" />
                   {item.isDone && (
-                    <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-green-500 p-1">
+                    <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-accent p-1">
                       <CheckIcon className="w-4 text-neutral-700" />
                     </div>
                   )}
                 </div>
                 <div className="flex flex-col">
                   <h2 className="text-lg font-medium">{item.title}</h2>
-                  <p className="text-md text-blue-500">{item.subTitle}</p>
+                  <p className="text-md text-info">{item.subTitle}</p>
                 </div>
               </div>
               {item.badge && (
