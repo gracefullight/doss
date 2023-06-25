@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "prisma.prisma",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss",
+    "pflannery.vscode-versionlens",
+    "mikestead.dotenv",
+    "esbenp.prettier-vscode",
+    "aaron-bond.better-comments"
+  ]
+}
