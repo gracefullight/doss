@@ -97,7 +97,7 @@ export default function Benefit() {
         <div className="space-y-5">
           {items.map((item, index) => (
             <div
-              className="flex cursor-pointer items-center justify-between rounded-lg p-3 active:bg-neutral-700"
+              className="flex cursor-pointer items-center justify-between rounded-lg py-3 active:bg-neutral-700"
               key={index}
             >
               <div className="flex items-center space-x-4">

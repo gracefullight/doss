@@ -13,13 +13,13 @@ export default function Pay() {
             <h1 className="text-2xl font-bold text-neutral-200">도스페이</h1>
           </div>
           <div className="join mb-10 w-full">
-            <button className="join-item btn grow rounded-l-2xl bg-neutral-700">
+            <button className="join-item btn grow rounded-l-2xl border-neutral-700 bg-neutral-700">
               주문내역
             </button>
-            <button className="join-item btn grow bg-neutral-700">
+            <button className="join-item btn grow border-neutral-700 bg-neutral-700">
               기프티콘
             </button>
-            <button className="join-item btn grow rounded-r-2xl bg-neutral-700">
+            <button className="join-item btn grow rounded-r-2xl border-neutral-700 bg-neutral-700">
               결제관리
             </button>
           </div>
