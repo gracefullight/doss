@@ -54,6 +54,9 @@ export const authOptions: NextAuthOptions = {
       clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
   ],
+  theme: {
+    colorScheme: "dark",
+  },
 };
 
 /**
@@ -67,4 +70,3 @@ export const getServerAuthSession = (ctx: {
 }) => {
   return getServerSession(ctx.req, ctx.res, authOptions);
 };
-
