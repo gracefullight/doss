@@ -14,7 +14,8 @@ pnpm dev
 ## db
 
 1. Download [Rancher desktop](https://rancherdesktop.io/)
-2. Run
+2. Run Pod
+3. Migrate
 
 ```bash
 docker run -d \
@@ -23,4 +24,8 @@ docker run -d \
   -e POSTGRES_DB=verceldb \
   -p 5432:5432 \
   --name doss-pg postgres
+```
+
+```bash
+pnpm migrate:dev
 ```
