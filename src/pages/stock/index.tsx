@@ -43,7 +43,7 @@ export default function Stock() {
         <title>Doss | 주식</title>
       </Head>
       <div className="flex w-screen flex-col gap-4">
-        <div className="flex flex-col bg-neutral-800 px-8 pt-4">
+        <div className="flex flex-col bg-neutral-800 px-6 pt-4">
           <div className="flex justify-end">
             <button className="btn-ghost btn-square btn">
               <MagnifyingGlassIcon className="w-6" />
