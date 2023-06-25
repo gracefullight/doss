@@ -1,4 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
+import Head from "next/head";
 import { Layout } from "~/components/layout";
 import {
   Asset,
@@ -15,6 +16,9 @@ import { getServerAuthSession } from "~/server/auth";
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>Doss | 홈</title>
+      </Head>
       <MainNavbar />
       <div className="flex w-screen flex-col items-center justify-center gap-4 px-6 py-2">
         <Section title="도스뱅크" link="/" />

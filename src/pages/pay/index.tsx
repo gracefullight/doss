@@ -1,4 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
+import Head from "next/head";
 import { Layout } from "~/components/layout";
 import { Brand, GroupShopping, Payback, Voucher } from "~/components/pay";
 import { PATH_SIGNIN } from "~/constants";
@@ -7,6 +8,9 @@ import { getServerAuthSession } from "~/server/auth";
 export default function Pay() {
   return (
     <Layout>
+      <Head>
+        <title>Doss | 도스페이</title>
+      </Head>
       <div className="flex w-screen flex-col gap-4">
         <div className="bg-neutral-800 px-8 pb-6 pt-10">
           <div className="mb-8 flex items-center justify-between">

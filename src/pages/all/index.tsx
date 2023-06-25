@@ -1,4 +1,5 @@
 import type { GetServerSidePropsContext } from "next";
+import Head from "next/head";
 import { Layout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
@@ -6,6 +7,9 @@ import { getServerAuthSession } from "~/server/auth";
 export default function All() {
   return (
     <Layout>
+      <Head>
+        <title>Doss | 전체</title>
+      </Head>
       <span>전체</span>
     </Layout>
   );

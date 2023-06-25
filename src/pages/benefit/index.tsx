@@ -13,6 +13,7 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import Head from "next/head";
 import { Layout } from "~/components/layout";
 import { formatNumber } from "~/utils/number";
 
@@ -85,6 +86,9 @@ export default function Benefit() {
 
   return (
     <Layout>
+      <Head>
+        <title>Doss | 혜택</title>
+      </Head>
       <div className="flex w-screen flex-col px-8 pt-10">
         <div className="mb-10 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
