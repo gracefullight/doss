@@ -1,12 +1,14 @@
 import {
   CalendarIcon,
   ChartBarIcon,
+  ChevronDownIcon,
   ChevronRightIcon,
   Cog6ToothIcon,
   MagnifyingGlassIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { useInterval } from "ahooks";
+import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
@@ -17,6 +19,7 @@ import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function Stock() {
+  const [tabIndex, setTabIndex] = useState(0);
   const [currentItem, setCurrentItem] = useState(0);
   const items = [
     { stockIndex: "환율", value: 1310, isBlack: true },
@@ -93,9 +96,66 @@ export default function Stock() {
             </button>
           </div>
           <div className="tabs w-full font-medium">
-            <a className="tab-bordered tab tab-active tab-lg w-1/2">내 주식</a>
-            <a className="tab-bordered tab tab-lg w-1/2">오늘의 발견</a>
+            <a
+              className={clsx(
+                `tab-bordered tab tab-lg w-1/2`,
+                tabIndex === 0 && "tab-active"
+              )}
+              onClick={() => setTabIndex(0)}
+            >
+              내 주식
+            </a>
+            <a
+              className={clsx(
+                `tab-bordered tab tab-lg w-1/2`,
+                tabIndex === 1 && "tab-active"
+              )}
+              onClick={() => setTabIndex(1)}
+            >
+              오늘의 발견
+            </a>
           </div>
+          {tabIndex === 0 && (
+            <>
+              <div className="mt-6 flex flex-col">
+                <div className="flex gap-1 font-medium text-neutral-300">
+                  <span className="text-lg">보유주식</span>
+                  <ChevronRightIcon className="w-4" />
+                </div>
+                <div className="mt-2 flex justify-between">
+                  <span className="text-2xl text-neutral-200">
+                    10,000,000원
+                  </span>
+                  <button className="btn-sm btn border-none bg-neutral-700 focus:outline-none">
+                    내 계좌 보기
+                  </button>
+                </div>
+                <div className="mt-1 text-error">+3,000,000원 (10%)</div>
+              </div>
+              <div className="mt-6 flex justify-between">
+                <div className="dropdown-bottom dropdown">
+                  <label tabIndex={0} className="btn-ghost btn-sm btn m-1">
+                    가나다 순
+                    <ChevronDownIcon className="w-4" />
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu rounded-box z-[1] w-52 bg-neutral-700 p-2 shadow"
+                  >
+                    <li>
+                      <a>가나다 순</a>
+                    </li>
+                    <li>
+                      <a>총 수익률 낮은 순</a>
+                    </li>
+                    <li>
+                      <a>총 수익률 높은 순</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </Layout>
