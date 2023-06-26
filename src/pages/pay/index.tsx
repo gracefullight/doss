@@ -12,7 +12,7 @@ export default function Pay() {
         <title>Doss | 도스페이</title>
       </Head>
       <div className="flex w-screen flex-col gap-4">
-        <div className="bg-neutral-800 px-6 pb-6 pt-10">
+        <div className="flex flex-col bg-neutral-800 px-6 pb-6 pt-10">
           <div className="mb-8 flex items-center justify-between">
             <h1 className="text-2xl font-bold text-neutral-200">도스페이</h1>
           </div>

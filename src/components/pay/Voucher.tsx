@@ -44,7 +44,7 @@ export default function Voucher() {
     },
   ];
   return (
-    <div className="bg-neutral-800 px-8 pb-4 pt-8">
+    <div className="flex flex-col bg-neutral-800 px-6 pb-4 pt-8">
       <h2 className="text-xl font-medium text-neutral-200">기프티콘</h2>
       <span className="text-info">살 때마다 포인트 3% 적립</span>
       <div className="my-6 grid grid-cols-4 gap-y-6">

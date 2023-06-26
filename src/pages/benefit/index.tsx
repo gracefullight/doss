@@ -92,7 +92,7 @@ export default function Benefit() {
       <div className="flex w-screen flex-col px-6 pt-10">
         <div className="mb-10 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
-          <button className="btn-ghost btn-md btn text-lg">
+          <button className="btn-ghost btn-md btn pr-0 text-lg">
             <CurrencyDollarIcon className="w-6 fill-info" />
             {formatNumber(1000)} 원
             <ChevronRightIcon className="w-4" />

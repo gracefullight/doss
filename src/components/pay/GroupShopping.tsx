@@ -61,7 +61,7 @@ export default function Countdown() {
       </span>
       <div className="place-self-center">
         <motion.div
-          className="w-36"
+          className="w-32"
           animate={{ rotateY: 360, opacity: [1, 0.6, 1] }}
           transition={{
             duration: 3,
@@ -74,7 +74,7 @@ export default function Countdown() {
           <QuestionMarkCircleIcon className="fill-info" />
         </motion.div>
       </div>
-      <button className="btn-info btn-block btn-lg btn mt-4 rounded-2xl">
+      <button className="btn-info btn-block btn mt-4 rounded-2xl">
         보러 가기
       </button>
     </div>

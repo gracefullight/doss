@@ -23,8 +23,8 @@ export default function Brand() {
   ];
 
   return (
-    <div className="bg-neutral-800 pb-4 pt-6">
-      <div className="px-8 pb-4">
+    <div className="flex flex-col bg-neutral-800 pb-4 pt-6">
+      <div className="flex flex-col px-6 pb-4">
         <h2 className="text-xl font-medium text-neutral-200">
           도스페이 인기 브랜드
         </h2>

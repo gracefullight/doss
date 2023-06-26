@@ -21,8 +21,8 @@ export default function Payback() {
   ];
 
   return (
-    <div className="bg-neutral-800 pt-8">
-      <div className="px-8 pb-4">
+    <div className="flex flex-col bg-neutral-800 pt-8">
+      <div className="flex flex-col px-6 pb-4">
         <h2 className="text-xl font-medium text-neutral-200">
           쇼핑하고 혜택 받기
         </h2>
