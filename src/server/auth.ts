@@ -6,6 +6,7 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import NaverProvider from "next-auth/providers/naver";
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
 
@@ -52,6 +53,10 @@ export const authOptions: NextAuthOptions = {
     GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
       clientSecret: env.GITHUB_CLIENT_SECRET,
+    }),
+    NaverProvider({
+      clientId: env.NAVER_CLIENT_ID,
+      clientSecret: env.NAVER_CLIENT_SECRET,
     }),
   ],
   theme: {
