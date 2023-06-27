@@ -20,7 +20,7 @@ export default function Section({
           children && "mb-6"
         )}
       >
-        <h2 className="text-2xl font-semibold text-neutral-200">{title}</h2>
+        <h2 className="text-lg font-semibold text-neutral-200">{title}</h2>
         {link && <ChevronRightIcon className="h-4 w-4" />}
       </div>
       {children}

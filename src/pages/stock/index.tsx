@@ -1,44 +1,43 @@
 import {
   CalendarIcon,
-  ChartBarIcon,
   ChevronDownIcon,
   ChevronRightIcon,
   Cog6ToothIcon,
   MagnifyingGlassIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/solid";
-import { useInterval } from "ahooks";
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Layout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
-import { formatNumber } from "~/utils/number";
+import { IndexBanner, NudgeAlert } from "~/components/stock";
+import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function Stock() {
   const [tabIndex, setTabIndex] = useState(0);
-  const [currentItem, setCurrentItem] = useState(0);
-  const items = [
-    { stockIndex: "환율", value: 1310, isBlack: true },
-    { stockIndex: "나스닥", value: 13492.52, isBlack: false },
-    { stockIndex: "S&P500", value: 4348.33, isBlack: false },
-    { stockIndex: "다우존스", value: 33747.23, isBlack: false },
+
+  const stocks = [
+    {
+      ticker: "MSFT",
+      title: "마이크로소프트",
+      count: 3,
+      currentPrice: 1000000,
+      purchasePrice: 900000,
+    },
+    {
+      ticker: "AAPL",
+      title: "애플",
+      count: 5,
+      currentPrice: 1000000,
+      purchasePrice: 900000,
+    },
+    {
+      ticker: "TQQQ",
+      title: "TQQQ",
+      count: 100,
+      currentPrice: 5000000,
+      purchasePrice: 3000000,
+    },
   ];
-
-  const clearBoard = useInterval(() => {
-    setCurrentItem((prevItem) => {
-      if (prevItem >= items.length - 1) {
-        return 0;
-      } else {
-        return prevItem + 1;
-      }
-    });
-  }, 3000);
-
-  useEffect(() => () => clearBoard(), [clearBoard]);
 
   return (
     <Layout>
@@ -61,40 +60,10 @@ export default function Stock() {
           <div className="mb-4 flex items-center gap-4">
             <h1 className="text-2xl font-bold text-neutral-200">도스증권</h1>
             <div className="flex self-end text-sm">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentItem}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                >
-                  <span className="mr-1 text-neutral-500">
-                    {items[currentItem]?.stockIndex}
-                  </span>
-                  <span
-                    className={
-                      items[currentItem]?.isBlack ? "text-error" : "text-info"
-                    }
-                  >
-                    {formatNumber(items[currentItem]?.value ?? 0)}
-                  </span>
-                </motion.div>
-              </AnimatePresence>
+              <IndexBanner />
             </div>
           </div>
-          <div className="alert mb-4 grid-flow-col-dense border-none bg-neutral-700 shadow-lg">
-            <ChartBarIcon className="w-6" />
-            <div className="flex flex-col gap-1">
-              <span className="font-medium">매일 방문할수록 혜택이 커져요</span>
-              <div className="flex text-info">
-                <span className="text-sm">출석체크하고 주식받기</span>
-                <ChevronRightIcon className="w-3" />
-              </div>
-            </div>
-            <button className="btn-ghost btn-sm btn">
-              <XMarkIcon className="w-5 fill-neutral-400" />
-            </button>
-          </div>
+          <NudgeAlert />
           <div className="tabs w-full font-medium">
             <a
               className={clsx(
@@ -130,7 +99,7 @@ export default function Stock() {
                     내 계좌 보기
                   </button>
                 </div>
-                <div className="mt-1 text-error">+3,000,000원 (10%)</div>
+                <div className="mt-1 text-error">+1,000,000원 (10%)</div>
               </div>
               <div className="mt-6 flex justify-between">
                 <div className="dropdown-bottom dropdown">
@@ -153,29 +122,70 @@ export default function Stock() {
                     </li>
                   </ul>
                 </div>
+                <div className="flex gap-1">
+                  <label className="swap btn-sm btn">
+                    <input type="checkbox" />
+                    <div className="swap-on">현재가</div>
+                    <div className="swap-off">평가금</div>
+                  </label>
+                  <label className="swap btn-sm btn">
+                    <input type="checkbox" />
+                    <div className="swap-on">$</div>
+                    <div className="swap-off">원</div>
+                  </label>
+                </div>
               </div>
+              <ul className="mt-6 flex flex-col gap-4">
+                {stocks.map((item) => {
+                  const priceGap = item.currentPrice - item.purchasePrice;
+                  const percentChange = priceGap / item.purchasePrice;
+
+                  let priceSign = "";
+                  let priceClassName = "text-neutral";
+
+                  if (priceGap > 0) {
+                    priceSign = "+";
+                    priceClassName = "text-error";
+                  } else if (priceGap < 0) {
+                    priceSign = "-";
+                    priceClassName = "text-info";
+                  }
+
+                  return (
+                    <li
+                      key={item.ticker}
+                      className="flex items-center justify-between"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="placeholder avatar">
+                          <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                            <span>1</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="font-medium">{item.title}</span>
+                          <span className="text-sm text-neutral-400">
+                            {formatNumber(item.count)}주
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end">
+                        <span className="text-lg font-medium">
+                          {formatNumber(item.currentPrice)}원
+                        </span>
+                        <span className={clsx("text-sm", priceClassName)}>
+                          {`${priceSign}${formatNumber(priceGap)}`} (
+                          {formatPercent(percentChange)})
+                        </span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </>
           )}
         </div>
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }
