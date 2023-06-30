@@ -4,6 +4,7 @@ import {
   ChevronRightIcon,
   Cog6ToothIcon,
   MagnifyingGlassIcon,
+  PlusIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Head from "next/head";
@@ -135,7 +136,7 @@ export default function Stock() {
                   </label>
                 </div>
               </div>
-              <ul className="mt-6 flex flex-col gap-4">
+              <ul className="mb-4 mt-6 flex flex-col gap-4">
                 {stocks.map((item) => {
                   const priceGap = item.currentPrice - item.purchasePrice;
                   const percentChange = priceGap / item.purchasePrice;
@@ -181,7 +182,42 @@ export default function Stock() {
                     </li>
                   );
                 })}
+                <li className="flex items-center">
+                  <div className="flex items-center space-x-3">
+                    <div className="placeholder avatar">
+                      <div className="w-10 rounded-full bg-info bg-opacity-20">
+                        <PlusIcon className="w-6 fill-info" />
+                      </div>
+                    </div>
+                    <span className="font-medium text-neutral-400">
+                      주식 옮겨오기
+                    </span>
+                  </div>
+                </li>
               </ul>
+              <div className="divider"></div>
+              <div className="mb-4 flex flex-col gap-3">
+                <div className="flex items-center justify-between py-1">
+                  <span className="text-lg text-neutral-300">주문내역</span>
+                  <div className="text-neutral-400">
+                    <ChevronRightIcon className="w-4" />
+                  </div>
+                </div>
+                <div className="flex items-center justify-between py-1">
+                  <span className="text-lg text-neutral-300">판매수익</span>
+                  <div className="flex  gap-2 text-neutral-400">
+                    <span>이번 달 {formatNumber(-100000)}원</span>
+                    <ChevronRightIcon className="w-4" />
+                  </div>
+                </div>
+                <div className="flex items-center justify-between py-1">
+                  <span className="text-lg text-neutral-300">주문내역</span>
+                  <div className="flex  gap-2 text-neutral-400">
+                    <span>이번 달 {formatNumber(40000)}원</span>
+                    <ChevronRightIcon className="w-4" />
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
