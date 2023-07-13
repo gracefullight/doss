@@ -15,6 +15,8 @@ const config = {
   experimental: {
     instrumentationHook: true,
   },
+
+  transpilePackages: ['ahooks']
 };
 
 export default config;
