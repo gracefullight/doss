@@ -7,8 +7,8 @@ interface PedometerLastPosition {
   timestamp: number | null;
 }
 
-export default function usePedometer() {
-  const { latitude, longitude, speed } = useGeolocation();
+export default function usePedometer(options: PositionOptions = {}) {
+  const { latitude, longitude, speed } = useGeolocation(options);
   const [lastPosition, setLastPosition] = useState<PedometerLastPosition>({
     latitude: null,
     longitude: null,

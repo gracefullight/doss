@@ -19,7 +19,7 @@ export interface GeolocationState
 }
 
 // ? https://github.com/uidotdev/usehooks/blob/main/index.js#L269
-export default function useGeolocation(options = {}) {
+export default function useGeolocation(options: PositionOptions = {}) {
   const [state, setState] = useState<GeolocationState>({
     loading: true,
     accuracy: null,
