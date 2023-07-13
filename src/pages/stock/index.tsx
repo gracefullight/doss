@@ -72,7 +72,7 @@ export default function Stock() {
             <a
               className={clsx(
                 `tab-bordered tab tab-lg w-1/2`,
-                tabIndex === 0 && "tab-active"
+                tabIndex === 0 && "tab-active",
               )}
               onClick={() => setTabIndex(0)}
             >
@@ -81,7 +81,7 @@ export default function Stock() {
             <a
               className={clsx(
                 `tab-bordered tab tab-lg w-1/2`,
-                tabIndex === 1 && "tab-active"
+                tabIndex === 1 && "tab-active",
               )}
               onClick={() => setTabIndex(1)}
             >
@@ -226,13 +226,15 @@ export default function Stock() {
                 <div className="text-neutral-200 text-lg">최근 본 주식</div>
                 <div className="carousel rounded-box max-w-full space-x-2 self-start">
                   <div className="carousel-item">
-                    <button className="btn btn-active btn-ghost rounded-2xl">테슬라
+                    <button className="btn btn-active btn-ghost rounded-2xl">
+                      테슬라
                       <span className="text-error">+10.2%</span>
                       <XMarkIcon className="w-4" />
                     </button>
                   </div>
                   <div className="carousel-item">
-                    <button className="btn btn-active btn-ghost rounded-2xl">한미반도체
+                    <button className="btn btn-active btn-ghost rounded-2xl">
+                      한미반도체
                       <span className="text-error">+30%</span>
                       <XMarkIcon className="w-4" />
                     </button>
@@ -242,20 +244,22 @@ export default function Stock() {
               <div className="divider"></div>
               <div className="mb-2 flex flex-col gap-4">
                 <div className="mb-2 flex justify-between">
-                  <div className="text-neutral-200 text-lg font-medium">관심 주식</div>
-                  <div className="text-neutral-400 cursor-pointer">편집하기</div>
+                  <div className="text-neutral-200 text-lg font-medium">
+                    관심 주식
+                  </div>
+                  <div className="text-neutral-400 cursor-pointer">
+                    편집하기
+                  </div>
                 </div>
                 <div className="join join-vertical w-full bg-base-400">
                   <div className="collapse collapse-arrow join-item">
-                    <input type="radio" name="my-accordion-4" checked /> 
+                    <input type="radio" name="my-accordion-4" checked />
                     <div className="collapse-title text-neutral-400 font-medium p-0">
                       기본
                     </div>
-                    <div className="collapse-content p-0"> 
+                    <div className="collapse-content p-0">
                       <ul className=" flex flex-col gap-2">
-                        <li
-                          className="flex items-center justify-between"
-                        >
+                        <li className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
                             <div className="placeholder avatar">
                               <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
@@ -264,7 +268,6 @@ export default function Stock() {
                             </div>
                             <div className="flex flex-col">
                               <span className="font-medium">애플</span>
-
                             </div>
                           </div>
                           <div className="flex flex-col items-end">
@@ -295,12 +298,14 @@ export default function Stock() {
               </div>
               <div className="divider"></div>
               <div className="flex flex-col">
-                <div className="text-neutral-200 text-lg">{sessionData?.user?.name}님이 관심 있어 할 월배당 관련 주식</div>
-                <div className="text-neutral-400 text-sm">최근 찾아 본 주식을 분석했어요.</div>
+                <div className="text-neutral-200 text-lg">
+                  {sessionData?.user?.name}님이 관심 있어 할 월배당 관련 주식
+                </div>
+                <div className="text-neutral-400 text-sm">
+                  최근 찾아 본 주식을 분석했어요.
+                </div>
                 <ul className="mb-6 mt-4 flex flex-col gap-4">
-                  <li
-                    className="flex items-center justify-between"
-                  >
+                  <li className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="placeholder avatar">
                         <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
