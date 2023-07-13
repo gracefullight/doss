@@ -8,6 +8,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import { useState } from "react";
 import { Layout } from "~/components/layout";
@@ -16,6 +17,7 @@ import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function Stock() {
   const [tabIndex, setTabIndex] = useState(0);
+  const { data: sessionData } = useSession();
 
   const stocks = [
     {
@@ -213,7 +215,7 @@ export default function Stock() {
                 </div>
                 <div className="flex items-center justify-between py-1">
                   <span className="text-lg text-neutral-300">예상 배당금</span>
-                  <div className="flex  gap-2 text-neutral-400">
+                  <div className="flex gap-2 text-neutral-400">
                     <span>이번 달 {formatNumber(40000)}원</span>
                     <ChevronRightIcon className="w-4" />
                   </div>
@@ -239,7 +241,86 @@ export default function Stock() {
               </div>
               <div className="divider"></div>
               <div className="mb-2 flex flex-col gap-4">
-                <div className="text-neutral-200 text-lg">관심 주식</div>
+                <div className="mb-2 flex justify-between">
+                  <div className="text-neutral-200 text-lg font-medium">관심 주식</div>
+                  <div className="text-neutral-400 cursor-pointer">편집하기</div>
+                </div>
+                <div className="join join-vertical w-full bg-base-400">
+                  <div className="collapse collapse-arrow join-item">
+                    <input type="radio" name="my-accordion-4" checked /> 
+                    <div className="collapse-title text-neutral-400 font-medium p-0">
+                      기본
+                    </div>
+                    <div className="collapse-content p-0"> 
+                      <ul className=" flex flex-col gap-2">
+                        <li
+                          className="flex items-center justify-between"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="placeholder avatar">
+                              <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                                <span>1</span>
+                              </div>
+                            </div>
+                            <div className="flex flex-col">
+                              <span className="font-medium">애플</span>
+
+                            </div>
+                          </div>
+                          <div className="flex flex-col items-end">
+                            <span className={clsx("text-lg", "text-error")}>
+                              {`+${formatPercent(0.002)}`}
+                            </span>
+                            <span className="text-sm font-medium text-neutral-400">
+                              {formatNumber(245546)}원
+                            </span>
+                          </div>
+                        </li>
+                        <li className="flex items-center">
+                          <div className="flex items-center space-x-3">
+                            <div className="placeholder avatar">
+                              <div className="w-10 rounded-full bg-info bg-opacity-20">
+                                <PlusIcon className="w-6 fill-info" />
+                              </div>
+                            </div>
+                            <span className="font-medium text-neutral-400">
+                              추가하기
+                            </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="divider"></div>
+              <div className="flex flex-col">
+                <div className="text-neutral-200 text-lg">{sessionData?.user?.name}님이 관심 있어 할 월배당 관련 주식</div>
+                <div className="text-neutral-400 text-sm">최근 찾아 본 주식을 분석했어요.</div>
+                <ul className="mb-6 mt-4 flex flex-col gap-4">
+                  <li
+                    className="flex items-center justify-between"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="placeholder avatar">
+                        <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                          <span>1</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-medium">JEPI</span>
+                        <span className="text-sm text-neutral-400">
+                          {formatNumber(71340)}원
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end">
+                      <div className="badge badge-lg text-error rounded-lg border-none bg-neutral-700">
+                        {`+${formatPercent(0.002)}`}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </>
           )}
