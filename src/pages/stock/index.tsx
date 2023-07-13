@@ -5,6 +5,7 @@ import {
   Cog6ToothIcon,
   MagnifyingGlassIcon,
   PlusIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Head from "next/head";
@@ -196,7 +197,7 @@ export default function Stock() {
                 </li>
               </ul>
               <div className="divider"></div>
-              <div className="mb-4 flex flex-col gap-3">
+              <div className="mb-2 flex flex-col gap-3">
                 <div className="flex items-center justify-between py-1">
                   <span className="text-lg text-neutral-300">주문내역</span>
                   <div className="text-neutral-400">
@@ -211,12 +212,34 @@ export default function Stock() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between py-1">
-                  <span className="text-lg text-neutral-300">주문내역</span>
+                  <span className="text-lg text-neutral-300">예상 배당금</span>
                   <div className="flex  gap-2 text-neutral-400">
                     <span>이번 달 {formatNumber(40000)}원</span>
                     <ChevronRightIcon className="w-4" />
                   </div>
                 </div>
+              </div>
+              <div className="divider"></div>
+              <div className="mb-2 flex flex-col gap-4">
+                <div className="text-neutral-200 text-lg">최근 본 주식</div>
+                <div className="carousel rounded-box max-w-full space-x-2 self-start">
+                  <div className="carousel-item">
+                    <button className="btn btn-active btn-ghost rounded-2xl">테슬라
+                      <span className="text-error">+10.2%</span>
+                      <XMarkIcon className="w-4" />
+                    </button>
+                  </div>
+                  <div className="carousel-item">
+                    <button className="btn btn-active btn-ghost rounded-2xl">한미반도체
+                      <span className="text-error">+30%</span>
+                      <XMarkIcon className="w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="divider"></div>
+              <div className="mb-2 flex flex-col gap-4">
+                <div className="text-neutral-200 text-lg">관심 주식</div>
               </div>
             </>
           )}

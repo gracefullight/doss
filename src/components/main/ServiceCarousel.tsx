@@ -26,7 +26,7 @@ export default function ServiceCarousel() {
   ];
 
   return (
-    <div className=" carousel rounded-box max-w-full space-x-4 self-start">
+    <div className="carousel rounded-box max-w-full space-x-4 self-start">
       {items.map((item, index) => (
         <div className="carousel-item" key={index}>
           <div className="flex w-32 cursor-pointer flex-col justify-between gap-2 rounded-lg bg-neutral-800 p-4">
