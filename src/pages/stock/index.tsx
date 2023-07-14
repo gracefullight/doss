@@ -8,11 +8,14 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import type { GetServerSidePropsContext } from "next";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 import { useState } from "react";
 import { Layout } from "~/components/layout";
 import { IndexBanner, NudgeAlert } from "~/components/stock";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function Stock() {
@@ -223,17 +226,17 @@ export default function Stock() {
               </div>
               <div className="divider"></div>
               <div className="mb-2 flex flex-col gap-4">
-                <div className="text-neutral-200 text-lg">최근 본 주식</div>
+                <div className="text-lg text-neutral-200">최근 본 주식</div>
                 <div className="carousel rounded-box max-w-full space-x-2 self-start">
                   <div className="carousel-item">
-                    <button className="btn btn-active btn-ghost rounded-2xl">
+                    <button className="btn-ghost btn-active btn rounded-2xl">
                       테슬라
                       <span className="text-error">+10.2%</span>
                       <XMarkIcon className="w-4" />
                     </button>
                   </div>
                   <div className="carousel-item">
-                    <button className="btn btn-active btn-ghost rounded-2xl">
+                    <button className="btn-ghost btn-active btn rounded-2xl">
                       한미반도체
                       <span className="text-error">+30%</span>
                       <XMarkIcon className="w-4" />
@@ -244,17 +247,17 @@ export default function Stock() {
               <div className="divider"></div>
               <div className="mb-2 flex flex-col gap-4">
                 <div className="mb-2 flex justify-between">
-                  <div className="text-neutral-200 text-lg font-medium">
+                  <div className="text-lg font-medium text-neutral-200">
                     관심 주식
                   </div>
-                  <div className="text-neutral-400 cursor-pointer">
+                  <div className="cursor-pointer text-neutral-400">
                     편집하기
                   </div>
                 </div>
-                <div className="join join-vertical w-full bg-base-400">
-                  <div className="collapse collapse-arrow join-item">
+                <div className="bg-base-400 join-vertical join w-full">
+                  <div className="collapse-arrow join-item collapse">
                     <input type="radio" name="my-accordion-4" checked />
-                    <div className="collapse-title text-neutral-400 font-medium p-0">
+                    <div className="collapse-title p-0 font-medium text-neutral-400">
                       기본
                     </div>
                     <div className="collapse-content p-0">
@@ -298,10 +301,10 @@ export default function Stock() {
               </div>
               <div className="divider"></div>
               <div className="flex flex-col">
-                <div className="text-neutral-200 text-lg">
+                <div className="text-lg text-neutral-200">
                   {sessionData?.user?.name}님이 관심 있어 할 월배당 관련 주식
                 </div>
-                <div className="text-neutral-400 text-sm">
+                <div className="text-sm text-neutral-400">
                   최근 찾아 본 주식을 분석했어요.
                 </div>
                 <ul className="mb-6 mt-4 flex flex-col gap-4">
@@ -320,7 +323,7 @@ export default function Stock() {
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
-                      <div className="badge badge-lg text-error rounded-lg border-none bg-neutral-700">
+                      <div className="badge badge-lg rounded-lg border-none bg-neutral-700 text-error">
                         {`+${formatPercent(0.002)}`}
                       </div>
                     </div>
@@ -333,4 +336,22 @@ export default function Stock() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }
