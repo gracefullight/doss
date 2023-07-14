@@ -14,7 +14,8 @@
     "dev": "next dev",
     "migrate:dev": "prisma migrate dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test": "playwright test"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -46,11 +47,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
+    "@playwright/test": "^1.36.0",
     "@types/eslint": "^8.44.0",
     "@types/luxon": "^3.3.0",
     "@types/node": "^18.16.19",
     "@types/prettier": "^2.7.3",
-    "@types/react": "^18.2.14",
+    "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -59,11 +61,11 @@
     "eslint": "^8.44.0",
     "eslint-config-next": "^13.4.9",
     "husky": "^8.0.3",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.26",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.0",
     "prisma": "5.0.0",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "^3.3.3",
     "type-fest": "^3.13.0",
     "typescript": "^5.1.6"
   },
