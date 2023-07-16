@@ -57,7 +57,7 @@ export default function IndexChartCarousel() {
               </span>
               <span className="text-sm text-error">{item.description}</span>
             </div>
-            {/* Chart Here */}
+            {/* Chart Here, 5분 단위 값으로 09:00부터 추가된 값 */}
           </div>
         </div>
       ))}
