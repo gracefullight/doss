@@ -15,8 +15,8 @@ export default function InterestedStocks() {
         <div className="cursor-pointer text-neutral-400">편집하기</div>
       </div>
       <div className="join join-vertical w-full">
-        <div className="collapse join-item collapse-arrow">
-          <input type="radio" name="my-accordion-4" checked />
+        <div className="collapse-arrow collapse join-item">
+          <input type="radio" name="my-accordion-4" defaultChecked />
           <div className="collapse-title pl-0 text-lg font-medium text-neutral-400">
             기본
           </div>
