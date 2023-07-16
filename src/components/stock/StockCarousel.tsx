@@ -26,7 +26,7 @@ export default function StockCarousel() {
 
   return (
     <div className="flex flex-col gap-4 pb-4">
-      <div className="text-lg text-neutral-200">둘러보기</div>
+      <div className="text-lg font-medium text-neutral-200">둘러보기</div>
       <ServiceCarousel items={items} />
     </div>
   );

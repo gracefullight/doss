@@ -3,6 +3,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
   Cog6ToothIcon,
+  InboxArrowDownIcon,
   MagnifyingGlassIcon,
   PlusIcon,
 } from "@heroicons/react/24/solid";
@@ -113,7 +114,7 @@ export default function Stock() {
                   <div className="mt-1 text-error">+1,000,000원 (10%)</div>
                 </div>
                 <div className="mt-6 flex justify-between">
-                  <div className="dropdown dropdown-bottom">
+                  <div className="dropdown-bottom dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-sm m-1">
                       가나다 순
                       <ChevronDownIcon className="w-4" />
@@ -248,6 +249,39 @@ export default function Stock() {
               </div>
             </>
           )}
+          <div className="mb-3 mt-6 flex justify-between px-6">
+            <div className="flex gap-4">
+              <InboxArrowDownIcon className="w-6" />
+              <div className="flex flex-col">
+                <div className="text-lg font-medium text-neutral-200">
+                  지금까지 도스증권 어땠나요?
+                </div>
+                <span className="text-sm text-neutral-400">의견 보내기</span>
+              </div>
+            </div>
+            <ChevronRightIcon className="w-4 text-neutral-400" />
+          </div>
+          <div className="divider px-6"></div>
+          <div className="mt-3 flex flex-col gap-4 px-6">
+            <div className="text-neutral-200">도스증권</div>
+            <p className="text-sm text-neutral-500">
+              도스증권에서 제공하는 투자 정보는 고객의 투자 판단을 위한
+              단순참고용일뿐, 투자 제안 및 권유·종목 추천을 위해 작성된 것이
+              아닙니다.
+            </p>
+            <div>
+              <div className="text-sm text-neutral-400">
+                고객센터 | 투자 유의사항 | 개인정보처리방침
+              </div>
+              <div className="text-sm text-neutral-400">
+                이용자권리 및 유의사항 | 신용정보 활용체제
+              </div>
+            </div>
+            <div className=" flex justify-between">
+              <div className="text-lg text-neutral-400">꼭 알아두세요</div>
+              <ChevronRightIcon className="w-4 text-neutral-400" />
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
