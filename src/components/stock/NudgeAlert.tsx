@@ -3,8 +3,33 @@ import {
   ChevronRightIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import { useCookieState } from "ahooks";
+import { DateTime } from "luxon";
 
 export default function NudgeAlert() {
+  const [cookie, setCookie] = useCookieState("nudge-alert", {
+    defaultValue: "1",
+  });
+
+  const remainingSeconds = () => {
+    const now = DateTime.local();
+    const tomorrowMidnight = DateTime.local(now.year, now.month, now.day).plus({
+      days: 1,
+    });
+    const { seconds } = tomorrowMidnight.diff(now, "seconds");
+    return Math.floor(seconds);
+  };
+
+  const closeAlert = () => {
+    setCookie("0", {
+      expires: new Date(Date.now() + remainingSeconds() * 1000),
+    });
+  };
+
+  if (cookie === "0") {
+    return null;
+  }
+
   return (
     <div className="alert mb-4 grid-flow-col-dense border-none bg-neutral-700 shadow-lg">
       <ChartBarIcon className="w-6" />
@@ -15,7 +40,7 @@ export default function NudgeAlert() {
           <ChevronRightIcon className="w-3" />
         </div>
       </div>
-      <button className="btn-ghost btn-sm btn">
+      <button onClick={closeAlert} className="btn btn-ghost btn-sm">
         <XMarkIcon className="w-5 fill-neutral-400" />
       </button>
     </div>
