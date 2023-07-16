@@ -14,6 +14,7 @@ import { Layout } from "~/components/layout";
 import {
   DynamicNudgeAlert,
   IndexBanner,
+  IndexChartCarousel,
   InterestedStocks,
   RecentStocks,
   RecommendedStocks,
@@ -114,7 +115,7 @@ export default function Stock() {
                   <div className="mt-1 text-error">+1,000,000원 (10%)</div>
                 </div>
                 <div className="mt-6 flex justify-between">
-                  <div className="dropdown dropdown-bottom">
+                  <div className="dropdown-bottom dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-sm m-1">
                       가나다 순
                       <ChevronDownIcon className="w-4" />
@@ -246,6 +247,24 @@ export default function Stock() {
               </div>
               <div className="mt-4 bg-neutral-800 px-6 py-4">
                 <StockCarousel />
+              </div>
+            </>
+          )}
+          {tabIndex === 1 && (
+            <>
+              <div className="bg-neutral-800 px-6">
+                <div className="mt-4 flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <div className="text-lg font-medium text-neutral-300">
+                      주요 지수
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="text-neutral-500">전체보기</div>
+                      <ChevronRightIcon className="w-4" />
+                    </div>
+                  </div>
+                  <IndexChartCarousel />
+                </div>
               </div>
             </>
           )}
