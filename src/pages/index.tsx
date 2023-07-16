@@ -4,9 +4,9 @@ import { Layout } from "~/components/layout";
 import {
   Asset,
   Extra,
+  MainCarousel,
   MainNavbar,
   Section,
-  ServiceCarousel,
   Spend,
   Stock,
 } from "~/components/main";
@@ -25,7 +25,7 @@ export default function Home() {
         <Asset />
         <Stock />
         <Spend />
-        <ServiceCarousel />
+        <MainCarousel />
         <Extra />
       </div>
     </Layout>

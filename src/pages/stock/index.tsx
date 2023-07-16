@@ -7,7 +7,6 @@ import {
   PlusIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useState } from "react";
 import { Layout } from "~/components/layout";
@@ -18,8 +17,7 @@ import {
   RecentStocks,
   RecommendedStocks,
 } from "~/components/stock";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
+import StockCarousel from "~/components/stock/StockCarousel";
 import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function Stock() {
@@ -245,28 +243,13 @@ export default function Stock() {
               <div className="mt-4 bg-neutral-800 px-6 py-4">
                 <RecommendedStocks />
               </div>
+              <div className="mt-4 bg-neutral-800 px-6 py-4">
+                <StockCarousel />
+              </div>
             </>
           )}
         </div>
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }
