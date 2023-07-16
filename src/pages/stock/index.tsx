@@ -17,8 +17,8 @@ import {
   InterestedStocks,
   RecentStocks,
   RecommendedStocks,
+  StockCarousel,
 } from "~/components/stock";
-import StockCarousel from "~/components/stock/StockCarousel";
 import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function Stock() {
@@ -114,7 +114,7 @@ export default function Stock() {
                   <div className="mt-1 text-error">+1,000,000원 (10%)</div>
                 </div>
                 <div className="mt-6 flex justify-between">
-                  <div className="dropdown-bottom dropdown">
+                  <div className="dropdown dropdown-bottom">
                     <label tabIndex={0} className="btn btn-ghost btn-sm m-1">
                       가나다 순
                       <ChevronDownIcon className="w-4" />
