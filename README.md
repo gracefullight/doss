@@ -29,3 +29,8 @@ docker run -d \
 ```bash
 pnpm migrate:dev
 ```
+
+## TODO
+
+- [t3-oss/create-t3-turbo](https://github.com/t3-oss/create-t3-turbo)
+- [trpc/examples-next-app-dir](https://github.com/trpc/examples-next-app-dir)
