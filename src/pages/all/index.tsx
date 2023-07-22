@@ -11,12 +11,12 @@ export default function All() {
       <Head>
         <title>Doss | 전체</title>
       </Head>
-      <div className="flex w-screen flex-col gap-4 bg-neutral-800 px-6 pt-4">
-        <div className="flex justify-end">
-          <button className="btn-ghost btn-square btn">
+      <div className="flex w-screen flex-col bg-neutral-800 px-6 pt-4">
+        <div className="sticky top-0 z-50 flex justify-end">
+          <button className="btn btn-square btn-ghost">
             <MagnifyingGlassIcon className="w-6" />
           </button>
-          <button className="btn-ghost btn-square btn">
+          <button className="btn btn-square btn-ghost">
             <Cog6ToothIcon className="w-6" />
           </button>
         </div>

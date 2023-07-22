@@ -13,11 +13,22 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { DateTime, Interval } from "luxon";
+import { type GetServerSidePropsContext } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Layout } from "~/components/layout";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function Benefit() {
+  const router = useRouter();
+  const { hours: diffHours } = Interval.fromDateTimes(
+    DateTime.local(),
+    DateTime.local().plus({ days: 1 }).startOf("day"),
+  ).toDuration(["hours", "minutes"]);
+
   const items = [
     {
       title: "친구와 함께 도스켜고",
@@ -64,7 +75,7 @@ export default function Benefit() {
     {
       title: "만보기",
       subTitle: "130원 받기",
-      badge: "12시간 남음",
+      badge: `${diffHours}시간 남음`,
       isDone: false,
       Icon: SparklesIcon,
     },
@@ -79,36 +90,44 @@ export default function Benefit() {
       title: "버튼 누르기",
       subTitle: "완료",
       badge: null,
+      link: "/benefit/coupang",
       isDone: true,
       Icon: CursorArrowRaysIcon,
     },
   ];
+
+  const handleBenefitLink = async (link?: string) => {
+    if (link) {
+      await router.push(link);
+    }
+  };
 
   return (
     <Layout>
       <Head>
         <title>Doss | 혜택</title>
       </Head>
-      <div className="flex w-screen flex-col px-6 pt-10">
-        <div className="mb-10 flex items-center justify-between">
+      <div className="flex w-screen flex-col pt-10">
+        <div className="mb-10 flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
-          <button className="btn-ghost btn-md btn pr-0 text-lg">
+          <button className="btn btn-ghost btn-md pr-0 text-lg">
             <CurrencyDollarIcon className="w-6 fill-info" />
             {formatNumber(1000)} 원
             <ChevronRightIcon className="w-4" />
           </button>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-5 px-2">
           {items.map((item, index) => (
             <div
-              className="flex cursor-pointer items-center justify-between rounded-lg py-3 active:bg-neutral-700"
+              className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 active:bg-neutral-700"
               key={index}
+              onClick={() => void handleBenefitLink(item.link)}
             >
               <div className="flex items-center space-x-4">
                 <div
                   className={clsx(
                     `relative flex items-center justify-center rounded-full border-2 bg-neutral-700 p-3`,
-                    item.isDone ? `border-accent` : `border-neutral-700`
+                    item.isDone ? `border-accent` : `border-neutral-700`,
                   )}
                 >
                   <item.Icon className="w-8" />
@@ -134,4 +153,22 @@ export default function Benefit() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }
