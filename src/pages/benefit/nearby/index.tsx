@@ -92,9 +92,7 @@ export default function BenefitNearby() {
                   cx={center.x}
                   cy={center.y}
                   r={radius}
-                  fill="none"
-                  stroke="#888"
-                  strokeWidth="1"
+                  className="fill-none stroke-neutral-600 stroke-1"
                 />
               );
             })}
@@ -121,8 +119,7 @@ export default function BenefitNearby() {
                     x={x}
                     y={y + 45}
                     textAnchor="middle"
-                    fill="#ccc"
-                    fontSize="14"
+                    className="fill-neutral-400 text-sm"
                   >
                     {nameLines.map((line, index) => (
                       <tspan x={x} dy={index > 0 ? "1.2em" : 0} key={index}>
