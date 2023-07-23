@@ -21,7 +21,7 @@ import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import { proxy, useSnapshot } from "valtio";
 import { Layout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
+import { PATH_SIGNIN, SCROLL_BOUNCING_THRESHOLD } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
@@ -35,7 +35,11 @@ export default function Benefit() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    scrollState.direction = scrollState.scrollY < latest ? 1 : 0;
+    if (latest < SCROLL_BOUNCING_THRESHOLD) {
+      scrollState.direction = 0;
+    } else {
+      scrollState.direction = scrollState.scrollY < latest ? 1 : 0;
+    }
     scrollState.scrollY = latest;
   });
 
@@ -148,7 +152,9 @@ export default function Benefit() {
         autoPlay
         muted
         loop
+        controls
         className="max-h-[30vh] w-full object-cover"
+        preload="metadata"
         ref={videoRef}
       >
         <source
@@ -160,7 +166,7 @@ export default function Benefit() {
         className="z-10 flex h-full w-screen flex-col bg-base-100 pb-4"
         ref={scope}
       >
-        <div className="mb-10 flex items-center justify-between px-6">
+        <div className="mb-8 flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button className="btn btn-ghost btn-md pr-0 text-lg">
             <CurrencyDollarIcon className="w-6 fill-info" />
@@ -168,7 +174,7 @@ export default function Benefit() {
             <ChevronRightIcon className="w-4" />
           </button>
         </div>
-        <div className="space-y-5 px-2">
+        <div className="space-y-4 px-2">
           {items.map((item, index) => (
             <div
               className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 active:bg-neutral-700"

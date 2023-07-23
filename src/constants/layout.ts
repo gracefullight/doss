@@ -1,0 +1,1 @@
+export const SCROLL_BOUNCING_THRESHOLD = 20;
