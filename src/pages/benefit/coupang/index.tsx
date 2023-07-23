@@ -1,7 +1,10 @@
 import { CheckCircleIcon, ClockIcon } from "@heroicons/react/24/solid";
+import { type GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { CoupangCircle } from "~/components/benefit";
 import { StackLayout } from "~/components/layout";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 
 export default function BenefitCoupang() {
   const handleCoupang = () => {
@@ -53,4 +56,22 @@ export default function BenefitCoupang() {
       </StackLayout>
     </>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }

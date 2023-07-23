@@ -1,6 +1,9 @@
 import { ChevronRightIcon, FaceSmileIcon } from "@heroicons/react/24/solid";
+import { type GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { StackLayout, type StackLayoutNavbarItem } from "~/components/layout";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function BenefitNearby() {
@@ -37,4 +40,22 @@ export default function BenefitNearby() {
       </StackLayout>
     </>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }
