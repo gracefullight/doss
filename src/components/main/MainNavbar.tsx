@@ -7,7 +7,7 @@ export default function MainNavbar() {
     await router.push("/benefit/nearby");
   };
   return (
-    <div className="navbar">
+    <div className="navbar sticky top-0 z-50 bg-base-100">
       <div className="flex-1">
         <a className="btn btn-ghost text-3xl normal-case">doss</a>
       </div>

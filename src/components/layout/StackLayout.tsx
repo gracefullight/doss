@@ -25,8 +25,8 @@ export default function StackLayout({
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <div className="navbar sticky top-0 z-50 px-4">
+    <div className="flex min-h-screen flex-col bg-base-100">
+      <div className="navbar sticky top-0 z-50 bg-base-100 px-4">
         <div className="navbar-start">
           <ChevronLeftIcon
             className="w-6 cursor-pointer font-bold"

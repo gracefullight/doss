@@ -13,17 +13,53 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import { DateTime, Interval } from "luxon";
 import { type GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
+import { proxy, useSnapshot } from "valtio";
 import { Layout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
+const scrollState = proxy({ scrollY: 0, direction: 0 });
+
 export default function Benefit() {
+  const { direction } = useSnapshot(scrollState);
   const router = useRouter();
+  const { scrollY } = useScroll();
+  const [scope, animate] = useAnimate<HTMLDivElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    scrollState.direction = scrollState.scrollY < latest ? 1 : 0;
+    scrollState.scrollY = latest;
+  });
+
+  useEffect(() => {
+    if (direction === 1) {
+      videoRef.current?.pause();
+      void animate(
+        scope.current,
+        { y: "-30vh", paddingTop: "3rem" },
+        { duration: 0.2 },
+      );
+    } else {
+      void videoRef.current?.play();
+      void animate(
+        scope.current,
+        {
+          y: 0,
+          paddingTop: "1rem",
+        },
+        { duration: 0.2 },
+      );
+    }
+  }, [direction]);
+
   const { hours: diffHours } = Interval.fromDateTimes(
     DateTime.local(),
     DateTime.local().plus({ days: 1 }).startOf("day"),
@@ -108,7 +144,22 @@ export default function Benefit() {
       <Head>
         <title>Doss | 혜택</title>
       </Head>
-      <div className="flex w-screen flex-col pt-10">
+      <video
+        autoPlay
+        muted
+        loop
+        className="max-h-[30vh] w-full object-cover"
+        ref={videoRef}
+      >
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div
+        className="z-10 flex h-full w-screen flex-col bg-base-100 pb-4"
+        ref={scope}
+      >
         <div className="mb-10 flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button className="btn btn-ghost btn-md pr-0 text-lg">

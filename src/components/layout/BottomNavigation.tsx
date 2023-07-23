@@ -20,7 +20,7 @@ export default function BottomNavigation() {
   ];
 
   return (
-    <div className="btm-nav">
+    <div className="btm-nav z-50">
       {links.map((link) => (
         <button
           key={link.href}
