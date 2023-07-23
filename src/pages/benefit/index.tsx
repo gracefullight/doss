@@ -152,7 +152,6 @@ export default function Benefit() {
         autoPlay
         muted
         loop
-        controls
         className="max-h-[30vh] w-full object-cover"
         preload="metadata"
         playsInline
