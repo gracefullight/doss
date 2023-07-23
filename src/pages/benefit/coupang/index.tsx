@@ -1,18 +1,9 @@
-import {
-  CheckCircleIcon,
-  ChevronLeftIcon,
-  ClockIcon,
-} from "@heroicons/react/24/solid";
+import { CheckCircleIcon, ClockIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { CoupangCircle } from "~/components/benefit";
+import { StackLayout } from "~/components/layout";
 
 export default function BenefitCoupang() {
-  const router = useRouter();
-  const handleBack = () => {
-    router.back();
-  };
-
   const handleCoupang = () => {
     // TODO: click log
     window.open("https://link.coupang.com/a/4Fw2T");
@@ -23,14 +14,8 @@ export default function BenefitCoupang() {
       <Head>
         <title>Doss | 혜택 | 쿠팡</title>
       </Head>
-      <div className="flex min-h-screen flex-col pt-4">
-        <div className="sticky top-0 z-50 flex px-4">
-          <ChevronLeftIcon
-            className="w-6 cursor-pointer font-bold"
-            onClick={handleBack}
-          />
-        </div>
-        <div className="flex flex-col px-6 pt-6">
+      <StackLayout>
+        <div className="flex flex-col px-6">
           <div className="text-sm text-neutral-400">
             오늘은 이미 포인트를 받았어요
           </div>
@@ -65,7 +50,7 @@ export default function BenefitCoupang() {
             인기 상품 구경가기
           </div>
         </div>
-      </div>
+      </StackLayout>
     </>
   );
 }
