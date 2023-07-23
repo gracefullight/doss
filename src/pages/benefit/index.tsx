@@ -36,6 +36,7 @@ export default function Benefit() {
       badge: null,
       isDone: false,
       Icon: MapPinIcon,
+      link: "/benefit/nearby",
     },
     {
       title: "이번 주 미션",

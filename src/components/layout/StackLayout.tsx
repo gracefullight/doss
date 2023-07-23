@@ -2,10 +2,26 @@ import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import type { PropsWithChildren } from "react";
 
-export default function StackLayout({ children }: PropsWithChildren) {
+export interface StackLayoutNavbarItem {
+  title: string;
+  link: string;
+}
+
+interface StackLayoutProps {
+  items?: StackLayoutNavbarItem[];
+}
+
+export default function StackLayout({
+  children,
+  items,
+}: PropsWithChildren<StackLayoutProps>) {
   const router = useRouter();
   const handleBack = () => {
     router.back();
+  };
+
+  const handleNavbarLink = async (link: string) => {
+    await router.push(link);
   };
 
   return (
@@ -17,6 +33,19 @@ export default function StackLayout({ children }: PropsWithChildren) {
             onClick={handleBack}
           />
         </div>
+        {items && (
+          <div className="navbar-end gap-3 pr-1">
+            {items.map((item) => (
+              <div
+                key={item.link}
+                className="cursor-pointer text-neutral-200"
+                onClick={() => void handleNavbarLink(item.link)}
+              >
+                {item.title}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       {children}
     </div>

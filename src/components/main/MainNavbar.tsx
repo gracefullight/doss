@@ -1,16 +1,24 @@
-import { MapPinIcon, BellIcon } from "@heroicons/react/24/solid";
+import { BellIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/router";
 
 export default function MainNavbar() {
+  const router = useRouter();
+  const handleNearby = async () => {
+    await router.push("/benefit/nearby");
+  };
   return (
     <div className="navbar">
       <div className="flex-1">
-        <a className="btn-ghost btn text-3xl normal-case">doss</a>
+        <a className="btn btn-ghost text-3xl normal-case">doss</a>
       </div>
       <div className="flex-none">
-        <button className="btn-ghost btn-square btn">
+        <button
+          className="btn btn-square btn-ghost"
+          onClick={() => void handleNearby()}
+        >
           <MapPinIcon className="h-6 w-6" />
         </button>
-        <button className="btn-ghost btn-square btn">
+        <button className="btn btn-square btn-ghost">
           <BellIcon className="h-6 w-6" />
         </button>
       </div>
