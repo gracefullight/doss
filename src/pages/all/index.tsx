@@ -58,7 +58,7 @@ export default function All() {
           <h1 className="text-2xl font-bold text-neutral-200">전체</h1>
         </div>
         <div className="flex justify-between gap-2 py-2">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div
               className="flex cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600"
               key={item.title}
