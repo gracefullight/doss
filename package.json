@@ -6,7 +6,7 @@
   "engines": {
     "node": "18"
   },
-  "packageManager": "^pnpm@8.6.9",
+  "packageManager": "^pnpm@8.6.10",
   "scripts": {
     "prepare": "husky install",
     "postinstall": "prisma generate",
@@ -34,8 +34,8 @@
     "ahooks": "^3.7.8",
     "apexcharts": "^3.41.0",
     "clsx": "^2.0.0",
-    "daisyui": "^3.3.1",
-    "framer-motion": "^10.13.0",
+    "daisyui": "^3.4.0",
+    "framer-motion": "^10.13.1",
     "luxon": "^3.3.0",
     "next": "^13.4.12",
     "next-auth": "^4.22.3",
@@ -54,10 +54,10 @@
     "@types/luxon": "^3.3.1",
     "@types/node": "^18.17.0",
     "@types/prettier": "^2.7.3",
-    "@types/react": "^18.2.15",
+    "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "autoprefixer": "^10.4.14",
     "devmoji": "^2.3.0",
     "eslint": "^8.45.0",
