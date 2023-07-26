@@ -4,6 +4,19 @@ Duplicated version of Toss application
 
 ![demo](./apps/web/public/demo.jpg)
 
+## structure
+
+```bash
+.
+├── apps
+│   └── web: Next.js application
+└── packages
+    ├── config
+    │   ├── eslint: Shared ESLint configurations
+    │   └── tailwind: Shared Tailwind CSS configurations
+    └── db: Shared database schema, using Prisma
+```
+
 ## server
 
 ```bash
