@@ -1,0 +1,24 @@
+{
+  "name": "@doss/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:deploy": "pnpm with-env prisma migrate deploy",
+    "dev": "pnpm with-env prisma studio --port 5557",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "dotenv-cli": "^7.2.1",
+    "prisma": "^5.0.0",
+    "typescript": "^5.1.6"
+  }
+}
