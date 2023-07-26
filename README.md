@@ -2,7 +2,7 @@
 
 Duplicated version of Toss application
 
-![demo](./public/demo.jpg)
+![demo](./apps/web/public/demo.jpg)
 
 ## server
 
