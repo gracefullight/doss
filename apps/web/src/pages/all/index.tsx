@@ -47,7 +47,6 @@ import {
   NewspaperIcon,
   PaintBrushIcon,
   PaperAirplaneIcon,
-  PhoneArrowDownLeftIcon,
   PhoneArrowUpRightIcon,
   QuestionMarkCircleIcon,
   QueueListIcon,
@@ -104,7 +103,7 @@ export default function All() {
     },
     {
       title: "고객센터",
-      Icon: PhoneArrowDownLeftIcon,
+      Icon: PhoneArrowUpRightIcon,
       color: "error-content",
     },
   ];
@@ -662,7 +661,7 @@ export default function All() {
         },
         {
           title: "24시간 고객센터",
-          icon: <PhoneArrowUpRightIcon className="fill-info w-6" />,
+          icon: <PhoneArrowUpRightIcon className="fill-error-content w-6" />,
         },
         {
           title: "도스 새소식",
@@ -765,14 +764,14 @@ export default function All() {
                     >
                       <div className="flex items-center space-x-3">
                         {item.icon}
-                        <div className="flex items-center gap-1">
-                          <span className="font-medium">{item.title}</span>
+                        <span className="font-medium">
+                          {item.title}
                           {item.serviceName && (
-                            <span className="text-sm text-neutral-500">
-                              {`· ${item.serviceName}`}
+                            <span className="text-sm font-normal text-neutral-500">
+                              {` · ${item.serviceName}`}
                             </span>
                           )}
-                        </div>
+                        </span>
                       </div>
                       {item.badge && (
                         <div
