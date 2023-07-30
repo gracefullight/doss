@@ -31,16 +31,23 @@ export default function NudgeAlert() {
   }
 
   return (
-    <div className="alert mb-4 grid-flow-col-dense border-none bg-neutral-700 shadow-lg">
-      <ChartBarIcon className="w-6" />
-      <div className="flex flex-col gap-1">
-        <span className="font-medium">매일 방문할수록 혜택이 커져요</span>
-        <div className="flex text-info">
-          <span className="text-sm">출석체크하고 주식받기</span>
-          <ChevronRightIcon className="w-3" />
+    <div className="alert mb-4 flex justify-between border-none bg-neutral-700 shadow-lg">
+      <div className="flex space-x-3">
+        <ChartBarIcon className="w-6" />
+        <div className="flex flex-col gap-1">
+          <span className="font-medium">매일 방문할수록 혜택이 커져요</span>
+          <div className="text-info flex">
+            <span className="text-sm">출석체크하고 주식받기</span>
+            <ChevronRightIcon className="w-3" />
+          </div>
         </div>
       </div>
-      <button onClick={closeAlert} className="btn btn-ghost btn-sm">
+      <button
+        onClick={closeAlert}
+        className="btn btn-ghost btn-sm pr-0"
+        title="닫기"
+        type="button"
+      >
         <XMarkIcon className="w-5 fill-neutral-400" />
       </button>
     </div>
