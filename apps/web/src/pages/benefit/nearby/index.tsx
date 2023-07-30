@@ -3,10 +3,7 @@ import { type GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import {
-  StackLayout,
-  type StackLayoutNavbarItem,
-} from "~/components/layout";
+import { StackLayout, type StackLayoutNavbarItem } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
@@ -135,14 +132,14 @@ export default function BenefitNearby() {
             })}
           </svg>
         </div>
-        <div className="flex cursor-pointer items-center justify-between px-6 py-6">
+        <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 py-6">
           <div className="flex gap-2">
-            <FaceSmileIcon className="w-10 fill-warning" />
+            <FaceSmileIcon className="fill-warning w-10" />
             <div className="flex flex-col gap-1">
               <span className="text-sm">
                 함께 도스 켜고 총 {formatNumber(259)}원 모았어요
               </span>
-              <span className="font-medium text-info">내 캐릭터 보기</span>
+              <span className="text-info font-medium">내 캐릭터 보기</span>
             </div>
           </div>
           <ChevronRightIcon className="w-4" />
