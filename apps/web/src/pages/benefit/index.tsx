@@ -1,11 +1,11 @@
 import {
+  ArrowRightCircleIcon,
   BellIcon,
   CheckIcon,
   ChevronRightIcon,
   CurrencyDollarIcon,
   DevicePhoneMobileIcon,
   DocumentArrowDownIcon,
-  GiftIcon,
   MapPinIcon,
   QuestionMarkCircleIcon,
   SparklesIcon,
@@ -83,7 +83,7 @@ export default function Benefit() {
       subTitle: "46,610원 받기",
       badge: "3일 남음",
       isDone: false,
-      Icon: GiftIcon,
+      Icon: ArrowRightCircleIcon,
     },
     {
       title: "행운복권",
