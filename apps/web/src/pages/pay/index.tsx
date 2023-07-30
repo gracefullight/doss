@@ -2,12 +2,7 @@ import { Cog6ToothIcon, CommandLineIcon } from "@heroicons/react/24/solid";
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { Layout } from "~/components/layout";
-import {
-  Brand,
-  GroupShopping,
-  Payback,
-  Voucher,
-} from "~/components/pay";
+import { Brand, GroupShopping, Payback, Voucher } from "~/components/pay";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 
@@ -19,10 +14,18 @@ export default function Pay() {
       </Head>
       <div className="flex w-screen flex-col">
         <div className="sticky top-0 z-50 flex justify-end bg-neutral-800 px-6 pt-4">
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            title="페이"
+            type="button"
+          >
             <CommandLineIcon className="w-6" />
           </button>
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            title="설정"
+            type="button"
+          >
             <Cog6ToothIcon className="w-6" />
           </button>
         </div>

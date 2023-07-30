@@ -3,8 +3,8 @@ import {
   CheckIcon,
   ChevronRightIcon,
   CurrencyDollarIcon,
-  CursorArrowRaysIcon,
   DevicePhoneMobileIcon,
+  DocumentArrowDownIcon,
   GiftIcon,
   MapPinIcon,
   QuestionMarkCircleIcon,
@@ -133,7 +133,7 @@ export default function Benefit() {
       badge: null,
       link: "/benefit/coupang",
       isDone: true,
-      Icon: CursorArrowRaysIcon,
+      Icon: DocumentArrowDownIcon,
     },
   ];
 
@@ -163,13 +163,13 @@ export default function Benefit() {
         />
       </video>
       <div
-        className="z-10 flex h-full w-screen flex-col bg-base-100 pb-4"
+        className="bg-base-100 z-10 flex h-full w-screen flex-col pb-4"
         ref={scope}
       >
         <div className="mb-8 flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button className="btn btn-ghost btn-md pr-0 text-lg">
-            <CurrencyDollarIcon className="w-6 fill-info" />
+            <CurrencyDollarIcon className="fill-info w-6" />
             {formatNumber(1000)} 원
             <ChevronRightIcon className="w-4" />
           </button>
@@ -190,7 +190,7 @@ export default function Benefit() {
                 >
                   <item.Icon className="w-8" />
                   {item.isDone && (
-                    <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-accent p-1">
+                    <div className="bg-accent absolute -bottom-1 -right-1 rounded-full border border-neutral-700 p-1">
                       <CheckIcon className="w-4 text-neutral-700" />
                     </div>
                   )}
