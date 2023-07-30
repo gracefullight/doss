@@ -17,7 +17,7 @@ export default function Section({
       <div
         className={clsx(
           `flex items-center justify-between`,
-          children && "mb-6"
+          children && "mb-6",
         )}
       >
         <h2 className="text-lg font-semibold text-neutral-200">{title}</h2>

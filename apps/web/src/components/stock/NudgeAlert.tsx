@@ -44,7 +44,7 @@ export default function NudgeAlert() {
       </div>
       <button
         onClick={closeAlert}
-        className="btn btn-ghost btn-sm pr-0"
+        className="btn btn-ghost btn-sm p-0"
         title="닫기"
         type="button"
       >

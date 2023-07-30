@@ -6,6 +6,7 @@ import {
   Extra,
   MainCarousel,
   MainNavbar,
+  RemitAlert,
   Section,
   Spend,
   Stock,
@@ -21,6 +22,7 @@ export default function Home() {
       </Head>
       <MainNavbar />
       <div className="flex w-screen flex-col items-center justify-center gap-4 px-6 py-2">
+        <RemitAlert />
         <Section title="도스뱅크" link="/" />
         <Asset />
         <Stock />
