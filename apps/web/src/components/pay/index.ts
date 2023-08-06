@@ -5,7 +5,7 @@ export { default as GroupShopping } from "./GroupShopping";
 export { default as Payback } from "./Payback";
 export { default as QuickAccessButtons } from "./QuickAccessButtons";
 export { default as Voucher } from "./Voucher";
-export const GroupShoppingBanner = dynamic(
+export const DynamicGroupShoppingBanner = dynamic(
   () => import("./group-shopping/GroupShoppingBanner"),
   { ssr: false },
 );

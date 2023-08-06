@@ -3,7 +3,6 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
   Cog6ToothIcon,
-  InboxArrowDownIcon,
   MagnifyingGlassIcon,
   PlusIcon,
 } from "@heroicons/react/24/solid";
@@ -13,12 +12,14 @@ import { useState } from "react";
 import { Layout } from "~/components/layout";
 import {
   DynamicNudgeAlert,
+  FeedbackBanner,
   IndexBanner,
   IndexChartCarousel,
   InterestedStocks,
   RecentStocks,
   RecommendedStocks,
   StockCarousel,
+  StockFooter,
 } from "~/components/stock";
 import { formatNumber, formatPercent } from "~/utils/number";
 
@@ -56,13 +57,25 @@ export default function Stock() {
       </Head>
       <div className="flex w-screen flex-col">
         <div className="sticky top-0 z-50 flex justify-end bg-neutral-800 px-6 pt-4">
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            title="검색"
+            type="button"
+          >
             <MagnifyingGlassIcon className="w-6" />
           </button>
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            title="캘린더"
+            type="button"
+          >
             <CalendarIcon className="w-6" />
           </button>
-          <button className="btn btn-square btn-ghost">
+          <button
+            className="btn btn-square btn-ghost"
+            title="설정"
+            type="button"
+          >
             <Cog6ToothIcon className="w-6" />
           </button>
         </div>
@@ -115,7 +128,7 @@ export default function Stock() {
                         내 계좌 보기
                       </button>
                     </div>
-                    <div className="mt-1 text-error">+1,000,000원 (10%)</div>
+                    <div className="text-error mt-1">+1,000,000원 (10%)</div>
                   </div>
                   <div className="mt-6 flex justify-between">
                     <div className="dropdown dropdown-bottom">
@@ -174,7 +187,7 @@ export default function Stock() {
                         >
                           <div className="flex items-center space-x-3">
                             <div className="avatar placeholder">
-                              <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                              <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
                                 <span>1</span>
                               </div>
                             </div>
@@ -200,8 +213,8 @@ export default function Stock() {
                     <li className="flex items-center">
                       <div className="flex items-center space-x-3">
                         <div className="avatar placeholder">
-                          <div className="w-10 rounded-full bg-info bg-opacity-20">
-                            <PlusIcon className="w-6 fill-info" />
+                          <div className="bg-info w-10 rounded-full bg-opacity-20">
+                            <PlusIcon className="fill-info w-6" />
                           </div>
                         </div>
                         <span className="font-medium text-neutral-400">
@@ -212,20 +225,20 @@ export default function Stock() {
                   </ul>
                   <div className="divider"></div>
                   <div className="mb-2 flex flex-col gap-3">
-                    <div className="flex items-center justify-between py-1">
+                    <div className="flex cursor-pointer items-center justify-between py-1">
                       <span className="text-lg text-neutral-300">주문내역</span>
                       <div className="text-neutral-400">
                         <ChevronRightIcon className="w-4" />
                       </div>
                     </div>
-                    <div className="flex items-center justify-between py-1">
+                    <div className="flex cursor-pointer items-center justify-between  py-1">
                       <span className="text-lg text-neutral-300">판매수익</span>
                       <div className="flex  gap-2 text-neutral-400">
                         <span>이번 달 {formatNumber(-100000)}원</span>
                         <ChevronRightIcon className="w-4" />
                       </div>
                     </div>
-                    <div className="flex items-center justify-between py-1">
+                    <div className="flex cursor-pointer items-center justify-between py-1">
                       <span className="text-lg text-neutral-300">
                         예상 배당금
                       </span>
@@ -261,9 +274,9 @@ export default function Stock() {
                       <div className="text-lg font-medium text-neutral-300">
                         주요 지수
                       </div>
-                      <div className="flex gap-2">
-                        <div className="text-neutral-500">전체보기</div>
-                        <ChevronRightIcon className="w-4" />
+                      <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
+                        전체보기
+                        <ChevronRightIcon className="w-4 font-medium" />
                       </div>
                     </div>
                     <IndexChartCarousel />
@@ -271,38 +284,10 @@ export default function Stock() {
                 </div>
               </>
             )}
-            <div className="mb-3 mt-6 flex justify-between px-6">
-              <div className="flex gap-4">
-                <InboxArrowDownIcon className="w-6" />
-                <div className="flex flex-col">
-                  <div className="text-lg font-medium text-neutral-200">
-                    지금까지 도스증권 어땠나요?
-                  </div>
-                  <span className="text-sm text-neutral-400">의견 보내기</span>
-                </div>
-              </div>
-              <ChevronRightIcon className="w-4 text-neutral-400" />
-            </div>
-            <div className="divider px-6"></div>
-            <div className="mt-3 flex flex-col gap-4 px-6">
-              <div className="text-neutral-200">도스증권</div>
-              <p className="text-sm text-neutral-500">
-                도스증권에서 제공하는 투자 정보는 고객의 투자 판단을 위한
-                단순참고용일뿐, 투자 제안 및 권유·종목 추천을 위해 작성된 것이
-                아닙니다.
-              </p>
-              <div>
-                <div className="text-sm text-neutral-400">
-                  고객센터 | 투자 유의사항 | 개인정보처리방침
-                </div>
-                <div className="text-sm text-neutral-400">
-                  이용자권리 및 유의사항 | 신용정보 활용체제
-                </div>
-              </div>
-              <div className=" flex justify-between">
-                <div className="text-lg text-neutral-400">꼭 알아두세요</div>
-                <ChevronRightIcon className="w-4 text-neutral-400" />
-              </div>
+            <div className="px-6">
+              <FeedbackBanner />
+              <div className="divider"></div>
+              <StockFooter />
             </div>
           </div>
         </div>

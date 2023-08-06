@@ -4,8 +4,8 @@ import Head from "next/head";
 import { Layout } from "~/components/layout";
 import {
   Brand,
+  DynamicGroupShoppingBanner,
   GroupShopping,
-  GroupShoppingBanner,
   Payback,
   QuickAccessButtons,
   Voucher,
@@ -41,7 +41,7 @@ export default function Pay() {
             <div className="mb-2 flex items-center justify-between px-6">
               <h1 className="text-2xl font-bold text-neutral-200">도스페이</h1>
             </div>
-            <GroupShoppingBanner />
+            <DynamicGroupShoppingBanner />
             <QuickAccessButtons />
             <GroupShopping />
           </div>
