@@ -1,6 +1,7 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import type { PropsWithChildren } from "react";
+import ScreenCaptureToast from "./ScreenCaptureToast";
 
 export interface StackLayoutNavbarItem {
   title: string;
@@ -25,8 +26,8 @@ export default function StackLayout({
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-base-100">
-      <div className="navbar sticky top-0 z-50 bg-base-100 px-4">
+    <div className="bg-base-100 flex min-h-screen flex-col">
+      <div className="navbar bg-base-100 sticky top-0 z-50 px-4">
         <div className="navbar-start">
           <ChevronLeftIcon
             className="w-6 cursor-pointer font-bold"
@@ -48,6 +49,7 @@ export default function StackLayout({
         )}
       </div>
       {children}
+      <ScreenCaptureToast />
     </div>
   );
 }
