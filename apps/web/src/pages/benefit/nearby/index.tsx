@@ -54,7 +54,7 @@ export default function BenefitNearby() {
     {
       x: 100,
       y: 200,
-      link: "/friend1",
+      link: "/benefit/nearby/my-character",
       points: 100,
       icon: "https://i.pravatar.cc/50?u=a",
       name: "언팩\n팝업스토어",
@@ -62,7 +62,7 @@ export default function BenefitNearby() {
     {
       x: -50,
       y: -100,
-      link: "/friend2",
+      link: "/benefit/nearby/my-character",
       points: 200,
       icon: "https://i.pravatar.cc/50?u=b",
       name: "보너스 친구",
