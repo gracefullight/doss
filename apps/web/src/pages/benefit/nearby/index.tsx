@@ -46,7 +46,7 @@ export default function BenefitNearby() {
     {
       x: 0,
       y: 0,
-      link: "/me",
+      link: "/benefit/nearby/my-character",
       points: 0,
       icon: "https://i.pravatar.cc/50?u=me",
       name: "나",
@@ -73,6 +73,10 @@ export default function BenefitNearby() {
     if (link) {
       await router.push(link);
     }
+  };
+
+  const handleMyCharacter = async () => {
+    await router.push("/benefit/nearby/my-character");
   };
 
   return (
@@ -132,7 +136,10 @@ export default function BenefitNearby() {
             })}
           </svg>
         </div>
-        <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 py-6">
+        <div
+          className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 py-6"
+          onClick={handleMyCharacter}
+        >
           <div className="flex gap-2">
             <FaceSmileIcon className="fill-warning w-10" />
             <div className="flex flex-col gap-1">
