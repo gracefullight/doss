@@ -26,7 +26,7 @@ export default function GroupShoppingCarousel() {
   ];
 
   return (
-    <div className="carousel rounded-box mt-2 max-w-full space-x-4 self-start">
+    <div className="carousel rounded-box mt-2 max-w-full cursor-pointer space-x-4 self-start">
       {items.map((item) => {
         const discountRate = formatPercent(
           1 - item.discountPrice / item.originalPrice,
