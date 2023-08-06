@@ -26,15 +26,15 @@
     "@commitlint/config-conventional": "^17.6.7",
     "@commitlint/types": "^17.4.4",
     "@manypkg/cli": "^0.21.0",
-    "@types/node": "^18.17.1",
+    "@types/node": "^18.17.3",
     "devmoji": "^2.3.0",
     "husky": "^8.0.3",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "turbo": "^1.10.12",
-    "type-fest": "^4.0.0",
+    "type-fest": "^4.1.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "vitest": "^0.34.1"
   },
   "ct3aMetadata": {
     "initVersion": "7.16.0"
