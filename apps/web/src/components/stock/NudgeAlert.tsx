@@ -1,3 +1,6 @@
+// ? compatibility
+"use-client";
+
 import {
   ChartBarIcon,
   ChevronRightIcon,

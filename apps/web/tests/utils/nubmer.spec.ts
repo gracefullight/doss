@@ -15,4 +15,10 @@ describe("formatPercent", () => {
     expect(formatPercent(0)).toBe("0.0%");
     expect(formatPercent(-0.45678)).toBe("-45.7%");
   });
+
+  it("formats percentages with different minimumFractionDigits", () => {
+    expect(formatPercent(0.45678)).toBe("45.7%");
+    expect(formatPercent(0.45678, 0)).toBe("46%");
+    expect(formatPercent(0.45678, 2)).toBe("45.68%");
+  });
 });

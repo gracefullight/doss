@@ -3,10 +3,13 @@ export function formatNumber(num: number): string {
   return formatter.format(num);
 }
 
-export const formatPercent = (num: number): string => {
+export const formatPercent = (
+  num: number,
+  minimumFractionDigits = 1,
+): string => {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "percent",
-    minimumFractionDigits: 1,
+    minimumFractionDigits: minimumFractionDigits,
   });
 
   return formatter.format(num);

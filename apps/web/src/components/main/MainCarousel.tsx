@@ -10,12 +10,12 @@ export default function MainCarousel() {
     {
       subheader: "59개 금융사",
       title: "대출 한도\n조회",
-      icon: <PlayCircleIcon className="w-8 self-end fill-success" />,
+      icon: <PlayCircleIcon className="fill-success w-8 self-end" />,
     },
     {
       subheader: "최근",
       title: "내 부동산\n시세 조회",
-      icon: <CreditCardIcon className="w-8 self-end fill-info" />,
+      icon: <CreditCardIcon className="fill-info w-8 self-end" />,
     },
     {
       subheader: "자주",

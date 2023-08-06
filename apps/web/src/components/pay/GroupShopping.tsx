@@ -1,10 +1,11 @@
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useInterval } from "ahooks";
-import { motion } from "framer-motion";
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
+import GroupShoppingCarousel from "./group-shopping/GroupShoppingCarousel";
+import GroupShoppingTimer from "./group-shopping/GroupShoppingTimer";
 
-export default function Countdown() {
+export default function GroupShopping() {
   const { seconds } = DateTime.local()
     .plus({ days: 1 })
     .set({
@@ -30,53 +31,24 @@ export default function Countdown() {
     () => () => {
       clearCount();
     },
-    [clearCount]
+    [clearCount],
   );
 
-  const countHours = Math.floor((durationSeconds / 3600) % 24);
-  const countMinutes = Math.floor((durationSeconds / 60) % 60);
-  const countSeconds = Math.floor(durationSeconds % 60);
-
+  // TODO: check if only hide the timer
   if (isTimerEnded) {
     return null;
   }
 
   return (
     <div className="flex flex-col gap-1">
-      <h2 className="text-xl font-medium text-neutral-200">도스 공동구매</h2>
-      <span className="text-error">
-        할인 종료까지{" "}
-        <span className="countdown font-mono">
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore TS2322 */}
-          <span style={{ "--value": countHours }}></span>:
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore TS2322 */}
-          <span style={{ "--value": countMinutes }}></span>:
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore TS2322 */}
-          <span style={{ "--value": countSeconds }}></span>
-        </span>{" "}
-        남음
-      </span>
-      <div className="place-self-center">
-        <motion.div
-          className="w-32"
-          animate={{ rotateY: 360, opacity: [1, 0.6, 1] }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatDelay: 0.5,
-            ease: "linear",
-            times: [0, 0.5, 1],
-          }}
-        >
-          <QuestionMarkCircleIcon className="fill-info" />
-        </motion.div>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-medium text-neutral-200">공동구매</h2>
+        <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
+          모두 보기 <ChevronRightIcon className="w-4 font-medium" />
+        </div>
       </div>
-      <button className="btn-info btn-block btn mt-4 rounded-2xl">
-        보러 가기
-      </button>
+      <GroupShoppingTimer seconds={durationSeconds} />
+      <GroupShoppingCarousel />
     </div>
   );
 }
