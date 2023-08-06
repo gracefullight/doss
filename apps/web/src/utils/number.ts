@@ -3,14 +3,19 @@ export function formatNumber(num: number): string {
   return formatter.format(num);
 }
 
-export const formatPercent = (
-  num: number,
-  minimumFractionDigits = 1,
-): string => {
+export function formatPercent(num: number, minimumFractionDigits = 1): string {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "percent",
     minimumFractionDigits: minimumFractionDigits,
   });
 
   return formatter.format(num);
-};
+}
+
+export function getDiscountRate(original: number, discount: number) {
+  if (original <= 0 || discount > original) {
+    return formatPercent(0, 0);
+  }
+
+  return formatPercent((original - discount) / original, 0);
+}
