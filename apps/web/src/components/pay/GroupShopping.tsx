@@ -3,6 +3,7 @@ import { useInterval } from "ahooks";
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
 import GroupShoppingCarousel from "./group-shopping/GroupShoppingCarousel";
+import GroupShoppingRecommended from "./group-shopping/GroupShoppingRecommended";
 import GroupShoppingTimer from "./group-shopping/GroupShoppingTimer";
 
 export default function GroupShopping() {
@@ -41,14 +42,17 @@ export default function GroupShopping() {
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-medium text-neutral-200">공동구매</h2>
-        <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
-          모두 보기 <ChevronRightIcon className="w-4 font-medium" />
+      <div className="px-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-medium text-neutral-200">공동구매</h2>
+          <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
+            모두 보기 <ChevronRightIcon className="w-4 font-medium" />
+          </div>
         </div>
+        <GroupShoppingTimer seconds={durationSeconds} />
+        <GroupShoppingCarousel />
       </div>
-      <GroupShoppingTimer seconds={durationSeconds} />
-      <GroupShoppingCarousel />
+      <GroupShoppingRecommended />
     </div>
   );
 }

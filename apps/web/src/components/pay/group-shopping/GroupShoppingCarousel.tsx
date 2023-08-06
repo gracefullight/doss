@@ -7,21 +7,21 @@ export default function GroupShoppingCarousel() {
       originalPrice: 10000,
       discountPrice: 8000,
       viewers: 540153,
-      imageUrl: "https://picsum.photos/300?1",
+      imageUrl: "https://picsum.photos/260?1",
     },
     {
       name: "상품명2",
       originalPrice: 12000,
       discountPrice: 10000,
       viewers: 560747,
-      imageUrl: "https://picsum.photos/300?2",
+      imageUrl: "https://picsum.photos/260?2",
     },
     {
       name: "상품명3",
       originalPrice: 35000,
       discountPrice: 21800,
       viewers: 495955,
-      imageUrl: "https://picsum.photos/300?3",
+      imageUrl: "https://picsum.photos/260?3",
     },
   ];
 

@@ -29,7 +29,7 @@ export default function GroupShoppingBanner() {
 
   return (
     <div
-      className="my-4 flex cursor-pointer justify-between"
+      className="my-4 flex cursor-pointer justify-between px-6"
       onClick={handleBannerClick}
     >
       <div className="flex items-center gap-4">

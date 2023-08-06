@@ -37,8 +37,8 @@ export default function Pay() {
           </button>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col bg-neutral-800 px-6 pb-6">
-            <div className="mb-2 flex items-center justify-between">
+          <div className="flex flex-col bg-neutral-800 pb-1">
+            <div className="mb-2 flex items-center justify-between px-6">
               <h1 className="text-2xl font-bold text-neutral-200">도스페이</h1>
             </div>
             <GroupShoppingBanner />

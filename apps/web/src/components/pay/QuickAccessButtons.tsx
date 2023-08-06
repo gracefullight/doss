@@ -1,6 +1,6 @@
 export default function QuickAccessButtons() {
   return (
-    <div className="join mb-6 w-full">
+    <div className="join mb-6 w-full px-6">
       <button
         className="btn join-item grow rounded-l-2xl border-neutral-700 bg-neutral-700"
         type="button"
