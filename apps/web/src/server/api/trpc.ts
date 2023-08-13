@@ -32,12 +32,13 @@ interface CreateContextOptions {
  * it from here.
  *
  * Examples of things you may need it for:
- * - testing, so we don't have to mock Next.js' req/res
+ * ? https://github.com/trpc/examples-next-prisma-starter/blob/main/src/server/routers/post.test.ts
+ * ! testing, so we don't have to mock Next.js' req/res
  * - tRPC's `createSSGHelpers`, where we don't have req/res
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = (opts: CreateContextOptions) => {
+export const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
     prisma,
