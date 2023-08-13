@@ -34,7 +34,6 @@ import {
   GiftIcon,
   GlobeAltIcon,
   GlobeAsiaAustraliaIcon,
-  HandRaisedIcon,
   HashtagIcon,
   HomeModernIcon,
   IdentificationIcon,
@@ -63,7 +62,7 @@ import {
   VideoCameraIcon,
   ViewfinderCircleIcon,
   WalletIcon,
-  WifiIcon,
+  WifiIcon
 } from "@heroicons/react/24/solid";
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
@@ -115,13 +114,6 @@ export default function All() {
         {
           title: "만보기",
           icon: <SparklesIcon className="fill-info w-5" />,
-        },
-        {
-          title: "R U Next? 응원하며 저금하기",
-          serviceName: "도스뱅크",
-          badge: "업데이트",
-          badgeColor: "warning",
-          icon: <HandRaisedIcon className="fill-primary w-5" />,
         },
         {
           title: "R U Next? 투표하기",

@@ -92,7 +92,7 @@ export default function Stock() {
               </div>
               <DynamicNudgeAlert />
             </div>
-            <div className="tabs w-full bg-neutral-800 px-6 font-medium">
+            <div className="tabs w-full bg-neutral-800 font-medium">
               <a
                 className={clsx(
                   `tab tab-bordered tab-lg w-1/3`,
