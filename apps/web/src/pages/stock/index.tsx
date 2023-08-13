@@ -95,7 +95,7 @@ export default function Stock() {
             <div className="tabs w-full bg-neutral-800 px-6 font-medium">
               <a
                 className={clsx(
-                  `tab tab-bordered tab-lg w-1/2`,
+                  `tab tab-bordered tab-lg w-1/3`,
                   tabIndex === 0 && "tab-active",
                 )}
                 onClick={() => setTabIndex(0)}
@@ -104,12 +104,21 @@ export default function Stock() {
               </a>
               <a
                 className={clsx(
-                  `tab tab-bordered tab-lg w-1/2`,
+                  `tab tab-bordered tab-lg w-1/3`,
                   tabIndex === 1 && "tab-active",
                 )}
                 onClick={() => setTabIndex(1)}
               >
                 오늘의 발견
+              </a>
+              <a
+                className={clsx(
+                  `tab tab-bordered tab-lg w-1/3`,
+                  tabIndex === 2 && "tab-active",
+                )}
+                onClick={() => setTabIndex(2)}
+              >
+                뉴스
               </a>
             </div>
             {tabIndex === 0 && (
