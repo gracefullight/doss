@@ -1,5 +1,5 @@
 import { SparklesIcon, TicketIcon } from "@heroicons/react/24/solid";
-import { DateTime } from 'luxon';
+import { DateTime } from "luxon";
 import { GetServerSidePropsContext } from "next";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
@@ -29,10 +29,10 @@ export default function Notification() {
   const formatTimestamp = (isoTimestamp: string) => {
     const timestamp = DateTime.fromISO(isoTimestamp);
     const now = DateTime.local();
-    const { days } = now.diff(timestamp, ['days']);
+    const { days } = now.diff(timestamp, ["days"]);
 
     if (days >= 1) {
-        return timestamp.toFormat('M월 d일');
+        return timestamp.toFormat("M월 d일");
     }
     
     return timestamp.toRelative({ base: now });
