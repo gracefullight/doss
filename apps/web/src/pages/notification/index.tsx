@@ -1,6 +1,9 @@
 import { SparklesIcon, TicketIcon } from "@heroicons/react/24/solid";
 import { DateTime } from 'luxon';
+import { GetServerSidePropsContext } from "next";
 import { StackLayout } from "~/components/layout";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function Notification() {
@@ -59,4 +62,22 @@ export default function Notification() {
       </div>
     </StackLayout>
   )
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }
