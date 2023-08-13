@@ -6,6 +6,11 @@ export default function MainNavbar() {
   const handleNearby = async () => {
     await router.push("/benefit/nearby");
   };
+  
+  const handleNotification = async () => {
+    await router.push("/notification");
+  };
+  
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="flex-1">
@@ -16,10 +21,11 @@ export default function MainNavbar() {
           className="btn btn-square btn-ghost"
           onClick={() => void handleNearby()}
           title="함께 도스켜고 포인트"
+          type="button"
         >
           <MapPinIcon className="h-6 w-6" />
         </button>
-        <button className="btn btn-square btn-ghost" title="알림" type="button">
+        <button className="btn btn-square btn-ghost" title="알림" type="button" onClick={() => void handleNotification()}>
           <BellIcon className="h-6 w-6" />
         </button>
       </div>
