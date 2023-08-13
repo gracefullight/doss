@@ -59,6 +59,12 @@ export const authOptions: NextAuthOptions = {
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
   ],
+  events: {
+    async createUser(message) { 
+      const { user } = message;
+      console.log(user);
+    }
+  },
   theme: {
     colorScheme: "dark",
   },

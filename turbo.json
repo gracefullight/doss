@@ -15,6 +15,11 @@
       "dependsOn": ["^db:generate"],
       "cache": false
     },
+    "db:seed": {
+      "inputs": ["prisma/schema.prisma"],
+      "dependsOn": ["^db:generate"],
+      "cache": false
+    },
     "dev": {
       "persistent": true,
       "cache": false

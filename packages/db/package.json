@@ -9,6 +9,7 @@
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:deploy": "pnpm with-env prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
     "dev": "pnpm with-env prisma studio --port 5557",
     "with-env": "dotenv -e ../../.env --"
   },
@@ -19,6 +20,7 @@
     "@types/node": "*",
     "dotenv-cli": "^7.2.1",
     "prisma": "^5.1.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.1.6"
   }
 }
