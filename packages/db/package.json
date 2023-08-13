@@ -6,6 +6,7 @@
   "types": "./index.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
+    "db:migrate": "pnpm with-env prisma migrate dev",
     "db:generate": "pnpm with-env prisma generate",
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:deploy": "pnpm with-env prisma migrate deploy",
@@ -22,5 +23,8 @@
     "prisma": "^5.1.1",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6"
+  },
+  "prisma": {
+    "seed": "pnpm db:seed"
   }
 }

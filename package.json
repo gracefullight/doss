@@ -12,6 +12,7 @@
     "clean:workspaces": "turbo clean",
     "db:deploy": "turbo db:deploy",
     "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
     "db:push": "turbo db:push db:generate",
     "db:seed": "turbo db:seed",
     "db:studio": "pnpm -F db dev",

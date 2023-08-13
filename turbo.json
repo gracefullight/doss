@@ -20,6 +20,9 @@
       "dependsOn": ["^db:generate"],
       "cache": false
     },
+    "db:migrate": {
+      "cache": false
+    },
     "dev": {
       "persistent": true,
       "cache": false

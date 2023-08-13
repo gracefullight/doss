@@ -17,12 +17,6 @@ datasource db {
   shadowDatabaseUrl = env("DATABASE_URL_NON_POOLING") // used for migrations
 }
 
-model Example {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 // Necessary for Next auth
 model Account {
   id                String  @id @default(cuid())
@@ -72,8 +66,11 @@ model VerificationToken {
 
 model Bank {
   id           String        @id @default(cuid())
+  // ? https://bank-code.co.kr
+  code         String        @unique
   name         String
   icon         String
+  swiftCode    String?       @unique
   bankAccounts BankAccount[]
 }
 
@@ -116,4 +113,55 @@ model CustomCategory {
   userId       String
   user         User          @relation(fields: [userId], references: [id])
   transactions Transaction[]
+}
+
+model Market {
+  id          String        @id @default(cuid())
+  // e.g. "US", "KR", "FX"
+  code        String        @unique
+  // e.g. "미국주식", "한국주식", "환율"
+  name        String
+  MarketIndex MarketIndex[]
+  Stocks      Stock[]
+}
+
+model MarketIndex {
+  id       String  @id @default(cuid())
+  marketId String
+  // e.g. "SPX", "K200", "USDKRW"
+  ticker   String
+  // e.g. "S&P 500", "KOSPI 200", "원/달러 환율"
+  name     String
+  Market   Market  @relation(fields: [marketId], references: [id])
+  OHLCV    OHLCV[]
+
+  @@unique([marketId, ticker])
+}
+
+model Stock {
+  id       String  @id @default(cuid())
+  marketId String
+  ticker   String
+  name     String
+  Market   Market  @relation(fields: [marketId], references: [id])
+  OHLCV    OHLCV[]
+
+  @@unique([marketId, ticker])
+}
+
+model OHLCV {
+  id            String       @id @default(cuid())
+  subjectId     String // This can be a Stock ID or a MarketIndex ID
+  subjectType   String // This can be "Stock" or "MarketIndex"
+  timeframe     String
+  datetime      DateTime     @map("datetime")
+  open          Float
+  high          Float
+  low           Float
+  close         Float
+  volume        Float
+  MarketIndex   MarketIndex? @relation(fields: [marketIndexId], references: [id])
+  marketIndexId String?
+  Stock         Stock?       @relation(fields: [stockId], references: [id])
+  stockId       String?
 }
