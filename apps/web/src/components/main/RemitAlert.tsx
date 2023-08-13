@@ -19,7 +19,7 @@ export default function RemitAlert() {
 
   return (
     <div className="alert flex cursor-pointer justify-between rounded-2xl border-none bg-neutral-800 p-5">
-      <div className="flex  select-none space-x-3">
+      <div className="flex select-none space-x-3">
         <BuildingLibraryIcon className="fill-warning w-6" />
         <div className="flex flex-col gap-1">
           <span className="text-sm text-neutral-500">

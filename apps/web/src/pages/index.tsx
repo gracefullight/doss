@@ -21,7 +21,7 @@ export default function Home() {
         <title>Doss | 홈</title>
       </Head>
       <MainNavbar />
-      <div className="flex w-screen flex-col items-center justify-center gap-4 px-6 py-2">
+      <div className="flex w-screen flex-col items-center justify-center gap-4 px-5 py-2">
         <RemitAlert />
         <Section title="도스뱅크" link="/" />
         <Asset />
