@@ -89,6 +89,7 @@ model Transaction {
   id               String          @id @default(cuid())
   type             String
   amount           Float
+  // TODO: naming for date col
   date             DateTime
   memo             String?
   categoryType     String          @default("category")
