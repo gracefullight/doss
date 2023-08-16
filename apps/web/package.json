@@ -39,7 +39,7 @@
     "react-dom": "^18.2.0",
     "superjson": "^1.13.1",
     "valtio": "^1.11.2",
-    "zod": "^3.22.0"
+    "zod": "^3.22.1"
   },
   "devDependencies": {
     "@doss/eslint-config": "^0.1.0",
@@ -53,7 +53,7 @@
     "autoprefixer": "^10.4.15",
     "dotenv-cli": "^7.2.1",
     "eslint": "^8.47.0",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3",
     "type-fest": "4.2.0",
     "typescript": "^5.1.6",
