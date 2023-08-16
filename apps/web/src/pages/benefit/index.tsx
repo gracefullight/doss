@@ -91,6 +91,7 @@ export default function Benefit() {
       badge: null,
       isDone: true,
       Icon: TicketIcon,
+      link: "/benefit/lottery",
     },
     {
       title: "라이브 쇼핑",
