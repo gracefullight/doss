@@ -116,7 +116,7 @@ export default function BenefitLottery() {
               </div>
             </div>
           </div>
-          <div className="fixed bottom-0 z-50 w-full px-4 pb-8">
+          <div className="fixed bottom-0 z-50 w-full px-4 pb-6">
             <div className="flex cursor-pointer select-none items-center justify-between rounded-full bg-neutral-700 px-6 py-4">
               <div className="flex gap-4">
                 <QuestionMarkCircleIcon className="w-6" />
