@@ -98,6 +98,9 @@ importers:
       framer-motion:
         specifier: ^10.16.0
         version: 10.16.0(react-dom@18.2.0)(react@18.2.0)
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       luxon:
         specifier: ^3.4.0
         version: 3.4.0
@@ -132,6 +135,9 @@ importers:
       '@doss/tailwind-config':
         specifier: ^0.1.0
         version: link:../../packages/config/tailwind
+      '@types/lodash':
+        specifier: ^4.14.197
+        version: 4.14.197
       '@types/luxon':
         specifier: ^3.3.1
         version: 3.3.1
@@ -1828,6 +1834,10 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 18.17.6
+    dev: true
+
+  /@types/lodash@4.14.197:
+    resolution: {integrity: sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==}
     dev: true
 
   /@types/long@4.0.2:
