@@ -167,7 +167,7 @@ export default function Benefit() {
         className="bg-base-100 z-10 flex h-full w-screen flex-col pb-4"
         ref={scope}
       >
-        <div className="mb-8 flex items-center justify-between px-6">
+        <div className="flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button className="btn btn-ghost btn-md pr-0 text-lg">
             <CurrencyDollarIcon className="fill-info w-6" />
@@ -175,7 +175,7 @@ export default function Benefit() {
             <ChevronRightIcon className="w-4" />
           </button>
         </div>
-        <div className="space-y-4 px-2">
+        <div className="mt-4 flex flex-col gap-2 px-2">
           {items.map((item, index) => (
             <div
               className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 active:bg-neutral-700"
@@ -186,12 +186,12 @@ export default function Benefit() {
                 <div
                   className={clsx(
                     `relative flex items-center justify-center rounded-full border-2 bg-neutral-700 p-3`,
-                    item.isDone ? `border-accent` : `border-neutral-700`,
+                    item.isDone ? `border-green-500` : `border-neutral-700`,
                   )}
                 >
                   <item.Icon className="w-8" />
                   {item.isDone && (
-                    <div className="bg-accent absolute -bottom-1 -right-1 rounded-full border border-neutral-700 p-1">
+                    <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-green-500 p-1">
                       <CheckIcon className="w-4 text-neutral-700" />
                     </div>
                   )}
