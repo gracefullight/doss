@@ -1,6 +1,7 @@
 import { CameraIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { GetServerSidePropsContext } from "next";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import {
   TransferContact,
@@ -13,6 +14,11 @@ import { getServerAuthSession } from "~/server/auth";
 
 export default function BankTransfer() {
   const [tabIndex, setTabIndex] = useState(0);
+  const router = useRouter();
+
+  const handleFindAccount = async () => {
+    await router.push("/bank/transfer/find-account");
+  };
 
   return (
     <StackLayout>
@@ -40,7 +46,9 @@ export default function BankTransfer() {
               <input
                 type="text"
                 placeholder="계좌번호 입력"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full cursor-pointer"
+                readOnly
+                onClick={() => void handleFindAccount()}
               />
               <button
                 className="btn btn-ghost btn-sm btn-square"
