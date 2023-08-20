@@ -46,7 +46,7 @@ export default function BankTransferFindAccount() {
             ))}
           </select>
           <label className="label">
-            <span className="label-text-alt">
+            <span className="label-text-alt text-neutral-400">
               계좌번호를 입력하면 은행을 찾아드릴게요.
             </span>
           </label>
