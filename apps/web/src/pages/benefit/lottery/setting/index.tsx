@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
+import { PATH_LOTTERY } from "~/constants";
 
 interface LotterySettingItem {
   name: string;
@@ -16,13 +17,13 @@ export default function BenefitLotterySetting() {
     {
       name: "복권 공유하기",
       action: "share",
-      link: "https://doss.gracefullight.dev/benefit/lottery",
+      link: `https://doss.gracefullight.dev/${PATH_LOTTERY}`,
     },
     {
       name: "복권 알림 시간",
       action: "link",
-      link: "/benefit/lottery",
-      description: "매일 오전 10시",
+      link: "/benefit/lottery/setting/alarm",
+      description: "매일 오전 8시",
     },
   ];
 

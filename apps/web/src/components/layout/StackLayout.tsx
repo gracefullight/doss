@@ -5,7 +5,8 @@ import ScreenCaptureToast from "./ScreenCaptureToast";
 
 export interface StackLayoutNavbarItem {
   title: string;
-  link: string;
+  link?: string;
+  handleItem?: () => void;
 }
 
 interface StackLayoutProps {
@@ -46,9 +47,15 @@ export default function StackLayout({
           {items &&
             items.map((item) => (
               <div
-                key={item.link}
+                key={item.title}
                 className="cursor-pointer text-neutral-200"
-                onClick={() => void handleNavbarLink(item.link)}
+                onClick={() => {
+                  if (item.link) {
+                    handleNavbarLink(item.link);
+                  } else if (item.handleItem) {
+                    item.handleItem();
+                  }
+                }}
               >
                 {item.title}
               </div>
