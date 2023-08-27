@@ -9,12 +9,14 @@ export interface StackLayoutNavbarItem {
 }
 
 interface StackLayoutProps {
+  title?: string;
   items?: StackLayoutNavbarItem[];
 }
 
 export default function StackLayout({
   children,
   items,
+  title,
 }: PropsWithChildren<StackLayoutProps>) {
   const router = useRouter();
   const handleBack = () => {
@@ -34,9 +36,15 @@ export default function StackLayout({
             onClick={handleBack}
           />
         </div>
-        {items && (
-          <div className="navbar-end gap-3 pr-1">
-            {items.map((item) => (
+        {title && (
+          <div className="navbar-center">
+            <a className="btn btn-ghost text-lg normal-case">{title}</a>
+          </div>
+        )}
+
+        <div className="navbar-end gap-3 pr-1">
+          {items &&
+            items.map((item) => (
               <div
                 key={item.link}
                 className="cursor-pointer text-neutral-200"
@@ -45,8 +53,7 @@ export default function StackLayout({
                 {item.title}
               </div>
             ))}
-          </div>
-        )}
+        </div>
       </div>
       {children}
       <ScreenCaptureToast />

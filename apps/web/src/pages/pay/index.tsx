@@ -1,6 +1,7 @@
 import { Cog6ToothIcon, CommandLineIcon } from "@heroicons/react/24/solid";
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Layout } from "~/components/layout";
 import {
   Brand,
@@ -14,6 +15,10 @@ import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 
 export default function Pay() {
+  const router = useRouter();
+  const handlePaySetting = async () => {
+    await router.push("/pay/setting");
+  };
   return (
     <Layout>
       <Head>
@@ -32,6 +37,7 @@ export default function Pay() {
             className="btn btn-square btn-ghost"
             title="설정"
             type="button"
+            onClick={() => void handlePaySetting()}
           >
             <Cog6ToothIcon className="w-6" />
           </button>
