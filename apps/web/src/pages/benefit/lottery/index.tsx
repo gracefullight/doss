@@ -15,7 +15,7 @@ import { getServerAuthSession } from "~/server/auth";
 export default function BenefitLottery() {
   // TODO: get this from server
   const [selected, setSelected] = useState(false);
-  const navItems = [{ title: "설정", link: "/" }];
+  const navItems = [{ title: "설정", link: "/benefit/lottery/setting" }];
 
   const motionItems = [
     {

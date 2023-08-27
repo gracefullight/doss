@@ -2,9 +2,14 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
 
+interface PaySettingItem {
+  name: string;
+  link: string;
+}
+
 export default function PaySetting() {
   const router = useRouter();
-  const items = [
+  const items: PaySettingItem[] = [
     { name: "결제수단", link: "/pay" },
     { name: "내 도스페이 쿠폰", link: "/pay" },
     { name: "결제 내역", link: "/pay" },
@@ -29,7 +34,7 @@ export default function PaySetting() {
             <button
               className="btn btn-square btn-sm btn-ghost"
               type="button"
-              title="더보기"
+              title={name}
             >
               <ChevronRightIcon className="w-4 fill-neutral-400" />
             </button>
