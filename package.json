@@ -28,15 +28,15 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
     "@manypkg/cli": "^0.21.0",
-    "@types/node": "^18.17.6",
+    "@types/node": "^18.17.11",
     "devmoji": "^2.3.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "turbo": "^1.10.12",
-    "type-fest": "^4.2.0",
-    "typescript": "^5.1.6",
-    "vitest": "^0.34.2"
+    "turbo": "^1.10.13",
+    "type-fest": "^4.3.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3"
   },
   "ct3aMetadata": {
     "initVersion": "7.16.0"

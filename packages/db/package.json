@@ -15,14 +15,14 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@prisma/client": "^5.1.1"
+    "@prisma/client": "^5.2.0"
   },
   "devDependencies": {
     "@types/node": "*",
     "dotenv-cli": "^7.3.0",
-    "prisma": "^5.1.1",
+    "prisma": "^5.2.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "prisma": {
     "seed": "pnpm db:seed"
