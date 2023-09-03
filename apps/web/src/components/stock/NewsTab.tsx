@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 import { formatTimestamp } from "~/utils/datetime";
 import { formatPercent } from "~/utils/number";
-import NowInformation from "./news/NowInformation";
-import ValuableInformation from "./news/ValuableInformation";
+import { NowInformation, ValuableInformation } from "./news";
 
 export default function NewsTab() {
   const router = useRouter();
