@@ -12,10 +12,10 @@ import {
   FeedbackBanner,
   IndexBanner,
   MyStocks,
+  News,
   StockFooter,
   TodaysDiscovery,
 } from "~/components/stock";
-import News from "~/components/stock/News";
 
 export default function Stock() {
   const [tabIndex, setTabIndex] = useState(0);
