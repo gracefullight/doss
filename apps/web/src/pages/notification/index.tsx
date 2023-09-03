@@ -1,9 +1,9 @@
 import { SparklesIcon, TicketIcon } from "@heroicons/react/24/solid";
-import { DateTime } from "luxon";
 import { GetServerSidePropsContext } from "next";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
+import { formatTimestamp } from "~/utils/datetime";
 import { formatNumber } from "~/utils/number";
 
 export default function Notification() {
@@ -21,47 +21,44 @@ export default function Notification() {
       iconColor: "fill-info",
       title: "만보기",
       timestamp: "2023-08-13T00:00:00+09:00",
-      message: `오늘 ${formatNumber(1000)}걸음을 넘겼어요. 포인트를 받아보세요.`,
-      moreCount: 29
-    }
+      message: `오늘 ${formatNumber(
+        1000,
+      )}걸음을 넘겼어요. 포인트를 받아보세요.`,
+      moreCount: 29,
+    },
   ];
-
-  const formatTimestamp = (isoTimestamp: string) => {
-    const timestamp = DateTime.fromISO(isoTimestamp);
-    const now = DateTime.local();
-    const { days } = now.diff(timestamp, ["days"]);
-
-    if (days >= 1) {
-        return timestamp.toFormat("M월 d일");
-    }
-    
-    return timestamp.toRelative({ base: now });
-  };
 
   return (
     <StackLayout>
       <div className="">
-        <h1 className="text-neutral-200 font-semibold text-2xl px-6">알림</h1>
-        <div className="flex flex-col mt-4 gap-2">
+        <h1 className="px-6 text-2xl font-semibold text-neutral-200">알림</h1>
+        <div className="mt-4 flex flex-col gap-2">
           {items.map((item, index) => (
-            <div key={index} className="flex flex-col cursor-pointer px-6 py-4 active:bg-neutral-700">
-              <div className="flex justify-between items-center">
+            <div
+              key={index}
+              className="flex cursor-pointer flex-col px-6 py-4 active:bg-neutral-700"
+            >
+              <div className="flex items-center justify-between">
                 <div className="flex gap-1">
                   <item.icon className={`w-3 ${item.iconColor}`} />
-                  <span className="text-neutral-500 text-sm">{item.title}</span>
+                  <span className="text-sm text-neutral-500">{item.title}</span>
                 </div>
-                <span className="text-neutral-500 text-sm">{formatTimestamp(item.timestamp)}</span>
+                <span className="text-sm text-neutral-500">
+                  {formatTimestamp(item.timestamp)}
+                </span>
               </div>
-              <div className="flex flex-col px-4 gap-1">
-                <h2 className="text-neutral-300 font-medium">{item.message}</h2>
-                <span className="text-info text-sm">{item.moreCount}건 더보기</span>
+              <div className="flex flex-col gap-1 px-4">
+                <h2 className="font-medium text-neutral-300">{item.message}</h2>
+                <span className="text-info text-sm">
+                  {item.moreCount}건 더보기
+                </span>
               </div>
             </div>
           ))}
         </div>
       </div>
     </StackLayout>
-  )
+  );
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
