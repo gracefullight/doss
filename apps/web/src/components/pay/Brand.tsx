@@ -31,9 +31,9 @@ export default function Brand() {
         <ul className="mt-8 flex flex-col gap-6">
           {brands.map((item, index) => (
             <li key={index} className="flex items-center space-x-3">
-              <span className="px-2 font-medium text-info">{index + 1}</span>
+              <span className="text-info px-2 font-medium">{index + 1}</span>
               <div className="placeholder avatar">
-                <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
                   <span>1</span>
                 </div>
               </div>
@@ -45,7 +45,10 @@ export default function Brand() {
         </ul>
       </div>
       <div className="divider my-0"></div>
-      <button className="btn-ghost btn-block btn-lg btn font-medium text-neutral-400">
+      <button
+        className="btn-ghost btn-block btn-lg btn font-medium text-neutral-400"
+        type="button"
+      >
         더 보기
       </button>
     </div>

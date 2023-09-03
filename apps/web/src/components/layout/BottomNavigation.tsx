@@ -26,6 +26,7 @@ export default function BottomNavigation() {
           key={link.href}
           className={clsx(router.pathname === link.href && "active")}
           onClick={() => void router.push(link.href)}
+          type="button"
         >
           <link.Icon className="w-6" />
           <span className="btm-nav-label text-sm">{link.label}</span>

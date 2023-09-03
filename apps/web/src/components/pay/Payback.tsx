@@ -31,7 +31,7 @@ export default function Payback() {
             <li key={index} className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="avatar placeholder">
-                  <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                  <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
                     <span>1</span>
                   </div>
                 </div>
@@ -48,7 +48,10 @@ export default function Payback() {
         </ul>
       </div>
       <div className="divider my-0"></div>
-      <button className="btn btn-ghost btn-lg btn-block font-medium text-neutral-400">
+      <button
+        className="btn btn-ghost btn-lg btn-block font-medium text-neutral-400"
+        type="button"
+      >
         혜택 모두 보기
       </button>
     </div>
