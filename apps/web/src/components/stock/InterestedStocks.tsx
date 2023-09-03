@@ -15,8 +15,13 @@ export default function InterestedStocks() {
         <div className="cursor-pointer text-neutral-400">편집하기</div>
       </div>
       <div className="join join-vertical w-full">
-        <div className="collapse join-item collapse-arrow">
-          <input type="radio" name="my-accordion-4" defaultChecked />
+        <div className="join-item collapse-arrow collapse">
+          <input
+            type="radio"
+            name="my-accordion-4"
+            defaultChecked
+            title="관심 주식 펼치기"
+          />
           <div className="collapse-title pl-0 text-lg font-medium text-neutral-400">
             기본
           </div>
@@ -29,7 +34,7 @@ export default function InterestedStocks() {
                 >
                   <div className="flex items-center space-x-3">
                     <div className="avatar placeholder">
-                      <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+                      <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
                         {/* ? 아이콘 추가 */}
                         <span>{index + 1}</span>
                       </div>
@@ -51,8 +56,8 @@ export default function InterestedStocks() {
               <li className="flex items-center">
                 <div className="flex items-center space-x-3">
                   <div className="avatar placeholder">
-                    <div className="w-10 rounded-full bg-info bg-opacity-20">
-                      <PlusIcon className="w-6 fill-info" />
+                    <div className="bg-info w-10 rounded-full bg-opacity-20">
+                      <PlusIcon className="fill-info w-6" />
                     </div>
                   </div>
                   <span className="font-medium text-neutral-400">추가하기</span>
