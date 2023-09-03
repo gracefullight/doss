@@ -19,6 +19,7 @@
     "superjson",
     "tailwindcss",
     "tanstack",
+    "testid",
     "trpc",
     "valtio",
     "verceldb"
