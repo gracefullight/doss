@@ -1,14 +1,13 @@
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
-import { defineConfig } from "vitest/config";
+import type { UserConfig } from "vitest";
+import { defineConfig, mergeConfig } from "vitest/config";
 
-export default defineConfig({
+import rootConfig from "../../vitest.config";
+
+const projectConfig = defineConfig({
   test: {
     dir: "tests",
-    coverage: {
-      reporter: ["text", "json", "html"],
-    },
-    globals: true,
     environment: "jsdom",
     setupFiles: "./tests/setupTests.ts",
   },
@@ -18,4 +17,6 @@ export default defineConfig({
       "~": resolve(__dirname, "src"),
     },
   },
-});
+}) as UserConfig;
+
+export default mergeConfig(rootConfig, projectConfig);
