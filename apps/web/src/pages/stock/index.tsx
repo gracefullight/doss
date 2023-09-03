@@ -19,6 +19,11 @@ import {
 
 export default function Stock() {
   const [tabIndex, setTabIndex] = useState(0);
+  const tabs = [
+    { name: "내 주식", component: <MyStocksTab /> },
+    { name: "오늘의 발견", component: <TodaysDiscoveryTab /> },
+    { name: "뉴스", component: <NewsTab /> },
+  ];
 
   return (
     <Layout>
@@ -63,37 +68,20 @@ export default function Stock() {
               <DynamicNudgeAlert />
             </div>
             <div className="tabs w-full bg-neutral-800 font-medium">
-              <a
-                className={clsx(
-                  `tab tab-bordered tab-lg w-1/3`,
-                  tabIndex === 0 && "tab-active",
-                )}
-                onClick={() => setTabIndex(0)}
-              >
-                내 주식
-              </a>
-              <a
-                className={clsx(
-                  `tab tab-bordered tab-lg w-1/3`,
-                  tabIndex === 1 && "tab-active",
-                )}
-                onClick={() => setTabIndex(1)}
-              >
-                오늘의 발견
-              </a>
-              <a
-                className={clsx(
-                  `tab tab-bordered tab-lg w-1/3`,
-                  tabIndex === 2 && "tab-active",
-                )}
-                onClick={() => setTabIndex(2)}
-              >
-                뉴스
-              </a>
+              {tabs.map((tab, index) => (
+                <a
+                  key={tab.name}
+                  className={clsx(
+                    "tab tab-bordered tab-lg w-1/3",
+                    tabIndex === index && "tab-active",
+                  )}
+                  onClick={() => setTabIndex(index)}
+                >
+                  {tab.name}
+                </a>
+              ))}
             </div>
-            {tabIndex === 0 && <MyStocksTab />}
-            {tabIndex === 1 && <TodaysDiscoveryTab />}
-            {tabIndex === 2 && <NewsTab />}
+            {tabs[tabIndex]!.component}
             <div className="px-6">
               <FeedbackBanner />
               <div className="divider"></div>
