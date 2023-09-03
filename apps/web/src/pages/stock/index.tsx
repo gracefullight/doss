@@ -11,10 +11,10 @@ import {
   DynamicNudgeAlert,
   FeedbackBanner,
   IndexBanner,
-  MyStocks,
-  News,
+  MyStocksTab,
+  NewsTab,
   StockFooter,
-  TodaysDiscovery,
+  TodaysDiscoveryTab,
 } from "~/components/stock";
 
 export default function Stock() {
@@ -91,9 +91,9 @@ export default function Stock() {
                 뉴스
               </a>
             </div>
-            {tabIndex === 0 && <MyStocks />}
-            {tabIndex === 1 && <TodaysDiscovery />}
-            {tabIndex === 2 && <News />}
+            {tabIndex === 0 && <MyStocksTab />}
+            {tabIndex === 1 && <TodaysDiscoveryTab />}
+            {tabIndex === 2 && <NewsTab />}
             <div className="px-6">
               <FeedbackBanner />
               <div className="divider"></div>

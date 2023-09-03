@@ -5,12 +5,14 @@ import {
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { formatNumber, formatPercent } from "~/utils/number";
-import InterestedStocks from "./InterestedStocks";
-import RecentStocks from "./RecentStocks";
-import RecommendedStocks from "./RecommendedStocks";
-import StockCarousel from "./StockCarousel";
+import {
+  InterestedStocks,
+  RecentStocks,
+  RecommendedStocks,
+  StockCarousel,
+} from "./my-stocks";
 
-export default function MyStock() {
+export default function MyStocksTab() {
   const stocks = [
     {
       ticker: "MSFT",
@@ -171,19 +173,10 @@ export default function MyStock() {
           </div>
         </div>
       </div>
-
-      <div className="mt-4 bg-neutral-800 px-6 py-4">
+      <div className="flex flex-col gap-4">
         <RecentStocks />
-      </div>
-
-      <div className="mt-4 bg-neutral-800 px-6 py-4">
         <InterestedStocks />
-      </div>
-
-      <div className="mt-4 bg-neutral-800 px-6 py-4">
         <RecommendedStocks />
-      </div>
-      <div className="mt-4 bg-neutral-800 px-6 py-4">
         <StockCarousel />
       </div>
     </>

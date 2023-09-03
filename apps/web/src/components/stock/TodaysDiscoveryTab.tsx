@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import IndexChartCarousel from "./IndexChartCarousel";
 
-export default function TodaysDiscovery() {
+export default function TodaysDiscoveryTab() {
   return (
     <>
       <div className="bg-neutral-800 px-6">
