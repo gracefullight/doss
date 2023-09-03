@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
 
+// ? https://vitest.dev/config/#configuration
 export default defineConfig({
   test: {
     dir: "tests",
@@ -7,6 +8,8 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
     globals: true,
+    // ? performance
     css: false,
+    useAtomics: true,
   },
 });
