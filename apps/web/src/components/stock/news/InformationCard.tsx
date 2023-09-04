@@ -3,17 +3,15 @@ import type { ElementType, ReactNode } from "react";
 
 interface InformationCardProps {
   title: string;
-  link?: string;
+  handleLink?: () => void;
   imageUrl?: string;
   description?: ReactNode;
-  handleLink?: () => void;
   IconComponent?: ElementType;
   iconProps?: object;
 }
 
 export default function InformationCard({
   title,
-  link,
   imageUrl,
   description,
   handleLink,
