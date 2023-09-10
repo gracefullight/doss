@@ -26,7 +26,7 @@ export default function BankTransfer() {
         <h1 className="text-2xl font-bold text-neutral-300">
           어디로 돈을 보낼까요?
         </h1>
-        <div className="tabs tabs-boxed mt-4 w-full">
+        <div className="tabs tabs-boxed mt-4 bg-neutral-700">
           <a
             className={clsx(`tab w-1/2`, tabIndex === 0 && "tab-active")}
             onClick={() => setTabIndex(0)}

@@ -1,10 +1,12 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import clsx from "clsx";
 import { useRouter } from "next/router";
-import type { PropsWithChildren } from "react";
+import type { ElementType, PropsWithChildren } from "react";
 import ScreenCaptureToast from "./ScreenCaptureToast";
 
 export interface StackLayoutNavbarItem {
   title: string;
+  IconComponent?: ElementType;
   link?: string;
   handleItem?: () => void;
 }
@@ -12,25 +14,39 @@ export interface StackLayoutNavbarItem {
 interface StackLayoutProps {
   title?: string;
   items?: StackLayoutNavbarItem[];
+  isLightBackground?: boolean;
 }
 
 export default function StackLayout({
   children,
   items,
   title,
+  isLightBackground = false,
 }: PropsWithChildren<StackLayoutProps>) {
   const router = useRouter();
   const handleBack = () => {
     router.back();
   };
 
-  const handleNavbarLink = async (link: string) => {
-    await router.push(link);
+  const handleInnerItem = async ({
+    link,
+    handleItem,
+  }: Pick<StackLayoutNavbarItem, "link" | "handleItem">) => {
+    if (link) {
+      await router.push(link);
+    } else if (handleItem) {
+      handleItem();
+    }
   };
 
   return (
     <div className="bg-base-100 flex min-h-screen flex-col">
-      <div className="navbar bg-base-100 sticky top-0 z-50 px-4">
+      <div
+        className={clsx(
+          "navbar sticky top-0 z-50 px-4",
+          isLightBackground ? "bg-neutral-800" : "bg-base-100",
+        )}
+      >
         <div className="navbar-start">
           <ChevronLeftIcon
             className="w-6 cursor-pointer font-bold"
@@ -45,21 +61,27 @@ export default function StackLayout({
 
         <div className="navbar-end gap-3 pr-1">
           {items &&
-            items.map((item) => (
-              <div
-                key={item.title}
-                className="cursor-pointer text-neutral-200"
-                onClick={() => {
-                  if (item.link) {
-                    handleNavbarLink(item.link);
-                  } else if (item.handleItem) {
-                    item.handleItem();
-                  }
-                }}
-              >
-                {item.title}
-              </div>
-            ))}
+            items.map(({ IconComponent, title, ...item }) =>
+              IconComponent ? (
+                <button
+                  key={title}
+                  className="btn btn-square btn-sm btn-ghost"
+                  type="button"
+                  title={title}
+                  onClick={() => void handleInnerItem(item)}
+                >
+                  <IconComponent className="w-6" />
+                </button>
+              ) : (
+                <div
+                  key={title}
+                  className="cursor-pointer text-neutral-200"
+                  onClick={() => void handleInnerItem(item)}
+                >
+                  {title}
+                </div>
+              ),
+            )}
         </div>
       </div>
       {children}

@@ -2,12 +2,12 @@ import Section from "./Section";
 
 export default function Spend() {
   return (
-    <Section title="소비" link="/">
+    <Section title="소비" link="/" hiddenLink>
       <ul className="flex flex-col">
         <li className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
-              <div className="w-10 rounded-full bg-neutral-focus text-neutral-content">
+              <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
                 <span>1</span>
               </div>
             </div>
@@ -16,7 +16,10 @@ export default function Spend() {
               <span className="text-lg font-medium">1,000,000원</span>
             </div>
           </div>
-          <button className="btn-sm btn border-none bg-neutral-700 focus:outline-none">
+          <button
+            className="btn-sm btn border-none bg-neutral-700 focus:outline-none"
+            type="button"
+          >
             내역
           </button>
         </li>
@@ -24,7 +27,7 @@ export default function Spend() {
         <li className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
-              <div className="w-10 rounded-lg bg-neutral-500 text-neutral-content">
+              <div className="text-neutral-content w-10 rounded-lg bg-neutral-500">
                 <span>1</span>
               </div>
             </div>
