@@ -10,20 +10,16 @@ export default function GroupShoppingTimer({
   const countSeconds = Math.floor(seconds % 60);
 
   return (
-    <span className="text-info">
-      할인 종료까지{" "}
-      <span className="countdown font-mono">
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore TS2322 */}
-        <span style={{ "--value": countHours }}></span>:
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore TS2322 */}
-        <span style={{ "--value": countMinutes }}></span>:
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore TS2322 */}
-        <span style={{ "--value": countSeconds }}></span>
-      </span>{" "}
-      남음
+    <span className="countdown">
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore TS2322 */}
+      <span style={{ "--value": countHours }}></span>:
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore TS2322 */}
+      <span style={{ "--value": countMinutes }}></span>:
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore TS2322 */}
+      <span style={{ "--value": countSeconds }}></span>
     </span>
   );
 }

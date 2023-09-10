@@ -1,6 +1,37 @@
+import { ClockIcon } from "@heroicons/react/24/solid";
+import { useInterval } from "ahooks";
+import { DateTime } from "luxon";
+import { useEffect, useState } from "react";
 import { formatNumber, getDiscountRate } from "~/utils/number";
+import GroupShoppingTimer from "./GroupShoppingTimer";
 
 export default function GroupShoppingCarousel() {
+  const { seconds } = DateTime.local()
+    .plus({ days: 1 })
+    .set({
+      hour: 0,
+      minute: 0,
+      second: 0,
+    })
+    .diffNow(["seconds"]);
+
+  const [durationSeconds, setDurationSeconds] = useState(Math.round(seconds));
+
+  const clearCount = useInterval(() => {
+    if (durationSeconds <= 0) {
+      clearCount();
+    } else {
+      setDurationSeconds((prevSeconds) => prevSeconds - 1);
+    }
+  }, 1000);
+
+  useEffect(
+    () => () => {
+      clearCount();
+    },
+    [clearCount],
+  );
+
   const items = [
     {
       name: "상품명1",
@@ -35,6 +66,10 @@ export default function GroupShoppingCarousel() {
             alt={item.name}
           />
           <div className="rounded-b-box absolute bottom-0 flex h-24 w-full flex-col justify-center bg-neutral-700 px-4 shadow-[0_-15px_30px_rgba(0,0,0,0.8)]">
+            <div className="badge badge-error absolute -top-6 gap-1 p-1">
+              <ClockIcon className="w-4" />
+              <GroupShoppingTimer seconds={durationSeconds} />
+            </div>
             <span className="text-ellipsis text-neutral-100">{item.name}</span>
             <div className="flex text-lg font-semibold">
               <span className="mr-1 text-red-500">
