@@ -28,9 +28,9 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
     "@manypkg/cli": "^0.21.0",
-    "@types/node": "^18.17.14",
-    "@vitest/ui": "^0.34.3",
-    "@vitest/coverage-v8": "^0.34.3",
+    "@types/node": "^18.17.15",
+    "@vitest/ui": "^0.34.4",
+    "@vitest/coverage-v8": "^0.34.4",
     "devmoji": "^2.3.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
@@ -38,7 +38,7 @@
     "turbo": "^1.10.13",
     "type-fest": "^4.3.1",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   },
   "ct3aMetadata": {
     "initVersion": "7.16.0"
