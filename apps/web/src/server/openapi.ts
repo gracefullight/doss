@@ -6,9 +6,10 @@ import { appRouter } from "~/server/api/root";
 export const openApiDocument = generateOpenApiDocument(
   appRouter as OpenApiRouter,
   {
-    title: "Doss API",
-    description: "Duplicated version of Toss application",
-    version: "0.1.0",
+    // ? https://docs.npmjs.com/cli/v10/using-npm/scripts#packagejson-vars
+    title: `${process.env.npm_package_name} API Docs`,
+    description: process.env.npm_package_description,
+    version: `${process.env.npm_package_version}`,
     baseUrl: "http://localhost:3000/api",
     docsUrl: "https://doss.gracefullight.dev/docs",
     tags: ["banks"],
