@@ -38,6 +38,7 @@
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
+    "redoc": "^2.1.2",
     "superjson": "^1.13.1",
     "trpc-openapi": "^1.2.0",
     "valtio": "^1.11.2",

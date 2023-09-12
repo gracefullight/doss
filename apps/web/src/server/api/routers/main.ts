@@ -1,20 +1,35 @@
-import {
-  createTRPCRouter,
-  protectedProcedure,
-} from "~/server/api/trpc";
+import * as z from "zod";
+import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 
 export const mainRouter = createTRPCRouter({
-  getBankAccounts: protectedProcedure.query(async ({ ctx }) => {
-    const userId = ctx.session.user.id;
-    const bankAccounts = await ctx.prisma.bankAccount.findMany({
-      where: {
-        userId: userId,
+  getBankAccounts: protectedProcedure
+    .meta({
+      openapi: {
+        method: "GET",
+        path: "/banks/accounts",
+        tags: ["banks"],
       },
-      select: {
-        name: true,
-        balance: true,
-      },
-    });
-    return bankAccounts;
-  }),
+    })
+    .input(z.object({}))
+    .output(
+      z.array(
+        z.object({
+          name: z.string(),
+          balance: z.number(),
+        }),
+      ),
+    )
+    .query(async ({ ctx }) => {
+      const userId = ctx.session.user.id;
+      const bankAccounts = await ctx.prisma.bankAccount.findMany({
+        where: {
+          userId: userId,
+        },
+        select: {
+          name: true,
+          balance: true,
+        },
+      });
+      return bankAccounts;
+    }),
 });
