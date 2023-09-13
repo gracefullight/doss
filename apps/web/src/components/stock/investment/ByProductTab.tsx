@@ -119,7 +119,7 @@ export default function ByProductTab() {
           ))}
         </div>
       </div>
-      <div className="mt-4 flex flex-col bg-neutral-800 px-3 pt-4">
+      <div className="mt-4 flex flex-col bg-neutral-800 px-3 py-4">
         <div className="px-2">
           <div className="tabs tabs-boxed bg-neutral-700 font-medium">
             {tabs.map((tab, index) => (
@@ -227,6 +227,16 @@ export default function ByProductTab() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="mt-8 flex flex-col items-center justify-center">
+        <ChartPieIcon className="fill-info w-6" />
+        <div className="mt-4 text-center text-neutral-300">
+          다른 증권사도 쓴다면 연결해보세요
+          <br />한 번에 모아 볼 수 있어요
+        </div>
+        <button className="btn btn-info btn-sm mt-2" type="button">
+          한 번에 모아보기
+        </button>
       </div>
     </>
   );

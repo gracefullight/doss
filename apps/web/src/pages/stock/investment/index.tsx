@@ -2,7 +2,11 @@ import { PaperAirplaneIcon, PlusIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { useState } from "react";
 import { StackLayout } from "~/components/layout";
-import { ByAccountTab, ByProductTab } from "~/components/stock/investment";
+import {
+  ByAccountTab,
+  ByProductTab,
+  FeedbackToast,
+} from "~/components/stock/investment";
 
 export default function BankInvestment() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -12,7 +16,11 @@ export default function BankInvestment() {
       IconComponent: PlusIcon,
       link: "/",
     },
-    { title: "보내기", IconComponent: PaperAirplaneIcon, link: "/" },
+    {
+      title: "피드백",
+      IconComponent: PaperAirplaneIcon,
+      link: "/stock/investment/feedback",
+    },
   ];
 
   return (
@@ -41,6 +49,7 @@ export default function BankInvestment() {
         {tabIndex === 0 && <ByProductTab />}
         {tabIndex === 1 && <ByAccountTab />}
       </div>
+      <FeedbackToast />
     </StackLayout>
   );
 }
