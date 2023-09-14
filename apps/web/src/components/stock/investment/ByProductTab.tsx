@@ -153,7 +153,7 @@ export default function ByProductTab() {
         </div>
         <div className="mt-1 flex flex-col gap-2">
           <div
-            className="mb-4 flex cursor-pointer select-none items-center gap-1 self-end px-2"
+            className="mb-2 flex cursor-pointer select-none items-center gap-1 self-end px-2"
             onClick={() => setShowCurrentPrice(!isShowCurrentPrice)}
           >
             <CheckCircleIcon
@@ -170,7 +170,7 @@ export default function ByProductTab() {
                 key={categoryItem.category}
                 className={clsx(categoryItem.category === "해외" && "mt-4")}
               >
-                <div className="flex justify-between">
+                <div className="flex items-center justify-between">
                   <span className="mb-1 px-2 text-sm text-neutral-500">
                     {categoryItem.category}
                   </span>

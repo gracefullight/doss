@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { Layout } from "~/components/layout";
 import {
@@ -18,6 +19,7 @@ import {
 } from "~/components/stock";
 
 export default function Stock() {
+  const router = useRouter();
   const [tabIndex, setTabIndex] = useState(0);
   const tabs = [
     { name: "내 주식", component: <MyStocksTab /> },
@@ -50,6 +52,7 @@ export default function Stock() {
             className="btn btn-square btn-ghost"
             title="설정"
             type="button"
+            onClick={() => void router.push("/stock/setting")}
           >
             <Cog6ToothIcon className="w-6" />
           </button>
