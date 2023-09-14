@@ -80,7 +80,7 @@ export default function StackLayout({
                     title={title}
                     onClick={() => void handleInnerItem(item)}
                   >
-                    <IconComponent className="w-6" />
+                    <IconComponent className="w-5" />
                   </button>
                 ) : (
                   <div

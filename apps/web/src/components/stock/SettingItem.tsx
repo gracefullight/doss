@@ -26,7 +26,7 @@ export default function SettingItem({
   return (
     <div
       onClick={handleClick}
-      className="flex cursor-pointer select-none items-center justify-between px-5 py-2 active:bg-neutral-700"
+      className="flex cursor-pointer select-none items-center justify-between px-5 py-3 active:bg-neutral-700"
     >
       <div className="flex flex-col">
         <div className="font-medium text-neutral-400">{title}</div>
