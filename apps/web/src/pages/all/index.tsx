@@ -62,7 +62,7 @@ import {
   VideoCameraIcon,
   ViewfinderCircleIcon,
   WalletIcon,
-  WifiIcon
+  WifiIcon,
 } from "@heroicons/react/24/solid";
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
@@ -674,24 +674,24 @@ export default function All() {
       <Head>
         <title>Doss | 전체</title>
       </Head>
-      <div className="flex w-screen flex-col px-4 pt-4">
+      <div className="flex w-screen flex-col px-4 pt-2">
+        <div className="sticky top-0 z-50 flex justify-end">
+          <button
+            className="btn btn-square btn-ghost"
+            title="검색"
+            type="button"
+          >
+            <MagnifyingGlassIcon className="w-6" />
+          </button>
+          <button
+            className="btn btn-square btn-ghost"
+            title="설정"
+            type="button"
+          >
+            <Cog6ToothIcon className="w-6" />
+          </button>
+        </div>
         <div className="px-2">
-          <div className="sticky top-0 z-50 flex justify-end">
-            <button
-              className="btn btn-square btn-ghost"
-              title="검색"
-              type="button"
-            >
-              <MagnifyingGlassIcon className="w-6" />
-            </button>
-            <button
-              className="btn btn-square btn-ghost"
-              title="설정"
-              type="button"
-            >
-              <Cog6ToothIcon className="w-6" />
-            </button>
-          </div>
           <div className="mb-4 flex items-center gap-4">
             <h1 className="text-2xl font-bold text-neutral-200">전체</h1>
           </div>
@@ -702,7 +702,7 @@ export default function All() {
                 key={item.title}
                 onClick={() => void handleLink(item.link)}
               >
-                <item.Icon className={`w-4 fill-${item.color}`} />
+                <item.Icon className={`w-5 fill-${item.color}`} />
                 <span className="text-sm text-neutral-200">{item.title}</span>
               </div>
             ))}
@@ -712,7 +712,9 @@ export default function All() {
           <ul className="flex flex-col gap-2">
             <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
               <div className="flex items-center space-x-3">
-              <div className="bg-neutral-700 p-1 rounded-xl"><LockClosedIcon className="fill-info w-5" /></div>
+                <div className="rounded-xl bg-neutral-700 p-1">
+                  <LockClosedIcon className="fill-info w-5" />
+                </div>
                 <div className="flex flex-col">
                   <span className="font-medium">보안과 인증</span>
                 </div>
@@ -721,7 +723,9 @@ export default function All() {
             </li>
             <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
               <div className="flex items-center space-x-3">
-              <div className="bg-neutral-700 p-1 rounded-xl"><ViewfinderCircleIcon className="fill-info w-5" /></div>
+                <div className="rounded-xl bg-neutral-700 p-1">
+                  <ViewfinderCircleIcon className="fill-info w-5" />
+                </div>
                 <div className="flex flex-col">
                   <span className="font-medium">내 신용점수</span>
                 </div>
@@ -730,7 +734,9 @@ export default function All() {
             </li>
             <li className="flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
               <div className="flex items-center space-x-3">
-              <div className="bg-neutral-700 p-1 rounded-xl"><GiftIcon className="fill-error w-5" /></div>
+                <div className="rounded-xl bg-neutral-700 p-1">
+                  <GiftIcon className="fill-error w-5" />
+                </div>
                 <div className="flex flex-col">
                   <span className="font-medium">진행중인 이벤트</span>
                 </div>
@@ -755,7 +761,7 @@ export default function All() {
                       key={item.title}
                     >
                       <div className="flex items-center space-x-3">
-                        <div className="bg-neutral-700 p-1 rounded-xl">
+                        <div className="rounded-xl bg-neutral-700 p-1">
                           {item.icon}
                         </div>
                         <span className="font-medium">

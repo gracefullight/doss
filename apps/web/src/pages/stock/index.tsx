@@ -31,7 +31,7 @@ export default function Stock() {
         <title>Doss | 주식</title>
       </Head>
       <div className="flex w-screen flex-col">
-        <div className="sticky top-0 z-50 flex justify-end bg-neutral-800 px-6 pt-4">
+        <div className="sticky top-0 z-50 flex justify-end bg-neutral-800 px-4 pt-2">
           <button
             className="btn btn-square btn-ghost"
             title="검색"

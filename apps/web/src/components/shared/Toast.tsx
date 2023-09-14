@@ -31,7 +31,7 @@ export default function Toast({
 
   return (
     <div className={clsx("toast toast-center z-50", !visible && "hidden")}>
-      <div className="alert rounded-full border-none bg-neutral-700">
+      <div className="alert grid-flow-col-dense gap-2 rounded-full border-none bg-neutral-700">
         {cloneElement(icon, {
           className: clsx("w-6", icon.props.className),
         })}
