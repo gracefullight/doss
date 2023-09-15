@@ -37,7 +37,7 @@ export default function TransferRecentAccounts() {
             <div className="flex items-center gap-2">
               <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content h-10 w-10 rounded-full">
-                  <span>{item.initials || item.name[0]}</span>
+                  <span>{item.initials ?? item.name[0]}</span>
                 </div>
               </div>
               <div className="flex flex-col gap-1">

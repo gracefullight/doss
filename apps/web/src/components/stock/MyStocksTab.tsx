@@ -57,15 +57,12 @@ export default function MyStocksTab() {
           <div className="text-error mt-1">+1,000,000원 (10%)</div>
         </div>
         <div className="mt-6 flex justify-between">
-          <div className="dropdown dropdown-bottom">
-            <label tabIndex={0} className="btn btn-ghost btn-sm m-1">
+          <details className="dropdown dropdown-bottom">
+            <summary className="btn btn-ghost btn-sm m-1">
               가나다 순
               <ChevronDownIcon className="w-4" />
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content rounded-box z-[1] w-52 bg-neutral-700 p-2 shadow"
-            >
+            </summary>
+            <ul className="menu dropdown-content rounded-box z-[1] w-52 bg-neutral-700 p-2 shadow">
               <li>
                 <a>가나다 순</a>
               </li>
@@ -76,7 +73,7 @@ export default function MyStocksTab() {
                 <a>총 수익률 높은 순</a>
               </li>
             </ul>
-          </div>
+          </details>
           <div className="flex gap-1">
             <label className="btn swap btn-sm">
               <input type="checkbox" />

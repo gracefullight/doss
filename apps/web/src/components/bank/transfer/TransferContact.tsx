@@ -9,7 +9,7 @@ interface ContactItem {
 
 export default function TransferContact() {
   const [searchTerm, setSearchTerm] = useState("");
-  const contactItems = useMemo(
+  const contactItems = useMemo<ContactItem[]>(
     () => [
       {
         name: "은광",
@@ -26,7 +26,7 @@ export default function TransferContact() {
   const [filteredContacts, setFilteredContacts] =
     useState<ContactItem[]>(contactItems);
 
-  const handleSearch = debounce((term) => {
+  const handleSearch = debounce((term: string) => {
     const filtered = contactItems.filter((item) =>
       item.name.toLowerCase().includes(term.toLowerCase()),
     );
@@ -50,7 +50,7 @@ export default function TransferContact() {
           <div key={item.phoneNumber} className="flex items-center gap-2">
             <div className="avatar placeholder">
               <div className="bg-neutral-focus text-neutral-content h-10 w-10 rounded-full">
-                <span>{item.initials || item.name[0]}</span>
+                <span>{item.initials ?? item.name[0]}</span>
               </div>
             </div>
             <div className="flex flex-col gap-1">

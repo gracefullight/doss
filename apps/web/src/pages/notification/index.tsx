@@ -1,5 +1,5 @@
 import { SparklesIcon, TicketIcon } from "@heroicons/react/24/solid";
-import { GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext } from "next";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";

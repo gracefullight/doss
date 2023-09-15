@@ -1,3 +1,7 @@
+const { resolve } = require("node:path");
+
+const project = resolve(process.cwd(), "tsconfig.json");
+
 /** @type {import("eslint").Linter.Config} */
 const config = {
   extends: [
@@ -13,7 +17,7 @@ const config = {
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: true,
+    project,
   },
   plugins: ["@typescript-eslint", "import"],
   rules: {

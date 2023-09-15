@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import type { FormEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StackLayout } from "~/components/layout";
 import { feedbackToastState } from "~/components/stock/investment";
 
@@ -26,7 +27,7 @@ export default function InvestmentFeedback() {
     adjustTextAreaHeight();
   };
 
-  const handleFeedback = async () => {
+  const handleFeedback = () => {
     feedbackToastState.visible = true;
     router.back();
   };
@@ -43,7 +44,6 @@ export default function InvestmentFeedback() {
           onInput={handleInput}
           className="textarea mt-4 w-full resize-none overflow-hidden bg-neutral-800"
           placeholder="답변 적기"
-          autoFocus
         ></textarea>
       </div>
       <div className="fixed bottom-0 z-50 flex w-full">

@@ -18,7 +18,7 @@ export default function usePedometer(options: PositionOptions = {}) {
   // ? Adjust based on testing, in meters
   const stepDistanceThreshold = 0.8;
   // ? Maximum speed in meters per second
-  const maxSpeed = (5 * 1000) / 3600; 
+  const maxSpeed = (5 * 1000) / 3600;
 
   useEffect(() => {
     if (
@@ -58,7 +58,7 @@ export default function usePedometer(options: PositionOptions = {}) {
     lon2: number,
   ) => {
     // ? Radius of the earth in km
-    const R = 6371; 
+    const R = 6371;
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
@@ -69,7 +69,7 @@ export default function usePedometer(options: PositionOptions = {}) {
         Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     // ? Distance in meters
-    const distance = R * c * 1000; 
+    const distance = R * c * 1000;
     return distance;
   };
 

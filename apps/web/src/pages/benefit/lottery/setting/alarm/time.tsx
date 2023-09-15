@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
-import { StackLayout, StackLayoutNavbarItem } from "~/components/layout";
+import { useId } from "react";
+import type { StackLayoutNavbarItem } from "~/components/layout";
+import { StackLayout } from "~/components/layout";
 
 declare global {
   interface Window {
@@ -9,6 +11,9 @@ declare global {
 
 export default function LotterySettingAlarmTime() {
   const router = useRouter();
+
+  const startTimeLabelId = useId();
+  const dndOnWeekendLabelId = useId();
 
   const navItems: StackLayoutNavbarItem[] = [
     {
@@ -43,19 +48,24 @@ export default function LotterySettingAlarmTime() {
           />
         </div>
         <div className="form-control mt-4 w-full">
-          <label className="label">
+          <label className="label" htmlFor={startTimeLabelId}>
             <span className="label-text">시작 시간</span>
           </label>
           <input
+            id={startTimeLabelId}
             type="time"
             placeholder="Type here"
             className="input input-bordered w-full"
           />
         </div>
         <div className="form-control mt-4">
-          <label className="label cursor-pointer">
+          <label className="label cursor-pointer" htmlFor={dndOnWeekendLabelId}>
             <span className="label-text">주말엔 안 받기</span>
-            <input type="checkbox" className="toggle toggle-info" />
+            <input
+              id={dndOnWeekendLabelId}
+              type="checkbox"
+              className="toggle toggle-info"
+            />
           </label>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import type { ElementType, ReactNode } from "react";
 
 interface InformationCardProps {
@@ -32,11 +33,13 @@ export default function InformationCard({
           imageUrl && (
             <div className="avatar">
               <div className="h-8 w-8 rounded-full">
-                <img
+                <Image
                   src={imageUrl}
                   alt="thumbnail"
                   loading="lazy"
                   decoding="async"
+                  width={100}
+                  height={100}
                 />
               </div>
             </div>

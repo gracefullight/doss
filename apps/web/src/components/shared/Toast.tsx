@@ -1,8 +1,9 @@
 import clsx from "clsx";
-import { ReactElement, cloneElement, useEffect } from "react";
+import type { ReactElement } from "react";
+import { cloneElement, useEffect } from "react";
 
 interface ToastProps {
-  icon: ReactElement;
+  icon: ReactElement<{ className?: string }>;
   message: string;
   visible: boolean;
   duration?: number; // in milliseconds
@@ -27,7 +28,7 @@ export default function Toast({
         clearTimeout(timer);
       };
     }
-  }, [visible]);
+  }, [visible, onClose]);
 
   return (
     <div className={clsx("toast toast-center z-50", !visible && "hidden")}>

@@ -1,11 +1,8 @@
 import { prisma } from "@doss/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { type GetServerSidePropsContext } from "next";
-import {
-  getServerSession,
-  type DefaultSession,
-  type NextAuthOptions,
-} from "next-auth";
+import type { GetServerSidePropsContext } from "next";
+import type { DefaultSession, NextAuthOptions } from "next-auth";
+import { getServerSession } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import GithubProvider from "next-auth/providers/github";
 import { env } from "~/env.mjs";
@@ -60,10 +57,10 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   events: {
-    async createUser(message) { 
+    createUser(message) {
       const { user } = message;
       console.log(user);
-    }
+    },
   },
   theme: {
     colorScheme: "dark",

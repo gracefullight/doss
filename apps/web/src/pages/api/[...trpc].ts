@@ -1,5 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { createOpenApiNextHandler, type OpenApiRouter } from "trpc-openapi";
+import type { NextApiRequest, NextApiResponse } from "next";
+import type { OpenApiRouter } from "trpc-openapi";
+import { createOpenApiNextHandler } from "trpc-openapi";
 import { createTRPCContext } from "~/server/api/trpc";
 
 import { appRouter } from "~/server/api/root";

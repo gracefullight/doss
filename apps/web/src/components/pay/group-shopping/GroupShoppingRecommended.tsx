@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import { formatNumber, getDiscountRate } from "~/utils/number";
 
 export default function GroupShoppingRecommended() {
@@ -48,10 +49,12 @@ export default function GroupShoppingRecommended() {
         <div className="mt-4 grid grid-cols-2 gap-x-2 gap-y-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
           {items.map((product) => (
             <div key={product.name} className="overflow-hidden">
-              <img
+              <Image
                 src={product.imageUrl}
                 alt={product.name}
                 className="rounded-box max-h-48 w-full"
+                width={100}
+                height={100}
               />
               <div className="flex flex-col gap-1 p-2">
                 <div className="flex gap-1 font-medium">

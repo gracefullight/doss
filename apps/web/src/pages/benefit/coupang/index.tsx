@@ -1,5 +1,5 @@
 import { CheckCircleIcon, ClockIcon } from "@heroicons/react/24/solid";
-import { type GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { CoupangCircle } from "~/components/benefit";
 import { StackLayout } from "~/components/layout";
@@ -32,7 +32,7 @@ export default function BenefitCoupang() {
           </div>
           <div className="flex flex-col gap-4 pt-6">
             <div className="flex gap-2">
-              <CheckCircleIcon className="w-6 fill-success" />
+              <CheckCircleIcon className="fill-success w-6" />
               <span className="text-neutral-400">
                 오늘은 이미 10원 받았어요.
               </span>

@@ -70,28 +70,27 @@ export default function StackLayout({
           )}
 
           <div className="navbar-end gap-3 pr-1">
-            {items &&
-              items.map(({ IconComponent, title, ...item }) =>
-                IconComponent ? (
-                  <button
-                    key={title}
-                    className="btn btn-square btn-sm btn-ghost"
-                    type="button"
-                    title={title}
-                    onClick={() => void handleInnerItem(item)}
-                  >
-                    <IconComponent className="w-5" />
-                  </button>
-                ) : (
-                  <div
-                    key={title}
-                    className="cursor-pointer text-neutral-200"
-                    onClick={() => void handleInnerItem(item)}
-                  >
-                    {title}
-                  </div>
-                ),
-              )}
+            {items?.map(({ IconComponent, title, ...item }) =>
+              IconComponent ? (
+                <button
+                  key={title}
+                  className="btn btn-square btn-sm btn-ghost"
+                  type="button"
+                  title={title}
+                  onClick={() => void handleInnerItem(item)}
+                >
+                  <IconComponent className="w-5" />
+                </button>
+              ) : (
+                <div
+                  key={title}
+                  className="cursor-pointer text-neutral-200"
+                  onClick={() => void handleInnerItem(item)}
+                >
+                  {title}
+                </div>
+              ),
+            )}
           </div>
         </div>
         {children}

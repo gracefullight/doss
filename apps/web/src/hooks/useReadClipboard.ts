@@ -6,7 +6,7 @@ export default function useReadClipboard() {
 
   useEffect(() => {
     // ? https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/1245
-    navigator.permissions
+    void navigator.permissions
       .query({ name: "clipboard-read" as PermissionName })
       .then((result) => {
         setPermission(result.state);

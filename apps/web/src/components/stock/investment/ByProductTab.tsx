@@ -7,6 +7,7 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import Image from "next/image";
 import { useState } from "react";
 import { formatNumber, formatPercent } from "~/utils/number";
 
@@ -192,11 +193,13 @@ export default function ByProductTab() {
                     <div className="flex items-center gap-2">
                       <div className="avatar">
                         <div className="h-8 w-8 rounded-full">
-                          <img
+                          <Image
                             src={`https://placehold.co/100x100?text=${stock.ticker}`}
                             alt="thumbnail"
                             loading="lazy"
                             decoding="async"
+                            width={100}
+                            height={100}
                           />
                         </div>
                       </div>

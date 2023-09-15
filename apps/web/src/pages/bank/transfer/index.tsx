@@ -1,6 +1,6 @@
 import { CameraIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import {

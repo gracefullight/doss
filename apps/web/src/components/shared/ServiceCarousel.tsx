@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { Fragment } from "react";
 
 interface CarouselItem {
   subheader: string;

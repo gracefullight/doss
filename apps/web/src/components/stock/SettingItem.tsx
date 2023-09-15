@@ -19,13 +19,13 @@ export default function SettingItem({
 }: SettingItemProps) {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push(link);
+  const handleClick = async () => {
+    await router.push(link);
   };
 
   return (
     <div
-      onClick={handleClick}
+      onClick={() => void handleClick()}
       className="flex cursor-pointer select-none items-center justify-between px-5 py-3 active:bg-neutral-700"
     >
       <div className="flex flex-col">

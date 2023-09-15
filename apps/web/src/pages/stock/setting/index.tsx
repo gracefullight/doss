@@ -1,7 +1,8 @@
 import { PhoneArrowUpRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { StackLayout } from "~/components/layout";
-import { SettingItem, type SettingItemProps } from "~/components/stock";
+import type { SettingItemProps } from "~/components/stock";
+import { SettingItem } from "~/components/stock";
 
 interface Section {
   title?: string;

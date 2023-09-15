@@ -47,6 +47,7 @@
   "devDependencies": {
     "@doss/eslint-config": "^0.1.0",
     "@doss/tailwind-config": "^0.1.0",
+    "@doss/tsconfig": "*",
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "@types/lodash": "^4.14.198",

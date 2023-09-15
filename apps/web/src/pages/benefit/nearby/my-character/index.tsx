@@ -1,6 +1,7 @@
 import { HeartIcon } from "@heroicons/react/24/solid";
-import { GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext } from "next";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import type { StackLayoutNavbarItem } from "~/components/layout";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
@@ -26,7 +27,12 @@ export default function BenefitNearbyMyCharacter() {
           <span className="pt-1 text-lg font-medium">{session?.user.name}</span>
           <div className="avatar my-4">
             <div className="w-48 rounded-full">
-              <img src="https://i.pravatar.cc/200?u=b" alt="내 캐릭터" />
+              <Image
+                src="https://i.pravatar.cc/200?u=b"
+                width={200}
+                height={200}
+                alt="내 캐릭터"
+              />
             </div>
           </div>
           <div className="btn btn-active btn-ghost my-4 rounded-2xl">

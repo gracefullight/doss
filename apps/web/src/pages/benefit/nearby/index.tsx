@@ -1,9 +1,10 @@
 import { ChevronRightIcon, FaceSmileIcon } from "@heroicons/react/24/solid";
-import { type GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { StackLayout, type StackLayoutNavbarItem } from "~/components/layout";
+import type { StackLayoutNavbarItem } from "~/components/layout";
+import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";

@@ -1,5 +1,5 @@
-import { GetServerSidePropsContext } from "next";
-import { useState } from "react";
+import type { GetServerSidePropsContext } from "next";
+import { useId, useState } from "react";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
@@ -7,6 +7,7 @@ import { getServerAuthSession } from "~/server/auth";
 export default function BankTransferFindAccount() {
   const [accountNumber, setAccountNumber] = useState("");
   const [selectedBank, setSelectedBank] = useState("");
+  const accountLabelId = useId();
 
   const bankItems = [
     { name: "NH 농협", code: "NH" },
@@ -24,6 +25,7 @@ export default function BankTransferFindAccount() {
           어떤 계좌로 보낼까요?
         </h1>
         <input
+          id={accountLabelId}
           type="text"
           placeholder="계좌번호 입력"
           className="input input-bordered w-full"
@@ -48,7 +50,7 @@ export default function BankTransferFindAccount() {
               </option>
             ))}
           </select>
-          <label className="label">
+          <label className="label" htmlFor={accountLabelId}>
             <span className="label-text-alt text-neutral-400">
               계좌번호를 입력하면 은행을 찾아드릴게요.
             </span>

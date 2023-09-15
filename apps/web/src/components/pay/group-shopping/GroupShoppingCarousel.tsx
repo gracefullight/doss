@@ -64,6 +64,7 @@ export default function GroupShoppingCarousel() {
             src={item.imageUrl}
             className="rounded-box w-full"
             alt={item.name}
+            loading="eager"
           />
           <div className="rounded-b-box absolute bottom-0 flex h-24 w-full flex-col justify-center bg-neutral-700 px-4 shadow-[0_-15px_30px_rgba(0,0,0,0.8)]">
             <div className="badge badge-error absolute -top-6 gap-1 p-1">

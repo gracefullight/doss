@@ -5,8 +5,9 @@ import {
   QuestionMarkCircleIcon,
   TicketIcon,
 } from "@heroicons/react/24/solid";
-import { motion, type TargetAndTransition } from "framer-motion";
-import { GetServerSidePropsContext } from "next";
+import type { TargetAndTransition } from "framer-motion";
+import { motion } from "framer-motion";
+import type { GetServerSidePropsContext } from "next";
 import { useState } from "react";
 import { StackLayout } from "~/components/layout";
 import { PATH_SIGNIN } from "~/constants";

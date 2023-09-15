@@ -1,4 +1,5 @@
-import { generateOpenApiDocument, type OpenApiRouter } from "trpc-openapi";
+import type { OpenApiRouter } from "trpc-openapi";
+import { generateOpenApiDocument } from "trpc-openapi";
 
 import { appRouter } from "~/server/api/root";
 
