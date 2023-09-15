@@ -27,6 +27,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/types": "^17.4.4",
+    "@doss/tsconfig": "*",
     "@manypkg/cli": "^0.21.0",
     "@types/node": "^18.17.15",
     "@vitest/ui": "^0.34.4",

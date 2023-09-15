@@ -17,6 +17,9 @@ importers:
       '@commitlint/types':
         specifier: ^17.4.4
         version: 17.4.4
+      '@doss/tsconfig':
+        specifier: '*'
+        version: link:packages/config/ts
       '@manypkg/cli':
         specifier: ^0.21.0
         version: 0.21.0
@@ -256,6 +259,8 @@ importers:
       tailwindcss:
         specifier: 3.3.3
         version: 3.3.3(ts-node@10.9.1)
+
+  packages/config/ts: {}
 
   packages/db:
     dependencies:
