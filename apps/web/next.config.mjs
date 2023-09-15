@@ -20,6 +20,7 @@ const config = {
 
   // ? https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",
