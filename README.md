@@ -13,7 +13,8 @@ Duplicated version of Toss application
 └── packages
     ├── config
     │   ├── eslint: Shared ESLint configurations
-    │   └── tailwind: Shared Tailwind CSS configurations
+    │   ├── tailwind: Shared Tailwind CSS configurations
+    │   └── ts: Shared typescript configurations
     └── db: Shared database schema, using Prisma
 ```
 
