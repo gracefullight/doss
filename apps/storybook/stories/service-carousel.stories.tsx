@@ -1,4 +1,5 @@
-import { ServiceCarousel, ServiceCarouselProps } from "@doss/ui";
+import type { ServiceCarouselProps } from "@doss/ui";
+import { ServiceCarousel } from "@doss/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ServiceCarousel> = {
