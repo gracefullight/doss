@@ -29,7 +29,7 @@
     },
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": [".next/**"]
+      "outputs": [".next/**", "storybook-static/**"]
     },
     "lint": {},
     "lint:fix": {},

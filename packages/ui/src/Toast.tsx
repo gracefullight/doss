@@ -3,8 +3,8 @@ import type { ReactElement } from "react";
 import { cloneElement, useEffect, useState } from "react";
 
 export interface ToastProps {
-  icon: ReactElement<{ className?: string }>;
   message: string;
+  icon?: ReactElement<{ className?: string }>;
   visible?: boolean;
   duration?: number; // in milliseconds
   onClose?: () => void;
@@ -34,9 +34,10 @@ export function Toast({
   return (
     <div className={clsx("toast toast-center z-50", !innerVisible && "hidden")}>
       <div className="alert grid-flow-col-dense gap-2 rounded-full border-none bg-neutral-700">
-        {cloneElement(icon, {
-          className: clsx("w-6", icon.props.className),
-        })}
+        {icon &&
+          cloneElement(icon, {
+            className: clsx("w-6", icon.props.className),
+          })}
         <span>{message}</span>
       </div>
     </div>

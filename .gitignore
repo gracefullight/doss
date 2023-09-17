@@ -51,3 +51,6 @@ playwright-report
 
 # turbo
 .turbo
+
+# storybook
+storybook-static
