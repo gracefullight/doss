@@ -1,6 +1,6 @@
+import { Toast } from "@doss/ui";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-import { Toast } from "~/components/shared";
 
 export default function ScreenCaptureToast() {
   const [toastVisible, setToastVisible] = useState(false);

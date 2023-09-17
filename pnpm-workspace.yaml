@@ -1,4 +1,4 @@
 packages:
   - apps/*
-  - packages/db
+  - packages/*
   - packages/config/*

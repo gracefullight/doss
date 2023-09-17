@@ -2,7 +2,7 @@ import clsx from "clsx";
 import type { ReactElement } from "react";
 import { cloneElement, useEffect, useState } from "react";
 
-interface ToastProps {
+export interface ToastProps {
   icon: ReactElement<{ className?: string }>;
   message: string;
   visible?: boolean;
@@ -10,7 +10,7 @@ interface ToastProps {
   onClose?: () => void;
 }
 
-export default function Toast({
+export function Toast({
   icon,
   message,
   visible = false,

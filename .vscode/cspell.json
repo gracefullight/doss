@@ -25,7 +25,9 @@
     "tailwindcss",
     "tanstack",
     "testid",
+    "treeshake",
     "trpc",
+    "tsup",
     "valtio",
     "verceldb"
   ]

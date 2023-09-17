@@ -4,6 +4,7 @@ import type { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/app";
 
+import "@doss/ui/styles.css";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
 

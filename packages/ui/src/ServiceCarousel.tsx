@@ -8,12 +8,12 @@ interface CarouselItem {
   icon: ReactNode;
 }
 
-interface ServiceCarouselProps {
+export interface ServiceCarouselProps {
   items: CarouselItem[];
   isDark?: boolean;
 }
 
-export default function ServiceCarousel({
+export function ServiceCarousel({
   items,
   isDark = false,
 }: ServiceCarouselProps) {

@@ -1,9 +1,9 @@
+import { ServiceCarousel } from "@doss/ui";
 import {
   BanknotesIcon,
   PresentationChartLineIcon,
   StarIcon,
 } from "@heroicons/react/24/solid";
-import { ServiceCarousel } from "~/components/shared";
 
 export default function StockCarousel() {
   const items = [

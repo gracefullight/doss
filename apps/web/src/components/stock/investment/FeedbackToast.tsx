@@ -1,6 +1,6 @@
+import { Toast } from "@doss/ui";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { proxy, useSnapshot } from "valtio";
-import { Toast } from "~/components/shared";
 
 export const feedbackToastState = proxy({ visible: false });
 
