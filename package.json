@@ -29,7 +29,7 @@
     "@commitlint/types": "^17.4.4",
     "@doss/tsconfig": "*",
     "@manypkg/cli": "^0.21.0",
-    "@types/node": "^18.17.15",
+    "@types/node": "^18.17.17",
     "@vitest/ui": "^0.34.4",
     "@vitest/coverage-v8": "^0.34.4",
     "devmoji": "^2.3.0",
