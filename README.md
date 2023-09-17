@@ -9,13 +9,15 @@ Duplicated version of Toss application
 ```bash
 .
 ├── apps
-│   └── web: Next.js application
+│   ├── storybook: doss ui storybook
+│   └── web: doss web application
 └── packages
     ├── config
     │   ├── eslint: Shared ESLint configurations
     │   ├── tailwind: Shared Tailwind CSS configurations
     │   └── ts: Shared typescript configurations
-    └── db: Shared database schema, using Prisma
+    ├── db: Shared database schema, using Prisma
+    └── ui: Shared ui components
 ```
 
 ## server
