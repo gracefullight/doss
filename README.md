@@ -17,7 +17,7 @@ Duplicated version of Toss application
     │   ├── tailwind: Shared Tailwind CSS configurations
     │   └── ts: Shared typescript configurations
     ├── db: Shared database schema, using Prisma
-    └── ui: Shared ui components
+    └── ui: Shared ui components, using Tailwind
 ```
 
 ## server
