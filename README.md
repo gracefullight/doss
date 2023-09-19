@@ -2,7 +2,10 @@
 
 Toss 앱의 복제 버전
 
-![demo](./apps/web/public/demo.jpg)
+| 예시                                  | 이미지                                |
+| ------------------------------------- | ------------------------------------- |
+| ![demo1](./apps/web/public/demo1.jpg) | ![demo2](./apps/web/public/demo2.jpg) |
+| ![demo3](./apps/web/public/demo3.jpg) | ![demo4](./apps/web/public/demo4.jpg) |
 
 ## 구조
 

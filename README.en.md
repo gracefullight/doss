@@ -2,7 +2,10 @@
 
 Duplicated version of Toss application
 
-![demo](./apps/web/public/demo.jpg)
+| Example                               | Image                                 |
+| ------------------------------------- | ------------------------------------- |
+| ![demo1](./apps/web/public/demo1.jpg) | ![demo2](./apps/web/public/demo2.jpg) |
+| ![demo3](./apps/web/public/demo3.jpg) | ![demo4](./apps/web/public/demo4.jpg) |
 
 ## Structure
 
