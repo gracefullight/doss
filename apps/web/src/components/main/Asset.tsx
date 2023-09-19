@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import type { SyntheticEvent } from "react";
 import { formatNumber } from "~/utils/number";
@@ -6,14 +7,30 @@ import Section from "./Section";
 export default function Asset() {
   const router = useRouter();
   const items = [
-    { title: "도스뱅크 통장", amount: 5000000, isBank: true },
-    { title: "입출금통장", amount: 100000000, isBank: true },
-    { title: "저축·주택청약 종합저축", amount: 10000000, isBank: false },
+    {
+      title: "도스뱅크 통장",
+      amount: 5000000,
+      isBank: true,
+      logoUrl: "https://placehold.co/100x100?text=doss",
+    },
+    {
+      title: "입출금통장",
+      amount: 100000000,
+      isBank: true,
+      logoUrl: "https://placehold.co/100x100?text=shinhan",
+    },
+    {
+      title: "저축·주택청약 종합저축",
+      amount: 10000000,
+      isBank: false,
+      logoUrl: "https://placehold.co/100x100?text=shinhan",
+    },
     {
       title: "포인트·머니",
       amount: 400,
       isBank: false,
       link: "/benefit/point",
+      logoUrl: "https://placehold.co/100x100?text=point",
     },
   ];
 
@@ -39,8 +56,15 @@ export default function Asset() {
           >
             <div className="flex items-center space-x-3">
               <div className="avatar placeholder">
-                <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
-                  <span>1</span>
+                <div className="h-10 w-10 rounded-full">
+                  <Image
+                    src={item.logoUrl}
+                    alt="thumbnail"
+                    loading="lazy"
+                    decoding="async"
+                    width={100}
+                    height={100}
+                  />
                 </div>
               </div>
               <div className="flex flex-col">
