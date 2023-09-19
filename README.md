@@ -17,8 +17,21 @@ Duplicated version of Toss application
     │   ├── tailwind: Shared Tailwind CSS configurations
     │   └── ts: Shared typescript configurations
     ├── db: Shared database schema, using Prisma
-    └── ui: Shared ui components, using Tailwind
+    └── ui: Shared ui components, using Tailwind and Daisy
 ```
+
+## stacks
+
+- [nextjs](https://github.com/vercel/next.js)
+- [turbo](https://github.com/vercel/turbo)
+- [prisma](https://github.com/prisma/prisma)
+- [trpc](https://github.com/trpc/trpc)
+- [redoc](https://github.com/Redocly/redoc)
+- [tailwind](https://github.com/tailwindlabs/tailwindcss)
+- [daisyui](https://github.com/saadeghi/daisyui)
+- [storybook](https://github.com/storybookjs/storybook)
+- [vitest](https://github.com/vitest-dev/vitest)
+- [playwright](https://github.com/microsoft/playwright)
 
 ## server
 
@@ -29,7 +42,7 @@ pnpm dev
 
 ## db
 
-### erd
+### ERD
 
 You can check [db/README.md](./packages/db/README.md)
 
