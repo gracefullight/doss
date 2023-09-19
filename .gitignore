@@ -54,3 +54,6 @@ playwright-report
 
 # storybook
 storybook-static
+
+# Sentry Auth Token
+.sentryclirc
