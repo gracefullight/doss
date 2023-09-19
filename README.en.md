@@ -11,13 +11,13 @@ This section outlines the directory structure of the project, providing a high-l
 ```bash
 .
 ├── apps
-│   ├── storybook: doss ui storybook
+│   ├── storybook: doss UI storybook
 │   └── web: doss web application
 └── packages
     ├── config
     │   ├── eslint: Shared ESLint configurations
     │   ├── tailwind: Shared Tailwind CSS configurations
-    │   └── ts: Shared typescript configurations
+    │   └── ts: Shared TypeScript configurations
     ├── db: Shared database schema, using Prisma
     └── ui: Shared ui components, using Tailwind and Daisy
 ```

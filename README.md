@@ -11,15 +11,15 @@ Toss 앱의 복제 버전
 ```bash
 .
 ├── apps
-│   ├── storybook: doss ui storybook
-│   └── web: doss web application
+│   ├── storybook: doss UI 스토리북
+│   └── web: doss 웹 어플리케이션
 └── packages
     ├── config
-    │   ├── eslint: Shared ESLint configurations
-    │   ├── tailwind: Shared Tailwind CSS configurations
-    │   └── ts: Shared typescript configurations
-    ├── db: Shared database schema, using Prisma
-    └── ui: Shared ui components, using Tailwind and Daisy
+    │   ├── eslint: 공유 ESLint 설정
+    │   ├── tailwind: 공유 Tailwind CSS 설정
+    │   └── ts: 공유 TypeScript 설정
+    ├── db: 공유 데이터베이스 스키마, Prisma 사용
+    └── ui: 공유 UI 컴포넌트, Tailwind와 Daisy 사용
 ```
 
 ## 기술 스택
