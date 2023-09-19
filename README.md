@@ -4,7 +4,9 @@ Duplicated version of Toss application
 
 ![demo](./apps/web/public/demo.jpg)
 
-## structure
+## Structure
+
+This section outlines the directory structure of the project, providing a high-level overview of how the codebase is organized.
 
 ```bash
 .
@@ -20,7 +22,9 @@ Duplicated version of Toss application
     └── ui: Shared ui components, using Tailwind and Daisy
 ```
 
-## stacks
+## Stacks
+
+This section lists the key technologies and libraries used in the project.
 
 - [nextjs](https://github.com/vercel/next.js)
 - [turbo](https://github.com/vercel/turbo)
@@ -33,24 +37,27 @@ Duplicated version of Toss application
 - [vitest](https://github.com/vitest-dev/vitest)
 - [playwright](https://github.com/microsoft/playwright)
 
-## server
+## Getting Started
+
+This section will guide you through setting up the development environment.
+
+### Server Setup
+
+To initialize the server environment, execute the following commands in your terminal:
 
 ```bash
 pnpm install
 pnpm dev
+
 ```
 
-## db
+### Database Configuration
 
-### ERD
+To configure the database, please follow these steps:
 
-You can check [db/README.md](./packages/db/README.md)
-
-### local installation
-
-1. Download [Rancher desktop](https://rancherdesktop.io/)
-2. Run Pod
-3. Migrate
+1. **Download Rancher Desktop**: Visit the Rancher Desktop website and download the appropriate version for your system.
+2. **Initialize Pod**: Open Rancher Desktop and run a new pod.
+3. **Database Migration**: Execute the commands below to run the database container and perform the initial migration.
 
 ```bash
 docker run -d \
@@ -65,9 +72,13 @@ docker run -d \
 pnpm migrate:dev
 ```
 
-## TODO
+For more information on the database structure, you can consult the Entity Relationship Diagram ([ERD](./packages/db/README.md)).
 
-- [x] [t3-oss/create-t3-turbo](https://github.com/t3-oss/create-t3-turbo)
-  - [prisma/deployment-guides](https://www.prisma.io/docs/guides/deployment/deployment-guides/deploying-to-vercel)
-- [trpc/examples-next-app-dir](https://github.com/trpc/examples-next-app-dir)
-- [t3-oss/create-t3-turbo](https://github.com/t3-oss/create-t3-turbo/tree/main/apps/nextjs)
+## How to Contribute
+
+I greatly appreciate your interest in contributing to our project! To get involved, kindly refer to our list of remaining tasks available on the [project board](https://github.com/users/gracefullight/projects/2).
+
+### Steps to Contribute
+
+1. **Request Permission**: Please reach out to the project maintainer to request permission for contributing.
+2. **Collaboration**: Upon receiving permission, you are welcome to contribute by coding, bug-fixing, or tackling other tasks listed on the project board.
