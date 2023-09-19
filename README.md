@@ -1,12 +1,12 @@
 # Doss
 
-Duplicated version of Toss application
+Toss 앱의 복제 버전
 
 ![demo](./apps/web/public/demo.jpg)
 
-## Structure
+## 구조
 
-This section outlines the directory structure of the project, providing a high-level overview of how the codebase is organized.
+이 섹션은 프로젝트의 디렉토리 구조를 개요로 설명하며, 코드베이스가 어떻게 구성되어 있는지 고수준에서 살펴봅니다.
 
 ```bash
 .
@@ -22,9 +22,9 @@ This section outlines the directory structure of the project, providing a high-l
     └── ui: Shared ui components, using Tailwind and Daisy
 ```
 
-## Stacks
+## 기술 스택
 
-This section lists the key technologies and libraries used in the project.
+이 섹션에서는 프로젝트에서 사용되는 주요 기술과 라이브러리를 나열합니다.
 
 - [nextjs](https://github.com/vercel/next.js)
 - [turbo](https://github.com/vercel/turbo)
@@ -37,13 +37,13 @@ This section lists the key technologies and libraries used in the project.
 - [vitest](https://github.com/vitest-dev/vitest)
 - [playwright](https://github.com/microsoft/playwright)
 
-## Getting Started
+## 시작하기
 
-This section will guide you through setting up the development environment.
+이 섹션에서는 개발 환경을 설정하는 방법을 안내합니다.
 
-### Server Setup
+### 서버 설정
 
-To initialize the server environment, execute the following commands in your terminal:
+서버 환경을 초기화하려면 터미널에서 다음 명령을 실행하세요.
 
 ```bash
 pnpm install
@@ -51,13 +51,13 @@ pnpm dev
 
 ```
 
-### Database Configuration
+### 데이터베이스 설정
 
-To configure the database, please follow these steps:
+데이터베이스를 설정하려면 다음 단계를 따르세요.
 
-1. **Download Rancher Desktop**: Visit the Rancher Desktop website and download the appropriate version for your system.
-2. **Initialize Pod**: Open Rancher Desktop and run a new pod.
-3. **Database Migration**: Execute the commands below to run the database container and perform the initial migration.
+1. **Rancher Desktop 다운로드**: Rancher Desktop 웹사이트를 방문해 시스템에 적합한 버전을 다운로드합니다.
+2. **Pod 초기화**: Rancher Desktop을 열고 새로운 Pod를 실행합니다.
+3. **데이터베이스 마이그레이션**: 아래 명령어를 실행해 데이터베이스 컨테이너를 실행하고 초기 마이그레이션을 수행합니다.
 
 ```bash
 docker run -d \
@@ -72,13 +72,13 @@ docker run -d \
 pnpm migrate:dev
 ```
 
-For more information on the database structure, you can consult the Entity Relationship Diagram ([ERD](./packages/db/README.md)).
+데이터베이스 구조에 대한 자세한 정보는 엔터티 관계 다이어그램 ([ERD](./packages/db/README.md))을 참조할 수 있습니다.
 
-## How to Contribute
+## 기여하는 방법
 
-I greatly appreciate your interest in contributing to our project! To get involved, kindly refer to our list of remaining tasks available on the [project board](https://github.com/users/gracefullight/projects/2).
+프로젝트에 기여에 관심을 가져 주셔서 감사합니다! 참여하려면 [프로젝트 보드](https://github.com/users/gracefullight/projects/2)에서 남아 있는 작업 목록을 참고해 주세요.
 
-### Steps to Contribute
+### 기여 단계
 
-1. **Request Permission**: Please reach out to the project maintainer to request permission for contributing.
-2. **Collaboration**: Upon receiving permission, you are welcome to contribute by coding, bug-fixing, or tackling other tasks listed on the project board.
+1. **권한 요청**: 저에게 기여에 대한 권한을 요청해 주세요.
+2. **협업**: 권한을 받은 후, 코드 작성, 버그 수정, 또는 프로젝트 보드에 나열된 다른 작업을 수행하여 기여할 수 있습니다.
