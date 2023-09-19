@@ -1,10 +1,11 @@
+import { formatNumber } from "~/utils/number";
 import Section from "./Section";
 
 export default function Spend() {
   return (
     <Section title="소비" link="/" hiddenLink>
-      <ul className="flex flex-col">
-        <li className="flex items-center justify-between">
+      <div className="flex flex-col">
+        <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
               <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
@@ -13,7 +14,9 @@ export default function Spend() {
             </div>
             <div className="flex flex-col">
               <span className="text-sm text-neutral-400">이번 달 쓴 금액</span>
-              <span className="text-lg font-medium">1,000,000원</span>
+              <span className="text-lg font-medium">
+                {formatNumber(1000000)}원
+              </span>
             </div>
           </div>
           <button
@@ -22,12 +25,12 @@ export default function Spend() {
           >
             내역
           </button>
-        </li>
-        <div className="divider"></div>
-        <li className="flex items-center justify-between">
+        </div>
+        <div className="divider px-2"></div>
+        <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
-              <div className="text-neutral-content w-10 rounded-lg bg-neutral-500">
+              <div className="w-10 rounded-lg bg-neutral-400 text-white">
                 <span>1</span>
               </div>
             </div>
@@ -35,11 +38,13 @@ export default function Spend() {
               <span className="text-sm text-neutral-400">
                 이번 달 낼 카드값
               </span>
-              <span className="text-lg font-medium">300,000원</span>
+              <span className="text-lg font-medium">
+                {formatNumber(300000)}원
+              </span>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </Section>
   );
 }

@@ -169,7 +169,11 @@ export default function Benefit() {
       >
         <div className="flex items-center justify-between px-6">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
-          <button className="btn btn-ghost btn-md pr-0 text-lg">
+          <button
+            className="btn btn-ghost btn-md pr-0 text-lg"
+            type="button"
+            onClick={() => void handleBenefitLink("/benefit/point")}
+          >
             <CurrencyDollarIcon className="fill-info w-6" />
             {formatNumber(1000)} 원
             <ChevronRightIcon className="w-4" />

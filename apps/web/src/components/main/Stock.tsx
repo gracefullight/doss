@@ -3,8 +3,8 @@ import Section from "./Section";
 export default function Stock() {
   return (
     <Section title="투자" link="/stock/investment">
-      <ul className="flex flex-col gap-6">
-        <li className="flex items-center justify-between">
+      <div className="flex flex-col gap-2">
+        <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
               <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
@@ -19,8 +19,8 @@ export default function Stock() {
               </div>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </Section>
   );
 }

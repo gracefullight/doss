@@ -21,10 +21,10 @@ export default function Section({
   };
 
   return (
-    <div className="w-full rounded-2xl bg-neutral-800 p-5 pb-6">
+    <section className="w-full rounded-2xl bg-neutral-800 px-3 pb-6 pt-5">
       <div
         className={clsx(
-          `flex cursor-pointer items-center justify-between`,
+          `flex cursor-pointer items-center justify-between px-2`,
           children && "mb-6",
         )}
         onClick={() => void handleLink(link)}
@@ -41,6 +41,6 @@ export default function Section({
         )}
       </div>
       {children}
-    </div>
+    </section>
   );
 }
