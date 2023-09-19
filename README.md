@@ -40,6 +40,7 @@ Toss 앱의 웹 클론 버전
 - [trpc](https://github.com/trpc/trpc)
 - [redoc](https://github.com/Redocly/redoc)
 - [tailwind](https://github.com/tailwindlabs/tailwindcss)
+- [heroicons](https://github.com/tailwindlabs/heroicons)
 - [daisyui](https://github.com/saadeghi/daisyui)
 - [storybook](https://github.com/storybookjs/storybook)
 - [vitest](https://github.com/vitest-dev/vitest)
