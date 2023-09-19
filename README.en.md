@@ -1,6 +1,6 @@
 # Doss
 
-Duplicated version of Toss application
+Duplicated version of the Toss application
 
 | Example                               | Image                                 |
 | ------------------------------------- | ------------------------------------- |
