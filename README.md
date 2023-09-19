@@ -1,5 +1,10 @@
 # Doss
 
+![Node Badge](https://img.shields.io/badge/node-18-green)
+![Pnpm Badge](https://img.shields.io/badge/pnpm-8-green)
+![GitHub Repo stars](https://img.shields.io/github/stars/gracefullight/doss?logo=github&color=red)
+![GitHub deployments](https://img.shields.io/github/deployments/gracefullight/doss/production?style=flat&logo=vercel&label=vercel)
+
 Toss 앱의 웹 클론 버전
 
 | 예시                                  | 이미지                                |
