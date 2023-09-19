@@ -29,6 +29,12 @@ pnpm dev
 
 ## db
 
+### erd
+
+You can check [db/README.md](./packages/db/README.md)
+
+### local installation
+
 1. Download [Rancher desktop](https://rancherdesktop.io/)
 2. Run Pod
 3. Migrate
