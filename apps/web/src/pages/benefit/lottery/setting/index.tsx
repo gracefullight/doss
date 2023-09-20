@@ -13,7 +13,11 @@ interface LotterySettingItem {
 export default function BenefitLotterySetting() {
   const router = useRouter();
   const items: LotterySettingItem[] = [
-    { name: "이용안내", action: "link", link: "/benefit/lottery" },
+    {
+      name: "이용안내",
+      action: "link",
+      link: "/benefit/lottery/setting/agreement",
+    },
     {
       name: "복권 공유하기",
       action: "share",
