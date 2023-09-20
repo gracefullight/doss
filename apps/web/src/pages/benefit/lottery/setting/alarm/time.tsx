@@ -3,12 +3,6 @@ import { useId } from "react";
 import type { StackLayoutNavbarItem } from "~/components/layout";
 import { StackLayout } from "~/components/layout";
 
-declare global {
-  interface Window {
-    modalLotteryAlarmTime: HTMLDialogElement;
-  }
-}
-
 export default function LotterySettingAlarmTime() {
   const router = useRouter();
 
