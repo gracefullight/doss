@@ -1,9 +1,3 @@
-## Reset
-
-```bash
-pnpm --filter "@doss/db" with-env prisma migrate reset
-```
-
 ## ERD
 
 ```mermaid
@@ -104,4 +98,14 @@ erDiagram
         string stockId FK
     }
 
+```
+
+## Reset
+
+```bash
+pnpm --filter "@doss/db" with-env prisma migrate reset
+```
+
+```bash
+ps -ef | grep prisma | awk '{print $2}' | xargs kill -9
 ```
