@@ -5,7 +5,7 @@ export default defineConfig({
   test: {
     dir: "tests",
     coverage: {
-      reporter: ["text", "json", "html"],
+      reporter: ["text", "json-summary", "json", "html"],
     },
     globals: true,
     // ? performance
