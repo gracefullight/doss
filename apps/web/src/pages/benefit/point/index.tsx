@@ -56,7 +56,7 @@ export default function BenefitPoint() {
         <div className="flex flex-col px-5">
           <span className="text-sm text-neutral-400">내 포인트</span>
           <div className="flex flex-row items-center justify-between">
-            <h1 className="text-2xl text-neutral-300">
+            <h1 className="text-2xl font-bold text-neutral-300">
               {formatNumber(200)} 원
             </h1>
             <button className="btn border-none bg-neutral-700" type="button">
