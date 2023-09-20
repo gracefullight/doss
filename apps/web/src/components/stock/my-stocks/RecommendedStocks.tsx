@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function RecommendedStocks() {
@@ -22,9 +23,16 @@ export default function RecommendedStocks() {
           {items.map((item) => (
             <li key={item.ticker} className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="avatar placeholder">
-                  <div className="bg-neutral-focus text-neutral-content w-10 rounded-full">
-                    <span>1</span>
+                <div className="avatar">
+                  <div className="h-10 w-10 rounded-full">
+                    <Image
+                      src={`https://placehold.co/100x100?text=${item.ticker}`}
+                      alt="thumbnail"
+                      loading="lazy"
+                      decoding="async"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                 </div>
                 <div className="flex flex-col">
