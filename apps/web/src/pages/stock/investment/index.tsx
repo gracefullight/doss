@@ -7,6 +7,7 @@ import {
   ByProductTab,
   FeedbackToast,
 } from "~/components/stock/investment";
+import { PATH_INVESTMENT_CONNECT } from "~/constants";
 
 export default function BankInvestment() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -14,7 +15,7 @@ export default function BankInvestment() {
     {
       title: "계좌 추가",
       IconComponent: PlusIcon,
-      link: "/",
+      link: PATH_INVESTMENT_CONNECT,
     },
     {
       title: "피드백",
