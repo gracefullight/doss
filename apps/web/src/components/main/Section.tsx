@@ -25,7 +25,7 @@ export default function Section({
       <div
         className={clsx(
           `flex cursor-pointer items-center justify-between px-2`,
-          children && "mb-6",
+          children && "mb-5",
         )}
         onClick={() => void handleLink(link)}
       >
