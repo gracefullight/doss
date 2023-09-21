@@ -12,6 +12,7 @@ const config = {
   rules: {
     "@next/next/no-html-link-for-pages": "off",
   },
+  ignorePatterns: ["public/sw.js", "public/workbox-*"],
 };
 
 module.exports = config;

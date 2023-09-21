@@ -1,3 +1,4 @@
+import withPWAInit from "@ducanh2912/next-pwa";
 import { withSentryConfig } from "@sentry/nextjs";
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
@@ -39,8 +40,19 @@ const config = {
   },
 };
 
+// ? https://ducanh-next-pwa.vercel.app/docs/next-pwa/configuring
+/** @type {import("@ducanh2912/next-pwa").PluginOptions} */
+const pwaConfig = {
+  dest: "public",
+  swcMinify: true,
+  reloadOnOnline: true,
+  watchWorkersInDev: true,
+};
+
+const withPWA = withPWAInit(pwaConfig);
+
 export default withSentryConfig(
-  config,
+  withPWA(config),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
