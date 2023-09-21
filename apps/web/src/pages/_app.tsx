@@ -22,7 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
-        <meta name="theme-color" content="#666666" />
+        <meta name="theme-color" content="#333333" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" sizes="32x32" href="/favicon-32x32.png" />
