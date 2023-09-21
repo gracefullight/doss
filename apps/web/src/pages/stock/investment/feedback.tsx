@@ -1,8 +1,11 @@
+import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import type { FormEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { StackLayout } from "~/components/layout";
 import { feedbackToastState } from "~/components/stock/investment";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 
 export default function InvestmentFeedback() {
   const router = useRouter();
@@ -58,4 +61,22 @@ export default function InvestmentFeedback() {
       </div>
     </StackLayout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }

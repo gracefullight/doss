@@ -1,8 +1,11 @@
 import { PhoneArrowUpRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import type { GetServerSidePropsContext } from "next";
 import { StackLayout } from "~/components/layout";
 import type { SettingItemProps } from "~/components/stock";
 import { SettingItem } from "~/components/stock";
+import { PATH_SIGNIN } from "~/constants";
+import { getServerAuthSession } from "~/server/auth";
 
 interface Section {
   title?: string;
@@ -114,4 +117,22 @@ export default function StockSetting() {
       ))}
     </StackLayout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: PATH_SIGNIN,
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
 }
