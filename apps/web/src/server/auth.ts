@@ -63,6 +63,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   theme: {
+    logo: "/apple-touch-icon.png",
     colorScheme: "dark",
   },
 };
