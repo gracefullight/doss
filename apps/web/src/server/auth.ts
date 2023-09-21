@@ -11,7 +11,7 @@ import { env } from "~/env.mjs";
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
  *
- * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
+ * ? https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -31,7 +31,7 @@ declare module "next-auth" {
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
  *
- * @see https://next-auth.js.org/configuration/options
+ * ? https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
   // ? for auth middleware
