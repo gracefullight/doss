@@ -16,6 +16,10 @@ jobs:
         with:
           fetch-depth: 0 # Required to retrieve git history
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install dependencies
         run: pnpm
 
