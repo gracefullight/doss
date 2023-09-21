@@ -21,7 +21,7 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm
+        run: pnpm install
 
       - name: Build UI
         run: pnpm --filter "@doss/ui" build
