@@ -21,7 +21,8 @@ export default function ScreenCaptureToast() {
 
   return (
     <Toast
-      icon={<InformationCircleIcon className="fill-warning" />}
+      IconComponent={InformationCircleIcon}
+      iconColor="fill-warning"
       message="화면 캡쳐를 감지했어요."
       visible={toastVisible}
     />

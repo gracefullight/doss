@@ -13,7 +13,8 @@ export default function FeedbackToast() {
 
   return (
     <Toast
-      icon={<CheckCircleIcon className="fill-success" />}
+      IconComponent={CheckCircleIcon}
+      iconColor="fill-green-500"
       message="소중한 의견 보내주셔서 감사해요."
       visible={toastVisible}
       onClose={handleClose}

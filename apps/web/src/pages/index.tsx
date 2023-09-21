@@ -1,5 +1,6 @@
 import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
+import { bankWelcomeToastState } from "~/components/bank";
 import { Layout } from "~/components/layout";
 import {
   Asset,
@@ -15,6 +16,10 @@ import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 
 export default function Home() {
+  const handleBankWelcomeToast = () => {
+    bankWelcomeToastState.visible = true;
+  };
+
   return (
     <Layout>
       <Head>
@@ -23,7 +28,11 @@ export default function Home() {
       <MainNavbar />
       <div className="flex w-screen flex-col items-center justify-center gap-4 px-5 py-2">
         <RemitAlert />
-        <Section title="도스뱅크" link="/bank" />
+        <Section
+          title="도스뱅크"
+          link="/bank"
+          handleLink={handleBankWelcomeToast}
+        />
         <Asset />
         <Stock />
         <Spend />

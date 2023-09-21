@@ -6,6 +6,7 @@ import type { PropsWithChildren } from "react";
 interface SectionProps {
   title: string;
   link: string;
+  handleLink?: () => void;
   hiddenLink?: boolean;
 }
 
@@ -13,10 +14,14 @@ export default function Section({
   title,
   link,
   children,
+  handleLink,
   hiddenLink = false,
 }: PropsWithChildren<SectionProps>) {
   const router = useRouter();
-  const handleLink = async (link: string) => {
+  const handleClick = async () => {
+    if (handleLink) {
+      void handleLink();
+    }
     await router.push(link);
   };
 
@@ -27,7 +32,7 @@ export default function Section({
           `flex cursor-pointer items-center justify-between px-2`,
           children && "mb-5",
         )}
-        onClick={() => void handleLink(link)}
+        onClick={handleClick}
       >
         <h2 className="text-lg font-semibold text-neutral-200">{title}</h2>
         {!hiddenLink && (
