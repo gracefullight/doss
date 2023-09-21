@@ -1,0 +1,29 @@
+# Workflow name
+name: "Chromatic"
+
+# Event for the workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to retrieve git history
+
+      - name: Install dependencies
+        run: pnpm
+
+      - name: Build UI
+        run: pnpm --filter "@doss/ui" build
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: apps/storybook

@@ -29,7 +29,7 @@
     },
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": [".next/**", "storybook-static/**", "public/*.js"]
+      "outputs": [".next/**", "public/*.js"]
     },
     "lint": {},
     "lint:fix": {},
@@ -50,6 +50,7 @@
   },
   "globalEnv": [
     "CI",
+    "CHROMATIC_PROJECT_TOKEN",
     "DATABASE_URL",
     "DATABASE_URL_NON_POOLING",
     "DISCORD_CLIENT_ID",
