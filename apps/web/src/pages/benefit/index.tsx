@@ -77,6 +77,7 @@ export default function Benefit() {
       isDone: false,
       Icon: MapPinIcon,
       link: "/benefit/nearby",
+      iconColor: "fill-yellow-500",
     },
     {
       title: "이번 주 미션",
@@ -84,6 +85,7 @@ export default function Benefit() {
       badge: "3일 남음",
       isDone: false,
       Icon: ArrowRightCircleIcon,
+      iconColor: "fill-red-600",
     },
     {
       title: "행운복권",
@@ -92,13 +94,15 @@ export default function Benefit() {
       isDone: true,
       Icon: TicketIcon,
       link: "/benefit/lottery",
+      iconColor: "fill-green-500",
     },
     {
       title: "라이브 쇼핑",
       subTitle: "포인트 받기",
-      badge: null,
+      badge: "방송 중",
       isDone: false,
       Icon: VideoCameraIcon,
+      iconColor: "fill-red-600",
     },
     {
       title: "행운퀴즈",
@@ -106,6 +110,7 @@ export default function Benefit() {
       badge: null,
       isDone: false,
       Icon: QuestionMarkCircleIcon,
+      iconColor: "fill-blue-500",
     },
     {
       title: "머니 알림 받고",
@@ -113,6 +118,7 @@ export default function Benefit() {
       badge: null,
       isDone: false,
       Icon: BellIcon,
+      iconColor: "fill-yellow-500",
     },
     {
       title: "만보기",
@@ -120,6 +126,7 @@ export default function Benefit() {
       badge: `${diffHours}시간 남음`,
       isDone: false,
       Icon: SparklesIcon,
+      iconColor: "fill-blue-500",
     },
     {
       title: "휴대폰 요금제 바꾸고",
@@ -135,6 +142,7 @@ export default function Benefit() {
       link: "/benefit/coupang",
       isDone: true,
       Icon: DocumentArrowDownIcon,
+      iconColor: "fill-blue-600",
     },
   ];
 
@@ -167,7 +175,7 @@ export default function Benefit() {
         className="bg-base-100 z-10 flex h-full w-screen flex-col pb-4"
         ref={scope}
       >
-        <div className="flex items-center justify-between px-6">
+        <div className="flex items-center justify-between px-5">
           <h1 className="text-2xl font-bold text-neutral-200">혜택</h1>
           <button
             className="btn btn-ghost btn-md pr-0 text-lg"
@@ -179,11 +187,11 @@ export default function Benefit() {
             <ChevronRightIcon className="w-4" />
           </button>
         </div>
-        <div className="mt-4 flex flex-col gap-2 px-2">
-          {items.map((item, index) => (
+        <div className="mt-3 flex flex-col gap-2 px-2">
+          {items.map((item) => (
             <div
-              className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 active:bg-neutral-700"
-              key={index}
+              className="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 active:bg-neutral-700"
+              key={item.title}
               onClick={() => void handleBenefitLink(item.link)}
             >
               <div className="flex items-center space-x-4">
@@ -193,7 +201,7 @@ export default function Benefit() {
                     item.isDone ? `border-green-500` : `border-neutral-700`,
                   )}
                 >
-                  <item.Icon className="w-8" />
+                  <item.Icon className={clsx(`w-7`, item.iconColor)} />
                   {item.isDone && (
                     <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-green-500 p-1">
                       <CheckIcon className="w-4 text-neutral-700" />
