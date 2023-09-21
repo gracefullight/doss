@@ -1,9 +1,13 @@
-import { PhoneArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { SettingItem } from "@doss/ui";
+import {
+  ChevronRightIcon,
+  PhoneArrowUpRightIcon,
+} from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import type { GetServerSidePropsContext } from "next";
+import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
 import type { SettingItemProps } from "~/components/stock";
-import { SettingItem } from "~/components/stock";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 
@@ -13,6 +17,7 @@ interface Section {
 }
 
 export default function StockSetting() {
+  const router = useRouter();
   const navItems = [
     {
       title: "고객센터",
@@ -103,11 +108,12 @@ export default function StockSetting() {
               {section.title}
             </div>
           )}
-          {section.items.map((item, idx) => (
+          {section.items.map((item) => (
             <SettingItem
-              key={idx}
+              key={item.title}
               title={item.title}
-              link={item.link}
+              handleLink={() => void router.push(item.link)}
+              IconComponent={ChevronRightIcon}
               description={item.description}
               actionText={item.actionText}
               actionColor={item.actionColor}

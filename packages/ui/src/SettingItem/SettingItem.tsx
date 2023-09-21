@@ -1,44 +1,45 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import type { ElementType } from "react";
 
 export interface SettingItemProps {
   title: string;
-  link: string;
+  IconComponent: ElementType;
+  handleLink?: () => void | Promise<void>;
   description?: string;
   actionText?: string;
   actionColor?: string;
 }
 
-export default function SettingItem({
+export function SettingItem({
   title,
-  link,
+  handleLink,
+  IconComponent,
   description,
   actionText,
   actionColor = "text-neutral-400",
 }: SettingItemProps) {
-  const router = useRouter();
-
-  const handleClick = async () => {
-    await router.push(link);
+  const handleClick = () => {
+    if (handleLink) {
+      void handleLink();
+    }
   };
 
   return (
     <div
-      onClick={() => void handleClick()}
+      onClick={handleClick}
       className="flex cursor-pointer select-none items-center justify-between px-5 py-3 active:bg-neutral-700"
     >
       <div className="flex flex-col">
-        <div className="font-medium text-neutral-400">{title}</div>
+        <div className="font-medium text-neutral-300">{title}</div>
         {description && (
-          <span className="text-sm text-neutral-500">{description}</span>
+          <span className="text-sm text-neutral-400">{description}</span>
         )}
       </div>
       <div className="flex items-center gap-1">
         {actionText && (
           <div className={clsx("font-medium", actionColor)}>{actionText}</div>
         )}
-        <ChevronRightIcon className="w-4" />
+        <IconComponent className="w-4" />
       </div>
     </div>
   );
