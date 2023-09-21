@@ -1,3 +1,5 @@
+# @doss/db
+
 ## ERD
 
 ```mermaid
