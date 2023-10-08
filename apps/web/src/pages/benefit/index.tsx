@@ -15,14 +15,12 @@ import {
 import clsx from "clsx";
 import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import { DateTime, Interval } from "luxon";
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import { proxy, useSnapshot } from "valtio";
 import { Layout } from "~/components/layout";
-import { PATH_SIGNIN, SCROLL_BOUNCING_THRESHOLD } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
+import { SCROLL_BOUNCING_THRESHOLD } from "~/constants";
 import { formatNumber } from "~/utils/number";
 
 const scrollState = proxy({ scrollY: 0, direction: 0 });
@@ -224,22 +222,4 @@ export default function Benefit() {
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

@@ -1,11 +1,8 @@
 import { HeartIcon } from "@heroicons/react/24/solid";
-import type { GetServerSidePropsContext } from "next";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import type { StackLayoutNavbarItem } from "~/components/layout";
 import { StackLayout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function BenefitNearbyMyCharacter() {
@@ -47,22 +44,4 @@ export default function BenefitNearbyMyCharacter() {
       </div>
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

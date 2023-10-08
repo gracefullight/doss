@@ -38,6 +38,7 @@
     "luxon": "^3.4.3",
     "next": "^13.5.4",
     "next-auth": "^4.23.2",
+    "path-to-regexp": "^6.2.1",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",

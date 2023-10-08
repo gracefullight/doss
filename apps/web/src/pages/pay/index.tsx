@@ -1,5 +1,4 @@
 import { Cog6ToothIcon, CommandLineIcon } from "@heroicons/react/24/solid";
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Layout } from "~/components/layout";
@@ -11,8 +10,6 @@ import {
   QuickAccessButtons,
   Voucher,
 } from "~/components/pay";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 
 export default function Pay() {
   const router = useRouter();
@@ -58,22 +55,4 @@ export default function Pay() {
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

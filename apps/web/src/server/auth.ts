@@ -34,13 +34,17 @@ declare module "next-auth" {
  * ? https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
+  // ? for middleware
+  session: {
+    strategy: "jwt",
+  },
   // ? for auth middleware
   callbacks: {
-    session: ({ session, user }) => ({
+    session: ({ session, token }) => ({
       ...session,
       user: {
         ...session.user,
-        id: user.id,
+        id: token.sub,
       },
     }),
   },

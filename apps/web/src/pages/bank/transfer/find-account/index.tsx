@@ -1,8 +1,5 @@
-import type { GetServerSidePropsContext } from "next";
 import { useId, useState } from "react";
 import { StackLayout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 
 export default function BankTransferFindAccount() {
   const [accountNumber, setAccountNumber] = useState("");
@@ -66,22 +63,4 @@ export default function BankTransferFindAccount() {
       )}
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

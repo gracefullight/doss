@@ -4,7 +4,6 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -18,8 +17,6 @@ import {
   StockFooter,
   TodaysDiscoveryTab,
 } from "~/components/stock";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 
 export default function Stock() {
   const router = useRouter();
@@ -98,22 +95,4 @@ export default function Stock() {
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

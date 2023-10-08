@@ -1,10 +1,7 @@
 import clsx from "clsx";
-import type { GetServerSidePropsContext } from "next";
 import { useState } from "react";
 import { BankWelcomeToast } from "~/components/bank";
 import { StackLayout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 
 export default function Bank() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -37,22 +34,4 @@ export default function Bank() {
       <BankWelcomeToast />
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

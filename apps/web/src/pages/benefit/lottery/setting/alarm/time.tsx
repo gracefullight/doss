@@ -1,10 +1,7 @@
-import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { useId } from "react";
 import type { StackLayoutNavbarItem } from "~/components/layout";
 import { StackLayout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 
 export default function LotterySettingAlarmTime() {
   const router = useRouter();
@@ -97,22 +94,4 @@ export default function LotterySettingAlarmTime() {
       </dialog>
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

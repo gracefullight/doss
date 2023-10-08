@@ -1,6 +1,5 @@
 import { PaperAirplaneIcon, PlusIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import type { GetServerSidePropsContext } from "next";
 import { useState } from "react";
 import { StackLayout } from "~/components/layout";
 import {
@@ -8,8 +7,7 @@ import {
   ByProductTab,
   FeedbackToast,
 } from "~/components/stock/investment";
-import { PATH_INVESTMENT_CONNECT, PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
+import { PATH_INVESTMENT_CONNECT } from "~/constants";
 
 export default function BankInvestment() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -55,22 +53,4 @@ export default function BankInvestment() {
       <FeedbackToast />
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

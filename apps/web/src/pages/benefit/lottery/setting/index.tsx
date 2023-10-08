@@ -1,9 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
-import { PATH_LOTTERY, PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
+import { PATH_LOTTERY } from "~/constants";
 
 interface LotterySettingItem {
   name: string;
@@ -81,22 +79,4 @@ export default function BenefitLotterySetting() {
       </div>
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }

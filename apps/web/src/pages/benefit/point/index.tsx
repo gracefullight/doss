@@ -4,12 +4,9 @@ import {
   ListBulletIcon,
   TicketIcon,
 } from "@heroicons/react/24/solid";
-import type { GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
-import { PATH_SIGNIN } from "~/constants";
-import { getServerAuthSession } from "~/server/auth";
 import { formatNumber } from "~/utils/number";
 
 export default function BenefitPoint() {
@@ -169,22 +166,4 @@ export default function BenefitPoint() {
       </div>
     </StackLayout>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerAuthSession({
-    req: context.req,
-    res: context.res,
-  });
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: PATH_SIGNIN,
-        permanent: false,
-      },
-    };
-  }
-
-  return { props: {} };
 }
