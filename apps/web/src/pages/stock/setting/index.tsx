@@ -1,3 +1,4 @@
+import type { SettingItemProps } from "@doss/ui";
 import { SettingItem } from "@doss/ui";
 import {
   ChevronRightIcon,
@@ -7,13 +8,17 @@ import clsx from "clsx";
 import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
-import type { SettingItemProps } from "~/components/stock";
 import { PATH_SIGNIN } from "~/constants";
 import { getServerAuthSession } from "~/server/auth";
 
+interface SectionItem extends Partial<SettingItemProps> {
+  title: string;
+  link: string;
+}
+
 interface Section {
   title?: string;
-  items: SettingItemProps[];
+  items: SectionItem[];
 }
 
 export default function StockSetting() {
