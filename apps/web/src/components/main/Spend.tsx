@@ -34,7 +34,7 @@ export default function Spend() {
             내역
           </button>
         </div>
-        <div className="divider px-2"></div>
+        <div className="divider my-1 px-2"></div>
         <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
