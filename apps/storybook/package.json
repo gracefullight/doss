@@ -31,7 +31,7 @@
     "@storybook/react-vite": "^7.4.6",
     "@vitejs/plugin-react": "^4.1.0",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^7.2.3",
+    "chromatic": "^7.4.0",
     "postcss": "^8.4.31",
     "serve": "^14.2.1",
     "storybook": "^7.4.6",
