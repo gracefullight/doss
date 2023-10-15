@@ -68,12 +68,12 @@ pnpm dev
 
 데이터베이스를 설정하려면 다음 단계를 따르세요.
 
-1. **Rancher Desktop 다운로드**: Rancher Desktop 웹사이트를 방문해 시스템에 적합한 버전을 다운로드합니다.
-2. **Pod 초기화**: Rancher Desktop을 열고 새로운 Pod를 실행합니다.
+1. **Podman 다운로드**: Podman Desktop 웹사이트를 방문해 시스템에 적합한 버전을 다운로드합니다.
+2. **Pod 초기화**: Podman Desktop을 열고 새로운 Pod를 실행합니다.
 3. **데이터베이스 마이그레이션**: 아래 명령어를 실행해 데이터베이스 컨테이너를 실행하고 초기 마이그레이션을 수행합니다.
 
 ```bash
-docker run -d \
+podman run -d \
   -e POSTGRES_PASSWORD=default \
   -e POSTGRES_USER=default \
   -e POSTGRES_DB=verceldb \

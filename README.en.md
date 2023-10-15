@@ -68,12 +68,12 @@ pnpm dev
 
 To configure the database, please follow these steps:
 
-1. **Download Rancher Desktop**: Visit the Rancher Desktop website and download the appropriate version for your system.
-2. **Initialize Pod**: Open Rancher Desktop and run a new pod.
+1. **Download Podman Desktop**: Visit the Podman Desktop website and download the appropriate version for your system.
+2. **Initialize Pod**: Open Podman Desktop and run a new pod.
 3. **Database Migration**: Execute the commands below to run the database container and perform the initial migration.
 
 ```bash
-docker run -d \
+podman run -d \
   -e POSTGRES_PASSWORD=default \
   -e POSTGRES_USER=default \
   -e POSTGRES_DB=verceldb \
