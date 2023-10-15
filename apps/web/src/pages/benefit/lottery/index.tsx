@@ -8,6 +8,7 @@ import {
 import type { TargetAndTransition } from "framer-motion";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { SevenDaysCalendar } from "~/components/benefit/lottery";
 import { StackLayout } from "~/components/layout";
 
 export default function BenefitLottery() {
@@ -92,7 +93,7 @@ export default function BenefitLottery() {
               <br />
               3일차에 2배 드려요
             </h1>
-            {/* TODO: 주간 달력 */}
+            <SevenDaysCalendar />
             <div className="mt-4 flex flex-col rounded-2xl bg-neutral-700 px-6 py-8">
               <div className="relative">
                 <div className="text-2xl font-bold text-neutral-300">
@@ -112,6 +113,7 @@ export default function BenefitLottery() {
                 </span>
                 <span className="font-bold text-neutral-300">ㅇㄱ</span>
               </div>
+              S
             </div>
           </div>
           <div className="fixed bottom-0 z-50 w-full px-4 pb-6">
