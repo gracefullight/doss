@@ -15,6 +15,7 @@ interface StackLayoutProps {
   title?: string;
   items?: StackLayoutNavbarItem[];
   isLightBackground?: boolean;
+  customBackgroundColor?: string;
 }
 
 export default function StackLayout({
@@ -22,8 +23,12 @@ export default function StackLayout({
   items,
   title,
   isLightBackground = false,
+  customBackgroundColor,
 }: PropsWithChildren<StackLayoutProps>) {
   const router = useRouter();
+  const backgroundColor = customBackgroundColor ?? "bg-base-100";
+  const navbarColor = isLightBackground ? "bg-neutral-800" : "bg-base-100";
+
   const handleBack = () => {
     router.back();
   };
@@ -40,11 +45,11 @@ export default function StackLayout({
   };
 
   return (
-    <main className="bg-base-100 flex min-h-screen flex-col">
+    <main className={clsx(`flex min-h-screen flex-col`, backgroundColor)}>
       <div
         className={clsx(
           "navbar sticky top-0 z-50 px-4",
-          isLightBackground ? "bg-neutral-800" : "bg-base-100",
+          !customBackgroundColor && navbarColor,
         )}
       >
         <div className="navbar-start">

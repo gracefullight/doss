@@ -2,11 +2,11 @@ import {
   BanknotesIcon,
   FaceSmileIcon,
   HeartIcon,
-  QuestionMarkCircleIcon,
   TicketIcon,
 } from "@heroicons/react/24/solid";
 import type { TargetAndTransition } from "framer-motion";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { SevenDaysCalendar } from "~/components/benefit/lottery";
 import { StackLayout } from "~/components/layout";
@@ -14,6 +14,7 @@ import { StackLayout } from "~/components/layout";
 export default function BenefitLottery() {
   // TODO: get this from server
   const [selected, setSelected] = useState(false);
+  const router = useRouter();
   const navItems = [{ title: "설정", link: "/benefit/lottery/setting" }];
 
   const motionItems = [
@@ -113,22 +114,16 @@ export default function BenefitLottery() {
                 </span>
                 <span className="font-bold text-neutral-300">ㅇㄱ</span>
               </div>
-              S
             </div>
           </div>
-          <div className="fixed bottom-0 z-50 w-full px-4 pb-6">
-            <div className="flex cursor-pointer select-none items-center justify-between rounded-full bg-neutral-700 px-6 py-4">
-              <div className="flex gap-4">
-                <QuestionMarkCircleIcon className="w-6" />
-                <div className="flex flex-col">
-                  <div className="text-neutral-300">깜짝 포인트 발견</div>
-                  <span className="text-sm text-neutral-500">
-                    지금 바로 확인해 보세요
-                  </span>
-                </div>
-              </div>
-              <div className="btn btn-info btn-sm">확인하기</div>
-            </div>
+          <div className="fixed bottom-0 z-50 flex w-full px-5 pb-4">
+            <button
+              className="btn btn-block btn-lg text-info rounded-xl border-none bg-neutral-700 hover:bg-neutral-800"
+              type="button"
+              onClick={() => void router.push("/benefit/lottery/share")}
+            >
+              복권 공유하기
+            </button>
           </div>
         </div>
       )}

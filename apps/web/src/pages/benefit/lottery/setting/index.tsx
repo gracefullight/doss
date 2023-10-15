@@ -2,6 +2,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import { StackLayout } from "~/components/layout";
 import { PATH_LOTTERY } from "~/constants";
+import { shareUrl } from "~/utils/share";
 
 interface LotterySettingItem {
   name: string;
@@ -39,14 +40,7 @@ export default function BenefitLotterySetting() {
     }
 
     if (action === "share" && "share" in navigator) {
-      try {
-        await navigator.share({
-          title: "복권 공유하기",
-          url: link,
-        });
-      } catch (error) {
-        console.warn("Sharing failed", error);
-      }
+      await shareUrl("복권 공유하기", PATH_LOTTERY);
     }
   };
 
