@@ -1,4 +1,5 @@
 export { default as Asset } from "./Asset";
+export { default as BankLinks } from "./BankLinks";
 export { default as Extra } from "./Extra";
 export { default as MainCarousel } from "./MainCarousel";
 export { default as MainNavbar } from "./MainNavbar";

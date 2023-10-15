@@ -3,6 +3,7 @@ import { bankWelcomeToastState } from "~/components/bank";
 import { Layout } from "~/components/layout";
 import {
   Asset,
+  BankLinks,
   Extra,
   MainCarousel,
   MainNavbar,
@@ -33,6 +34,7 @@ export default function Home() {
         <Asset />
         <Stock />
         <Spend />
+        <BankLinks />
         <MainCarousel />
         <Extra />
       </div>

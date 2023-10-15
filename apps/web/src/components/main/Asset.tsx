@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import type { SyntheticEvent } from "react";
@@ -46,7 +47,7 @@ export default function Asset() {
   };
 
   return (
-    <Section title="자산" link="/">
+    <Section title="자산" link="/" hasBottomButton>
       <div className="flex flex-col gap-2">
         {items.map((item, index) => (
           <div
@@ -85,6 +86,11 @@ export default function Asset() {
             )}
           </div>
         ))}
+      </div>
+      <div className="divider m-0 px-2"></div>
+      <div className="btn btn-ghost btn-block text-neutral-400">
+        계좌·대출·증권·포인트 보기
+        <ChevronDownIcon className="w-4" />
       </div>
     </Section>
   );

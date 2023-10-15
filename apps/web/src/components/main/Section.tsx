@@ -8,6 +8,7 @@ interface SectionProps {
   link: string;
   handleLink?: () => void;
   hiddenLink?: boolean;
+  hasBottomButton?: boolean;
 }
 
 export default function Section({
@@ -16,6 +17,7 @@ export default function Section({
   children,
   handleLink,
   hiddenLink = false,
+  hasBottomButton,
 }: PropsWithChildren<SectionProps>) {
   const router = useRouter();
   const handleClick = async () => {
@@ -26,7 +28,12 @@ export default function Section({
   };
 
   return (
-    <section className="w-full rounded-2xl bg-neutral-800 px-3 pb-6 pt-5">
+    <section
+      className={clsx(
+        `w-full rounded-2xl bg-neutral-800 px-3 pt-5`,
+        hasBottomButton ? "pb-2" : "pb-5",
+      )}
+    >
       <div
         className={clsx(
           `flex cursor-pointer items-center justify-between px-2`,
