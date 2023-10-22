@@ -7,6 +7,11 @@ describe("@formatNumber", () => {
     expect(formatNumber(0)).toBe("0");
     expect(formatNumber(-123456.789)).toBe("-123,456.789");
   });
+
+  it("formats numbers with different minimumFractionDigits", () => {
+    expect(formatNumber(12, 0)).toBe("12");
+    expect(formatNumber(12, 2)).toBe("12.00");
+  });
 });
 
 describe("@formatPercent", () => {

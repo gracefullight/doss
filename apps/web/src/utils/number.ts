@@ -1,5 +1,7 @@
-export function formatNumber(num: number): string {
-  const formatter = new Intl.NumberFormat("en-US");
+export function formatNumber(num: number, minimumFractionDigits = 0): string {
+  const formatter = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits,
+  });
   return formatter.format(num);
 }
 
