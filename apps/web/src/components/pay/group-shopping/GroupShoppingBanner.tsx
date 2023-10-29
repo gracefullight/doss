@@ -5,7 +5,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useCookieState } from "ahooks";
 import { DateTime } from "luxon";
 import { useState } from "react";
-import MoneyCircle from "./MoneyCircle";
+import MoneyCircle from "../MoneyCircle";
 
 export default function GroupShoppingBanner() {
   const [bannerCookie, setBannerCookie] = useCookieState(
