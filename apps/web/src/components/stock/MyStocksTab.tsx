@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Image from "next/image";
+import { Suspense } from "react";
 import { formatNumber, formatPercent } from "~/utils/number";
 import {
   InterestedStocks,
@@ -181,7 +182,9 @@ export default function MyStocksTab() {
       <div className="flex flex-col gap-4">
         <RecentStocks />
         <InterestedStocks />
-        <RecommendedStocks />
+        <Suspense fallback={null}>
+          <RecommendedStocks />
+        </Suspense>
         <StockCarousel />
       </div>
     </>

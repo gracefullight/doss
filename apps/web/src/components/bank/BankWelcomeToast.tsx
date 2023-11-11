@@ -1,3 +1,5 @@
+"use client";
+
 import { Toast } from "@doss/ui";
 import { BanknotesIcon } from "@heroicons/react/24/solid";
 import { proxy, useSnapshot } from "valtio";

@@ -1,5 +1,4 @@
-// ? compatibility
-"use-client";
+"use client";
 
 import {
   ChartBarIcon,

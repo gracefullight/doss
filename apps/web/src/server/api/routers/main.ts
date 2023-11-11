@@ -21,7 +21,7 @@ export const mainRouter = createTRPCRouter({
     )
     .query(async ({ ctx }) => {
       const userId = ctx.session.user.id;
-      const bankAccounts = await ctx.prisma.bankAccount.findMany({
+      const bankAccounts = await ctx.db.bankAccount.findMany({
         where: {
           userId: userId,
         },

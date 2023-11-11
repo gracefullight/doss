@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { formatTimestamp } from "~/utils/datetime";
 import InformationCard from "./InformationCard";
 
@@ -28,8 +28,8 @@ export default function NowInformation() {
     },
   ];
 
-  const handleLink = async (link: string) => {
-    await router.push(link);
+  const handleLink = (link: string) => {
+    router.push(link);
   };
 
   return (

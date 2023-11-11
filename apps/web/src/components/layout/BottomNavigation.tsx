@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Bars3Icon,
   ChartBarIcon,
@@ -6,10 +8,11 @@ import {
   HomeIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function BottomNavigation() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const links = [
     { href: "/", label: "홈", Icon: HomeIcon },
@@ -24,8 +27,8 @@ export default function BottomNavigation() {
       {links.map((link) => (
         <button
           key={link.href}
-          className={clsx(router.pathname === link.href && "active")}
-          onClick={() => void router.push(link.href)}
+          className={clsx(pathname === link.href && "active")}
+          onClick={() => router.push(link.href)}
           type="button"
         >
           <link.Icon className="w-6" />

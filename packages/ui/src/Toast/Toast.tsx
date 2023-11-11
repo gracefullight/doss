@@ -40,7 +40,7 @@ export function Toast({
         clearTimeout(timer);
       };
     }
-  }, [visible, onClose]);
+  }, [visible, onClose, duration]);
 
   if (typeof window === "undefined" || !isClient) {
     return null;

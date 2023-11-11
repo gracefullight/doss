@@ -1,6 +1,8 @@
+"use client";
+
 import { useInterval } from "ahooks";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { formatNumber } from "~/utils/number";
 
@@ -26,8 +28,8 @@ export default function StockIndexBanner() {
 
   useEffect(() => () => clearBanner(), [clearBanner]);
 
-  const handleIndexLink = async () => {
-    await router.push("/stock/major-indexes");
+  const handleIndexLink = () => {
+    router.push("/stock/major-indexes");
   };
 
   return (

@@ -1,5 +1,5 @@
 import { shuffle } from "lodash";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { NewsCard, NowInformation, ValuableInformation } from "./news";
 
 export default function NewsTab() {
@@ -100,8 +100,8 @@ export default function NewsTab() {
   const nextThreeItems = shuffledItems.slice(3, 6); // 3, 4, 5
   const remainingItems = shuffledItems.slice(6); // 6 ~ 나머지
 
-  const handleLink = async (link: string) => {
-    await router.push(link);
+  const handleLink = (link: string) => {
+    router.push(link);
   };
 
   return (

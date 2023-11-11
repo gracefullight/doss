@@ -1,6 +1,8 @@
+"use client";
+
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import type { SyntheticEvent } from "react";
 import { formatNumber } from "~/utils/number";
 import Section from "./Section";
@@ -35,14 +37,14 @@ export default function Asset() {
     },
   ];
 
-  const handleTransfer = async (e: SyntheticEvent<HTMLButtonElement>) => {
+  const handleTransfer = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    await router.push("/bank/transfer");
+    router.push("/bank/transfer");
   };
 
-  const handleLink = async (link?: string) => {
+  const handleLink = (link?: string) => {
     if (link) {
-      await router.push(link);
+      router.push(link);
     }
   };
 

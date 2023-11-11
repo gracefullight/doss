@@ -1,6 +1,5 @@
-import { prisma } from "@doss/db";
+import { db } from "@doss/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import type { GetServerSidePropsContext } from "next";
 import type { DefaultSession, NextAuthOptions } from "next-auth";
 import { getServerSession } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
@@ -48,7 +47,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   },
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(db),
   providers: [
     // ? https://next-auth.js.org/providers/github
     GithubProvider({
@@ -77,9 +76,4 @@ export const authOptions: NextAuthOptions = {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = (ctx: {
-  req: GetServerSidePropsContext["req"];
-  res: GetServerSidePropsContext["res"];
-}) => {
-  return getServerSession(ctx.req, ctx.res, authOptions);
-};
+export const getServerAuthSession = () => getServerSession(authOptions);

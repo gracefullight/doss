@@ -4,7 +4,7 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import InformationCard from "./InformationCard";
 
 export default function ValuableInformation() {
@@ -33,8 +33,8 @@ export default function ValuableInformation() {
     },
   ];
 
-  const handleLink = async (link: string) => {
-    await router.push(link);
+  const handleLink = (link: string) => {
+    router.push(link);
   };
 
   return (

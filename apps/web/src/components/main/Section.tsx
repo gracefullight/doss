@@ -1,6 +1,8 @@
+"use client";
+
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import type { PropsWithChildren } from "react";
 
 interface SectionProps {
@@ -20,11 +22,11 @@ export default function Section({
   hasBottomButton,
 }: PropsWithChildren<SectionProps>) {
   const router = useRouter();
-  const handleClick = async () => {
+  const handleClick = () => {
     if (handleLink) {
       void handleLink();
     }
-    await router.push(link);
+    router.push(link);
   };
 
   return (

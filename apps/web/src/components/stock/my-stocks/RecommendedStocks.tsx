@@ -1,9 +1,11 @@
-import { useSession } from "next-auth/react";
+"use client";
+
 import Image from "next/image";
+import { api } from "~/trpc/react";
 import { formatNumber, formatPercent } from "~/utils/number";
 
 export default function RecommendedStocks() {
-  const { data: sessionData } = useSession();
+  const { data: session } = api.auth.getSession.useQuery();
 
   const items = [
     { ticker: "JEPI", price: 71340, percent: 0.002 },
@@ -14,7 +16,7 @@ export default function RecommendedStocks() {
     <div className=" bg-neutral-800 px-6 py-4">
       <div className="flex flex-col ">
         <div className="text-lg text-neutral-200">
-          {sessionData?.user?.name}님이 관심 있어 할 월배당 관련 주식
+          {session?.user?.name}님이 관심 있어 할 월배당 관련 주식
         </div>
         <div className="text-sm text-neutral-400">
           최근 찾아 본 주식을 분석했어요.

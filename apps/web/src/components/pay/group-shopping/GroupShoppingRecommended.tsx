@@ -1,9 +1,11 @@
-import { useSession } from "next-auth/react";
+"use client";
+
 import Image from "next/image";
+import { api } from "~/trpc/react";
 import { formatNumber, getDiscountRate } from "~/utils/number";
 
 export default function GroupShoppingRecommended() {
-  const { data: session } = useSession();
+  const { data: session } = api.auth.getSession.useQuery();
   const items = [
     {
       name: "Sample Product 1",

@@ -1,11 +1,13 @@
+"use client";
+
 import { ChartPieIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { PATH_INVESTMENT_CONNECT } from "~/constants";
 
 export default function ConnectNudgeFooter() {
   const router = useRouter();
-  const handleConnect = async () => {
-    await router.push(PATH_INVESTMENT_CONNECT);
+  const handleConnect = () => {
+    router.push(PATH_INVESTMENT_CONNECT);
   };
 
   return (

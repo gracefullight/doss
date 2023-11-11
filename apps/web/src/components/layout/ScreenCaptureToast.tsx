@@ -1,3 +1,5 @@
+"use client";
+
 import { Toast } from "@doss/ui";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";

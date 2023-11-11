@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ChatBubbleBottomCenterIcon,
   CircleStackIcon,
@@ -5,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { useLocalStorageState } from "ahooks";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { proxy, useSnapshot } from "valtio";
 import { MoneyCircle } from "~/components/pay";
@@ -28,9 +30,9 @@ export default function MyBankTab() {
     bankFontState.isLargeFont = isLargeFont ?? false;
   }, []);
 
-  const handleLink = async (link?: string) => {
+  const handleLink = (link?: string) => {
     if (link) {
-      await router.push(link);
+      router.push(link);
     }
   };
 

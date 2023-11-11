@@ -7,10 +7,9 @@
  * need to use are documented accordingly near the end.
  */
 
-import { prisma } from "@doss/db";
+import { db } from "@doss/db";
 import { initTRPC, TRPCError } from "@trpc/server";
-import type { CreateNextContextOptions } from "@trpc/server/adapters/next";
-import type { Session } from "next-auth";
+import type { NextRequest } from "next/server";
 import superjson from "superjson";
 import type { OpenApiMeta } from "trpc-openapi";
 import { ZodError } from "zod";
@@ -23,9 +22,8 @@ import { getServerAuthSession } from "~/server/auth";
  *
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
-
 interface CreateContextOptions {
-  session: Session | null;
+  headers: Headers;
 }
 
 /**
@@ -33,16 +31,18 @@ interface CreateContextOptions {
  * it from here.
  *
  * Examples of things you may need it for:
- * ? https://github.com/trpc/examples-next-prisma-starter/blob/main/src/server/routers/post.test.ts
- * ! testing, so we don't have to mock Next.js' req/res
+ * - testing, so we don't have to mock Next.js' req/res
  * - tRPC's `createSSGHelpers`, where we don't have req/res
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-export const createInnerTRPCContext = (opts: CreateContextOptions) => {
+export const createInnerTRPCContext = async (opts: CreateContextOptions) => {
+  const session = await getServerAuthSession();
+
   return {
-    session: opts.session,
-    prisma,
+    session,
+    headers: opts.headers,
+    db,
   };
 };
 
@@ -52,14 +52,11 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
  *
  * @see https://trpc.io/docs/context
  */
-export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts;
+export const createTRPCContext = async (opts: { req: NextRequest }) => {
+  // Fetch stuff that depends on the request
 
-  // Get the session from the server using the getServerSession wrapper function
-  const session = await getServerAuthSession({ req, res });
-
-  return createInnerTRPCContext({
-    session,
+  return await createInnerTRPCContext({
+    headers: opts.req.headers,
   });
 };
 
@@ -70,7 +67,6 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
  * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
  * errors on the backend.
  */
-
 const t = initTRPC
   .context<typeof createTRPCContext>()
   .meta<OpenApiMeta>()

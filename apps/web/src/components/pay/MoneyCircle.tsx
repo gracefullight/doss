@@ -1,3 +1,5 @@
+"use client";
+
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 

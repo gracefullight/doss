@@ -1,3 +1,5 @@
+"use client";
+
 import { ClockIcon } from "@heroicons/react/24/solid";
 import { useInterval } from "ahooks";
 import { DateTime } from "luxon";

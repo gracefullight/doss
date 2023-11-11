@@ -1,17 +1,19 @@
+"use client";
+
 import { BellIcon, MapPinIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function MainNavbar() {
   // TODO: count unread alarms
   const [hasUnreadAlarms] = useState(true);
   const router = useRouter();
-  const handleNearby = async () => {
-    await router.push("/benefit/nearby");
+  const handleNearby = () => {
+    router.push("/benefit/nearby");
   };
 
-  const handleNotification = async () => {
-    await router.push("/notification");
+  const handleNotification = () => {
+    router.push("/notification");
   };
 
   return (

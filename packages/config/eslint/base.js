@@ -39,6 +39,7 @@ const config = {
     "**/.eslintrc.cjs",
     "**/*.config.js",
     "**/*.config.cjs",
+    "**/*.config.ts",
     "packages/config/**",
     ".next",
     "dist",

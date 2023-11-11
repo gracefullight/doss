@@ -1,5 +1,4 @@
-// ? compatibility
-"use-client";
+"use client";
 
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useCookieState } from "ahooks";
