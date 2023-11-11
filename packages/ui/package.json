@@ -27,7 +27,7 @@
     "@doss/eslint-config": "*",
     "@doss/tailwind-config": "*",
     "@doss/tsconfig": "*",
-    "@types/react": "^18.2.33",
+    "@types/react": "^18.2.34",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
