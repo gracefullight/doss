@@ -4,6 +4,7 @@ import "~/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Noto_Sans_KR } from "next/font/google";
 import { cookies } from "next/headers";
+import type { ReactNode } from "react";
 
 import type { Metadata, Viewport } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
@@ -37,11 +38,7 @@ export const viewport: Viewport = {
   themeColor: "#333333",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <body className={`font-sans ${notoSansKR.variable}`}>
