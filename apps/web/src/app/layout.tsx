@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   manifest: "/manifest.webmanifest",
   verification: {
-    google: "T-ff63rB7-5DJtELlhQ2o5v8ZouXl-ZYy_Hsf33WaB4",
+    google: "VBFsCrrBfyCqWKX3PHovmYqFuuqKNb4wdUZdsYpYDN8",
   },
 };
 
