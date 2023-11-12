@@ -69,6 +69,9 @@ export const authOptions: NextAuthOptions = {
     logo: "/apple-touch-icon.png",
     colorScheme: "dark",
   },
+  pages: {
+    signIn: "/auth/signIn",
+  },
 };
 
 /**
