@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     { rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
   ],
   manifest: "/manifest.webmanifest",
+  verification: {
+    google: "T-ff63rB7-5DJtELlhQ2o5v8ZouXl-ZYy_Hsf33WaB4",
+  },
 };
 
 export const viewport: Viewport = {
