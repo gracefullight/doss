@@ -1,4 +1,3 @@
-import { Layout } from "~/components/layout";
 import {
   Asset,
   BankLinks,
@@ -17,7 +16,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <MainNavbar />
       <div className="flex w-screen flex-col items-center justify-center gap-4 px-5 py-2">
         <RemitAlert />
@@ -29,6 +28,6 @@ export default function Home() {
         <MainCarousel />
         <Extra />
       </div>
-    </Layout>
+    </>
   );
 }

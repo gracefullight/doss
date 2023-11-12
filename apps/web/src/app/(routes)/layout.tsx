@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from "react";
-import BottomNavigation from "./BottomNavigation";
-import ScreenCaptureToast from "./ScreenCaptureToast";
+import { BottomNavigation, ScreenCaptureToast } from "~/components/layout";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (

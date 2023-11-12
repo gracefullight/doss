@@ -17,11 +17,9 @@ import {
 import clsx from "clsx";
 import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import { DateTime, Interval } from "luxon";
-import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { proxy, useSnapshot } from "valtio";
-import { Layout } from "~/components/layout";
 import { SCROLL_BOUNCING_THRESHOLD } from "~/constants";
 import { formatNumber } from "~/utils/number";
 
@@ -153,10 +151,7 @@ export default function Benefit() {
   };
 
   return (
-    <Layout>
-      <Head>
-        <title>Doss | 혜택</title>
-      </Head>
+    <>
       <video
         autoPlay
         muted
@@ -222,6 +217,6 @@ export default function Benefit() {
           ))}
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

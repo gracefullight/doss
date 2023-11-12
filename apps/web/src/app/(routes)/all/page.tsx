@@ -66,10 +66,8 @@ import {
   WalletIcon,
   WifiIcon,
 } from "@heroicons/react/24/solid";
-import Head from "next/head";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
-import { Layout } from "~/components/layout";
 
 interface SectionItem {
   title: string;
@@ -669,124 +667,111 @@ export default function All() {
   };
 
   return (
-    <Layout>
-      <Head>
-        <title>Doss | 전체</title>
-      </Head>
-      <div className="flex w-screen flex-col px-4 pt-2">
-        <div className="sticky top-0 z-50 flex justify-end">
-          <button
-            className="btn btn-square btn-ghost"
-            title="검색"
-            type="button"
-          >
-            <MagnifyingGlassIcon className="w-6" />
-          </button>
-          <button
-            className="btn btn-square btn-ghost"
-            title="설정"
-            type="button"
-          >
-            <Cog6ToothIcon className="w-6" />
-          </button>
+    <div className="flex w-screen flex-col px-4 pt-2">
+      <div className="sticky top-0 z-50 flex justify-end">
+        <button className="btn btn-square btn-ghost" title="검색" type="button">
+          <MagnifyingGlassIcon className="w-6" />
+        </button>
+        <button className="btn btn-square btn-ghost" title="설정" type="button">
+          <Cog6ToothIcon className="w-6" />
+        </button>
+      </div>
+      <div className="px-2">
+        <div className="mb-4 flex items-center gap-4">
+          <h1 className="text-2xl font-bold text-neutral-200">전체</h1>
         </div>
-        <div className="px-2">
-          <div className="mb-4 flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-neutral-200">전체</h1>
-          </div>
-          <div className="flex justify-between gap-2 py-2">
-            {items.map((item) => (
-              <div
-                className="flex cursor-pointer select-none flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600"
-                key={item.title}
-                onClick={() => void handleLink(item.link)}
-              >
-                <item.Icon className={`w-5 fill-${item.color}`} />
-                <span className="text-sm text-neutral-200">{item.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="pt-4">
-          <ul className="flex flex-col gap-2">
-            <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
-              <div className="flex items-center space-x-3">
-                <div className="rounded-xl bg-neutral-700 p-1">
-                  <LockClosedIcon className="fill-info w-5" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-medium">보안과 인증</span>
-                </div>
-              </div>
-              <ChevronRightIcon className="w-4" />
-            </li>
-            <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
-              <div className="flex items-center space-x-3">
-                <div className="rounded-xl bg-neutral-700 p-1">
-                  <ViewfinderCircleIcon className="fill-info w-5" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-medium">내 신용점수</span>
-                </div>
-              </div>
-              <ChevronRightIcon className="w-4" />
-            </li>
-            <li className="flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
-              <div className="flex items-center space-x-3">
-                <div className="rounded-xl bg-neutral-700 p-1">
-                  <GiftIcon className="fill-error w-5" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-medium">진행중인 이벤트</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="font-medium">9개</span>
-                <ChevronRightIcon className="w-4" />
-              </div>
-            </li>
-          </ul>
-          <div className="divider px-2"></div>
-          <div className="flex flex-col gap-6">
-            {sections.map((section) => (
-              <div key={section.sectionTitle}>
-                <div className="px-2 pb-4 text-lg font-medium">
-                  {section.sectionTitle}
-                </div>
-                <ul className="flex flex-col gap-2">
-                  {section.items.map((item) => (
-                    <li
-                      className="flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600"
-                      key={item.title}
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className="rounded-xl bg-neutral-700 p-1">
-                          {item.icon}
-                        </div>
-                        <span className="font-medium">
-                          {item.title}
-                          {item.serviceName && (
-                            <span className="text-sm font-normal text-neutral-500">
-                              {` · ${item.serviceName}`}
-                            </span>
-                          )}
-                        </span>
-                      </div>
-                      {item.badge && (
-                        <div
-                          className={`badge badge-${item.badgeColor} badge-sm badge-outline py-2`}
-                        >
-                          {item.badge}
-                        </div>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="flex justify-between gap-2 py-2">
+          {items.map((item) => (
+            <div
+              className="flex cursor-pointer select-none flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600"
+              key={item.title}
+              onClick={() => void handleLink(item.link)}
+            >
+              <item.Icon className={`w-5 fill-${item.color}`} />
+              <span className="text-sm text-neutral-200">{item.title}</span>
+            </div>
+          ))}
         </div>
       </div>
-    </Layout>
+      <div className="pt-4">
+        <ul className="flex flex-col gap-2">
+          <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
+            <div className="flex items-center space-x-3">
+              <div className="rounded-xl bg-neutral-700 p-1">
+                <LockClosedIcon className="fill-info w-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium">보안과 인증</span>
+              </div>
+            </div>
+            <ChevronRightIcon className="w-4" />
+          </li>
+          <li className="a flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
+            <div className="flex items-center space-x-3">
+              <div className="rounded-xl bg-neutral-700 p-1">
+                <ViewfinderCircleIcon className="fill-info w-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium">내 신용점수</span>
+              </div>
+            </div>
+            <ChevronRightIcon className="w-4" />
+          </li>
+          <li className="flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600">
+            <div className="flex items-center space-x-3">
+              <div className="rounded-xl bg-neutral-700 p-1">
+                <GiftIcon className="fill-error w-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium">진행중인 이벤트</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <span className="font-medium">9개</span>
+              <ChevronRightIcon className="w-4" />
+            </div>
+          </li>
+        </ul>
+        <div className="divider px-2"></div>
+        <div className="flex flex-col gap-6">
+          {sections.map((section) => (
+            <div key={section.sectionTitle}>
+              <div className="px-2 pb-4 text-lg font-medium">
+                {section.sectionTitle}
+              </div>
+              <ul className="flex flex-col gap-2">
+                {section.items.map((item) => (
+                  <li
+                    className="flex cursor-pointer select-none items-center justify-between rounded-xl px-2 py-2 active:bg-neutral-600"
+                    key={item.title}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="rounded-xl bg-neutral-700 p-1">
+                        {item.icon}
+                      </div>
+                      <span className="font-medium">
+                        {item.title}
+                        {item.serviceName && (
+                          <span className="text-sm font-normal text-neutral-500">
+                            {` · ${item.serviceName}`}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                    {item.badge && (
+                      <div
+                        className={`badge badge-${item.badgeColor} badge-sm badge-outline py-2`}
+                      >
+                        {item.badge}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
