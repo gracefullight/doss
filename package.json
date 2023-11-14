@@ -5,7 +5,7 @@
   "engines": {
     "node": "18"
   },
-  "packageManager": "^pnpm@8.10.0",
+  "packageManager": "^pnpm@8.10.5",
   "scripts": {
     "build": "turbo build",
     "clean": "git clean -xdf node_modules",
@@ -24,7 +24,7 @@
     "test": "turbo test"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.0",
+    "@commitlint/cli": "^18.4.1",
     "@commitlint/config-conventional": "^18.4.0",
     "@commitlint/types": "^18.4.0",
     "@doss/tsconfig": "*",
@@ -34,7 +34,7 @@
     "@vitest/coverage-v8": "^0.34.6",
     "devmoji": "^2.3.0",
     "husky": "^8.0.3",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "turbo": "^1.10.16",
     "type-fest": "^4.7.1",
@@ -42,6 +42,6 @@
     "vitest": "^0.34.6"
   },
   "ct3aMetadata": {
-    "initVersion": "7.16.0"
+    "initVersion": "7.23.3"
   }
 }
