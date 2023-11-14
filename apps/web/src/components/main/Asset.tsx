@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { SyntheticEvent } from "react";
@@ -55,7 +55,7 @@ export default function Asset() {
           <div
             key={index}
             className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600"
-            onClick={() => void handleLink(item.link)}
+            onClick={() => handleLink(item.link)}
           >
             <div className="flex items-center space-x-3">
               <div className="avatar placeholder">
@@ -92,7 +92,7 @@ export default function Asset() {
       <div className="divider m-0 px-2"></div>
       <div className="btn btn-ghost btn-block text-neutral-400">
         계좌·대출·증권·포인트 보기
-        <ChevronDownIcon className="w-4" />
+        <ChevronDownIcon name="chevron-down" size={16} />
       </div>
     </Section>
   );

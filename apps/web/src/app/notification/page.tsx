@@ -1,4 +1,4 @@
-import { SparklesIcon, TicketIcon } from "@heroicons/react/24/solid";
+import { CloverIcon, FootprintsIcon } from "lucide-react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 import { formatTimestamp } from "~/utils/datetime";
 import { formatNumber } from "~/utils/number";
@@ -6,22 +6,28 @@ import { formatNumber } from "~/utils/number";
 export default function Notification() {
   const items = [
     {
-      icon: TicketIcon,
-      iconColor: "fill-success",
       title: "행운복권",
       timestamp: "2023-08-13T09:00:00+09:00",
       message: "8월 13일, 행운복권이 도착했어요.",
       moreCount: 32,
+      IconComponent: (
+        <CloverIcon name="clover" className="text-green-500" size={16} />
+      ),
     },
     {
-      icon: SparklesIcon,
-      iconColor: "fill-info",
       title: "만보기",
       timestamp: "2023-08-13T00:00:00+09:00",
       message: `오늘 ${formatNumber(
         1000,
       )}걸음을 넘겼어요. 포인트를 받아보세요.`,
       moreCount: 29,
+      IconComponent: (
+        <FootprintsIcon
+          name="footprints"
+          className="blue-green-500"
+          size={16}
+        />
+      ),
     },
   ];
 
@@ -38,7 +44,7 @@ export default function Notification() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex gap-1">
-                  <item.icon className={`w-3 ${item.iconColor}`} />
+                  {item.IconComponent}
                   <span className="text-sm text-neutral-500">{item.title}</span>
                 </div>
                 <span className="text-sm text-neutral-500">

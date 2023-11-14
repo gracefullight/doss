@@ -1,12 +1,8 @@
 "use client";
 
-import {
-  ChatBubbleBottomCenterIcon,
-  CircleStackIcon,
-  CreditCardIcon,
-} from "@heroicons/react/24/solid";
 import { useLocalStorageState } from "ahooks";
 import clsx from "clsx";
+import { CreditCardIcon, LayersIcon, TypeIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { proxy, useSnapshot } from "valtio";
@@ -62,15 +58,14 @@ export default function MyBankTab() {
             <div className="flex items-center space-x-3">
               <div className="avatar">
                 <div className="h-10 w-10 rounded-full bg-gray-700 p-2">
-                  <CircleStackIcon className=" fill-blue-500" />
+                  <LayersIcon name="layers" className="text-blue-500" />
                 </div>
               </div>
               <div className="flex flex-col">
                 <span
-                  className={clsx(
-                    "text-neutral-400",
-                    !isLargeFont && "text-sm",
-                  )}
+                  className={clsx("text-neutral-400", {
+                    "text-sm": !isLargeFont,
+                  })}
                 >
                   모으기 · {formatNumber(0)}개
                 </span>
@@ -91,10 +86,9 @@ export default function MyBankTab() {
       </div>
       <div>
         <h3
-          className={clsx(
-            "mb-2 px-5 text-neutral-400",
-            bankLargeFont && "text-lg",
-          )}
+          className={clsx("mb-2 px-5 text-neutral-400", {
+            "text-lg": bankLargeFont,
+          })}
         >
           카드
         </h3>
@@ -106,7 +100,7 @@ export default function MyBankTab() {
             <div className="flex items-center space-x-3">
               <div className="avatar">
                 <div className="h-10 w-10 rounded-full bg-pink-500 p-2">
-                  <CreditCardIcon className="fill-black" />
+                  <CreditCardIcon name="credit-card" className="text-black" />
                 </div>
               </div>
               <div className="flex flex-col">
@@ -140,15 +134,17 @@ export default function MyBankTab() {
             <div className="flex items-center space-x-3">
               <div className="avatar">
                 <div className="h-10 w-10 rounded-full bg-rose-900 p-2">
-                  <CreditCardIcon className="fill-pink-400" />
+                  <CreditCardIcon
+                    name="credit-card"
+                    className="text-pink-400"
+                  />
                 </div>
               </div>
               <div className="flex flex-col">
                 <span
-                  className={clsx(
-                    "text-neutral-400",
-                    !isLargeFont && "text-sm",
-                  )}
+                  className={clsx("text-neutral-400", {
+                    "text-sm": !isLargeFont,
+                  })}
                 >
                   모임 카드로 쓴 금액
                 </span>
@@ -169,10 +165,9 @@ export default function MyBankTab() {
       </div>
       <div>
         <h3
-          className={clsx(
-            "mb-2 px-5 text-neutral-400",
-            bankLargeFont && "text-lg",
-          )}
+          className={clsx("mb-2 px-5 text-neutral-400", {
+            "text-lg": bankLargeFont,
+          })}
         >
           대출
         </h3>
@@ -189,10 +184,9 @@ export default function MyBankTab() {
               </div>
               <div className="flex flex-col">
                 <span
-                  className={clsx(
-                    "text-neutral-400",
-                    !isLargeFont && "text-sm",
-                  )}
+                  className={clsx("text-neutral-400", {
+                    "text-sm": !isLargeFont,
+                  })}
                 >
                   얼마나 빌릴 수 있을까?
                 </span>
@@ -213,10 +207,9 @@ export default function MyBankTab() {
       </div>
       <div>
         <h3
-          className={clsx(
-            "mb-2 px-5 text-neutral-400",
-            bankLargeFont && "text-lg",
-          )}
+          className={clsx("mb-2 px-5 text-neutral-400", {
+            "text-lg": bankLargeFont,
+          })}
         >
           설정
         </h3>
@@ -227,16 +220,15 @@ export default function MyBankTab() {
           >
             <div className="flex items-center space-x-3">
               <div className="avatar">
-                <div className="h-10 w-10 rounded-full bg-blue-900 p-2">
-                  <ChatBubbleBottomCenterIcon className="fill-blue-500" />
+                <div className="h-10 w-10 rounded-full bg-blue-300 p-2">
+                  <TypeIcon name="type" className="text-blue-500" />
                 </div>
               </div>
               <div className="flex flex-col">
                 <span
-                  className={clsx(
-                    "text-neutral-400",
-                    !isLargeFont && "text-sm",
-                  )}
+                  className={clsx("text-neutral-400", {
+                    "text-sm": !isLargeFont,
+                  })}
                 >
                   큰 글씨
                 </span>

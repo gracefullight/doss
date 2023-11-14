@@ -1,13 +1,13 @@
 "use client";
 
-import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { ChevronLeftIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import type { ElementType } from "react";
+import type { ReactNode } from "react";
 
 export interface StackLayoutNavbarItem {
   title: string;
-  IconComponent?: ElementType;
+  IconComponent?: ReactNode;
   link?: string;
   handleItem?: () => void;
 }
@@ -50,7 +50,9 @@ export default function StackLayoutNavbar({
     >
       <div className="navbar-start">
         <ChevronLeftIcon
-          className="w-6 cursor-pointer font-bold"
+          name="chevron-left"
+          className="cursor-pointer font-bold"
+          size={28}
           onClick={handleBack}
         />
       </div>
@@ -70,7 +72,7 @@ export default function StackLayoutNavbar({
               title={title}
               onClick={() => void handleInnerItem(item)}
             >
-              <IconComponent className="w-5" />
+              {IconComponent}
             </button>
           ) : (
             <div

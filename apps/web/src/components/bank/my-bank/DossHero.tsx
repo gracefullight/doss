@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import { formatNumber } from "~/utils/number";
 
@@ -21,7 +21,7 @@ export default function DossHero() {
         className="btn btn-ghost mt-1 text-xl text-neutral-400"
         type="button"
       >
-        도스뱅크 통장 조회 <ChevronRightIcon className="w-5" />
+        도스뱅크 통장 조회 <ChevronRightIcon name="chevron-right" size={20} />
       </button>
       <h1 className="select-none text-3xl font-bold text-neutral-300">
         {formatNumber(100000)}원

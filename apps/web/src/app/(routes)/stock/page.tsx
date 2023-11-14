@@ -33,7 +33,6 @@ export default function Stock() {
             <StockFooter />
           </div>
         </div>
-        S
       </div>
     </div>
   );

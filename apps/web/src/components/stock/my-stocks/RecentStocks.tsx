@@ -1,4 +1,4 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { XIcon } from "lucide-react";
 import { formatPercent } from "~/utils/number";
 
 export default function RecentStocks() {
@@ -22,7 +22,7 @@ export default function RecentStocks() {
                 <span className="text-error">
                   {formatPercent(item.percent)}
                 </span>
-                <XMarkIcon className="w-4" />
+                <XIcon size={16} />
               </button>
             </div>
           ))}

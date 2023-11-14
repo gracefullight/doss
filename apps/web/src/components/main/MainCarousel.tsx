@@ -1,26 +1,36 @@
 import { ServiceCarousel } from "@doss/ui";
-import {
-  BanknotesIcon,
-  CreditCardIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/24/solid";
+import { GaugeIcon, LightbulbIcon, Users2Icon } from "lucide-react";
 
 export default function MainCarousel() {
   const items = [
     {
-      subheader: "59개 금융사",
-      title: "대출 한도\n조회",
-      icon: <PlayCircleIcon className="fill-success w-8 self-end" />,
+      subheader: "안전하게",
+      title: "신용점수\n보기",
+      icon: (
+        <GaugeIcon name="gauge" className="self-end text-green-500" size={32} />
+      ),
     },
     {
       subheader: "최근",
-      title: "내 부동산\n시세 조회",
-      icon: <CreditCardIcon className="fill-info w-8 self-end" />,
+      title: "공동구매\n보기",
+      icon: (
+        <Users2Icon
+          name="users-2"
+          className="self-end text-red-500"
+          size={32}
+        />
+      ),
     },
     {
       subheader: "자주",
-      title: "이번 주 미션",
-      icon: <BanknotesIcon className="w-8 self-end" />,
+      title: "오늘의\n머니 팁",
+      icon: (
+        <LightbulbIcon
+          name="lightbulb"
+          className="self-end text-yellow-500"
+          size={32}
+        />
+      ),
     },
     { subheader: "인기", title: "더보기", icon: null },
   ];

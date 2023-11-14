@@ -1,5 +1,5 @@
-import { PlusIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { PlusIcon } from "lucide-react";
 import Image from "next/image";
 import { formatNumber, formatPercent } from "~/utils/number";
 
@@ -65,7 +65,11 @@ export default function InterestedStocks() {
                   <div className="flex items-center space-x-3">
                     <div className="avatar placeholder">
                       <div className="bg-info w-10 rounded-full bg-opacity-20">
-                        <PlusIcon className="fill-info w-6" />
+                        <PlusIcon
+                          name="plus"
+                          className="fill-blue-500"
+                          size={24}
+                        />
                       </div>
                     </div>
                     <span className="font-medium text-neutral-400">

@@ -1,13 +1,13 @@
 "use client";
 
-import {
-  Bars3Icon,
-  ChartBarIcon,
-  CurrencyDollarIcon,
-  GiftIcon,
-  HomeIcon,
-} from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import {
+  GemIcon,
+  HomeIcon,
+  MenuIcon,
+  ShoppingBagIcon,
+  TrendingUpIcon,
+} from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function BottomNavigation() {
@@ -15,11 +15,11 @@ export default function BottomNavigation() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "홈", Icon: HomeIcon },
-    { href: "/benefit", label: "혜택", Icon: GiftIcon },
-    { href: "/pay", label: "도스페이", Icon: CurrencyDollarIcon },
-    { href: "/stock", label: "주식", Icon: ChartBarIcon },
-    { href: "/all", label: "전체", Icon: Bars3Icon },
+    { href: "/", label: "홈", Icon: <HomeIcon /> },
+    { href: "/benefit", label: "혜택", Icon: <GemIcon /> },
+    { href: "/pay", label: "도스페이", Icon: <ShoppingBagIcon /> },
+    { href: "/stock", label: "주식", Icon: <TrendingUpIcon /> },
+    { href: "/all", label: "전체", Icon: <MenuIcon /> },
   ];
 
   return (
@@ -31,7 +31,7 @@ export default function BottomNavigation() {
           onClick={() => router.push(link.href)}
           type="button"
         >
-          <link.Icon className="w-6" />
+          {link.Icon}
           <span className="btm-nav-label text-sm">{link.label}</span>
         </button>
       ))}

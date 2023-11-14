@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import { formatNumber } from "~/utils/number";
 
 export default function Payback() {
@@ -42,7 +42,11 @@ export default function Payback() {
                   <span className="text-sm text-neutral-400">{item.title}</span>
                 </div>
               </div>
-              <ChevronRightIcon className="w-4 fill-neutral-400" />
+              <ChevronRightIcon
+                name="chevron-right"
+                className="text-neutral-400"
+                size={20}
+              />
             </li>
           ))}
         </ul>

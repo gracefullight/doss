@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartPieIcon } from "@heroicons/react/24/solid";
+import { PieChartIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { PATH_INVESTMENT_CONNECT } from "~/constants";
 
@@ -12,7 +12,7 @@ export default function ConnectNudgeFooter() {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center">
-      <ChartPieIcon className="fill-info w-6" />
+      <PieChartIcon name="pie-chart" className="text-blue-500" size={24} />
       <div className="mt-4 text-center text-neutral-300">
         다른 증권사도 쓴다면 연결해보세요
         <br />한 번에 모아 볼 수 있어요

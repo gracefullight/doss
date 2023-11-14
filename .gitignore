@@ -57,3 +57,5 @@ storybook-static
 
 # Sentry Auth Token
 .sentryclirc
+
+analyze

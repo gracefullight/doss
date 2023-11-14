@@ -1,7 +1,7 @@
 "use client";
 
 import { Toast } from "@doss/ui";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { CheckCircleIcon } from "lucide-react";
 import { proxy, useSnapshot } from "valtio";
 
 export const feedbackToastState = proxy({ visible: false });
@@ -15,8 +15,13 @@ export default function FeedbackToast() {
 
   return (
     <Toast
-      IconComponent={CheckCircleIcon}
-      iconColor="fill-green-500"
+      IconComponent={
+        <CheckCircleIcon
+          name="check-circle"
+          size={24}
+          className="text-blue-500"
+        />
+      }
       message="소중한 의견 보내주셔서 감사해요."
       visible={toastVisible}
       onClose={handleClose}

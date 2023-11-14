@@ -1,7 +1,7 @@
 "use client";
 
-import { CameraIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { CameraIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -55,7 +55,7 @@ export default function BankTransfer() {
                 type="button"
                 title="계좌번호 또는 QR코드 촬영"
               >
-                <CameraIcon className="w-6" />
+                <CameraIcon name="camera" size={24} />
               </button>
             </div>
             <TransferMyAccounts />

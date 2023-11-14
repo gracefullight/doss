@@ -1,6 +1,6 @@
-import { StarIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { orderBy } from "lodash";
+import { StarIcon } from "lucide-react";
 
 export default function TransferRecentAccounts() {
   const items = [
@@ -55,7 +55,9 @@ export default function TransferRecentAccounts() {
               title="최근 계좌 즐겨찾기"
             >
               <StarIcon
-                className={clsx("w-6", item.isFavorite && "fill-info")}
+                name="star"
+                className={clsx(item.isFavorite && "fill-blue-500")}
+                size={24}
               />
             </button>
           </div>

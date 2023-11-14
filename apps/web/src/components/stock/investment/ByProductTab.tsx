@@ -1,12 +1,12 @@
 "use client";
 
+import clsx from "clsx";
 import {
-  ChartBarSquareIcon,
-  ChartPieIcon,
   ChevronDownIcon,
   ChevronRightIcon,
-} from "@heroicons/react/24/solid";
-import clsx from "clsx";
+  PieChartIcon,
+  TrendingUpIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { formatNumber, formatPercent } from "~/utils/number";
 import EtcTab from "./EtcTab";
@@ -21,14 +21,17 @@ export default function ByProductTab() {
   const items = [
     {
       title: "포트폴리오",
-      IconComponent: ChartPieIcon,
-      iconColor: "fill-blue-500",
+      IconComponent: (
+        <PieChartIcon name="pie-chart" className="text-blue-500" size={24} />
+      ),
       extraInfo: null,
     },
     {
       title: "배당금 보기",
-      IconComponent: ChartBarSquareIcon,
       iconColor: "fill-red-500",
+      IconComponent: (
+        <TrendingUpIcon name="trending-up" className="text-red-500" size={24} />
+      ),
       extraInfo: `이번 달 ${formatNumber(900)}원 예상`,
     },
   ];
@@ -42,7 +45,7 @@ export default function ByProductTab() {
         <div className="flex flex-row px-1">
           <button className="btn btn-ghost rounded-lg px-1" type="button">
             <h1 className="text-2xl">{formatNumber(20000000)}원</h1>
-            <ChevronDownIcon className="w-4" />
+            <ChevronDownIcon name="chevron-down" size={16} />
           </button>
         </div>
         <span className="text-error px-2 text-sm">
@@ -55,7 +58,7 @@ export default function ByProductTab() {
               className="flex cursor-pointer select-none items-center justify-between rounded-lg py-1 pl-2 pr-1 active:bg-neutral-600"
             >
               <div className="flex gap-2">
-                <item.IconComponent className={clsx("w-6", item.iconColor)} />
+                {item.IconComponent}
                 <div className="text-neutral-400">{item.title}</div>
               </div>
               <div className="flex items-center gap-3">
@@ -67,7 +70,7 @@ export default function ByProductTab() {
                   type="button"
                   title={item.title}
                 >
-                  <ChevronRightIcon className="w-4" />
+                  <ChevronRightIcon name="chevron-right" size={20} />
                 </button>
               </div>
             </div>

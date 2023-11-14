@@ -1,10 +1,7 @@
 "use client";
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  StarIcon,
-} from "@heroicons/react/24/solid";
+
 import clsx from "clsx";
+import { ChevronDownIcon, ChevronRightIcon, StarIcon } from "lucide-react";
 import { useState } from "react";
 import { formatNumber } from "~/utils/number";
 
@@ -49,9 +46,9 @@ export default function TransferMyAccounts() {
             ? `${formatNumber(items.length)}개`
             : `+${formatNumber(items.length - filteredItems.length)}개`}
           {showAll ? (
-            <ChevronDownIcon className="w-4" />
+            <ChevronDownIcon size={20} />
           ) : (
-            <ChevronRightIcon className="w-4" />
+            <ChevronRightIcon size={20} />
           )}
         </button>
       </div>
@@ -77,7 +74,9 @@ export default function TransferMyAccounts() {
               type="button"
             >
               <StarIcon
-                className={clsx("w-6", item.isFavorite && "fill-info")}
+                name="star"
+                className={clsx(item.isFavorite && "fill-blue-500")}
+                size={24}
               />
             </button>
           </div>

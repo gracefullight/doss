@@ -1,10 +1,7 @@
 "use client";
 
-import {
-  CheckCircleIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { CheckCircle, HelpCircleIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { formatNumber, formatPercent } from "~/utils/number";
@@ -65,7 +62,11 @@ export default function StockTab() {
               type="button"
             >
               <h1 className="text-lg">{formatNumber(20000000)}원</h1>
-              <QuestionMarkCircleIcon className="w-5 fill-neutral-500" />
+              <HelpCircleIcon
+                name="help-circle"
+                className="text-neutral-500"
+                size={20}
+              />
             </button>
           </div>
           <span className="text-error px-1 text-sm">
@@ -77,11 +78,12 @@ export default function StockTab() {
             className="mb-1 flex cursor-pointer select-none items-center gap-1 self-end px-2"
             onClick={() => setShowCurrentPrice(!isShowCurrentPrice)}
           >
-            <CheckCircleIcon
-              className={clsx(
-                "w-6",
-                isShowCurrentPrice ? "fill-blue-500" : "fill-neutral-500",
-              )}
+            <CheckCircle
+              name="check-circle"
+              className={
+                isShowCurrentPrice ? "text-blue-500" : "text-neutral-500"
+              }
+              size={20}
             />
             <span className="text-sm text-neutral-500">현재가</span>
           </div>

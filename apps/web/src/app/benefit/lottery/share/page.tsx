@@ -1,6 +1,6 @@
 "use client";
 
-import { TicketIcon } from "@heroicons/react/24/solid";
+import { CloverIcon } from "lucide-react";
 import { DateTime } from "luxon";
 import Head from "next/head";
 import { useRef } from "react";
@@ -50,7 +50,11 @@ export default function BenefitLotteryShare() {
                 <span className="text-sm text-neutral-400">
                   행운복권 | {today}
                 </span>
-                <TicketIcon className="w-8 fill-green-500" />
+                <CloverIcon
+                  name="clover"
+                  className="text-green-500"
+                  size={32}
+                />
               </div>
               <h2 className="text-lg font-semibold text-neutral-900">
                 매사가 딱딱 맞아 떨어지네요. 자신감과 용기를 가지고 움직이세요.

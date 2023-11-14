@@ -1,7 +1,7 @@
 "use client";
 
-import { PaperAirplaneIcon, PlusIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { PlusIcon, SendIcon } from "lucide-react";
 import { useState } from "react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 import {
@@ -16,12 +16,12 @@ export default function BankInvestment() {
   const navItems = [
     {
       title: "계좌 추가",
-      IconComponent: PlusIcon,
+      IconComponent: <PlusIcon name="plus" size={20} />,
       link: PATH_INVESTMENT_CONNECT,
     },
     {
       title: "피드백",
-      IconComponent: PaperAirplaneIcon,
+      IconComponent: <SendIcon name="send" size={20} />,
       link: "/stock/investment/feedback",
     },
   ];

@@ -1,25 +1,16 @@
 "use client";
-import {
-  CalendarDaysIcon,
-  ClockIcon,
-  LightBulbIcon,
-} from "@heroicons/react/24/solid";
+
+import { CalendarIcon, ClockIcon, LightbulbIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 import { PATH_LOTTERY } from "~/constants";
+import { shareUrl } from "~/utils/share";
 
 export default function LotterySettingAlarm() {
   const router = useRouter();
 
   const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: "복권 나눠주기",
-        url: `https://doss.gracefullight.dev/${PATH_LOTTERY}`,
-      });
-    } catch (error) {
-      console.warn("Sharing failed", error);
-    }
+    await shareUrl("복권 나눠주기", PATH_LOTTERY);
   };
 
   const handleAlarmTime = () => {
@@ -39,12 +30,16 @@ export default function LotterySettingAlarm() {
           알림은 복권 설정에서 끌 수 있어요.
         </span>
         <div className="my-6 flex items-center justify-center">
-          <LightBulbIcon className="w-24 fill-green-400" />
+          <LightbulbIcon
+            name="lightbulb"
+            className="fill-green-400"
+            size={96}
+          />
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex select-none items-center justify-between">
             <div className="flex gap-2">
-              <ClockIcon className="w-6" />
+              <ClockIcon name="clock" size={24} />
               <div className="flex flex-col">
                 <span className="text-sm text-neutral-500">시간</span>
                 <div className="font-medium text-neutral-300">
@@ -62,7 +57,7 @@ export default function LotterySettingAlarm() {
           </div>
           <div className="flex select-none items-center justify-between">
             <div className="flex gap-2">
-              <CalendarDaysIcon className="w-6" />
+              <CalendarIcon name="calendar" size={24} />
               <div className="flex flex-col">
                 <span className="text-sm text-neutral-500">날짜</span>
                 <div className="font-medium text-neutral-300">내일부터</div>

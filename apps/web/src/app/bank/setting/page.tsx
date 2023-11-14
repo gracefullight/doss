@@ -1,15 +1,15 @@
 "use client";
 
 import { SettingItem } from "@doss/ui";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import { useSession } from "next-auth/react";
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
+import { api } from "~/trpc/react";
 
 export default function BankSetting() {
   const router = useRouter();
-  const { data: session } = useSession();
+  const { data: session } = api.auth.getSession.useQuery();
 
   const sections = [
     {
@@ -87,7 +87,7 @@ export default function BankSetting() {
               <span className="text-sm text-neutral-400">내 정보 수정하기</span>
             </div>
           </div>
-          <ChevronRightIcon className="w-4" />
+          <ChevronRightIcon name="chevron-right" size={20} />
         </div>
       </div>
 
@@ -101,7 +101,9 @@ export default function BankSetting() {
               <SettingItem
                 key={item.title}
                 title={item.title}
-                IconComponent={ChevronRightIcon}
+                IconComponent={
+                  <ChevronRightIcon name="chevron-right" size={20} />
+                }
                 handleLink={() => router.push(item.link)}
               />
             ))}

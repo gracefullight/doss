@@ -1,29 +1,29 @@
 "use client";
 
 import {
-  ArrowsUpDownIcon,
+  ArrowUpDownIcon,
   ChevronRightIcon,
-  Cog6ToothIcon,
-  EyeSlashIcon,
-  LockClosedIcon,
+  EyeOffIcon,
+  LockKeyholeIcon,
   PlusIcon,
-} from "@heroicons/react/24/solid";
+  SettingsIcon,
+} from "lucide-react";
 
 export default function Extra() {
   const settings = [
     {
       name: "자산 목록 편집",
-      IconComponent: ArrowsUpDownIcon,
+      IconComponent: <ArrowUpDownIcon name="arrow-up-down" size={20} />,
       extraText: null,
     },
     {
       name: "금액 숨기기",
-      IconComponent: EyeSlashIcon,
+      IconComponent: <EyeOffIcon name="eye-off" size={20} />,
       extraText: null,
     },
     {
       name: "비밀번호 인증",
-      IconComponent: LockClosedIcon,
+      IconComponent: <LockKeyholeIcon name="lock-keyhole" size={20} />,
       extraText: "거래 내역 볼 때",
     },
   ];
@@ -39,14 +39,14 @@ export default function Extra() {
         type="button"
         onClick={handleHomeSetting}
       >
-        <Cog6ToothIcon className="w-6" />
+        <SettingsIcon name="settings" size={20} />
         화면 설정
       </button>
       <button
         className="btn border-none bg-neutral-800 hover:bg-neutral-900"
         type="button"
       >
-        <PlusIcon className="w-6" />
+        <PlusIcon name="plus" size={20} />
         자산 추가
       </button>
       <dialog id="modalHomeSetting" className="modal modal-bottom">
@@ -61,7 +61,7 @@ export default function Extra() {
                 className="flex cursor-pointer select-none flex-row items-center justify-between rounded-lg px-2 py-2 active:bg-neutral-700"
               >
                 <div className="flex flex-row gap-2">
-                  <setting.IconComponent className="w-5" />
+                  {setting.IconComponent}
                   <div className="text-neutral-300">{setting.name}</div>
                 </div>
                 <div className="flex flex-row items-center">
@@ -73,7 +73,7 @@ export default function Extra() {
                     type="button"
                     title="더보기"
                   >
-                    <ChevronRightIcon className="w-4" />
+                    <ChevronRightIcon name="chevron-right" size={16} />
                   </button>
                 </div>
               </div>

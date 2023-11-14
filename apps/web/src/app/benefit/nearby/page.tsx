@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightIcon, FaceSmileIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon, SmileIcon } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -135,7 +135,7 @@ export default function BenefitNearby() {
       <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 py-6">
         <Link href="/benefit/nearby/my-character">
           <div className="flex gap-2">
-            <FaceSmileIcon className="fill-warning w-10" />
+            <SmileIcon name="smile" className="text-yellow-500" size={40} />
             <div className="flex flex-col gap-1">
               <span className="text-sm">
                 함께 도스 켜고 총 {formatNumber(259)}원 모았어요
@@ -143,7 +143,7 @@ export default function BenefitNearby() {
               <span className="text-info font-medium">내 캐릭터 보기</span>
             </div>
           </div>
-          <ChevronRightIcon className="w-4" />
+          <ChevronRightIcon name="chevron-right" size={20} />
         </Link>
       </div>
     </StackLayout>

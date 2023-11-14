@@ -1,13 +1,10 @@
-import {
-  ChevronRightIcon,
-  InboxArrowDownIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronRightIcon, InboxIcon } from "lucide-react";
 
 export default function FeedbackBanner() {
   return (
-    <div className="mb-3 mt-6 flex cursor-pointer justify-between">
-      <div className="flex gap-4">
-        <InboxArrowDownIcon className="w-6" />
+    <div className="mb-3 mt-6 flex cursor-pointer items-center justify-between">
+      <div className="flex items-center gap-4">
+        <InboxIcon name="inbox" size={24} className="text-blue-300" />
         <div className="flex flex-col">
           <div className="text-lg font-medium text-neutral-200">
             지금까지 도스증권 어땠나요?
@@ -15,7 +12,7 @@ export default function FeedbackBanner() {
           <span className="text-sm text-neutral-400">의견 보내기</span>
         </div>
       </div>
-      <ChevronRightIcon className="w-4 text-neutral-400" />
+      <ChevronRightIcon name="chevron-right" className=" text-neutral-400" size={20} />
     </div>
   );
 }

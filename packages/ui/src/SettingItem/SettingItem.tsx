@@ -1,9 +1,9 @@
 import clsx from "clsx";
-import type { ElementType } from "react";
+import type { ReactNode } from "react";
 
 export interface SettingItemProps {
   title: string;
-  IconComponent: ElementType;
+  IconComponent: ReactNode;
   handleLink?: () => void | Promise<void>;
   description?: string;
   actionText?: string;
@@ -39,7 +39,7 @@ export function SettingItem({
         {actionText && (
           <div className={clsx("font-medium", actionColor)}>{actionText}</div>
         )}
-        <IconComponent className="w-4" />
+        {IconComponent}
       </div>
     </div>
   );

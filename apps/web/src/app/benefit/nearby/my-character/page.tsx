@@ -1,12 +1,14 @@
 "use client";
 
-import { HeartIcon } from "@heroicons/react/24/solid";
-import { useSession } from "next-auth/react";
+import { HeartIcon } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
+import { api } from "~/trpc/react";
 import { formatNumber } from "~/utils/number";
 
 export default function BenefitNearbyMyCharacter() {
+  const [favorite, setFavorite] = useState(false);
   const navbarItems = [
     // TODO: fetching point
     {
@@ -15,7 +17,11 @@ export default function BenefitNearbyMyCharacter() {
     },
   ];
 
-  const { data: session } = useSession();
+  const { data: session } = api.auth.getSession.useQuery();
+
+  const toggleFavorite = () => {
+    setFavorite(!favorite);
+  };
 
   return (
     <StackLayout>
@@ -34,9 +40,21 @@ export default function BenefitNearbyMyCharacter() {
               />
             </div>
           </div>
-          <div className="btn btn-active btn-ghost my-4 rounded-2xl">
-            이 캐릭터 소장하기 <HeartIcon className="w-4 fill-neutral-500" />
-          </div>
+          <button
+            className="btn btn-active btn-ghost my-4 rounded-2xl"
+            type="button"
+            onClick={toggleFavorite}
+          >
+            이 캐릭터 소장하기{" "}
+            <HeartIcon
+              className={
+                favorite
+                  ? "fill-red-500 text-red-500"
+                  : "fill-neutral-500 text-neutral-500"
+              }
+              size={16}
+            />
+          </button>
         </div>
       </div>
       <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 pb-4 pt-2">

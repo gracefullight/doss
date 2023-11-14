@@ -1,13 +1,8 @@
 "use client";
 
-import {
-  BanknotesIcon,
-  FaceSmileIcon,
-  HeartIcon,
-  TicketIcon,
-} from "@heroicons/react/24/solid";
 import type { TargetAndTransition } from "framer-motion";
 import { motion } from "framer-motion";
+import { CloverIcon, GemIcon, HeartIcon, SmileIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SevenDaysCalendar } from "~/components/benefit/lottery";
@@ -21,25 +16,26 @@ export default function BenefitLottery() {
 
   const motionItems = [
     {
-      icon: BanknotesIcon,
       type: "money",
       label: "재물운",
       animationDuration: 1.2,
-      iconColor: "fill-info-content",
+      IconComponent: <GemIcon name="gem" className="text-blue-200" size={40} />,
     },
     {
-      icon: TicketIcon,
       type: "fame",
       label: "성공운",
       animationDuration: 0.8,
-      iconColor: "fill-success-content",
+      IconComponent: (
+        <CloverIcon name="clover" className="text-green-500" size={40} />
+      ),
     },
     {
-      icon: HeartIcon,
       type: "love",
       label: "애정운",
       animationDuration: 1,
-      iconColor: "fill-error",
+      IconComponent: (
+        <HeartIcon name="heart" className="text-red-500" size={40} />
+      ),
     },
   ];
 
@@ -79,7 +75,7 @@ export default function BenefitLottery() {
                 animate={shakeAnimation(item.animationDuration)}
                 onClick={() => void handleLottery(item.type)}
               >
-                <item.icon className={`${item.iconColor} w-10`} />
+                {item.IconComponent}
                 <span className="font-medium text-neutral-400">
                   {item.label}
                 </span>
@@ -103,7 +99,11 @@ export default function BenefitLottery() {
                 <div className="text-2xl font-bold text-neutral-300">
                   성공운 좋음
                 </div>
-                <FaceSmileIcon className="absolute -top-1 right-0 w-12 fill-yellow-400" />
+                <SmileIcon
+                  name="smile"
+                  className="absolute -top-1 right-0 text-yellow-400"
+                  size={48}
+                />
                 <span className="text-info block text-2xl font-bold">6 원</span>
               </div>
               <p className="mt-2 text-sm text-neutral-400">

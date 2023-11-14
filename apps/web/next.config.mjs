@@ -1,4 +1,5 @@
 import withPWAInit from "@ducanh2912/next-pwa";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import { withSentryConfig } from "@sentry/nextjs";
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
@@ -18,9 +19,10 @@ const config = {
     instrumentationHook: true,
   },
 
-  transpilePackages: ["ahooks", "@doss/db"],
+  // ? https://nextjs.org/docs/app/api-reference/next-config-js/optimizePackageImports
+  transpilePackages: ["@doss/db", "ahooks"],
 
-  // ? https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns
+  // ? https://nextjs.org/docs/app/api-reference/components/image#remotepatterns
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -50,9 +52,10 @@ const pwaConfig = {
 };
 
 const withPWA = withPWAInit(pwaConfig);
+const withBA = withBundleAnalyzer({ enabled: false, openAnalyzer: false });
 
 export default withSentryConfig(
-  withPWA(config),
+  withPWA(withBA(config)),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options

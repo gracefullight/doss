@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  ChartBarIcon,
-  ChevronRightIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/solid";
 import { useCookieState } from "ahooks";
+import { BarChartIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import { DateTime } from "luxon";
 
 export default function NudgeAlert() {
@@ -35,12 +31,12 @@ export default function NudgeAlert() {
   return (
     <div className="alert mb-4 flex justify-between border-none bg-neutral-700 shadow-lg">
       <div className="flex space-x-3">
-        <ChartBarIcon className="w-6" />
+        <BarChartIcon name="bar-chart" size={24} />
         <div className="flex flex-col gap-1">
           <span className="font-medium">매일 방문할수록 혜택이 커져요</span>
-          <div className="text-info flex">
+          <div className="text-info flex items-center">
             <span className="text-sm">출석체크하고 주식받기</span>
-            <ChevronRightIcon className="w-3" />
+            <ChevronRightIcon name="chevron-right" size={16} />
           </div>
         </div>
       </div>
@@ -50,7 +46,7 @@ export default function NudgeAlert() {
         title="닫기"
         type="button"
       >
-        <XMarkIcon className="w-5 fill-neutral-400" />
+        <XIcon name="x" className="text-neutral-400" size={20} />
       </button>
     </div>
   );

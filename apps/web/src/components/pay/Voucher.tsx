@@ -1,26 +1,49 @@
 import {
-  BeakerIcon,
   CakeIcon,
-  FingerPrintIcon,
-  HomeIcon,
-  InboxIcon,
-  InboxStackIcon,
+  CoffeeIcon,
+  DrumstickIcon,
+  PizzaIcon,
+  SoupIcon,
   StarIcon,
+  StoreIcon,
   TicketIcon,
-} from "@heroicons/react/24/solid";
-import clsx from "clsx";
+} from "lucide-react";
 import { formatNumber } from "~/utils/number";
 
 export default function Voucher() {
   const voucherCategories = [
-    { Icon: StarIcon, label: "추천", color: "text-primary" },
-    { Icon: BeakerIcon, label: "카페", color: "text-accent" },
-    { Icon: TicketIcon, label: "상품권", color: "text-secondary" },
-    { Icon: FingerPrintIcon, label: "치킨", color: "text-warning" },
-    { Icon: InboxIcon, label: "피자·버거", color: "text-primary-focus" },
-    { Icon: HomeIcon, label: "편의점", color: "text-info" },
-    { Icon: InboxStackIcon, label: "외식", color: "text-secondary-content" },
-    { Icon: CakeIcon, label: "디저트", color: "text-base-content" },
+    {
+      label: "추천",
+      IconComponent: <StarIcon className="text-yellow-500" size={32} />,
+    },
+    {
+      label: "카페",
+      IconComponent: <CoffeeIcon className="text-green-500" size={32} />,
+    },
+    {
+      label: "상품권",
+      IconComponent: <TicketIcon className="text-pink-400" size={32} />,
+    },
+    {
+      label: "치킨",
+      IconComponent: <DrumstickIcon className="text-orange-500" size={32} />,
+    },
+    {
+      label: "피자·버거",
+      IconComponent: <PizzaIcon className="text-orange-500" size={32} />,
+    },
+    {
+      label: "편의점",
+      IconComponent: <StoreIcon className="text-sky-600" size={32} />,
+    },
+    {
+      label: "외식",
+      IconComponent: <SoupIcon className="text-red-400" size={32} />,
+    },
+    {
+      label: "디저트",
+      IconComponent: <CakeIcon className="text-white" size={32} />,
+    },
   ];
 
   const vouchers = [
@@ -53,7 +76,7 @@ export default function Voucher() {
             key={item.label}
             className="flex cursor-pointer flex-col items-center space-y-2"
           >
-            <item.Icon className={clsx("w-8", item.color)} />
+            {item.IconComponent}
             <span className="text-neutral-200">{item.label}</span>
           </div>
         ))}

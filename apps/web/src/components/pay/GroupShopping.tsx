@@ -1,7 +1,4 @@
-import {
-  ChevronRightIcon,
-  CurrencyDollarIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronRightIcon, DollarSignIcon } from "lucide-react";
 import GroupShoppingCarousel from "./group-shopping/GroupShoppingCarousel";
 import GroupShoppingRecommended from "./group-shopping/GroupShoppingRecommended";
 
@@ -12,11 +9,20 @@ export default function GroupShopping() {
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-medium text-neutral-200">공동구매</h2>
           <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
-            모두 보기 <ChevronRightIcon className="w-4 font-medium" />
+            모두 보기{" "}
+            <ChevronRightIcon
+              name="chevron-right"
+              className="font-medium"
+              size={20}
+            />
           </div>
         </div>
         <div className="btn btn-sm btn-ghost self-start rounded-2xl border-none bg-neutral-700">
-          <CurrencyDollarIcon className="fill-info w-5" />
+          <DollarSignIcon
+            name="dollar-sign"
+            className="text-blue-500"
+            size={20}
+          />
           <span className="text-info">190원</span>
           <span className="text-neutral-300">사용가능</span>
         </div>

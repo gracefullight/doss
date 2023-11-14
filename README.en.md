@@ -44,7 +44,7 @@ This section lists the key technologies and libraries used in the project.
 - [trpc](https://github.com/trpc/trpc)
 - [redoc](https://github.com/Redocly/redoc)
 - [tailwind](https://github.com/tailwindlabs/tailwindcss)
-- [heroicons](https://github.com/tailwindlabs/heroicons)
+- [lucide](https://github.com/lucide-icons/lucide)
 - [daisyui](https://github.com/saadeghi/daisyui)
 - [storybook](https://github.com/storybookjs/storybook)
 - [vitest](https://github.com/vitest-dev/vitest)

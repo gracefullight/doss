@@ -1,9 +1,4 @@
-import {
-  Battery50Icon,
-  CpuChipIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/24/solid";
-import clsx from "clsx";
+import { BatteryMediumIcon, CpuIcon, HelpCircleIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import InformationCard from "./InformationCard";
 
@@ -12,22 +7,33 @@ export default function ValuableInformation() {
   const items = [
     {
       link: "/stock",
-      icon: QuestionMarkCircleIcon,
-      iconColor: "fill-purple-500",
+      IconComponent: (
+        <HelpCircleIcon
+          name="help-circle"
+          className="text-purple-500"
+          size={24}
+        />
+      ),
       title: "이번주 복습퀴즈, 100점 도전해볼까요?",
       tags: ["#주식초보", "#재미"],
     },
     {
       link: "/stock",
-      icon: CpuChipIcon,
-      iconColor: "fill-green-500",
+      IconComponent: (
+        <CpuIcon name="cpu" className="text-green-500" size={24} />
+      ),
       title: "오늘 상한가 찍은 반도체 종목, 어떤 곳이지?",
       tags: ["#주식초보", "#산업", "#반도체"],
     },
     {
       link: "/stock",
-      icon: Battery50Icon,
-      iconColor: "fill-green-500",
+      IconComponent: (
+        <BatteryMediumIcon
+          name="battery-medium"
+          className="text-green-500"
+          size={24}
+        />
+      ),
       title: "전고체 배터리가 주목받고 있어요",
       tags: ["#국내주식", "#주식초보"],
     },
@@ -48,8 +54,7 @@ export default function ValuableInformation() {
             key={item.title}
             title={item.title}
             handleLink={() => handleLink(item.link)}
-            IconComponent={item.icon}
-            iconProps={{ className: clsx("w-6", item.iconColor) }}
+            IconComponent={item.IconComponent}
             description={item.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}

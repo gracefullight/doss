@@ -1,11 +1,11 @@
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { SearchIcon } from "lucide-react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 
 export default function InvestConnect() {
   const navItems = [
     {
       title: "검색",
-      IconComponent: MagnifyingGlassIcon,
+      IconComponent: <SearchIcon name="search" size={20} />,
     },
   ];
 

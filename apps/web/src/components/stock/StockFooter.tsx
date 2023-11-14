@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 
 export default function StockFooter() {
   return (
@@ -18,7 +18,11 @@ export default function StockFooter() {
       </div>
       <div className="flex cursor-pointer justify-between">
         <div className="text-lg text-neutral-400">꼭 알아두세요</div>
-        <ChevronRightIcon className="w-4 text-neutral-400" />
+        <ChevronRightIcon
+          name="chevron-right"
+          className="text-neutral-400"
+          size={20}
+        />
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import clsx from "clsx";
-import type { ElementType } from "react";
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export interface ToastProps {
   message: string;
-  IconComponent?: ElementType;
-  iconColor?: string;
+  IconComponent?: ReactNode;
   visible?: boolean;
   duration?: number; // in milliseconds
   onClose?: () => void;
@@ -16,7 +15,6 @@ export interface ToastProps {
 export function Toast({
   IconComponent,
   message,
-  iconColor,
   visible = false,
   duration = 2000,
   position = "bottom",
@@ -55,21 +53,11 @@ export function Toast({
       )}
     >
       <div className="alert grid-flow-col-dense gap-2 rounded-full border-none bg-neutral-700">
-        {IconComponent && <IconComponent className={clsx("w-6", iconColor)} />}
+        {IconComponent}
         <span>{message}</span>
       </div>
     </div>
   );
 
-  // Create a DOM element to host the Toast
-  const toastRoot = document.getElementById("toast-root");
-
-  // Check if the 'toast-root' element exists, else create one
-  if (!toastRoot) {
-    const newToastRoot = document.createElement("div");
-    newToastRoot.id = "toast-root";
-    document.body.appendChild(newToastRoot);
-  }
-
-  return createPortal(toastElement, toastRoot ?? document.body);
+  return createPortal(toastElement, document.body);
 }

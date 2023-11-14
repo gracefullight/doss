@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import { Fragment } from "react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 import { formatNumber, formatPercent } from "~/utils/number";
@@ -117,7 +117,11 @@ export default function StockMajorIndexes() {
                   type="button"
                   title="더보기"
                 >
-                  <ChevronRightIcon className="w-4 fill-neutral-400" />
+                  <ChevronRightIcon
+                    name="chevron-right"
+                    className="text-neutral-400"
+                    size={20}
+                  />
                 </button>
               </div>
               <div className="divider my-0 px-5"></div>

@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { ChevronRightIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import type { PropsWithChildren } from "react";
 
@@ -50,7 +50,7 @@ export default function Section({
             type="button"
             title={title}
           >
-            <ChevronRightIcon className="h-4 w-4" />
+            <ChevronRightIcon name="chevron-right" size={20} />
           </button>
         )}
       </div>

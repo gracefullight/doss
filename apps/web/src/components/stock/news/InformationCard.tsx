@@ -1,14 +1,13 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
-import type { ElementType, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface InformationCardProps {
   title: string;
   handleLink?: () => void;
   imageUrl?: string;
   description?: ReactNode;
-  IconComponent?: ElementType;
-  iconProps?: object;
+  IconComponent?: ReactNode;
 }
 
 export default function InformationCard({
@@ -17,7 +16,6 @@ export default function InformationCard({
   description,
   handleLink,
   IconComponent,
-  iconProps,
 }: InformationCardProps) {
   return (
     <div
@@ -26,9 +24,7 @@ export default function InformationCard({
     >
       <div className="flex items-center gap-2">
         {IconComponent ? (
-          <div className="rounded-full bg-neutral-700 p-1">
-            <IconComponent {...iconProps} />
-          </div>
+          <div className="rounded-full bg-neutral-700 p-1">{IconComponent}</div>
         ) : (
           imageUrl && (
             <div className="avatar">
@@ -59,7 +55,11 @@ export default function InformationCard({
         type="button"
         title="더보기"
       >
-        <ChevronRightIcon className="w-4 fill-neutral-400" />
+        <ChevronRightIcon
+          name="chevron-right"
+          className="text-neutral-400"
+          size={20}
+        />
       </button>
     </div>
   );

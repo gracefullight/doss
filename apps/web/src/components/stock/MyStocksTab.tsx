@@ -1,9 +1,5 @@
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  PlusIcon,
-} from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { ChevronDownIcon, ChevronRightIcon, PlusIcon } from "lucide-react";
 import Image from "next/image";
 import { Suspense } from "react";
 import { formatNumber, formatPercent } from "~/utils/number";
@@ -43,9 +39,9 @@ export default function MyStocksTab() {
     <>
       <div className="bg-neutral-800 px-6">
         <div className="mt-6 flex flex-col">
-          <div className="flex gap-1 font-medium text-neutral-300">
+          <div className="flex items-center gap-1 font-medium text-neutral-300">
             <span className="text-lg">보유주식</span>
-            <ChevronRightIcon className="w-4" />
+            <ChevronRightIcon name="chevron-right" size={20} />
           </div>
           <div className="mt-2 flex justify-between">
             <span className="text-2xl text-neutral-200">10,000,000원</span>
@@ -62,7 +58,7 @@ export default function MyStocksTab() {
           <details className="dropdown dropdown-bottom">
             <summary className="btn btn-ghost btn-sm m-1">
               가나다 순
-              <ChevronDownIcon className="w-4" />
+              <ChevronDownIcon name="chevron-down" size={20} />
             </summary>
             <ul className="menu dropdown-content rounded-box z-[1] w-52 bg-neutral-700 p-2 shadow">
               <li>
@@ -146,7 +142,7 @@ export default function MyStocksTab() {
             <div className="flex items-center space-x-3">
               <div className="avatar placeholder">
                 <div className="bg-info w-10 rounded-full bg-opacity-20">
-                  <PlusIcon className="fill-info w-6" />
+                  <PlusIcon name="plus" className="text-blue-500" size={24} />
                 </div>
               </div>
               <span className="font-medium text-neutral-400">
@@ -160,21 +156,21 @@ export default function MyStocksTab() {
           <div className="flex cursor-pointer items-center justify-between py-1">
             <span className="text-lg text-neutral-300">주문내역</span>
             <div className="text-neutral-400">
-              <ChevronRightIcon className="w-4" />
+              <ChevronRightIcon name="chevron-right" size={20} />
             </div>
           </div>
           <div className="flex cursor-pointer items-center justify-between  py-1">
             <span className="text-lg text-neutral-300">판매수익</span>
             <div className="flex  gap-2 text-neutral-400">
               <span>이번 달 {formatNumber(-100000)}원</span>
-              <ChevronRightIcon className="w-4" />
+              <ChevronRightIcon name="chevron-right" size={20} />
             </div>
           </div>
           <div className="flex cursor-pointer items-center justify-between py-1">
             <span className="text-lg text-neutral-300">예상 배당금</span>
             <div className="flex gap-2 text-neutral-400">
               <span>이번 달 {formatNumber(40000)}원</span>
-              <ChevronRightIcon className="w-4" />
+              <ChevronRightIcon name="chevron-right" size={20} />
             </div>
           </div>
         </div>

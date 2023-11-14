@@ -1,7 +1,7 @@
 "use client";
 
 import { Toast } from "@doss/ui";
-import { InformationCircleIcon } from "@heroicons/react/24/solid";
+import { InfoIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ScreenCaptureToast() {
@@ -23,8 +23,9 @@ export default function ScreenCaptureToast() {
 
   return (
     <Toast
-      IconComponent={InformationCircleIcon}
-      iconColor="fill-warning"
+      IconComponent={
+        <InfoIcon name="info" size={24} className="text-yellow-500" />
+      }
       message="화면 캡쳐를 감지했어요."
       visible={toastVisible}
     />

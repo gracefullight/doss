@@ -1,4 +1,4 @@
-import { CheckCircleIcon, ClockIcon } from "@heroicons/react/24/solid";
+import { CheckCircleIcon, ClockIcon } from "lucide-react";
 import Link from "next/link";
 import { CoupangCircle } from "~/components/benefit";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
@@ -25,11 +25,15 @@ export default function BenefitCoupang() {
         </div>
         <div className="flex flex-col gap-4 pt-6">
           <div className="flex gap-2">
-            <CheckCircleIcon className="fill-success w-6" />
+            <CheckCircleIcon
+              name="check-circle"
+              className="text-green-500"
+              size={24}
+            />
             <span className="text-neutral-400">오늘은 이미 10원 받았어요.</span>
           </div>
           <div className="flex gap-2">
-            <ClockIcon className="w-6" />
+            <ClockIcon name="clock" size={24} />
             <span className="text-neutral-400">
               12시가 되면 다시 받을 수 있어요.
             </span>

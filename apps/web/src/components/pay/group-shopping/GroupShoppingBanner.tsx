@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useCookieState } from "ahooks";
+import { ChevronRightIcon } from "lucide-react";
 import { DateTime } from "luxon";
 import { useState } from "react";
 import MoneyCircle from "../MoneyCircle";
@@ -38,7 +38,7 @@ export default function GroupShoppingBanner() {
           <div className="font-medium text-neutral-300">매일 6원 받기</div>
         </div>
       </div>
-      <ChevronRightIcon className="w-4" />
+      <ChevronRightIcon name="chevron-right" size={20} />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  ChartPieIcon,
   ChevronRightIcon,
-  ListBulletIcon,
+  ListIcon,
+  PieChartIcon,
   TicketIcon,
-} from "@heroicons/react/24/solid";
+} from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
@@ -65,9 +65,9 @@ export default function BenefitPoint() {
           </div>
           <div className="flex">
             <button className="btn btn-ghost btn-xs" type="button">
-              <TicketIcon className="w-4" />
+              <TicketIcon name="ticket" size={20} />
               무료 출금 쿠폰 {formatNumber(0)}개
-              <ChevronRightIcon className="w-4" />
+              <ChevronRightIcon name="chevron-right" size={20} />
             </button>
           </div>
         </div>
@@ -152,19 +152,23 @@ export default function BenefitPoint() {
       <div className="mt-4 flex flex-grow flex-col gap-2 bg-neutral-800 px-3 pt-2">
         <div className="flex cursor-pointer select-none flex-row items-center justify-between rounded-lg p-2 active:bg-neutral-700">
           <div className="flex gap-2">
-            <ChartPieIcon className="fill-info w-6" />
+            <PieChartIcon
+              name="pie-chart"
+              className="text-blue-500"
+              size={24}
+            />
             <div className="font-medium text-neutral-300">
               지금까지 {formatNumber(30000)}원 받았어요
             </div>
           </div>
-          <ChevronRightIcon className="w-4" />
+          <ChevronRightIcon name="chevron-right" size={20} />
         </div>
         <div className="flex cursor-pointer select-none flex-row items-center justify-between rounded-lg p-2 active:bg-neutral-700">
           <div className="flex gap-2">
-            <ListBulletIcon className="fill-info w-6" />
+            <ListIcon name="list" className="text-blue-500" size={24} />
             <div className="font-medium text-neutral-300">적립 내역 보기</div>
           </div>
-          <ChevronRightIcon className="w-4" />
+          <ChevronRightIcon name="chevron-right" size={20} />
         </div>
       </div>
     </StackLayout>

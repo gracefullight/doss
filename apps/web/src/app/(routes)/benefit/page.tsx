@@ -1,21 +1,22 @@
 "use client";
 
+import clsx from "clsx";
+import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import {
-  ArrowRightCircleIcon,
+  ArrowDownLeftFromCircleIcon,
+  ArrowDownSquareIcon,
   BellIcon,
   CheckIcon,
   ChevronRightIcon,
-  CurrencyDollarIcon,
-  DevicePhoneMobileIcon,
-  DocumentArrowDownIcon,
+  CircleDollarSignIcon,
+  CloverIcon,
+  FootprintsIcon,
+  HelpCircleIcon,
   MapPinIcon,
-  QuestionMarkCircleIcon,
-  SparklesIcon,
-  TicketIcon,
-  VideoCameraIcon,
-} from "@heroicons/react/24/solid";
-import clsx from "clsx";
-import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
+  NewspaperIcon,
+  SmartphoneIcon,
+  VideoIcon,
+} from "lucide-react";
 import { DateTime, Interval } from "luxon";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -73,65 +74,90 @@ export default function Benefit() {
       subTitle: "포인트 받기",
       badge: null,
       isDone: false,
-      Icon: MapPinIcon,
       link: "/benefit/nearby",
-      iconColor: "fill-yellow-500",
+      IconComponent: (
+        <MapPinIcon name="map-pin" className="text-yellow-500" size={28} />
+      ),
     },
     {
       title: "이번 주 미션",
       subTitle: "46,610원 받기",
       badge: "3일 남음",
       isDone: false,
-      Icon: ArrowRightCircleIcon,
-      iconColor: "fill-red-600",
+      IconComponent: (
+        <ArrowDownLeftFromCircleIcon
+          name="arrow-down-left-from-circle"
+          className="text-red-500"
+          size={28}
+        />
+      ),
     },
     {
       title: "행운복권",
       subTitle: "완료",
       badge: null,
       isDone: true,
-      Icon: TicketIcon,
       link: "/benefit/lottery",
-      iconColor: "fill-green-500",
+      IconComponent: (
+        <CloverIcon name="clover" className="text-green-500" size={28} />
+      ),
     },
     {
       title: "라이브 쇼핑",
       subTitle: "포인트 받기",
       badge: "방송 중",
       isDone: false,
-      Icon: VideoCameraIcon,
-      iconColor: "fill-red-600",
+      IconComponent: (
+        <VideoIcon name="video" className="text-red-500" size={28} />
+      ),
     },
     {
       title: "행운퀴즈",
       subTitle: "추가 혜택 보기",
       badge: null,
       isDone: false,
-      Icon: QuestionMarkCircleIcon,
-      iconColor: "fill-blue-500",
+      IconComponent: (
+        <HelpCircleIcon
+          name="help-circle"
+          className="text-purple-500"
+          size={28}
+        />
+      ),
     },
     {
       title: "머니 알림 받고",
       subTitle: "20원 받기",
       badge: null,
       isDone: false,
-      Icon: BellIcon,
-      iconColor: "fill-yellow-500",
+      IconComponent: (
+        <BellIcon name="bell" className="text-yellow-500" size={28} />
+      ),
     },
     {
       title: "만보기",
       subTitle: "130원 받기",
       badge: `${diffHours}시간 남음`,
       isDone: false,
-      Icon: SparklesIcon,
-      iconColor: "fill-blue-500",
+      IconComponent: (
+        <FootprintsIcon name="footprints" className="text-blue-500" size={28} />
+      ),
+    },
+    {
+      title: "피드보고",
+      subTitle: "포인트 받기",
+      isDone: false,
+      IconComponent: (
+        <NewspaperIcon name="newspaper" className="text-white" size={28} />
+      ),
     },
     {
       title: "휴대폰 요금제 바꾸고",
       subTitle: "12만원 받기",
       badge: null,
       isDone: false,
-      Icon: DevicePhoneMobileIcon,
+      IconComponent: (
+        <SmartphoneIcon name="smartphone" className="text-white" size={28} />
+      ),
     },
     {
       title: "버튼 누르기",
@@ -139,8 +165,13 @@ export default function Benefit() {
       badge: null,
       link: "/benefit/coupang",
       isDone: true,
-      Icon: DocumentArrowDownIcon,
-      iconColor: "fill-blue-600",
+      IconComponent: (
+        <ArrowDownSquareIcon
+          name="arrow-down-square"
+          className="text-blue-600"
+          size={28}
+        />
+      ),
     },
   ];
 
@@ -177,9 +208,13 @@ export default function Benefit() {
             type="button"
             onClick={() => handleBenefitLink("/benefit/point")}
           >
-            <CurrencyDollarIcon className="fill-info w-6" />
+            <CircleDollarSignIcon
+              name="circle-dollar-sign"
+              className="text-blue-500"
+              size={24}
+            />
             {formatNumber(1000)} 원
-            <ChevronRightIcon className="w-4" />
+            <ChevronRightIcon name="chevron-right" size={20} />
           </button>
         </div>
         <div className="mt-3 flex flex-col gap-2 px-2">
@@ -196,10 +231,14 @@ export default function Benefit() {
                     item.isDone ? `border-green-500` : `border-neutral-700`,
                   )}
                 >
-                  <item.Icon className={clsx(`w-7`, item.iconColor)} />
+                  {item.IconComponent}
                   {item.isDone && (
                     <div className="absolute -bottom-1 -right-1 rounded-full border border-neutral-700 bg-green-500 p-1">
-                      <CheckIcon className="w-4 text-neutral-700" />
+                      <CheckIcon
+                        name="check"
+                        className="w-4 text-neutral-700"
+                        size={16}
+                      />
                     </div>
                   )}
                 </div>

@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 
@@ -32,7 +32,11 @@ export default function PaySetting() {
                 type="button"
                 title={name}
               >
-                <ChevronRightIcon className="w-4 fill-neutral-400" />
+                <ChevronRightIcon
+                  name="chevron-right"
+                  className="till-neutral-400"
+                  size={20}
+                />
               </button>
             </Link>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { BellIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { BellIcon, MapPinIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -19,16 +19,18 @@ export default function MainNavbar() {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="flex-1">
-        <a className="btn btn-ghost text-3xl normal-case">doss</a>
+        <button className="btn btn-ghost text-3xl normal-case" type="button">
+          doss
+        </button>
       </div>
       <div className="flex-none">
         <button
           className="btn btn-square btn-ghost"
-          onClick={() => void handleNearby()}
+          onClick={handleNearby}
           title="함께 도스켜고 포인트"
           type="button"
         >
-          <MapPinIcon className="h-6 w-6 fill-yellow-500" />
+          <MapPinIcon name="map-pin" className="text-yellow-500" size={24} />
         </button>
         <div className="indicator">
           {hasUnreadAlarms && (
@@ -38,9 +40,9 @@ export default function MainNavbar() {
             className="btn btn-square btn-ghost"
             title="알림"
             type="button"
-            onClick={() => void handleNotification()}
+            onClick={handleNotification}
           >
-            <BellIcon className="h-6 w-6" />
+            <BellIcon name="bell" className="text-neutral-400" size={24} />
           </button>
         </div>
       </div>

@@ -2,11 +2,8 @@
 
 import type { SettingItemProps } from "@doss/ui";
 import { SettingItem } from "@doss/ui";
-import {
-  ChevronRightIcon,
-  PhoneArrowUpRightIcon,
-} from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { ChevronRightIcon, HeadphonesIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 
@@ -25,7 +22,7 @@ export default function StockSetting() {
   const navItems = [
     {
       title: "고객센터",
-      IconComponent: PhoneArrowUpRightIcon,
+      IconComponent: <HeadphonesIcon name="headphones" size={20} />,
       link: "/stock",
     },
   ];
@@ -118,7 +115,9 @@ export default function StockSetting() {
               key={item.title}
               title={item.title}
               handleLink={() => router.push(item.link)}
-              IconComponent={ChevronRightIcon}
+              IconComponent={
+                <ChevronRightIcon name="chevron-right" size={20} />
+              }
               description={item.description}
               actionText={item.actionText}
               actionColor={item.actionColor}

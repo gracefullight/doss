@@ -1,4 +1,4 @@
-import { CurrencyDollarIcon, TicketIcon } from "@heroicons/react/24/solid";
+import { CloverIcon, DollarSignIcon } from "lucide-react";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 
 export default function LotteryAgreement() {
@@ -7,7 +7,7 @@ export default function LotteryAgreement() {
       <StackLayoutNavbar isLightBackground />
       <div className="flex flex-col">
         <div className="flex items-center justify-center bg-neutral-200 py-4">
-          <TicketIcon className="w-60 fill-green-500" />
+          <CloverIcon name="clover" className="text-green-500" size={240} />
         </div>
         <div className="flex flex-col gap-4 bg-neutral-800 px-5 pb-10 pt-5">
           <h1 className="text-2xl font-bold text-neutral-200">
@@ -16,13 +16,17 @@ export default function LotteryAgreement() {
             행운 복권을 받아보세요
           </h1>
           <div className="flex flex-row gap-2">
-            <TicketIcon className="w-5 fill-green-500" />
+            <CloverIcon name="clover" className="text-green-500" size={16} />
             <span className="font-medium text-neutral-200">
               매일 아침, 행운 복권이 전달돼요
             </span>
           </div>
           <div className="flex flex-row gap-2">
-            <CurrencyDollarIcon className="w-5 fill-blue-500" />
+            <DollarSignIcon
+              name="dollar-sign"
+              className="text-blue-500"
+              size={16}
+            />
             <span className="font-medium text-neutral-200">
               복권을 긁으면 100% 포인트를 드려요
             </span>

@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "lucide-react";
 import IndexChartCarousel from "./IndexChartCarousel";
 
 export default function TodaysDiscoveryTab() {
@@ -12,7 +12,11 @@ export default function TodaysDiscoveryTab() {
             </div>
             <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
               전체보기
-              <ChevronRightIcon className="w-4 font-medium" />
+              <ChevronRightIcon
+                name="chevron-right"
+                className="font-medium"
+                size={20}
+              />
             </div>
           </div>
           <IndexChartCarousel />

@@ -1,7 +1,7 @@
 "use client";
 
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import { HelpCircleIcon } from "lucide-react";
 
 export default function MoneyCircle() {
   return (
@@ -16,7 +16,7 @@ export default function MoneyCircle() {
         times: [0, 0.5, 1],
       }}
     >
-      <QuestionMarkCircleIcon className="fill-info" />
+      <HelpCircleIcon name="help-circle" className="text-blue-500" size={40} />
     </motion.div>
   );
 }
