@@ -34,21 +34,15 @@ export default function BankInvestment() {
         isLightBackground
       />
       <div className="flex flex-col pb-4">
-        <div className="tabs w-full bg-neutral-800 px-5">
+        <div className="tabs tabs-lg tabs-bordered w-full bg-neutral-800 px-5">
           <a
-            className={clsx(
-              `tab tab-bordered tab-lg w-1/2`,
-              tabIndex === 0 && "tab-active",
-            )}
+            className={clsx(`tab`, tabIndex === 0 && "tab-active")}
             onClick={() => setTabIndex(0)}
           >
             상품별
           </a>
           <a
-            className={clsx(
-              `tab tab-bordered tab-lg w-1/2`,
-              tabIndex === 1 && "tab-active",
-            )}
+            className={clsx(`tab`, tabIndex === 1 && "tab-active")}
             onClick={() => setTabIndex(1)}
           >
             계좌별

@@ -32,7 +32,7 @@ export default function LotterySettingAlarm() {
         <div className="my-6 flex items-center justify-center">
           <LightbulbIcon
             name="lightbulb"
-            className="fill-green-400"
+            className="text-green-400"
             size={96}
           />
         </div>

@@ -28,13 +28,13 @@ export default function BankTransfer() {
         </h1>
         <div className="tabs tabs-boxed mt-4 bg-neutral-700">
           <a
-            className={clsx(`tab w-1/2`, tabIndex === 0 && "tab-active")}
+            className={clsx(`tab`, tabIndex === 0 && "tab-active")}
             onClick={() => setTabIndex(0)}
           >
             계좌
           </a>
           <a
-            className={clsx(`tab w-1/2`, tabIndex === 1 && "tab-active")}
+            className={clsx(`tab`, tabIndex === 1 && "tab-active")}
             onClick={() => setTabIndex(1)}
           >
             연락처

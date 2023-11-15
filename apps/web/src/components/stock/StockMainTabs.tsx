@@ -15,14 +15,11 @@ export default function StockMainTabs() {
   ];
   return (
     <>
-      <div className="tabs w-full bg-neutral-800 font-medium">
+      <div className="tabs tabs-bordered tabs-lg w-full bg-neutral-800 font-medium">
         {tabs.map((tab, index) => (
           <a
             key={tab.name}
-            className={clsx(
-              "tab tab-bordered tab-lg w-1/3",
-              tabIndex === index && "tab-active",
-            )}
+            className={clsx("tab", tabIndex === index && "tab-active")}
             onClick={() => setTabIndex(index)}
           >
             {tab.name}

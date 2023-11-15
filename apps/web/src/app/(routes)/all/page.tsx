@@ -758,7 +758,7 @@ export default function All() {
         },
         {
           title: "24시간 고객센터",
-          icon: <HeadphonesIcon className="fill-blue-400" size={20} />,
+          icon: <HeadphonesIcon className="text-blue-400" size={20} />,
         },
         {
           title: "도스 새소식",

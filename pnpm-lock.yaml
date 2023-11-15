@@ -354,8 +354,8 @@ importers:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.31)
       daisyui:
-        specifier: ^3.9.4
-        version: 3.9.4
+        specifier: ^4.0.7
+        version: 4.0.7(postcss@8.4.31)
       postcss:
         specifier: ^8.4.31
         version: 8.4.31
@@ -8462,10 +8462,6 @@ packages:
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  /colord@2.9.3:
-    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
-    dev: true
-
   /colorette@1.4.0:
     resolution: {integrity: sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g==}
     dev: false
@@ -8771,17 +8767,21 @@ packages:
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
 
-  /daisyui@3.9.4:
-    resolution: {integrity: sha512-fvi2RGH4YV617/6DntOVGcOugOPym9jTGWW2XySb5ZpvdWO4L7bEG77VHirrnbRUEWvIEVXkBpxUz2KFj0rVnA==}
+  /culori@3.2.0:
+    resolution: {integrity: sha512-HIEbTSP7vs1mPq/2P9In6QyFE0Tkpevh0k9a+FkjhD+cwsYm9WRSbn4uMdW9O0yXlNYC3ppxL3gWWPOcvEl57w==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
+  /daisyui@4.0.7(postcss@8.4.31):
+    resolution: {integrity: sha512-D84DnNDZKcamwNsxCMrwYaddyz5kC6VO6oe30nM1x67GzCAfarfd3Ar1rpLGXCIqSsEoNZUHO8EcXvX93W2ZkA==}
     engines: {node: '>=16.9.0'}
     dependencies:
-      colord: 2.9.3
       css-selector-tokenizer: 0.8.0
-      postcss: 8.4.31
+      culori: 3.2.0
+      picocolors: 1.0.0
       postcss-js: 4.0.1(postcss@8.4.31)
-      tailwindcss: 3.3.5
     transitivePeerDependencies:
-      - ts-node
+      - postcss
     dev: true
 
   /damerau-levenshtein@1.0.8:

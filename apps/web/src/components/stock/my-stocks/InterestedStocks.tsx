@@ -67,7 +67,7 @@ export default function InterestedStocks() {
                       <div className="bg-info w-10 rounded-full bg-opacity-20">
                         <PlusIcon
                           name="plus"
-                          className="fill-blue-500"
+                          className="text-blue-500"
                           size={24}
                         />
                       </div>

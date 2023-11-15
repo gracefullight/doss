@@ -16,9 +16,9 @@ export default function InvestConnect() {
         <h1 className="text-lg text-neutral-300">어떤 계좌를 연결할까요?</h1>
       </div>
       <div className="flex flex-col px-5">
-        <div className="tabs mt-4">
-          <a className="tab tab-lg tab-bordered tab-active">증권</a>
-          <a className="tab tab-lg tab-bordered">은행</a>
+        <div className="tabs tabs-lg tabs-bordered mt-4">
+          <a className="tab tab-active">증권</a>
+          <a className="tab">은행</a>
         </div>
       </div>
     </StackLayout>

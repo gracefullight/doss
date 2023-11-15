@@ -28,7 +28,6 @@ export default function ByProductTab() {
     },
     {
       title: "배당금 보기",
-      iconColor: "fill-red-500",
       IconComponent: (
         <TrendingUpIcon name="trending-up" className="text-red-500" size={24} />
       ),
@@ -83,10 +82,7 @@ export default function ByProductTab() {
             {tabs.map((tabName, index) => (
               <a
                 key={tabName}
-                className={clsx(
-                  "tab w-1/3",
-                  tabIndex === index && "tab-active",
-                )}
+                className={clsx("tab", tabIndex === index && "tab-active")}
                 onClick={() => setTabIndex(index)}
               >
                 {tabName}

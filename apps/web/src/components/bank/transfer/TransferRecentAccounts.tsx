@@ -56,7 +56,7 @@ export default function TransferRecentAccounts() {
             >
               <StarIcon
                 name="star"
-                className={clsx(item.isFavorite && "fill-blue-500")}
+                className={clsx(item.isFavorite && "text-blue-500")}
                 size={24}
               />
             </button>
