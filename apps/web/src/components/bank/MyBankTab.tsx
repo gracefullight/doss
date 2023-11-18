@@ -23,11 +23,10 @@ export default function MyBankTab() {
 
   useEffect(() => {
     bankFontState.isLargeFont = isLargeFont ?? false;
-  }, []);
+  }, [isLargeFont]);
 
   const toggleLargeFont = () => {
     setIsLargeFont(!isLargeFont);
-    bankFontState.isLargeFont = !isLargeFont;
   };
 
   return (
