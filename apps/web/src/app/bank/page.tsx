@@ -3,14 +3,19 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { useSnapshot } from "valtio";
-import { BankWelcomeToast, MyBankTab, bankFontState } from "~/components/bank";
+import {
+  BankProductsTab,
+  BankWelcomeToast,
+  MyBankTab,
+  bankFontState,
+} from "~/components/bank";
 import { StackLayout, StackLayoutNavbar } from "~/components/layout";
 
 export default function Bank() {
   const navItems = [{ title: "설정", link: "/bank/setting" }];
   const tabs = [
     { name: "내 도스뱅크", component: <MyBankTab /> },
-    { name: "상품 찾기", component: null },
+    { name: "상품 찾기", component: <BankProductsTab /> },
   ];
 
   const [tabIndex, setTabIndex] = useState(0);

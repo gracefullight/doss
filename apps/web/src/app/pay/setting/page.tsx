@@ -26,7 +26,7 @@ export default function PaySetting() {
             key={name}
           >
             <Link href={link}>
-              <div className="text-neutral-300">{name}L</div>
+              <div className="text-neutral-300">{name}</div>
               <button
                 className="btn btn-square btn-sm btn-ghost"
                 type="button"

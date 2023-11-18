@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { MultilineText } from "@doss/ui";
 import { formatNumber } from "~/utils/number";
 
 interface CarouselItem {
@@ -48,12 +48,7 @@ export default function IndexChartCarousel() {
             <div className="flex flex-col">
               <span className="text-sm">{item.subheader}</span>
               <span className="text-lg font-medium">
-                {item.title.split("\n").map((str, i) => (
-                  <Fragment key={i}>
-                    {i > 0 && <br />}
-                    {str}
-                  </Fragment>
-                ))}
+                <MultilineText>{item.title}</MultilineText>
               </span>
               <span className="text-error text-sm">{item.description}</span>
             </div>

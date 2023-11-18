@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ReactNode } from "react";
-import { Fragment } from "react";
+import { MultilineText } from "../MultilineText";
 
 interface CarouselItem {
   subheader: string;
@@ -30,12 +30,7 @@ export function ServiceCarousel({
             <div className="flex flex-col gap-2">
               <span className="text-sm text-neutral-400">{item.subheader}</span>
               <span className="text-lg font-medium">
-                {item.title.split("\n").map((str, i) => (
-                  <Fragment key={i}>
-                    {i > 0 && <br />}
-                    {str}
-                  </Fragment>
-                ))}
+                <MultilineText>{item.title}</MultilineText>
               </span>
             </div>
             {item.icon}

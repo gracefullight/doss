@@ -868,7 +868,7 @@ export default function All() {
                     </div>
                     {item.badge && (
                       <div
-                        className={`badge badge-${item.badgeColor} badge-sm badge-outline py-2`}
+                        className={`badge badge-${item.badgeColor} badge-sm py-2`}
                       >
                         {item.badge}
                       </div>
