@@ -24,8 +24,8 @@
     "test": "turbo test"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.1",
-    "@commitlint/config-conventional": "^18.4.0",
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
     "@commitlint/types": "^18.4.0",
     "@doss/tsconfig": "*",
     "@manypkg/cli": "^0.21.0",
@@ -37,7 +37,7 @@
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "turbo": "^1.10.16",
-    "type-fest": "^4.7.1",
+    "type-fest": "^4.8.1",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },
