@@ -13,8 +13,8 @@ Toss 앱의 웹 클론 버전
 
 | 예시                                  | 이미지                                |
 | ------------------------------------- | ------------------------------------- |
-| ![demo1](./apps/web/public/demo1.jpg) | ![demo2](./apps/web/public/demo2.jpg) |
-| ![demo3](./apps/web/public/demo3.jpg) | ![demo4](./apps/web/public/demo4.jpg) |
+| ![demo1](./apps/web/public/demo1.png) | ![demo2](./apps/web/public/demo2.png) |
+| ![demo3](./apps/web/public/demo3.png) | ![demo4](./apps/web/public/demo4.png) |
 
 ## 구조
 

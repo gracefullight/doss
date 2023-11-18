@@ -13,8 +13,8 @@ Duplicated version of the Toss application
 
 | Example                               | Image                                 |
 | ------------------------------------- | ------------------------------------- |
-| ![demo1](./apps/web/public/demo1.jpg) | ![demo2](./apps/web/public/demo2.jpg) |
-| ![demo3](./apps/web/public/demo3.jpg) | ![demo4](./apps/web/public/demo4.jpg) |
+| ![demo1](./apps/web/public/demo1.png) | ![demo2](./apps/web/public/demo2.png) |
+| ![demo3](./apps/web/public/demo3.png) | ![demo4](./apps/web/public/demo4.png) |
 
 ## Structure
 
