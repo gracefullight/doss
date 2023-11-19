@@ -1,5 +1,3 @@
-"use client";
-
 import {
   AlarmCheckIcon,
   AppWindowIcon,
@@ -74,8 +72,8 @@ import {
   WarehouseIcon,
   WifiIcon,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
+import { ConditionalLink } from "~/components/layout";
 
 interface SectionItem {
   title: string;
@@ -91,8 +89,6 @@ interface Section {
 }
 
 export default function All() {
-  const router = useRouter();
-
   const items = [
     {
       title: "도스뱅크",
@@ -768,12 +764,6 @@ export default function All() {
     },
   ];
 
-  const handleLink = (link?: string) => {
-    if (link) {
-      router.push(link);
-    }
-  };
-
   return (
     <div className="flex w-screen flex-col px-4 pt-2">
       <div className="sticky top-0 z-50 flex justify-end">
@@ -790,14 +780,12 @@ export default function All() {
         </div>
         <div className="flex justify-between gap-2 py-2">
           {items.map((item) => (
-            <div
-              className="flex cursor-pointer select-none flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600"
-              key={item.title}
-              onClick={() => void handleLink(item.link)}
-            >
-              {item.IconComponent}
-              <span className="text-sm text-neutral-200">{item.title}</span>
-            </div>
+            <ConditionalLink href={item.link} key={item.title}>
+              <div className="flex cursor-pointer select-none flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600">
+                {item.IconComponent}
+                <span className="text-sm text-neutral-200">{item.title}</span>
+              </div>
+            </ConditionalLink>
           ))}
         </div>
       </div>
