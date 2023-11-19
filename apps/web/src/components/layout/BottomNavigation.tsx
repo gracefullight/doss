@@ -14,25 +14,25 @@ export default function BottomNavigation() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const links = [
-    { href: "/", label: "홈", Icon: <HomeIcon /> },
-    { href: "/benefit", label: "혜택", Icon: <GemIcon /> },
-    { href: "/pay", label: "도스페이", Icon: <ShoppingBagIcon /> },
-    { href: "/stock", label: "주식", Icon: <TrendingUpIcon /> },
-    { href: "/all", label: "전체", Icon: <MenuIcon /> },
+  const bottomNavigationItems = [
+    { href: "/", label: "홈", IconComponent: <HomeIcon /> },
+    { href: "/benefit", label: "혜택", IconComponent: <GemIcon /> },
+    { href: "/pay", label: "도스페이", IconComponent: <ShoppingBagIcon /> },
+    { href: "/stock", label: "주식", IconComponent: <TrendingUpIcon /> },
+    { href: "/all", label: "전체", IconComponent: <MenuIcon /> },
   ];
 
   return (
     <div className="btm-nav z-50">
-      {links.map((link) => (
+      {bottomNavigationItems.map((nav) => (
         <button
-          key={link.href}
-          className={clsx(pathname === link.href && "active")}
-          onClick={() => router.push(link.href)}
+          key={nav.href}
+          className={clsx(pathname === nav.href && "active")}
+          onClick={() => router.push(nav.href)}
           type="button"
         >
-          {link.Icon}
-          <span className="btm-nav-label text-sm">{link.label}</span>
+          {nav.IconComponent}
+          <span className="btm-nav-label text-sm">{nav.label}</span>
         </button>
       ))}
     </div>
