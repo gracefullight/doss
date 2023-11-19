@@ -52,4 +52,10 @@ export const BasicToast: Story = {
     visible: true,
     message: "토스트",
   },
+  parameters: {
+    design: {
+      type: "iframe",
+      url: "https://daisyui.com/components/toast/",
+    },
+  },
 };

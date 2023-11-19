@@ -37,4 +37,10 @@ export const BasicServiceCarousel: Story = {
   render: (props) => <ServiceCarousel items={items} isDark={props.isDark} />,
   name: "ServiceCarousel",
   args: {},
+  parameters: {
+    design: {
+      type: "iframe",
+      url: "https://daisyui.com/components/carousel/",
+    },
+  },
 };
