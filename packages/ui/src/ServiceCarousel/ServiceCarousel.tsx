@@ -5,7 +5,7 @@ import { MultilineText } from "../MultilineText";
 interface CarouselItem {
   subheader: string;
   title: string;
-  icon: ReactNode;
+  IconComponent: ReactNode;
 }
 
 export interface ServiceCarouselProps {
@@ -33,7 +33,7 @@ export function ServiceCarousel({
                 <MultilineText>{item.title}</MultilineText>
               </span>
             </div>
-            {item.icon}
+            {item.IconComponent}
           </div>
         </div>
       ))}

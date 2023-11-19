@@ -6,19 +6,21 @@ export default function StockCarousel() {
     {
       subheader: "실시간",
       title: "인기 많은\n주식보기",
-      icon: (
+      IconComponent: (
         <StarIcon name="star" className="self-end text-yellow-500" size={32} />
       ),
     },
     {
       subheader: "오늘은",
       title: "출석체크\n하러가기",
-      icon: <LineChartIcon name="line-chart" className="self-end " size={32} />,
+      IconComponent: (
+        <LineChartIcon name="line-chart" className="self-end " size={32} />
+      ),
     },
     {
       subheader: "차곡차곡",
       title: "주식\n모으기",
-      icon: (
+      IconComponent: (
         <BanknoteIcon
           name="banknote"
           className="self-end text-green-500"

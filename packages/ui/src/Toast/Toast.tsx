@@ -28,17 +28,21 @@ export function Toast({
   }, []);
 
   useEffect(() => {
-    if (visible) {
+    setInnerVisible(visible);
+  }, [visible]);
+
+  useEffect(() => {
+    if (innerVisible) {
       const timer = setTimeout(() => {
-        if (onClose) onClose();
         setInnerVisible(false);
+        if (onClose) onClose();
       }, duration);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [visible, onClose, duration]);
+  }, [innerVisible, onClose, duration]);
 
   if (typeof window === "undefined" || !isClient) {
     return null;
