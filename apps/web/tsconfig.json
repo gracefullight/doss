@@ -7,11 +7,12 @@
     }
   },
   "include": [
+    ".eslintrc.cjs",
     "next-env.d.ts",
-    "src",
-    "tests",
-    "*.ts",
-    "*.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "public/*.js"]

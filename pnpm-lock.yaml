@@ -63,8 +63,8 @@ importers:
         specifier: '*'
         version: link:../../packages/ui
       lucide-react:
-        specifier: 0.292.0
-        version: 0.292.0(react@18.2.0)
+        specifier: ^0.293.0
+        version: 0.293.0(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -169,17 +169,17 @@ importers:
         specifier: ^4.36.1
         version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client':
-        specifier: ^10.43.7
-        version: 10.43.7(@trpc/server@10.43.7)
+        specifier: ^10.44.1
+        version: 10.44.1(@trpc/server@10.44.1)
       '@trpc/next':
-        specifier: ^10.43.7
-        version: 10.43.7(@tanstack/react-query@4.36.1)(@trpc/client@10.43.7)(@trpc/react-query@10.43.7)(@trpc/server@10.43.7)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^10.44.1
+        version: 10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/react-query@10.44.1)(@trpc/server@10.44.1)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/react-query':
-        specifier: ^10.43.7
-        version: 10.43.7(@tanstack/react-query@4.36.1)(@trpc/client@10.43.7)(@trpc/server@10.43.7)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^10.44.1
+        version: 10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/server@10.44.1)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server':
-        specifier: ^10.43.7
-        version: 10.43.7
+        specifier: ^10.44.1
+        version: 10.44.1
       '@vercel/analytics':
         specifier: ^1.1.1
         version: 1.1.1
@@ -205,8 +205,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       lucide-react:
-        specifier: ^0.292.0
-        version: 0.292.0(react@18.2.0)
+        specifier: ^0.293.0
+        version: 0.293.0(react@18.2.0)
       luxon:
         specifier: ^3.4.4
         version: 3.4.4
@@ -231,12 +231,15 @@ importers:
       redoc:
         specifier: ^2.1.3
         version: 2.1.3(core-js@3.32.2)(mobx@6.10.2)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.0.7)
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
       superjson:
         specifier: ^2.2.1
         version: 2.2.1
       trpc-openapi:
         specifier: ^1.2.0
-        version: 1.2.0(@trpc/server@10.43.7)(zod@3.22.4)
+        version: 1.2.0(@trpc/server@10.44.1)(zod@3.22.4)
       valtio:
         specifier: ^1.12.0
         version: 1.12.0(@types/react@18.2.38)(react@18.2.0)
@@ -400,10 +403,6 @@ importers:
         version: 5.3.2
 
   packages/ui:
-    dependencies:
-      clsx:
-        specifier: ^2.0.0
-        version: 2.0.0
     devDependencies:
       '@doss/eslint-config':
         specifier: '*'
@@ -423,6 +422,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.31)
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
       postcss:
         specifier: ^8.4.31
         version: 8.4.31
@@ -6814,53 +6816,53 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@trpc/client@10.43.7(@trpc/server@10.43.7):
-    resolution: {integrity: sha512-dnZdHGrN6jZ6CO+stgGsM5M+A1iFYh/W5iuNs7O3sm0jX5I2/U26dSQrMuCu2PZxhl3MUC/i/PU4G8uS8/vcOw==}
+  /@trpc/client@10.44.1(@trpc/server@10.44.1):
+    resolution: {integrity: sha512-vTWsykNcgz1LnwePVl2fKZnhvzP9N3GaaLYPkfGINo314ZOS0OBqe9x0ytB2LLUnRVTAAZ2WoONzARd8nHiqrA==}
     peerDependencies:
-      '@trpc/server': 10.43.7
+      '@trpc/server': 10.44.1
     dependencies:
-      '@trpc/server': 10.43.7
+      '@trpc/server': 10.44.1
     dev: false
 
-  /@trpc/next@10.43.7(@tanstack/react-query@4.36.1)(@trpc/client@10.43.7)(@trpc/react-query@10.43.7)(@trpc/server@10.43.7)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-j5te9ImjfcdZI1Pg4Z+9TGj2rgYQQAQrXq6KlrbkvC5DoEdCuqtb5nNej8tWhJhZx+RHDpqpqNVk9uZFsUyIow==}
+  /@trpc/next@10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/react-query@10.44.1)(@trpc/server@10.44.1)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ez2oYUzmaQ+pGch627sRBfeEk3h+UIwNicR8WjTAM54TPcdP5W9ZyWCyO5HZTEfjHgGixYM4tCIxewdKOWY9yA==}
     peerDependencies:
       '@tanstack/react-query': ^4.18.0
-      '@trpc/client': 10.43.7
-      '@trpc/react-query': 10.43.7
-      '@trpc/server': 10.43.7
+      '@trpc/client': 10.44.1
+      '@trpc/react-query': 10.44.1
+      '@trpc/server': 10.44.1
       next: '*'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/client': 10.43.7(@trpc/server@10.43.7)
-      '@trpc/react-query': 10.43.7(@tanstack/react-query@4.36.1)(@trpc/client@10.43.7)(@trpc/server@10.43.7)(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/server': 10.43.7
+      '@trpc/client': 10.44.1(@trpc/server@10.44.1)
+      '@trpc/react-query': 10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/server@10.44.1)(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/server': 10.44.1
       next: 14.0.3(@babel/core@7.23.0)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-ssr-prepass: 1.5.0(react@18.2.0)
     dev: false
 
-  /@trpc/react-query@10.43.7(@tanstack/react-query@4.36.1)(@trpc/client@10.43.7)(@trpc/server@10.43.7)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-JG73mbFhVSOHk9jpNKJiaWjJ4j7wxGL4EwzUF0Oqo22ilLgPjDGBCtl1A6MvIO1Tb8mfmSa3kaoFEmP1XVn4kA==}
+  /@trpc/react-query@10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/server@10.44.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Sgi/v0YtdunOXjBRi7om9gILGkOCFYXPzn5KqLuEHiZw5dr5w4qGHFwCeMAvndZxmwfblJrl1tk2AznmsVu8MA==}
     peerDependencies:
       '@tanstack/react-query': ^4.18.0
-      '@trpc/client': 10.43.7
-      '@trpc/server': 10.43.7
+      '@trpc/client': 10.44.1
+      '@trpc/server': 10.44.1
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/client': 10.43.7(@trpc/server@10.43.7)
-      '@trpc/server': 10.43.7
+      '@trpc/client': 10.44.1(@trpc/server@10.44.1)
+      '@trpc/server': 10.44.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@trpc/server@10.43.7:
-    resolution: {integrity: sha512-i02zxH9ypeSrld6CAYdqwDJEAcnWvTZ8k3f5vWoi5dB7Qxw6dyxyLQY4ioV5D9cRJk6kBUJqEWc1lK0/SwUncg==}
+  /@trpc/server@10.44.1:
+    resolution: {integrity: sha512-mF7B+K6LjuboX8I1RZgKE5GA/fJhsJ8tKGK2UBt3Bwik7hepEPb4NJgNr7vO6BK5IYwPdBLRLTctRw6XZx0sRg==}
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -8818,7 +8820,6 @@ packages:
   /clsx@2.0.0:
     resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
-    dev: false
 
   /co-body@6.1.0:
     resolution: {integrity: sha512-m7pOT6CdLN7FuXUcpuz/8lfQ/L77x8SchHCF4G0RBTJO20Wzmhn5Sp4/5WsKy8OSpifBSUrmg83qEqaDHdyFuQ==}
@@ -12265,8 +12266,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-react@0.292.0(react@18.2.0):
-    resolution: {integrity: sha512-rRgUkpEHWpa5VCT66YscInCQmQuPCB1RFRzkkxMxg4b+jaL0V12E3riWWR2Sh5OIiUhCwGW/ZExuEO4Az32E6Q==}
+  /lucide-react@0.293.0(react@18.2.0):
+    resolution: {integrity: sha512-g3AN0EYITCpAjNgLHrKrFWvIJzZy0Y9OPBaonyKw1cM+nZE6piOM+TiuQdYfha7oa76TMiDaWXQHE44CEqsrzw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -16094,13 +16095,13 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /trpc-openapi@1.2.0(@trpc/server@10.43.7)(zod@3.22.4):
+  /trpc-openapi@1.2.0(@trpc/server@10.44.1)(zod@3.22.4):
     resolution: {integrity: sha512-pfYoCd/3KYXWXvUPZBKJw455OOwngKN/6SIcj7Yit19OMLJ+8yVZkEvGEeg5wUSwfsiTdRsKuvqkRPXVSwV7ew==}
     peerDependencies:
       '@trpc/server': ^10.0.0
       zod: ^3.14.4
     dependencies:
-      '@trpc/server': 10.43.7
+      '@trpc/server': 10.44.1
       co-body: 6.1.0
       h3: 1.8.1
       lodash.clonedeep: 4.5.0
