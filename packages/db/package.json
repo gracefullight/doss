@@ -6,10 +6,10 @@
   "types": "./index.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "db:migrate": "pnpm with-env prisma migrate dev",
-    "db:generate": "pnpm with-env prisma generate",
-    "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:deploy": "pnpm with-env prisma migrate deploy",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:migrate": "pnpm with-env prisma migrate dev",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:seed": "tsx prisma/seed.ts",
     "dev": "pnpm with-env prisma studio --port 5557",
     "with-env": "dotenv -e ../../.env --"

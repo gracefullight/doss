@@ -16,6 +16,7 @@
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint:fix && manypkg fix",
+    "sort-package-json": "pnpx sort-package-json \"package.json\" \"apps/*/package.json\" \"packages/*/package.json\" \"packages/config/*/package.json\"",
     "test": "turbo test",
     "type-check": "turbo type-check"
   },
@@ -30,8 +31,10 @@
     "@vitest/ui": "^0.34.6",
     "devmoji": "^2.3.0",
     "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
+    "sort-package-json": "^2.6.0",
     "turbo": "^1.10.16",
     "type-fest": "^4.8.2",
     "typescript": "^5.3.2",

@@ -1,8 +1,8 @@
 {
   "name": "@doss/web",
-  "description": "Duplicated version of Toss application",
   "version": "0.1.0",
   "private": true,
+  "description": "Duplicated version of Toss application",
   "type": "module",
   "scripts": {
     "build": "pnpm with-env next build",
@@ -11,9 +11,9 @@
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
     "lint:fix": "pnpm lint --fix",
     "start": "pnpm with-env next start",
+    "test": "vitest --ui --coverage",
     "type-check": "tsc --noEmit",
-    "with-env": "dotenv -e ../../.env --",
-    "test": "vitest --ui --coverage"
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@doss/db": "^0.1.0",
