@@ -90,7 +90,7 @@ export default function Asset() {
         ))}
       </div>
       <div className="divider m-0 px-2"></div>
-      <div className="btn btn-ghost btn-block text-neutral-400">
+      <div className="btn btn-ghost btn-block no-animation text-neutral-400">
         계좌·대출·증권·포인트 보기
         <ChevronDownIcon name="chevron-down" size={16} />
       </div>
