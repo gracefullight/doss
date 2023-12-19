@@ -1,7 +1,11 @@
+"use client";
+
 import { ServiceCarousel } from "@doss/ui";
 import { GaugeIcon, LightbulbIcon, Users2Icon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function MainCarousel() {
+  const router = useRouter();
   const items = [
     {
       subheader: "안전하게",
@@ -32,7 +36,12 @@ export default function MainCarousel() {
         />
       ),
     },
-    { subheader: "인기", title: "더보기", IconComponent: null },
+    {
+      subheader: "인기",
+      title: "더보기",
+      IconComponent: null,
+      handleClick: () => router.push("/popular-menus"),
+    },
   ];
 
   return <ServiceCarousel items={items} isDark />;
