@@ -497,7 +497,7 @@ export default function All() {
         },
         {
           title: "부동산 시세",
-          icon: <WarehouseIcon className="text-blue-400" size={20} />,
+          icon: <WarehouseIcon className="text-blue-500" size={20} />,
         },
         {
           title: "주택 청약 공고",
