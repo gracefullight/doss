@@ -33,6 +33,7 @@
     "@vercel/otel": "^0.3.0",
     "ahooks": "^3.7.8",
     "apexcharts": "^3.45.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
     "html2canvas": "^1.4.1",

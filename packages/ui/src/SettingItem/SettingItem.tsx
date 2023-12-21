@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import type { ReactNode } from "react";
 
 export interface SettingItemProps {
@@ -37,7 +36,7 @@ export function SettingItem({
       </div>
       <div className="flex items-center gap-1">
         {actionText && (
-          <div className={clsx("font-medium", actionColor)}>{actionText}</div>
+          <div className={`font-medium ${actionColor}`}>{actionText}</div>
         )}
         {IconComponent}
       </div>

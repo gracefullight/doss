@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cva } from "class-variance-authority";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -11,6 +11,22 @@ export interface ToastProps {
   onClose?: () => void;
   position?: "bottom" | "top";
 }
+
+const toastVariants = cva("toast toast-center z-50", {
+  variants: {
+    innerVisible: {
+      false: "hidden",
+    },
+    position: {
+      bottom: "toast-bottom",
+      top: "toast-top",
+    },
+  },
+  defaultVariants: {
+    innerVisible: false,
+    position: "bottom",
+  },
+});
 
 export function Toast({
   IconComponent,
@@ -49,13 +65,7 @@ export function Toast({
   }
 
   const toastElement = (
-    <div
-      className={clsx(
-        "toast toast-center z-50",
-        `toast-${position}`,
-        !innerVisible && "hidden",
-      )}
-    >
+    <div className={toastVariants({ innerVisible, position })}>
       <div className="alert grid-flow-col-dense gap-2 rounded-full border-none bg-neutral-700">
         {IconComponent}
         <span>{message}</span>

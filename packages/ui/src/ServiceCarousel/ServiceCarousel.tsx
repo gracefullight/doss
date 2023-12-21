@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cva } from "class-variance-authority";
 import type { ReactNode } from "react";
 import { MultilineText } from "../MultilineText";
 
@@ -14,6 +14,21 @@ export interface ServiceCarouselProps {
   isDark?: boolean;
 }
 
+const carouselItemVariants = cva(
+  "flex w-32 cursor-pointer flex-col justify-between gap-2 rounded-2xl p-4",
+  {
+    variants: {
+      isDark: {
+        true: "bg-neutral-800",
+        false: "bg-neutral-700",
+      },
+    },
+    defaultVariants: {
+      isDark: false,
+    },
+  },
+);
+
 export function ServiceCarousel({
   items,
   isDark = false,
@@ -23,10 +38,7 @@ export function ServiceCarousel({
       {items.map((item) => (
         <div key={item.title} className="carousel-item">
           <div
-            className={clsx(
-              "flex w-32 cursor-pointer flex-col justify-between gap-2 rounded-2xl p-4",
-              isDark ? "bg-neutral-800" : "bg-neutral-700",
-            )}
+            className={carouselItemVariants({ isDark })}
             onClick={item.handleClick}
           >
             <div className="flex flex-col gap-2">
