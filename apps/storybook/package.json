@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@doss/ui": "*",
-    "lucide-react": "^0.298.0",
+    "lucide-react": "^0.300.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -33,7 +33,7 @@
     "@storybook/theming": "^7.6.6",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^10.1.0",
+    "chromatic": "^10.2.0",
     "postcss": "^8.4.32",
     "serve": "^14.2.1",
     "storybook": "^7.6.6",
