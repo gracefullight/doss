@@ -76,6 +76,6 @@
     "vitest": "*"
   },
   "ct3aMetadata": {
-    "initVersion": "7.24.0"
+    "initVersion": "7.25.0"
   }
 }
