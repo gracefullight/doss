@@ -1,17 +1,17 @@
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
-import type { UserConfig } from "vitest";
+import type { UserConfig } from "vitest/config";
 import { defineConfig, mergeConfig } from "vitest/config";
 
 import rootConfig from "../../vitest.config";
 
 const projectConfig = defineConfig({
+  plugins: [react()] as UserConfig["plugins"],
   test: {
     dir: "tests",
     environment: "jsdom",
     setupFiles: "./tests/setupTests.ts",
   },
-  plugins: [react()],
   resolve: {
     alias: {
       "~": resolve(__dirname, "src"),

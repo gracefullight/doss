@@ -10,6 +10,10 @@ export default defineConfig({
     globals: true,
     // ? performance
     css: false,
-    useAtomics: true,
+    poolOptions: {
+      threads: {
+        useAtomics: true,
+      },
+    },
   },
 });

@@ -46,9 +46,7 @@ const config = {
 /** @type {import("@ducanh2912/next-pwa").PluginOptions} */
 const pwaConfig = {
   dest: "public",
-  swcMinify: true,
   reloadOnOnline: true,
-  watchWorkersInDev: true,
 };
 
 const withPWA = withPWAInit(pwaConfig);
