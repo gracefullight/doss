@@ -8,6 +8,7 @@
     "pflannery.vscode-versionlens",
     "mikestead.dotenv",
     "esbenp.prettier-vscode",
-    "aaron-bond.better-comments"
+    "aaron-bond.better-comments",
+    "wix.vscode-import-cost"
   ]
 }
