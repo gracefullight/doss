@@ -16,7 +16,7 @@
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint:fix && manypkg fix",
-    "sort-package-json": "pnpx sort-package-json \"package.json\" \"apps/*/package.json\" \"packages/*/package.json\" \"packages/config/*/package.json\"",
+    "sort-package-json": "sort-package-json \"package.json\" \"apps/*/package.json\" \"packages/*/package.json\" \"packages/config/*/package.json\"",
     "test": "turbo test",
     "type-check": "turbo type-check"
   },
