@@ -57,7 +57,6 @@ export default meta;
 type Story = StoryObj<typeof Toast>;
 
 export const BasicToast: Story = {
-  render: (props) => <Toast {...props} />,
   args: {
     visible: false,
     message: "기본 토스트 메시지",
@@ -65,38 +64,36 @@ export const BasicToast: Story = {
 };
 
 export const SuccessToast: Story = {
-  render: (props) => (
-    <Toast {...props} IconComponent={<CheckCircle size={20} />} />
-  ),
   args: {
     visible: false,
     message: "성공 메시지",
     duration: 3000,
+    IconComponent: <CheckCircle size={20} />,
   },
 };
 
 export const ErrorToast: Story = {
-  render: (props) => <Toast {...props} IconComponent={<XCircle size={20} />} />,
   args: {
     visible: false,
     message: "오류 메시지",
     duration: 3000,
+    IconComponent: <XCircle size={20} />,
   },
 };
 
 export const InfoToast: Story = {
-  render: (props) => <Toast {...props} IconComponent={<Info size={20} />} />,
   args: {
     visible: false,
     message: "정보 메시지",
     duration: 3000,
+    IconComponent: <Info size={20} />,
   },
 };
 
 export const TopPositionToast: Story = {
-  render: (props) => <Toast {...props} position="top" />,
   args: {
     visible: false,
     message: "상단에 위치하는 토스트",
+    position: "top",
   },
 };

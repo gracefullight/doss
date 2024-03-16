@@ -20,7 +20,6 @@ type MultilineTextStory = StoryObj<typeof MultilineText>;
 
 // 기본 스토리 구성
 export const Basic: MultilineTextStory = {
-  render: (args) => <MultilineText {...args} />,
   args: {
     children: "첫 번째 줄\n두 번째 줄\n세 번째 줄",
   },
@@ -28,7 +27,6 @@ export const Basic: MultilineTextStory = {
 
 // 추가 스토리 예시 (옵션)
 export const WithLongText: MultilineTextStory = {
-  render: (args) => <MultilineText {...args} />,
   args: {
     children:
       "이것은 긴 텍스트 예시입니다. 여러 줄에 걸쳐 표시됩니다.\n두 번째 줄에도 내용이 있습니다.\n세 번째 줄에는 더 많은 내용이 있을 수 있습니다.",
