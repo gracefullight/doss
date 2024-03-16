@@ -1,4 +1,5 @@
 /**
+ * ? https://github.com/t3-oss/create-t3-app/blob/main/cli/template/extras/src/server/api/trpc-app/with-auth-db.ts
  * YOU PROBABLY DON'T NEED TO EDIT THIS FILE, UNLESS:
  * 1. You want to modify request context (see Part 1).
  * 2. You want to create a new middleware or type of procedure (see Part 3).
@@ -59,6 +60,13 @@ const t = initTRPC
       };
     },
   });
+
+/**
+ * Create a server-side caller.
+ *
+ * @see https://trpc.io/docs/server/server-side-calls
+ */
+export const createCallerFactory = t.createCallerFactory;
 
 /**
  * 3. ROUTER & PROCEDURE (THE IMPORTANT BIT)
