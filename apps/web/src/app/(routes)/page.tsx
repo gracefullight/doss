@@ -11,7 +11,7 @@ import {
 } from "~/components/main";
 
 export const metadata = {
-  title: "Doss | 홈",
+  title: "홈",
 };
 
 export default function Home() {

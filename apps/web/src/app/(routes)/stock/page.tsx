@@ -8,7 +8,7 @@ import {
 import StockHeader from "~/components/stock/StockHeader";
 
 export const metadata = {
-  title: "Doss | 주식",
+  title: "주식",
 };
 
 export default function Stock() {

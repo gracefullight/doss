@@ -9,14 +9,47 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 
+const APP_NAME = "Doss";
+const APP_TITLE_TEMPLATE = "%s | Doss";
+const APP_DESCRIPTION = "Duplicated version of Toss";
+
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Doss",
-  description: "Duplicated version of Toss",
+  applicationName: APP_NAME,
+  title: {
+    default: APP_NAME,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_NAME,
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    siteName: APP_NAME,
+    title: {
+      default: APP_NAME,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: APP_NAME,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
   icons: [
     { rel: "icon", url: "/favicon.ico" },
     { rel: "icon", url: "/favicon-16x16.png", sizes: "16x16" },

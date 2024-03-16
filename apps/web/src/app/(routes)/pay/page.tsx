@@ -9,7 +9,7 @@ import {
 } from "~/components/pay";
 
 export const metadata = {
-  title: "Doss | 도스페이",
+  title: "도스페이",
 };
 
 export default function Pay() {

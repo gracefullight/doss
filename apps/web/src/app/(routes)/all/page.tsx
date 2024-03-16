@@ -88,6 +88,10 @@ interface Section {
   items: SectionItem[];
 }
 
+export const metadata = {
+  title: "전체",
+};
+
 export default function All() {
   const items = [
     {

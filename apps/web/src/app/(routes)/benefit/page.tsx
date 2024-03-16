@@ -1,5 +1,6 @@
 "use client";
 
+import { useTitle } from "ahooks";
 import clsx from "clsx";
 import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import {
@@ -27,6 +28,7 @@ import { formatNumber } from "~/utils/number";
 const scrollState = proxy({ scrollY: 0, direction: 0 });
 
 export default function Benefit() {
+  useTitle("혜택 | Doss");
   const { direction } = useSnapshot(scrollState);
   const router = useRouter();
   const { scrollY } = useScroll();

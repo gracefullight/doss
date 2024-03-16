@@ -22,5 +22,23 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/?pwa=1",
     display: "standalone",
     orientation: "portrait",
+    screenshots: [
+      {
+        src: "demo1.png",
+        sizes: "390x844",
+      },
+      {
+        src: "demo2.png",
+        sizes: "390x844",
+      },
+      {
+        src: "demo3.png",
+        sizes: "390x844",
+      },
+      {
+        src: "demo4.png",
+        sizes: "390x844",
+      },
+    ],
   };
 }
