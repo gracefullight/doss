@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import react from "@vitejs/plugin-react-swc";
 import { mergeConfig } from "vite";
 
 // ? https://github.com/storybookjs/storybook/blob/next/code/addons/themes/docs/getting-started/tailwind.md
@@ -26,8 +27,9 @@ const config: StorybookConfig = {
   },
 
   async viteFinal(config, { configType }) {
-    // customize the Vite config here
+    // ? customize the Vite config here
     return mergeConfig(config, {
+      plugins: [react()],
       resolve: {
         alias: [],
       },
