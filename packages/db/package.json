@@ -23,7 +23,7 @@
     "dotenv-cli": "^7.4.1",
     "prisma": "^5.11.0",
     "tsx": "^4.7.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "prisma": {
     "seed": "pnpm db:seed"
