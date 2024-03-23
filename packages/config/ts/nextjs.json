@@ -5,6 +5,9 @@
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "incremental": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+
+    "moduleDetection": "force",
+    "moduleResolution": "Bundler"
   }
 }
