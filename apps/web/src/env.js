@@ -3,7 +3,6 @@ import { z } from "zod";
 
 // ? https://env.t3.gg/docs/nextjs
 // ? https://github.com/t3-oss/t3-env/issues/153
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
 export const env = createEnv({
   shared: {
     NODE_ENV: z.enum(["development", "test", "production"]),
