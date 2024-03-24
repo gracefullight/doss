@@ -6,6 +6,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import { cookies } from "next/headers";
 import type { ReactNode } from "react";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </TRPCReactProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
