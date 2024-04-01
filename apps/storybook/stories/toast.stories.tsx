@@ -9,7 +9,6 @@ const meta: Meta<typeof Toast> = {
     visible: {
       control: { type: "boolean" },
       description: "표시여부",
-      defaultValue: false,
       table: {
         defaultValue: { summary: false },
       },
@@ -17,7 +16,6 @@ const meta: Meta<typeof Toast> = {
     message: {
       control: { type: "text" },
       description: "토스트 메세지",
-      defaultValue: "토스트",
       table: {
         defaultValue: { summary: "토스트" },
       },
@@ -30,7 +28,6 @@ const meta: Meta<typeof Toast> = {
         step: 1000,
       },
       description: "노출시간 (ms)",
-      defaultValue: 2000,
       table: {
         defaultValue: { summary: 2000 },
       },
@@ -38,7 +35,6 @@ const meta: Meta<typeof Toast> = {
     position: {
       control: { type: "radio", options: ["top", "bottom"] },
       description: "토스트의 위치",
-      defaultValue: "bottom",
       table: {
         defaultValue: { summary: "bottom" },
       },
