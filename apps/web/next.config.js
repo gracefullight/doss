@@ -61,6 +61,25 @@ const config = {
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "NEL",
+            value: JSON.stringify({
+              report_to: "default",
+              max_age: 31_536_000,
+              include_subdomains: true,
+            }),
+          },
+          {
+            key: "Report-To",
+            value: JSON.stringify({
+              group: "default",
+              max_age: 31_536_000,
+              endpoints: [
+                { url: "https://gracefullight.report-uri.com/a/d/g" },
+              ],
+              include_subdomains: true,
+            }),
+          },
         ],
       },
     ];
