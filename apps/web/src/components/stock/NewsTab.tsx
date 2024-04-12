@@ -1,3 +1,5 @@
+"use client";
+
 import { shuffle } from "lodash";
 import { useRouter } from "next/navigation";
 import { NewsCard, NowInformation, ValuableInformation } from "./news";
