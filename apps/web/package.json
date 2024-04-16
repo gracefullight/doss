@@ -44,6 +44,8 @@
     "next": "^14.2.0",
     "next-auth": "^4.24.7",
     "path-to-regexp": "^6.2.2",
+    "pino": "^8.20.0",
+    "pino-pretty": "^11.0.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
