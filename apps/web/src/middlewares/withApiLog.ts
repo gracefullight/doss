@@ -34,28 +34,18 @@ export const withApiLog: MiddlewareFactory = (next) => {
       logger.isLevelEnabled("info");
 
     if (shouldLog) {
-      const contentType = req.headers.get("content-type");
-      let requestBody = "";
-
-      if (contentType?.includes("application/json")) {
-        requestBody = await req.text();
-      }
-
       // Log the request details
       logger.info({
         type: "Request",
         path: pathname,
         method: req.method,
-        headers: req.headers,
+        headers: Object.fromEntries(req.headers.entries()),
         query: req.nextUrl.searchParams.toString(),
-        body: requestBody,
       });
 
       // Intercept the response using a custom handler
       const originalResponse = NextResponse.next();
       const cloneResponse = originalResponse.clone();
-
-      const responseBody = await cloneResponse.text();
 
       // Log the response details
       logger.info({
@@ -63,7 +53,6 @@ export const withApiLog: MiddlewareFactory = (next) => {
         path: pathname,
         status: cloneResponse.status,
         headers: Object.fromEntries(cloneResponse.headers.entries()),
-        body: responseBody,
       });
 
       // Return the response with the original body
