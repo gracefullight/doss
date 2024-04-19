@@ -293,7 +293,7 @@ importers:
         specifier: '*'
         version: 18.17.1
       '@types/react':
-        specifier: ^18.2.79
+        specifier: ^18.2.77
         version: 18.2.79
       '@types/react-dom':
         specifier: ^18.2.25
@@ -432,7 +432,7 @@ importers:
         specifier: '*'
         version: link:../config/ts
       '@types/react':
-        specifier: ^18.2.79
+        specifier: ^18.2.77
         version: 18.2.79
       '@types/react-dom':
         specifier: ^18.2.25
