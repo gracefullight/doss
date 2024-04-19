@@ -21,11 +21,11 @@
     "type-check": "turbo type-check"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "@doss/tsconfig": "*",
-    "@manypkg/cli": "^0.21.3",
+    "@manypkg/cli": "^0.21.4",
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "^1.5.0",
     "@vitest/ui": "^1.5.0",
@@ -33,7 +33,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.13",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "sort-package-json": "^2.10.0",
     "turbo": "^1.13.2",
     "type-fest": "^4.15.0",
