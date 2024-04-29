@@ -31,7 +31,7 @@ async function addDirectivesToChunkFiles(distPath = "./dist"): Promise<void> {
 export default defineConfig((options: Options) => ({
   treeshake: true,
   splitting: true,
-  entry: ["src/**/*.tsx"],
+  entry: ["src/**/*.tsx", "src/globals.css"],
   format: ["esm"],
   dts: true,
   minify: true,

@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./globals.css";
 
 export * from "./MultilineText";
 export * from "./ServiceCarousel";

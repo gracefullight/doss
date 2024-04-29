@@ -1,6 +1,6 @@
 "use client";
 
-import type { BuiltInProviderType } from "next-auth/providers";
+import type { BuiltInProviderType } from "next-auth/providers/index";
 import type { ClientSafeProvider, LiteralUnion } from "next-auth/react";
 import { signIn } from "next-auth/react";
 

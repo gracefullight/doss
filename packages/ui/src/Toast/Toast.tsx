@@ -1,3 +1,5 @@
+"use client";
+
 import { cva } from "class-variance-authority";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";

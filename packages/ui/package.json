@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "doss components",
-  "sideEffects": [
-    "**/*.css"
-  ],
   "exports": {
-    ".": "./dist",
-    "./styles.css": "./dist/index.css"
+    ".": "./src/index.ts",
+    "./globals.css": "./src/globals.css"
   },
   "types": "./dist/index.d.mts",
   "scripts": {
@@ -18,23 +15,23 @@
     "lint": "eslint src/"
   },
   "devDependencies": {
-    "@doss/eslint-config": "*",
-    "@doss/tailwind-config": "*",
-    "@doss/tsconfig": "*",
-    "@types/react": "^18.2.77",
-    "@types/react-dom": "^18.2.25",
+    "@doss/eslint-config": "workspace:*",
+    "@doss/tailwind-config": "workspace:*",
+    "@doss/tsconfig": "workspace:*",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "class-variance-authority": "^0.7.0",
     "postcss": "^8.4.38",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3"
   }
 }

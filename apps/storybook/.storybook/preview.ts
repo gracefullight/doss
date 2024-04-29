@@ -1,6 +1,6 @@
 import { Preview } from "@storybook/react";
 
-import "@doss/ui/styles.css";
+import "@doss/ui/globals.css";
 
 const preview: Preview = {
   parameters: {},

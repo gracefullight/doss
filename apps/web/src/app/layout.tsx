@@ -1,4 +1,4 @@
-import "@doss/ui/styles.css";
+import "@doss/ui/globals.css";
 import "~/styles/globals.css";
 
 import { Analytics } from "@vercel/analytics/react";

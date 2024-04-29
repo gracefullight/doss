@@ -39,7 +39,9 @@ export default function Section({
       <div
         className={clsx(
           `flex cursor-pointer items-center justify-between px-2`,
-          children && "mb-5",
+          {
+            "mb-5": Boolean(children),
+          },
         )}
         onClick={handleClick}
       >
