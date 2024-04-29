@@ -8,6 +8,9 @@
     "./react.js",
     "./storybook.js"
   ],
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3",
     "@types/eslint": "^8.56.10",

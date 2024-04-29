@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsup && storybook build --docs",
     "check-types": "tsc --noEmit",
-    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "clean": "rm -rf .turbo node_modules",
     "deploy": "chromatic",
     "dev": "concurrently \"tsup --watch\" \"storybook dev -p 6006\"",
     "lint": "eslint",
