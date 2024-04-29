@@ -14,8 +14,8 @@
     "db:studio": "pnpm -F db dev",
     "dev": "turbo dev --parallel",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
-    "lint": "turbo lint && manypkg check",
-    "lint:fix": "turbo lint:fix && manypkg fix",
+    "lint": "turbo lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "sort-package-json": "sort-package-json \"package.json\" \"apps/*/package.json\" \"packages/*/package.json\" \"packages/config/*/package.json\"",
     "test": "turbo test",
     "type-check": "turbo type-check"
@@ -25,7 +25,6 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "@doss/tsconfig": "workspace:*",
-    "@manypkg/cli": "^0.21.4",
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "^1.5.2",
     "@vitest/ui": "^1.5.2",

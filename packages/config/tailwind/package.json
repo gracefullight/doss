@@ -7,6 +7,9 @@
     "index.ts",
     "postcss.js"
   ],
+  "scripts": {
+    "lint": "eslint"
+  },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.19",

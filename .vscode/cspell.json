@@ -25,6 +25,7 @@
     "placehold",
     "pnpx",
     "pravatar",
+    "prettiercache",
     "Redoc",
     "SAMEORIGIN",
     "signin",
@@ -34,6 +35,7 @@
     "testid",
     "treeshake",
     "trpc",
+    "tsbuildinfo",
     "tsup",
     "valtio",
     "verceldb"

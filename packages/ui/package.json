@@ -14,7 +14,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "deploy": "chromatic",
     "dev": "concurrently \"tsup --watch\" \"storybook dev -p 6006\"",
-    "lint": "eslint src/",
+    "lint": "eslint",
     "preview-storybook": "serve storybook-static"
   },
   "devDependencies": {
