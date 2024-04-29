@@ -189,6 +189,9 @@ importers:
       '@doss/tsconfig':
         specifier: workspace:*
         version: link:../../packages/config/ts
+      '@prisma/nextjs-monorepo-workaround-plugin':
+        specifier: ^5.13.0
+        version: 5.13.0
       '@testing-library/react':
         specifier: ^15.0.5
         version: 15.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1947,6 +1950,9 @@ packages:
 
   '@prisma/get-platform@5.13.0':
     resolution: {integrity: sha512-B/WrQwYTzwr7qCLifQzYOmQhZcFmIFhR81xC45gweInSUn2hTEbfKUPd2keAog+y5WI5xLAFNJ3wkXplvSVkSw==}
+
+  '@prisma/nextjs-monorepo-workaround-plugin@5.13.0':
+    resolution: {integrity: sha512-KcrUjPotWYanktn7t97NwzeMHRsRT9P452EVO802J+yvCm9yKx6xtFzfUlD3NFOsUToAMytIE+t9Ct7/7bDnsg==}
 
   '@radix-ui/react-compose-refs@1.0.1':
     resolution: {integrity: sha512-fDSBgd44FKHa1FRMU59qBMPFcl2PZE+2nmqunj+BWFyYYjnhIDWL2ItDs3rrbJDQOtzt5nIebLCQc4QRfz6LJw==}
@@ -9491,6 +9497,8 @@ snapshots:
   '@prisma/get-platform@5.13.0':
     dependencies:
       '@prisma/debug': 5.13.0
+
+  '@prisma/nextjs-monorepo-workaround-plugin@5.13.0': {}
 
   '@radix-ui/react-compose-refs@1.0.1(@types/react@18.3.1)(react@18.3.1)':
     dependencies:

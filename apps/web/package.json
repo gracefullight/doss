@@ -59,6 +59,7 @@
     "@doss/eslint-config": "workspace:*",
     "@doss/tailwind-config": "workspace:*",
     "@doss/tsconfig": "workspace:*",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.13.0",
     "@testing-library/react": "^15.0.5",
     "@types/lodash": "^4.17.0",
     "@types/luxon": "^3.4.2",
