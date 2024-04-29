@@ -1,6 +1,6 @@
-import { Toast } from "@doss/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CheckCircle, Info, XCircle } from "lucide-react"; // 예시 아이콘
+import { Toast } from "./Toast";
 
 const meta: Meta<typeof Toast> = {
   title: "Components/Toast",
@@ -10,7 +10,7 @@ const meta: Meta<typeof Toast> = {
       control: { type: "boolean" },
       description: "표시여부",
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: "" },
       },
     },
     message: {
@@ -29,7 +29,7 @@ const meta: Meta<typeof Toast> = {
       },
       description: "노출시간 (ms)",
       table: {
-        defaultValue: { summary: 2000 },
+        defaultValue: { summary: "2000" },
       },
     },
     position: {

@@ -1,9 +1,0 @@
-{
-  "extends": "@doss/tsconfig/base.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "incremental": true
-  },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
-}

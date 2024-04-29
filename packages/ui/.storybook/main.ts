@@ -4,10 +4,7 @@ import { mergeConfig } from "vite";
 
 // ? https://github.com/storybookjs/storybook/blob/next/code/addons/themes/docs/getting-started/tailwind.md
 const config: StorybookConfig = {
-  stories: [
-    "../stories/*.stories.@(ts|tsx)",
-    "../stories/**/*.stories.@(ts|tsx)",
-  ],
+  stories: ["../src/*.stories.@(ts|tsx)", "../src/**/*.stories.@(ts|tsx)"],
 
   addons: [
     "@chromatic-com/storybook",

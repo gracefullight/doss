@@ -31,5 +31,5 @@ jobs:
         with:
           # ? https://www.chromatic.com/docs/github-actions/
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: apps/storybook
+          workingDir: packages/ui
           buildScriptName: build

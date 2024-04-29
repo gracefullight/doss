@@ -1,5 +1,5 @@
-import { MultilineText } from "@doss/ui";
 import type { Meta, StoryObj } from "@storybook/react";
+import { MultilineText } from "./MultilineText";
 
 // 스토리북 메타데이터를 타입화하여 정의
 const meta: Meta<typeof MultilineText> = {

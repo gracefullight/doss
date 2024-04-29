@@ -1,7 +1,7 @@
-import type { SettingItemProps } from "@doss/ui";
-import { SettingItem } from "@doss/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { SettingsIcon } from "lucide-react"; // lucide-react 라이브러리에서 Settings 아이콘 사용
+import type { SettingItemProps } from "./SettingItem";
+import { SettingItem } from "./SettingItem";
 
 // 스토리북 메타데이터 정의
 const meta: Meta<typeof SettingItem> = {

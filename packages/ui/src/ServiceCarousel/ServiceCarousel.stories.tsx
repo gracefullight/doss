@@ -1,7 +1,7 @@
-import type { ServiceCarouselProps } from "@doss/ui";
-import { ServiceCarousel } from "@doss/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Settings, User } from "lucide-react";
+import type { ServiceCarouselProps } from "./ServiceCarousel";
+import { ServiceCarousel } from "./ServiceCarousel";
 
 const meta: Meta<typeof ServiceCarousel> = {
   title: "Components/ServiceCarousel",

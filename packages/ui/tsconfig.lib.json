@@ -1,0 +1,5 @@
+{
+  "extends": "@doss/tsconfig/react-library",
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"]
+}

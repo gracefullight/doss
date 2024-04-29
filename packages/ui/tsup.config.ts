@@ -29,6 +29,7 @@ async function addDirectivesToChunkFiles(distPath = "./dist"): Promise<void> {
 }
 
 export default defineConfig((options: Options) => ({
+  tsconfig: "tsconfig.lib.json",
   treeshake: true,
   splitting: true,
   entry: ["src/**/*.tsx", "src/globals.css"],
