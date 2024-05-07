@@ -21,9 +21,9 @@
   "devDependencies": {
     "@doss/tsconfig": "workspace:*",
     "@types/node": "*",
-    "dotenv-cli": "^7.4.1",
+    "dotenv-cli": "^7.4.2",
     "prisma": "^5.13.0",
-    "tsx": "^4.7.3",
+    "tsx": "^4.9.3",
     "typescript": "^5.4.5"
   },
   "prisma": {
