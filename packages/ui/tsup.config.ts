@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { defineConfig, Options } from "tsup";
+import type { Options } from "tsup";
+import { defineConfig } from "tsup";
 
 async function addDirectivesToChunkFiles(distPath = "./dist"): Promise<void> {
   try {
@@ -19,11 +20,12 @@ async function addDirectivesToChunkFiles(distPath = "./dist"): Promise<void> {
 
         await writeFile(filePath, updatedContent, "utf8");
 
+        // eslint-disable-next-line no-console
         console.log(`Directive has been added to ${file}`);
       }
     }
   } catch (err) {
-    // eslint-disable-next-line no-console -- We need to log the error
+    // eslint-disable-next-line no-console
     console.error("Error:", err);
   }
 }
