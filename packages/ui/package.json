@@ -18,7 +18,7 @@
     "preview-storybook": "serve storybook-static"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.3.4",
+    "@chromatic-com/storybook": "^1.3.5",
     "@doss/eslint-config": "workspace:*",
     "@doss/tailwind-config": "workspace:*",
     "@doss/tsconfig": "workspace:*",
@@ -37,7 +37,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "autoprefixer": "^10.4.19",
-    "chromatic": "^11.3.1",
+    "chromatic": "^11.3.2",
     "class-variance-authority": "^0.7.0",
     "concurrently": "^8.2.2",
     "postcss": "^8.4.38",
