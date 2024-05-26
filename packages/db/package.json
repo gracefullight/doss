@@ -16,14 +16,14 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@prisma/client": "^5.13.0"
+    "@prisma/client": "^5.14.0"
   },
   "devDependencies": {
     "@doss/tsconfig": "workspace:*",
     "@types/node": "*",
     "dotenv-cli": "^7.4.2",
-    "prisma": "^5.13.0",
-    "tsx": "^4.9.3",
+    "prisma": "^5.14.0",
+    "tsx": "^4.11.0",
     "typescript": "^5.4.5"
   },
   "prisma": {
