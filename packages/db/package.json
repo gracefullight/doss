@@ -23,7 +23,7 @@
     "@types/node": "*",
     "dotenv-cli": "^7.4.2",
     "prisma": "^5.15.0",
-    "tsx": "^4.15.1",
+    "tsx": "^4.15.5",
     "typescript": "^5.4.5"
   },
   "prisma": {
