@@ -1,5 +1,5 @@
 "use client";
-import { debounce } from "lodash";
+import { useDebounce } from "ahooks";
 import { useMemo, useState } from "react";
 
 interface ContactItem {
@@ -10,6 +10,7 @@ interface ContactItem {
 
 export default function TransferContact() {
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, { wait: 300 });
   const contactItems = useMemo<ContactItem[]>(
     () => [
       {
@@ -27,12 +28,13 @@ export default function TransferContact() {
   const [filteredContacts, setFilteredContacts] =
     useState<ContactItem[]>(contactItems);
 
-  const handleSearch = debounce((term: string) => {
+  const handleSearch = () => {
     const filtered = contactItems.filter((item) =>
-      item.name.toLowerCase().includes(term.toLowerCase()),
+      item.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
     );
+
     setFilteredContacts(filtered);
-  }, 300);
+  };
 
   return (
     <div className="mt-4">
@@ -43,7 +45,7 @@ export default function TransferContact() {
         value={searchTerm}
         onChange={(e) => {
           setSearchTerm(e.target.value);
-          handleSearch(e.target.value);
+          handleSearch();
         }}
       />
       <div className="mt-4 flex flex-col gap-3">

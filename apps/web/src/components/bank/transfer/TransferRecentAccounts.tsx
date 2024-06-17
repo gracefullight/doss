@@ -1,9 +1,18 @@
 import clsx from "clsx";
-import { orderBy } from "lodash";
+import { orderBy } from "lodash-es";
 import { StarIcon } from "lucide-react";
 
+interface Account {
+  type: string;
+  name: string;
+  initials?: string;
+  accountNumber?: string;
+  phoneNumber?: string;
+  isFavorite: boolean;
+}
+
 export default function TransferRecentAccounts() {
-  const items = [
+  const items: Account[] = [
     {
       type: "banking",
       name: "내 저축예금",

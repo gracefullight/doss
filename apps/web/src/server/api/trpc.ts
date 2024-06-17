@@ -11,7 +11,7 @@
 import { db } from "@doss/db";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
-import type { OpenApiMeta } from "trpc-openapi";
+import type { OpenApiMeta } from "trpc-swagger";
 import { ZodError } from "zod";
 import { getServerAuthSession } from "~/server/auth";
 
