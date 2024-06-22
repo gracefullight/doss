@@ -22,8 +22,8 @@
     "@types/node": "*",
     "dotenv-cli": "^7.4.2",
     "prisma": "^5.15.1",
-    "tsx": "^4.15.6",
-    "typescript": "^5.4.5"
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2"
   },
   "prisma": {
     "seed": "pnpm db:seed"
