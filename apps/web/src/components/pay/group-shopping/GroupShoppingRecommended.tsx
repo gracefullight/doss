@@ -47,14 +47,14 @@ export default function GroupShoppingRecommended() {
   return (
     <div className="mt-4 flex flex-col">
       <div className="px-6">
-        <h2 className="text-xl font-medium text-neutral-200">{`${session?.user.name}님을 위한 추천`}</h2>
-        <div className="mt-4 grid grid-cols-2 gap-x-2 gap-y-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+        <h2 className="font-medium text-neutral-200 text-xl">{`${session?.user.name}님을 위한 추천`}</h2>
+        <div className="mt-4 grid grid-cols-2 gap-x-2 gap-y-3 lg:grid-cols-6 md:grid-cols-4 xl:grid-cols-8">
           {items.map((product) => (
             <div key={product.name} className="overflow-hidden">
               <Image
                 src={product.imageUrl}
                 alt={product.name}
-                className="rounded-box max-h-48 w-full"
+                className="max-h-48 w-full rounded-box"
                 width={100}
                 height={100}
               />
@@ -69,13 +69,13 @@ export default function GroupShoppingRecommended() {
                   <span>{`${formatNumber(product.discountPrice)}원`}</span>
                 </div>
                 <span className="text-sm">{product.name}</span>
-                <span className="text-sm text-neutral-400">{`${product.viewers.toLocaleString()}명 구경중`}</span>
+                <span className="text-neutral-400 text-sm">{`${product.viewers.toLocaleString()}명 구경중`}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="divider mb-0"></div>
+      <div className="divider mb-0" />
       <div className="btn btn-block btn-ghost py-2">상품 더 보기</div>
     </div>
   );

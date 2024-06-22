@@ -37,7 +37,7 @@ export default function NewsCard({
       <div className="flex justify-between gap-1">
         <div className="flex flex-col gap-1">
           <div className="font-medium text-neutral-300">{title}</div>
-          <span className="text-sm text-neutral-500">
+          <span className="text-neutral-500 text-sm">
             {source} · {formatTimestamp(timestamp)}
           </span>
         </div>

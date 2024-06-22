@@ -27,7 +27,7 @@ export default function LotterySettingAlarmTime() {
     <StackLayout>
       <StackLayoutNavbar items={navItems} />
       <div className="flex flex-col px-5">
-        <h1 className="text-xl text-neutral-300">복권 알림 시간</h1>
+        <h1 className="text-neutral-300 text-xl">복권 알림 시간</h1>
         <div className="join mt-2">
           <input
             className="join-item btn btn-sm !w-1/2"
@@ -76,7 +76,7 @@ export default function LotterySettingAlarmTime() {
       </div>
       <dialog id="modalLotteryAlarmTime" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="text-lg font-medium text-neutral-300">
+          <h3 className="font-medium text-lg text-neutral-300">
             알림을 끌까요?
           </h3>
           <p className="py-2">매일 복권을 받아 볼 수 없어요.</p>

@@ -71,7 +71,7 @@ export default function BankSetting() {
             <div className="avatar">
               <div className="h-8 w-8 rounded-full">
                 <Image
-                  src={`https://placehold.co/100x100?text=me`}
+                  src={"https://placehold.co/100x100?text=me"}
                   alt="thumbnail"
                   loading="lazy"
                   decoding="async"
@@ -84,7 +84,7 @@ export default function BankSetting() {
               <div className="font-semibold text-neutral-300">
                 {session?.user.name}
               </div>
-              <span className="text-sm text-neutral-400">내 정보 수정하기</span>
+              <span className="text-neutral-400 text-sm">내 정보 수정하기</span>
             </div>
           </div>
           <ChevronRightIcon name="chevron-right" size={20} />
@@ -92,8 +92,8 @@ export default function BankSetting() {
       </div>
 
       <div className="mt-4 flex flex-col gap-3 bg-neutral-800 py-2">
-        {sections.map((section, index) => (
-          <div key={index} className="flex flex-col">
+        {sections.map((section) => (
+          <div key={section.sectionTitle} className="flex flex-col">
             <div className="px-5 py-2 font-semibold text-neutral-200">
               {section.sectionTitle}
             </div>

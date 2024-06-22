@@ -11,7 +11,7 @@ export default function RecentStocks() {
     <div className="bg-neutral-800 px-6 py-4">
       <div className="mb-2 flex flex-col gap-4">
         <div className="text-lg text-neutral-200">최근 본 주식</div>
-        <div className="carousel rounded-box max-w-full space-x-2 self-start">
+        <div className="carousel max-w-full space-x-2 self-start rounded-box">
           {items.map((item) => (
             <div key={item.ticker} className="carousel-item">
               <button

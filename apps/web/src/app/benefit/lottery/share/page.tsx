@@ -47,7 +47,7 @@ export default function BenefitLotteryShare() {
           >
             <div className="flex w-full flex-col rounded-lg bg-blue-50 px-4 py-5">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-neutral-400">
+                <span className="text-neutral-400 text-sm">
                   행운복권 | {today}
                 </span>
                 <CloverIcon
@@ -56,10 +56,10 @@ export default function BenefitLotteryShare() {
                   size={32}
                 />
               </div>
-              <h2 className="text-lg font-semibold text-neutral-900">
+              <h2 className="font-semibold text-lg text-neutral-900">
                 매사가 딱딱 맞아 떨어지네요. 자신감과 용기를 가지고 움직이세요.
               </h2>
-              <div className="divider before:bg-neutral-200 after:bg-neutral-200"></div>
+              <div className="divider after:bg-neutral-200 before:bg-neutral-200" />
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
                   <span className="text-neutral-400">성공운</span>
@@ -74,7 +74,7 @@ export default function BenefitLotteryShare() {
                 </div>
               </div>
             </div>
-            <div className="my-3 text-lg font-bold text-white">doss</div>
+            <div className="my-3 font-bold text-lg text-white">doss</div>
           </div>
           <div className="flex w-full flex-col gap-2 px-5">
             <button
@@ -85,7 +85,7 @@ export default function BenefitLotteryShare() {
               사진으로 저장하기
             </button>
             <button
-              className="btn btn-block text-info rounded-xl border-none bg-white hover:bg-neutral-100"
+              className="btn btn-block rounded-xl border-none bg-white text-info hover:bg-neutral-100"
               type="button"
               onClick={() =>
                 void shareUrl("도스 행운복권을 열어보세요", PATH_LOTTERY)

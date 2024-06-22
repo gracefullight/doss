@@ -32,7 +32,7 @@ describe("#NewsCard", () => {
     );
 
     expect(
-      screen.getByText("테스트 " + formatPercent(0.002)),
+      screen.getByText(`테스트 ${formatPercent(0.002)}`),
     ).toBeInTheDocument();
     expect(
       screen.getByText(`${source} · ${formatTimestamp(timestamp)}`),

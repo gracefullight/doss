@@ -12,10 +12,10 @@ export default function BenefitCoupang() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col px-6">
-        <div className="text-sm text-neutral-400">
+        <div className="text-neutral-400 text-sm">
           오늘은 이미 포인트를 받았어요
         </div>
-        <div className="pt-2 text-lg font-medium text-neutral-200">
+        <div className="pt-2 font-medium text-lg text-neutral-200">
           쿠팡 로켓배송
           <br />
           인기 상품 구경해볼까요?

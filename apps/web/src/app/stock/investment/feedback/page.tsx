@@ -38,7 +38,7 @@ export default function InvestmentFeedback() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col p-5">
-        <h1 className="text-xl font-bold text-neutral-300">
+        <h1 className="font-bold text-neutral-300 text-xl">
           투자 모아보기에서 더 알고 싶은 내용, 바라는 점이 있나요?
         </h1>
         <div className="mt-2 text-neutral-400">꼼꼼히 읽어보고 개선할게요.</div>
@@ -47,7 +47,7 @@ export default function InvestmentFeedback() {
           onInput={handleInput}
           className="textarea mt-4 w-full resize-none overflow-hidden bg-neutral-800"
           placeholder="답변 적기"
-        ></textarea>
+        />
       </div>
       <div className="fixed bottom-0 z-50 flex w-full">
         <button

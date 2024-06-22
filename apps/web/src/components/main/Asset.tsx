@@ -51,9 +51,9 @@ export default function Asset() {
   return (
     <Section title="자산" link="/" hasBottomButton>
       <div className="flex flex-col gap-2">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <div
-            key={index}
+            key={item.title}
             className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600"
             onClick={() => handleLink(item.link)}
           >
@@ -71,8 +71,8 @@ export default function Asset() {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm text-neutral-400">{item.title}</span>
-                <span className="text-lg font-medium">
+                <span className="text-neutral-400 text-sm">{item.title}</span>
+                <span className="font-medium text-lg">
                   {formatNumber(item.amount)}원
                 </span>
               </div>
@@ -89,7 +89,7 @@ export default function Asset() {
           </div>
         ))}
       </div>
-      <div className="divider m-0 px-2"></div>
+      <div className="divider m-0 px-2" />
       <div className="btn btn-ghost btn-block no-animation text-neutral-400">
         계좌·대출·증권·포인트 보기
         <ChevronDownIcon name="chevron-down" size={16} />

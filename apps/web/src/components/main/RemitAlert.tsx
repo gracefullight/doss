@@ -24,10 +24,10 @@ export default function RemitAlert() {
       <div className="flex select-none space-x-3">
         <LandmarkIcon name="landmark" className="text-yellow-500" size={24} />
         <div className="flex flex-col gap-1">
-          <span className="text-sm text-neutral-500">
+          <span className="text-neutral-500 text-sm">
             복사한 계좌로 {formatNumber(3000)}원 송금
           </span>
-          <div className="text-info text-left font-medium">
+          <div className="text-left font-medium text-info">
             도스뱅크 {clipboardValue}
           </div>
         </div>

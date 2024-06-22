@@ -14,12 +14,10 @@
     "clean": "rm -rf .turbo node_modules",
     "deploy": "chromatic",
     "dev": "concurrently \"tsup --watch\" \"storybook dev -p 6006\"",
-    "lint": "eslint",
     "preview-storybook": "serve storybook-static"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
-    "@doss/eslint-config": "workspace:*",
     "@doss/tailwind-config": "workspace:*",
     "@doss/tsconfig": "workspace:*",
     "@storybook/addon-actions": "^8.1.10",

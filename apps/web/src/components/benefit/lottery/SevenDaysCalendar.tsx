@@ -16,19 +16,19 @@ function CalendarDayBox({
 }: CalendarDayBoxProps) {
   const isSpecialStyle = isToday || isSpecial;
 
-  let displayText;
+  let displayText: string;
   if (isToday) {
     displayText = "오늘";
   } else if (isSpecial) {
-    displayText = specialText;
+    displayText = String(specialText);
   } else {
-    displayText = sequence;
+    displayText = String(sequence);
   }
 
   return (
     <div
       className={clsx(
-        `flex flex-1 items-center justify-center py-2 text-center font-semibold`,
+        "flex flex-1 items-center justify-center py-2 text-center font-semibold",
         {
           "text-neutral-500": !isSpecialStyle,
         },
@@ -36,9 +36,9 @@ function CalendarDayBox({
     >
       {isSpecialStyle ? (
         <div
-          className={clsx(`rounded-full p-2`, {
+          className={clsx("rounded-full p-2", {
             "bg-info text-white": isToday,
-            "text-info bg-neutral-800": !isToday,
+            "bg-neutral-800 text-info": !isToday,
           })}
         >
           {displayText}

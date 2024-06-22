@@ -8,7 +8,6 @@
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
     "dev": "pnpm with-env next dev",
-    "lint": "eslint",
     "start": "pnpm with-env next start",
     "test": "vitest --ui --coverage",
     "type-check": "tsc --noEmit",
@@ -56,7 +55,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@doss/eslint-config": "workspace:*",
     "@doss/tailwind-config": "workspace:*",
     "@doss/tsconfig": "workspace:*",
     "@prisma/nextjs-monorepo-workaround-plugin": "^5.15.1",

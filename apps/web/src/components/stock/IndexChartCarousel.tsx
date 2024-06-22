@@ -41,13 +41,13 @@ export default function IndexChartCarousel() {
     },
   ];
   return (
-    <div className="carousel rounded-box max-w-full space-x-4 self-start">
+    <div className="carousel max-w-full space-x-4 self-start rounded-box">
       {items.map((item, index) => (
         <div className="carousel-item" key={index}>
           <div className="flex w-36 cursor-pointer flex-col justify-between gap-2 rounded-2xl bg-neutral-700 p-4">
             <div className="flex flex-col">
               <span className="text-sm">{item.subheader}</span>
-              <span className="text-lg font-medium">
+              <span className="font-medium text-lg">
                 <MultilineText>{item.title}</MultilineText>
               </span>
               <span className="text-error text-sm">{item.description}</span>

@@ -34,13 +34,12 @@
       "dependsOn": ["^build", "^db:generate"],
       "outputs": [".next/**", "public/*.js"]
     },
-    "format": {
-      "outputs": ["node_modules/.cache/.prettiercache"],
-      "outputLogs": "new-only"
+    "//#format:fix": {
+      "cache": false
     },
-    "lint": {
-      "dependsOn": ["^topology"],
-      "outputs": ["node_modules/.cache/.eslintcache"]
+    "//#lint": {},
+    "//#lint:fix": {
+      "cache": false
     },
     "clean": {
       "cache": false

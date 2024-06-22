@@ -1,11 +1,8 @@
 {
   "[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
-  "[javascript,typescript,typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
+    "source.organize.biome": "explicit",
     "source.fixAll": "explicit"
   },
   "eslint.workingDirectories": [

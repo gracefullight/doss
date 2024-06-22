@@ -32,20 +32,20 @@ export default function Section({
   return (
     <section
       className={clsx(
-        `w-full rounded-2xl bg-neutral-800 px-3 pt-5`,
+        "w-full rounded-2xl bg-neutral-800 px-3 pt-5",
         hasBottomButton ? "pb-2" : "pb-5",
       )}
     >
       <div
         className={clsx(
-          `flex cursor-pointer items-center justify-between px-2`,
+          "flex cursor-pointer items-center justify-between px-2",
           {
             "mb-5": Boolean(children),
           },
         )}
         onClick={handleClick}
       >
-        <h2 className="text-lg font-semibold text-neutral-200">{title}</h2>
+        <h2 className="font-semibold text-lg text-neutral-200">{title}</h2>
         {!hiddenLink && (
           <button
             className="btn btn-square btn-sm btn-ghost"

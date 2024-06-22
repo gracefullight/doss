@@ -106,7 +106,7 @@ export default function StockSetting() {
           )}
         >
           {section.title && (
-            <div className="px-5 py-2 text-sm text-neutral-500">
+            <div className="px-5 py-2 text-neutral-500 text-sm">
               {section.title}
             </div>
           )}

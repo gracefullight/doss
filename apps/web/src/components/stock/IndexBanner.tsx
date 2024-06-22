@@ -20,9 +20,8 @@ export default function StockIndexBanner() {
     setCurrentItem((prevItem) => {
       if (prevItem >= items.length - 1) {
         return 0;
-      } else {
-        return prevItem + 1;
       }
+      return prevItem + 1;
     });
   }, 3000);
 

@@ -34,7 +34,7 @@ export function ServiceCarousel({
   isDark = false,
 }: ServiceCarouselProps) {
   return (
-    <div className="carousel rounded-box max-w-full space-x-4 self-start">
+    <div className="carousel max-w-full space-x-4 self-start rounded-box">
       {items.map((item) => (
         <div key={item.title} className="carousel-item">
           <div
@@ -42,8 +42,8 @@ export function ServiceCarousel({
             onClick={item.handleClick}
           >
             <div className="flex flex-col gap-2">
-              <span className="text-sm text-neutral-400">{item.subheader}</span>
-              <span className="text-lg font-medium">
+              <span className="text-neutral-400 text-sm">{item.subheader}</span>
+              <span className="font-medium text-lg">
                 <MultilineText>{item.title}</MultilineText>
               </span>
             </div>

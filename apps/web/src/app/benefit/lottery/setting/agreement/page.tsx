@@ -9,8 +9,8 @@ export default function LotteryAgreement() {
         <div className="flex items-center justify-center bg-neutral-200 py-4">
           <CloverIcon name="clover" className="text-green-500" size={240} />
         </div>
-        <div className="flex flex-col gap-4 bg-neutral-800 px-5 pb-10 pt-5">
-          <h1 className="text-2xl font-bold text-neutral-200">
+        <div className="flex flex-col gap-4 bg-neutral-800 px-5 pt-5 pb-10">
+          <h1 className="font-bold text-2xl text-neutral-200">
             100% 당첨되는
             <br />
             행운 복권을 받아보세요

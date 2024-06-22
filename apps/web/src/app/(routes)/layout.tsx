@@ -3,7 +3,7 @@ import { BottomNavigation, ScreenCaptureToast } from "~/components/layout";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <main className="bg-base-100 flex flex-col items-center justify-center pb-24">
+    <main className="flex flex-col items-center justify-center bg-base-100 pb-24">
       {children}
       <BottomNavigation />
       <ScreenCaptureToast />

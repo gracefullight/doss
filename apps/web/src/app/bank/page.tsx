@@ -25,11 +25,11 @@ export default function Bank() {
     <StackLayout>
       <StackLayoutNavbar items={navItems} isLightBackground />
       <div className="flex flex-grow flex-col bg-neutral-800">
-        <div className="tabs tabs-lg tabs-bordered w-full  bg-neutral-800 px-5">
+        <div className="tabs tabs-lg tabs-bordered w-full bg-neutral-800 px-5">
           {tabs.map((tab, idx) => (
             <a
               key={tab.name}
-              className={clsx(`tab`, {
+              className={clsx("tab", {
                 "tab-active": tabIndex === idx,
                 "text-2xl": isLargeFont,
               })}

@@ -57,13 +57,13 @@ export default function TransferMyAccounts() {
           <div key={item.accountNumber} className="flex justify-between">
             <div className="flex items-center gap-2">
               <div className="avatar placeholder">
-                <div className="bg-neutral-focus text-neutral-content h-10 w-10 rounded-full">
+                <div className="h-10 w-10 rounded-full bg-neutral-focus text-neutral-content">
                   <span>{item.initials || item.name[0]}</span>
                 </div>
               </div>
               <div className="flex flex-col gap-1">
                 <div className="font-medium text-neutral-300">{item.name}</div>
-                <span className="text-sm text-neutral-400">
+                <span className="text-neutral-400 text-sm">
                   {item.accountNumber}
                 </span>
               </div>

@@ -67,8 +67,8 @@ export default function Voucher() {
     },
   ];
   return (
-    <div className="flex flex-col bg-neutral-800 px-6 pb-4 pt-8">
-      <h2 className="text-xl font-medium text-neutral-200">기프티콘</h2>
+    <div className="flex flex-col bg-neutral-800 px-6 pt-8 pb-4">
+      <h2 className="font-medium text-neutral-200 text-xl">기프티콘</h2>
       <span className="text-info">살 때마다 포인트 3% 적립</span>
       <div className="my-6 grid grid-cols-4 gap-y-6">
         {voucherCategories.map((item) => (
@@ -81,24 +81,24 @@ export default function Voucher() {
           </div>
         ))}
       </div>
-      <h3 className="text-lg font-medium text-neutral-200">인기 기프티콘</h3>
+      <h3 className="font-medium text-lg text-neutral-200">인기 기프티콘</h3>
       <ul className="mt-6 flex flex-col gap-6">
         {vouchers.map((item) => (
           <li key={item.title} className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="avatar placeholder">
-                <div className="text-neutral w-10 rounded-lg bg-neutral-100">
+                <div className="w-10 rounded-lg bg-neutral-100 text-neutral">
                   <span>1</span>
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm text-neutral-400">{item.title}</span>
-                <span className="text-lg font-medium">
+                <span className="text-neutral-400 text-sm">{item.title}</span>
+                <span className="font-medium text-lg">
                   {formatNumber(item.amount)}원
                 </span>
               </div>
             </div>
-            <div className="badge badge-md bg-info text-info border-none bg-opacity-20 py-3 ">
+            <div className="badge badge-md border-none bg-info bg-opacity-20 py-3 text-info ">
               {formatNumber(item.point)}원 적립
             </div>
           </li>

@@ -780,14 +780,14 @@ export default function All() {
       </div>
       <div className="px-2">
         <div className="mb-4 flex items-center gap-4">
-          <h1 className="text-2xl font-bold text-neutral-200">전체</h1>
+          <h1 className="font-bold text-2xl text-neutral-200">전체</h1>
         </div>
         <div className="flex justify-between gap-2 py-2">
           {items.map((item) => (
             <ConditionalLink href={item.link} key={item.title}>
               <div className="flex cursor-pointer select-none flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-700 px-6 py-4 active:bg-neutral-600">
                 {item.IconComponent}
-                <span className="text-sm text-neutral-200">{item.title}</span>
+                <span className="text-neutral-200 text-sm">{item.title}</span>
               </div>
             </ConditionalLink>
           ))}
@@ -832,11 +832,11 @@ export default function All() {
             </div>
           </li>
         </ul>
-        <div className="divider px-2"></div>
+        <div className="divider px-2" />
         <div className="flex flex-col gap-6">
           {sections.map((section) => (
             <div key={section.sectionTitle}>
-              <div className="px-2 pb-4 text-lg font-medium">
+              <div className="px-2 pb-4 font-medium text-lg">
                 {section.sectionTitle}
               </div>
               <ul className="flex flex-col gap-2">
@@ -852,7 +852,7 @@ export default function All() {
                       <span className="font-medium">
                         {item.title}
                         {item.serviceName && (
-                          <span className="text-sm font-normal text-neutral-500">
+                          <span className="font-normal text-neutral-500 text-sm">
                             {` · ${item.serviceName}`}
                           </span>
                         )}

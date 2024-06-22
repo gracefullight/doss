@@ -8,7 +8,7 @@ export default function PointNudgeBanner() {
           <HelpCircleIcon name="help-circle" size={24} />
           <div className="flex flex-col">
             <div className="text-neutral-300">깜짝 포인트 발견</div>
-            <span className="text-sm text-neutral-500">
+            <span className="text-neutral-500 text-sm">
               지금 바로 확인해 보세요
             </span>
           </div>

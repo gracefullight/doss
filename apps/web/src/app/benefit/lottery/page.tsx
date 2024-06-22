@@ -44,7 +44,7 @@ export default function BenefitLottery() {
     transition: {
       y: {
         duration: duration,
-        repeat: Infinity,
+        repeat: Number.POSITIVE_INFINITY,
         repeatType: "reverse",
         ease: "easeInOut",
       },
@@ -61,10 +61,10 @@ export default function BenefitLottery() {
       <StackLayoutNavbar items={navItems} />
       {!selected && (
         <div className="flex h-[calc(100vh-140px)] flex-col items-center justify-center">
-          <span className="text-lg font-medium text-neutral-400">
+          <span className="font-medium text-lg text-neutral-400">
             오늘 이루고 싶은 것을 생각하며
           </span>
-          <h1 className="text-xl font-bold text-neutral-200">
+          <h1 className="font-bold text-neutral-200 text-xl">
             복권을 눌러보세요
           </h1>
           <div className="mt-12 flex justify-between gap-2">
@@ -87,8 +87,8 @@ export default function BenefitLottery() {
       {selected && (
         <div>
           <div className="flex flex-col px-6">
-            <h2 className="text-info text-lg font-bold">1일차</h2>
-            <h1 className="mt-2 text-2xl font-bold text-neutral-300">
+            <h2 className="font-bold text-info text-lg">1일차</h2>
+            <h1 className="mt-2 font-bold text-2xl text-neutral-300">
               복권을 매일 확인하면
               <br />
               3일차에 2배 드려요
@@ -96,23 +96,23 @@ export default function BenefitLottery() {
             <SevenDaysCalendar />
             <div className="mt-4 flex flex-col rounded-2xl bg-neutral-700 px-6 py-8">
               <div className="relative">
-                <div className="text-2xl font-bold text-neutral-300">
+                <div className="font-bold text-2xl text-neutral-300">
                   성공운 좋음
                 </div>
                 <SmileIcon
                   name="smile"
-                  className="absolute -top-1 right-0 text-yellow-400"
+                  className="-top-1 absolute right-0 text-yellow-400"
                   size={48}
                 />
-                <span className="text-info block text-2xl font-bold">6 원</span>
+                <span className="block font-bold text-2xl text-info">6 원</span>
               </div>
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-neutral-400 text-sm">
                 작은 행운이 찾아오는 날이에요.
                 <br />
                 소중한 지인들에게 연락해보세요.
               </p>
               <div className="mt-8 flex flex-col gap-1">
-                <span className="text-sm text-neutral-400">
+                <span className="text-neutral-400 text-sm">
                   행운을 줄 귀인의 초성
                 </span>
                 <span className="font-bold text-neutral-300">ㅇㄱ</span>
@@ -121,7 +121,7 @@ export default function BenefitLottery() {
           </div>
           <div className="fixed bottom-0 z-50 flex w-full px-5 pb-4">
             <button
-              className="btn btn-block btn-lg text-info rounded-xl border-none bg-neutral-700 hover:bg-neutral-800"
+              className="btn btn-block btn-lg rounded-xl border-none bg-neutral-700 text-info hover:bg-neutral-800"
               type="button"
               onClick={() => router.push("/benefit/lottery/share")}
             >

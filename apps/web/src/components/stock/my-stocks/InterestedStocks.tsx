@@ -13,7 +13,7 @@ export default function InterestedStocks() {
     <div className="bg-neutral-800 px-6 py-4">
       <div className="mb-2 flex flex-col gap-4">
         <div className="mb-2 flex justify-between">
-          <div className="text-lg font-medium text-neutral-200">관심 주식</div>
+          <div className="font-medium text-lg text-neutral-200">관심 주식</div>
           <div className="cursor-pointer text-neutral-400">편집하기</div>
         </div>
         <div className="join join-vertical w-full">
@@ -24,7 +24,7 @@ export default function InterestedStocks() {
               defaultChecked
               title="관심 주식 펼치기"
             />
-            <div className="collapse-title pl-0 text-lg font-medium text-neutral-400">
+            <div className="collapse-title pl-0 font-medium text-lg text-neutral-400">
               기본
             </div>
             <div className="collapse-content p-0">
@@ -55,7 +55,7 @@ export default function InterestedStocks() {
                       <span className={clsx("text-lg", "text-error")}>
                         {`+${formatPercent(item.percent)}`}
                       </span>
-                      <span className="text-sm font-medium text-neutral-400">
+                      <span className="font-medium text-neutral-400 text-sm">
                         {formatNumber(item.price)}원
                       </span>
                     </div>
@@ -64,7 +64,7 @@ export default function InterestedStocks() {
                 <li className="flex items-center">
                   <div className="flex items-center space-x-3">
                     <div className="avatar placeholder">
-                      <div className="bg-info w-10 rounded-full bg-opacity-20">
+                      <div className="w-10 rounded-full bg-info bg-opacity-20">
                         <PlusIcon
                           name="plus"
                           className="text-blue-500"

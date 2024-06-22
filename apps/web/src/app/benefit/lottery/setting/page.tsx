@@ -53,12 +53,12 @@ export default function BenefitLotterySetting() {
           <div
             className="flex cursor-pointer select-none items-center justify-between px-5 py-2 active:bg-neutral-600"
             key={item.name}
-            onClick={() => void handleClick(item)}
+            onClick={() => handleClick(item)}
           >
             <div className="flex flex-col">
               <div className="text-neutral-300">{item.name}</div>
               {item.description && (
-                <span className="text-sm text-neutral-500">
+                <span className="text-neutral-500 text-sm">
                   {item.description}
                 </span>
               )}

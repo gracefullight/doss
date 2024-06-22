@@ -214,7 +214,7 @@ export default function BankProductsTab() {
     <div className="mt-5 flex flex-col gap-6">
       {sections.map((section) => (
         <div key={section.sectionTitle}>
-          <h3 className="mb-2 px-5 text-xl text-neutral-200">
+          <h3 className="mb-2 px-5 text-neutral-200 text-xl">
             {section.sectionTitle}
           </h3>
           <div className="flex flex-col gap-1 px-3">
@@ -237,7 +237,7 @@ export default function BankProductsTab() {
                         </div>
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-sm text-neutral-400">
+                        <span className="text-neutral-400 text-sm">
                           {description}
                         </span>
                         <span className="font-medium text-neutral-200">
@@ -256,7 +256,7 @@ export default function BankProductsTab() {
                       </div>
                     )}
                     {badgeText && (
-                      <span className="text-right text-xs text-blue-500">
+                      <span className="text-right text-blue-500 text-xs">
                         <MultilineText>{badgeText}</MultilineText>
                       </span>
                     )}
@@ -269,7 +269,7 @@ export default function BankProductsTab() {
       ))}
       <div>
         <div className="mb-2 flex justify-between px-5">
-          <h3 className="text-xl text-neutral-200">유용한 정보</h3>
+          <h3 className="text-neutral-200 text-xl">유용한 정보</h3>
           <button className="btn btn-xs btn-active btn-ghost" type="button">
             더보기
           </button>
@@ -279,7 +279,7 @@ export default function BankProductsTab() {
             <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
               <div className="flex items-center space-x-3">
                 <div className="avatar placeholder">
-                  <div className="bg-neutral w-12 rounded-lg p-2">
+                  <div className="w-12 rounded-lg bg-neutral p-2">
                     <span>U1</span>
                   </div>
                 </div>
@@ -287,7 +287,7 @@ export default function BankProductsTab() {
                   <span className="font-medium text-neutral-200">
                     전세살이의 진정한 해피엔딩, 내 보증금 온전히 돌려받기
                   </span>
-                  <span className="text-sm text-neutral-400">전세툰</span>
+                  <span className="text-neutral-400 text-sm">전세툰</span>
                 </div>
               </div>
             </div>
@@ -296,7 +296,7 @@ export default function BankProductsTab() {
             <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
               <div className="flex items-center space-x-3">
                 <div className="avatar placeholder">
-                  <div className="bg-neutral w-12 rounded-lg p-2">
+                  <div className="w-12 rounded-lg bg-neutral p-2">
                     <span>U2</span>
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export default function BankProductsTab() {
                   <span className="font-medium text-neutral-200">
                     여행을 좋아한다면? 적금 금리에 여행 혜택까지 받아요
                   </span>
-                  <span className="text-sm text-neutral-400">
+                  <span className="text-neutral-400 text-sm">
                     도스뱅크 사용팁
                   </span>
                 </div>

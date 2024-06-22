@@ -29,7 +29,7 @@ export default function BenefitNearbyMyCharacter() {
       <div className="flex flex-grow flex-col px-6 pt-4">
         <div className="flex flex-col items-center">
           <div className="badge badge-warning badge-outline">웃는 얼굴</div>
-          <span className="pt-1 text-lg font-medium">{session?.user.name}</span>
+          <span className="pt-1 font-medium text-lg">{session?.user.name}</span>
           <div className="avatar my-4">
             <div className="w-48 rounded-full">
               <Image
@@ -57,7 +57,7 @@ export default function BenefitNearbyMyCharacter() {
           </button>
         </div>
       </div>
-      <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 pb-4 pt-2">
+      <div className="sticky bottom-0 z-10 flex cursor-pointer items-center justify-between px-6 pt-2 pb-4">
         <div className="btn btn-info btn-block rounded-xl">
           내 캐릭터 바꾸기
         </div>

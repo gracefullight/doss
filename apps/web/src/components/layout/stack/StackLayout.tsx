@@ -13,7 +13,7 @@ function StackLayout({
   const backgroundColor = customBackgroundColor ?? "bg-base-100";
 
   return (
-    <main className={clsx(`flex min-h-screen flex-col`, backgroundColor)}>
+    <main className={clsx("flex min-h-screen flex-col", backgroundColor)}>
       {children}
       <ScreenCaptureToast />
     </main>

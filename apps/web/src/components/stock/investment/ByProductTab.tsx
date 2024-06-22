@@ -37,7 +37,7 @@ export default function ByProductTab() {
 
   return (
     <>
-      <div className="flex flex-col bg-neutral-800 px-3 pb-2 pt-6">
+      <div className="flex flex-col bg-neutral-800 px-3 pt-6 pb-2">
         <span className="ml-1 px-1 font-medium text-neutral-300">
           총 2개 계좌 합산
         </span>
@@ -47,14 +47,14 @@ export default function ByProductTab() {
             <ChevronDownIcon name="chevron-down" size={16} />
           </button>
         </div>
-        <span className="text-error px-2 text-sm">
+        <span className="px-2 text-error text-sm">
           총손익 {formatNumber(1000000)}원 ({formatPercent(0.11)})
         </span>
         <div className="mt-4 flex flex-col gap-2">
           {items.map((item) => (
             <div
               key={item.title}
-              className="flex cursor-pointer select-none items-center justify-between rounded-lg py-1 pl-2 pr-1 active:bg-neutral-600"
+              className="flex cursor-pointer select-none items-center justify-between rounded-lg py-1 pr-1 pl-2 active:bg-neutral-600"
             >
               <div className="flex gap-2">
                 {item.IconComponent}

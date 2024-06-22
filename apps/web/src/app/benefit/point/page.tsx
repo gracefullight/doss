@@ -54,9 +54,9 @@ export default function BenefitPoint() {
       <StackLayoutNavbar items={navItems} isLightBackground />
       <div className="flex flex-col bg-neutral-800 pb-2">
         <div className="flex flex-col px-5">
-          <span className="text-sm text-neutral-400">내 포인트</span>
+          <span className="text-neutral-400 text-sm">내 포인트</span>
           <div className="flex flex-row items-center justify-between">
-            <h1 className="text-2xl font-bold text-neutral-300">
+            <h1 className="font-bold text-2xl text-neutral-300">
               {formatNumber(200)} 원
             </h1>
             <button className="btn border-none bg-neutral-700" type="button">
@@ -71,7 +71,7 @@ export default function BenefitPoint() {
             </button>
           </div>
         </div>
-        <div className="divider px-5"></div>
+        <div className="divider px-5" />
         <div className="flex flex-col gap-2 px-5">
           <h2 className="mb-1 font-medium text-neutral-300">
             여기서 쓸 수 있어요
@@ -101,14 +101,14 @@ export default function BenefitPoint() {
                     />
                   </div>
                 </div>
-                <span className="text-sm text-neutral-300">{item.name}</span>
+                <span className="text-neutral-300 text-sm">{item.name}</span>
               </div>
             ))}
             <div className="col-start-auto flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl bg-neutral-700 px-6 py-4">
               <div className="avatar">
                 <div className="h-8 w-8 rounded-full">
                   <Image
-                    src={`https://placehold.co/100x100?text=more`}
+                    src={"https://placehold.co/100x100?text=more"}
                     alt="thumbnail"
                     loading="lazy"
                     decoding="async"
@@ -117,18 +117,18 @@ export default function BenefitPoint() {
                   />
                 </div>
               </div>
-              <span className="text-sm text-neutral-300">더보기</span>
+              <span className="text-neutral-300 text-sm">더보기</span>
             </div>
           </div>
           <div className="mt-6 flex flex-col">
             <h2 className="mb-2 font-medium text-neutral-300">기프티콘</h2>
-            <div className="carousel rounded-box mt-2 max-w-full cursor-pointer space-x-4 self-start">
+            <div className="carousel mt-2 max-w-full cursor-pointer space-x-4 self-start rounded-box">
               {giftIcons.map((item) => (
                 <div key={item.name} className="carousel-item">
                   <div className="flex w-32 cursor-pointer flex-col">
                     <img
                       src={item.imageUrl}
-                      className="rounded-box w-full"
+                      className="w-full rounded-box"
                       alt={item.name}
                       loading="eager"
                     />
@@ -136,7 +136,7 @@ export default function BenefitPoint() {
                       <div className="text-lg text-neutral-300">
                         {formatNumber(500)}원
                       </div>
-                      <span className="text-sm text-neutral-400">
+                      <span className="text-neutral-400 text-sm">
                         {item.name}
                       </span>
                     </div>
@@ -146,7 +146,7 @@ export default function BenefitPoint() {
             </div>
           </div>
         </div>
-        <div className="divider mb-0"></div>
+        <div className="divider mb-0" />
         <div className="btn btn-block btn-ghost">다른 상품 더보기</div>
       </div>
       <div className="mt-4 flex flex-grow flex-col gap-2 bg-neutral-800 px-3 pt-2">

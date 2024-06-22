@@ -9,7 +9,7 @@ export default function CoupangCircle() {
       height={200}
       initial={{ y: 20 }}
       animate={{ y: [-20, 20, -20] }}
-      transition={{ repeat: Infinity, duration: 2 }}
+      transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
     >
       <motion.circle cx={100} cy={100} r={80} fill="red" />
       <motion.text

@@ -26,7 +26,7 @@ export default function StockMainTabs() {
           </a>
         ))}
       </div>
-      {tabs[tabIndex]!.component}
+      {tabs[tabIndex]?.component}
     </>
   );
 }

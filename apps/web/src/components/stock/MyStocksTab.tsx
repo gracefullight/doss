@@ -52,7 +52,7 @@ export default function MyStocksTab() {
               내 계좌 보기
             </button>
           </div>
-          <div className="text-error mt-1">+1,000,000원 (10%)</div>
+          <div className="mt-1 text-error">+1,000,000원 (10%)</div>
         </div>
         <div className="mt-6 flex justify-between">
           <details className="dropdown dropdown-bottom">
@@ -60,7 +60,7 @@ export default function MyStocksTab() {
               가나다 순
               <ChevronDownIcon name="chevron-down" size={20} />
             </summary>
-            <ul className="menu dropdown-content rounded-box z-[1] w-52 bg-neutral-700 p-2 shadow">
+            <ul className="menu dropdown-content z-[1] w-52 rounded-box bg-neutral-700 p-2 shadow">
               <li>
                 <a>가나다 순</a>
               </li>
@@ -85,7 +85,7 @@ export default function MyStocksTab() {
             </label>
           </div>
         </div>
-        <ul className="mb-4 mt-6 flex flex-col gap-4">
+        <ul className="mt-6 mb-4 flex flex-col gap-4">
           {stocks.map((item) => {
             const priceGap = item.currentPrice - item.purchasePrice;
             const percentChange = priceGap / item.purchasePrice;
@@ -121,13 +121,13 @@ export default function MyStocksTab() {
                   </div>
                   <div className="flex flex-col">
                     <span className="font-medium">{item.title}</span>
-                    <span className="text-sm text-neutral-400">
+                    <span className="text-neutral-400 text-sm">
                       {formatNumber(item.count)}주
                     </span>
                   </div>
                 </div>
                 <div className="flex flex-col items-end">
-                  <span className="text-lg font-medium">
+                  <span className="font-medium text-lg">
                     {formatNumber(item.currentPrice)}원
                   </span>
                   <span className={clsx("text-sm", priceClassName)}>
@@ -141,7 +141,7 @@ export default function MyStocksTab() {
           <li className="flex items-center">
             <div className="flex items-center space-x-3">
               <div className="avatar placeholder">
-                <div className="bg-info w-10 rounded-full bg-opacity-20">
+                <div className="w-10 rounded-full bg-info bg-opacity-20">
                   <PlusIcon name="plus" className="text-blue-500" size={24} />
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function MyStocksTab() {
             </div>
           </li>
         </ul>
-        <div className="divider"></div>
+        <div className="divider" />
         <div className="mb-2 flex flex-col gap-3">
           <div className="flex cursor-pointer items-center justify-between py-1">
             <span className="text-lg text-neutral-300">주문내역</span>
@@ -159,9 +159,9 @@ export default function MyStocksTab() {
               <ChevronRightIcon name="chevron-right" size={20} />
             </div>
           </div>
-          <div className="flex cursor-pointer items-center justify-between  py-1">
+          <div className="flex cursor-pointer items-center justify-between py-1">
             <span className="text-lg text-neutral-300">판매수익</span>
-            <div className="flex  gap-2 text-neutral-400">
+            <div className="flex gap-2 text-neutral-400">
               <span>이번 달 {formatNumber(-100000)}원</span>
               <ChevronRightIcon name="chevron-right" size={20} />
             </div>

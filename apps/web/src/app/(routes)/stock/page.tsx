@@ -19,7 +19,7 @@ export default function Stock() {
         <div className="flex flex-col">
           <div className="bg-neutral-800 px-6">
             <div className="mb-4 flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-neutral-200">도스증권</h1>
+              <h1 className="font-bold text-2xl text-neutral-200">도스증권</h1>
               <div className="flex self-end text-sm">
                 <IndexBanner />
               </div>
@@ -29,7 +29,7 @@ export default function Stock() {
           <StockMainTabs />
           <div className="px-6">
             <FeedbackBanner />
-            <div className="divider"></div>
+            <div className="divider" />
             <StockFooter />
           </div>
         </div>

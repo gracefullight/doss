@@ -20,10 +20,10 @@ export default function Stock() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm text-neutral-400">주식</span>
+              <span className="text-neutral-400 text-sm">주식</span>
               <div className="flex flex-row space-x-2">
-                <span className="text-lg font-medium">20,000,000원</span>
-                <span className="text-error text-lg font-medium">+10.1%</span>
+                <span className="font-medium text-lg">20,000,000원</span>
+                <span className="font-medium text-error text-lg">+10.1%</span>
               </div>
             </div>
           </div>

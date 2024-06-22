@@ -20,9 +20,9 @@ export default function DossItem() {
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm text-neutral-400">도스뱅크 통장</span>
+            <span className="text-neutral-400 text-sm">도스뱅크 통장</span>
             <div className="flex flex-row space-x-2">
-              <span className="text-lg font-medium">
+              <span className="font-medium text-lg">
                 {formatNumber(100000)}원
               </span>
             </div>

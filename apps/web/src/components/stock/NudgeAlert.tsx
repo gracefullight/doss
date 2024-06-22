@@ -34,7 +34,7 @@ export default function NudgeAlert() {
         <BarChartIcon name="bar-chart" size={24} />
         <div className="flex flex-col gap-1">
           <span className="font-medium">매일 방문할수록 혜택이 커져요</span>
-          <div className="text-info flex items-center">
+          <div className="flex items-center text-info">
             <span className="text-sm">출석체크하고 주식받기</span>
             <ChevronRightIcon name="chevron-right" size={16} />
           </div>

@@ -7,7 +7,7 @@ export default function GroupShopping() {
     <div className="flex flex-col gap-1">
       <div className="flex flex-col gap-1 px-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-medium text-neutral-200">공동구매</h2>
+          <h2 className="font-medium text-neutral-200 text-xl">공동구매</h2>
           <div className="btn btn-link btn-sm text-neutral-400 no-underline hover:no-underline">
             모두 보기{" "}
             <ChevronRightIcon

@@ -12,7 +12,6 @@
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "db:seed": "tsx prisma/seed.ts",
     "dev": "pnpm with-env prisma studio --port 5557",
-    "lint": "eslint",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {

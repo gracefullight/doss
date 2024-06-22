@@ -8,7 +8,7 @@ export function MultilineText({ children }: MultilineTextProps) {
   return (
     <>
       {children.split("\n").map((str, i) => (
-        <Fragment key={i}>
+        <Fragment key={str}>
           {i > 0 && <br />}
           {str}
         </Fragment>

@@ -82,7 +82,7 @@ export default function BenefitNearby() {
       </Head>
       <StackLayoutNavbar items={navbarItems} />
       <div className="relative flex-grow bg-neutral-800" ref={contentRef}>
-        <svg className="absolute left-0 top-0 h-full w-full">
+        <svg className="absolute top-0 left-0 h-full w-full">
           {[1, 2, 3].map((i) => {
             // ? maxRadius * i * gap
             const radius = 20 * i * 5;
@@ -92,12 +92,12 @@ export default function BenefitNearby() {
                 cx={center.x}
                 cy={center.y}
                 r={radius}
-                className="fill-none stroke-neutral-600 stroke-1"
+                className="fill-none stroke-1 stroke-neutral-600"
               />
             );
           })}
 
-          {friends.map((friend, index) => {
+          {friends.map((friend) => {
             const x = center.x + friend.x;
             const y = center.y + friend.y;
             const nameLines = friend.name.split("\n");
@@ -105,7 +105,7 @@ export default function BenefitNearby() {
             return (
               <g
                 className="cursor-pointer"
-                key={index}
+                key={friend.name}
                 onClick={() => handleFriendLink(friend.link)}
               >
                 <image
@@ -122,7 +122,7 @@ export default function BenefitNearby() {
                   className="fill-neutral-400 text-sm"
                 >
                   {nameLines.map((line, index) => (
-                    <tspan x={x} dy={index > 0 ? "1.2em" : 0} key={index}>
+                    <tspan x={x} dy={index > 0 ? "1.2em" : 0} key={line}>
                       {line}
                     </tspan>
                   ))}
@@ -140,7 +140,7 @@ export default function BenefitNearby() {
               <span className="text-sm">
                 함께 도스 켜고 총 {formatNumber(259)}원 모았어요
               </span>
-              <span className="text-info font-medium">내 캐릭터 보기</span>
+              <span className="font-medium text-info">내 캐릭터 보기</span>
             </div>
           </div>
           <ChevronRightIcon name="chevron-right" size={20} />

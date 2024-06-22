@@ -55,7 +55,7 @@ export default function StockTab() {
     <>
       <div className="bg-neutral-800 px-3 pb-4">
         <div className="flex flex-col gap-1 px-1">
-          <span className="px-1 text-sm text-neutral-500">전체 평가금액</span>
+          <span className="px-1 text-neutral-500 text-sm">전체 평가금액</span>
           <div className="flex flex-row">
             <button
               className="btn btn-sm btn-ghost rounded-lg px-1"
@@ -69,7 +69,7 @@ export default function StockTab() {
               />
             </button>
           </div>
-          <span className="text-error px-1 text-sm">
+          <span className="px-1 text-error text-sm">
             {formatNumber(1000000)}원 ({formatPercent(0.06)})
           </span>
         </div>
@@ -85,7 +85,7 @@ export default function StockTab() {
               }
               size={20}
             />
-            <span className="text-sm text-neutral-500">현재가</span>
+            <span className="text-neutral-500 text-sm">현재가</span>
           </div>
           <div className="flex flex-col gap-1">
             {stockItems.map((categoryItem) => (
@@ -94,7 +94,7 @@ export default function StockTab() {
                 className={clsx(categoryItem.category === "해외" && "mt-4")}
               >
                 <div className="flex items-center justify-between">
-                  <span className="mb-1 px-2 text-sm text-neutral-500">
+                  <span className="mb-1 px-2 text-neutral-500 text-sm">
                     {categoryItem.category}
                   </span>
                   {categoryItem.category === "해외" && (
@@ -129,7 +129,7 @@ export default function StockTab() {
                         <div className="font-medium text-neutral-300">
                           {stock.name}
                         </div>
-                        <span className="text-sm text-neutral-500">
+                        <span className="text-neutral-500 text-sm">
                           {stock.quantity}주
                         </span>
                       </div>
@@ -141,7 +141,7 @@ export default function StockTab() {
                         )}
                         원
                       </div>
-                      <span className="text-sm text-red-500">
+                      <span className="text-red-500 text-sm">
                         {formatNumber(stock.change)} (
                         {formatPercent(stock.changePercent, 2)})
                       </span>

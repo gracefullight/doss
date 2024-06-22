@@ -10,7 +10,7 @@ export default function MoneyCircle() {
       animate={{ rotateY: 360, opacity: [1, 0.6, 1] }}
       transition={{
         duration: 3,
-        repeat: Infinity,
+        repeat: Number.POSITIVE_INFINITY,
         repeatDelay: 0.5,
         ease: "linear",
         times: [0, 0.5, 1],

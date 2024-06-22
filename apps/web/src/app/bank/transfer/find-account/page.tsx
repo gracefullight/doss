@@ -21,7 +21,7 @@ export default function BankTransferFindAccount() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col gap-6 px-6">
-        <h1 className="mt-4 text-2xl font-bold text-neutral-300">
+        <h1 className="mt-4 font-bold text-2xl text-neutral-300">
           어떤 계좌로 보낼까요?
         </h1>
         <input

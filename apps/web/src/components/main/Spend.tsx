@@ -21,8 +21,8 @@ export default function Spend() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm text-neutral-400">이번 달 쓴 금액</span>
-              <span className="text-lg font-medium">
+              <span className="text-neutral-400 text-sm">이번 달 쓴 금액</span>
+              <span className="font-medium text-lg">
                 {formatNumber(1000000)}원
               </span>
             </div>
@@ -34,7 +34,7 @@ export default function Spend() {
             내역
           </button>
         </div>
-        <div className="divider my-1 px-2"></div>
+        <div className="divider my-1 px-2" />
         <div className="flex cursor-pointer select-none items-center justify-between rounded-xl p-2 active:bg-neutral-600">
           <div className="flex items-center space-x-3">
             <div className="placeholder avatar">
@@ -43,10 +43,10 @@ export default function Spend() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm text-neutral-400">
+              <span className="text-neutral-400 text-sm">
                 이번 달 낼 카드값
               </span>
-              <span className="text-lg font-medium">
+              <span className="font-medium text-lg">
                 {formatNumber(300000)}원
               </span>
             </div>

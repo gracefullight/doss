@@ -44,7 +44,7 @@ export default function InformationCard({
         <div className="flex flex-col">
           <div className="text-neutral-400">{title}</div>
           {description && (
-            <div className="flex gap-1 text-sm text-neutral-500">
+            <div className="flex gap-1 text-neutral-500 text-sm">
               {description}
             </div>
           )}

@@ -33,8 +33,8 @@ export default function NowInformation() {
   };
 
   return (
-    <div className="mt-4 bg-neutral-800 pb-2 pt-5">
-      <h2 className="px-5 text-lg font-medium text-neutral-300">
+    <div className="mt-4 bg-neutral-800 pt-5 pb-2">
+      <h2 className="px-5 font-medium text-lg text-neutral-300">
         도스증권 NOW
       </h2>
       <div className="mt-3 flex flex-col">
@@ -48,8 +48,8 @@ export default function NowInformation() {
           />
         ))}
       </div>
-      <div className="divider mb-0"></div>
-      <div className="btn btn-block btn-ghost text-info py-2">더 보기</div>
+      <div className="divider mb-0" />
+      <div className="btn btn-block btn-ghost py-2 text-info">더 보기</div>
     </div>
   );
 }

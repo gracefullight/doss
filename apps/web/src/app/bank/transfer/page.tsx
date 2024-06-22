@@ -23,18 +23,18 @@ export default function BankTransfer() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col px-6">
-        <h1 className="text-2xl font-bold text-neutral-300">
+        <h1 className="font-bold text-2xl text-neutral-300">
           어디로 돈을 보낼까요?
         </h1>
         <div className="tabs tabs-boxed mt-4 bg-neutral-700">
           <a
-            className={clsx(`tab`, tabIndex === 0 && "tab-active")}
+            className={clsx("tab", tabIndex === 0 && "tab-active")}
             onClick={() => setTabIndex(0)}
           >
             계좌
           </a>
           <a
-            className={clsx(`tab`, tabIndex === 1 && "tab-active")}
+            className={clsx("tab", tabIndex === 1 && "tab-active")}
             onClick={() => setTabIndex(1)}
           >
             연락처

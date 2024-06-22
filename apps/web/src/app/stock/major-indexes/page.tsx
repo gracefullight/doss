@@ -64,8 +64,8 @@ export default function StockMajorIndexes() {
       <StackLayoutNavbar isLightBackground />
       <div className="flex flex-grow flex-col bg-neutral-800">
         <div className="mt-4 flex flex-row items-end justify-between px-5">
-          <h1 className="text-lg font-bold text-neutral-300">주요 지수</h1>
-          <span className="text-sm text-neutral-400">
+          <h1 className="font-bold text-lg text-neutral-300">주요 지수</h1>
+          <span className="text-neutral-400 text-sm">
             1일 차트 (10월 23일 기준)
           </span>
         </div>
@@ -79,7 +79,7 @@ export default function StockMajorIndexes() {
                     <div className="font-semibold text-neutral-300">
                       {item.title}
                     </div>
-                    <div className="text-info flex flex-row items-end gap-2">
+                    <div className="flex flex-row items-end gap-2 text-info">
                       <h2 className="text-lg">
                         {formatNumber(item.chartValue, 2)}
                       </h2>
@@ -124,7 +124,7 @@ export default function StockMajorIndexes() {
                   />
                 </button>
               </div>
-              <div className="divider my-0 px-5"></div>
+              <div className="divider my-0 px-5" />
             </Fragment>
           ))}
         </div>

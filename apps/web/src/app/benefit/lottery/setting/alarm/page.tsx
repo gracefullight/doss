@@ -21,7 +21,7 @@ export default function LotterySettingAlarm() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col px-5">
-        <h1 className="text-xl font-bold text-neutral-300">
+        <h1 className="font-bold text-neutral-300 text-xl">
           복권 신청 완료!
           <br />
           매일 행운을 보내드릴게요
@@ -41,7 +41,7 @@ export default function LotterySettingAlarm() {
             <div className="flex gap-2">
               <ClockIcon name="clock" size={24} />
               <div className="flex flex-col">
-                <span className="text-sm text-neutral-500">시간</span>
+                <span className="text-neutral-500 text-sm">시간</span>
                 <div className="font-medium text-neutral-300">
                   매일 오전 8시
                 </div>
@@ -59,7 +59,7 @@ export default function LotterySettingAlarm() {
             <div className="flex gap-2">
               <CalendarIcon name="calendar" size={24} />
               <div className="flex flex-col">
-                <span className="text-sm text-neutral-500">날짜</span>
+                <span className="text-neutral-500 text-sm">날짜</span>
                 <div className="font-medium text-neutral-300">내일부터</div>
               </div>
             </div>

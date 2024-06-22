@@ -31,7 +31,7 @@ export function SettingItem({
       <div className="flex flex-col">
         <div className="font-medium text-neutral-300">{title}</div>
         {description && (
-          <span className="text-sm text-neutral-400">{description}</span>
+          <span className="text-neutral-400 text-sm">{description}</span>
         )}
       </div>
       <div className="flex items-center gap-1">

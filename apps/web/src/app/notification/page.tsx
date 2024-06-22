@@ -35,19 +35,19 @@ export default function Notification() {
     <StackLayout>
       <StackLayoutNavbar />
       <div>
-        <h1 className="px-6 text-2xl font-semibold text-neutral-200">알림</h1>
+        <h1 className="px-6 font-semibold text-2xl text-neutral-200">알림</h1>
         <div className="mt-4 flex flex-col gap-2">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div
-              key={index}
+              key={item.title}
               className="flex cursor-pointer flex-col px-6 py-4 active:bg-neutral-700"
             >
               <div className="flex items-center justify-between">
                 <div className="flex gap-1">
                   {item.IconComponent}
-                  <span className="text-sm text-neutral-500">{item.title}</span>
+                  <span className="text-neutral-500 text-sm">{item.title}</span>
                 </div>
-                <span className="text-sm text-neutral-500">
+                <span className="text-neutral-500 text-sm">
                   {formatTimestamp(item.timestamp)}
                 </span>
               </div>

@@ -5,7 +5,7 @@ export default function PointBrand() {
     <StackLayout>
       <StackLayoutNavbar />
       <div className="flex flex-col gap-4 px-5">
-        <h1 className="text-xl text-neutral-300">포인트를 쓸 수 있는 브랜드</h1>
+        <h1 className="text-neutral-300 text-xl">포인트를 쓸 수 있는 브랜드</h1>
         <input
           type="text"
           placeholder="검색"

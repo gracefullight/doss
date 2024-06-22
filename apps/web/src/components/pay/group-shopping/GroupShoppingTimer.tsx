@@ -13,13 +13,13 @@ export default function GroupShoppingTimer({
     <span className="countdown">
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore TS2322 */}
-      <span style={{ "--value": countHours }}></span>:
+      <span style={{ "--value": countHours }} />:
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore TS2322 */}
-      <span style={{ "--value": countMinutes }}></span>:
+      <span style={{ "--value": countMinutes }} />:
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore TS2322 */}
-      <span style={{ "--value": countSeconds }}></span>
+      <span style={{ "--value": countSeconds }} />
     </span>
   );
 }

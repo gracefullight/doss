@@ -44,8 +44,8 @@ export default function ValuableInformation() {
   };
 
   return (
-    <div className="mt-4 bg-neutral-800 pb-2 pt-5">
-      <h2 className="px-5 text-lg font-medium text-neutral-300">
+    <div className="mt-4 bg-neutral-800 pt-5 pb-2">
+      <h2 className="px-5 font-medium text-lg text-neutral-300">
         알아두면 쓸모있는 주식 정보
       </h2>
       <div className="mt-3 flex flex-col">
@@ -55,14 +55,12 @@ export default function ValuableInformation() {
             title={item.title}
             handleLink={() => handleLink(item.link)}
             IconComponent={item.IconComponent}
-            description={item.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
+            description={item.tags.map((tag) => <span key={tag}>{tag}</span>)}
           />
         ))}
       </div>
-      <div className="divider my-0"></div>
-      <div className="btn btn-block btn-ghost text-info py-2">더 보기</div>
+      <div className="divider my-0" />
+      <div className="btn btn-block btn-ghost py-2 text-info">더 보기</div>
     </div>
   );
 }

@@ -18,10 +18,10 @@ export default function RecommendedStocks() {
         <div className="text-lg text-neutral-200">
           {session?.user?.name}님이 관심 있어 할 월배당 관련 주식
         </div>
-        <div className="text-sm text-neutral-400">
+        <div className="text-neutral-400 text-sm">
           최근 찾아 본 주식을 분석했어요.
         </div>
-        <ul className="mb-6 mt-4 flex flex-col gap-4">
+        <ul className="mt-4 mb-6 flex flex-col gap-4">
           {items.map((item) => (
             <li key={item.ticker} className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
@@ -39,13 +39,13 @@ export default function RecommendedStocks() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-medium">{item.ticker}</span>
-                  <span className="text-sm text-neutral-400">
+                  <span className="text-neutral-400 text-sm">
                     {formatNumber(item.price)}원
                   </span>
                 </div>
               </div>
               <div className="flex flex-col items-end">
-                <div className="badge badge-lg text-error rounded-lg border-none bg-neutral-700">
+                <div className="badge badge-lg rounded-lg border-none bg-neutral-700 text-error">
                   {`+${formatPercent(item.percent)}`}
                 </div>
               </div>

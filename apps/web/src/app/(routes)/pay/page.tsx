@@ -19,7 +19,7 @@ export default function Pay() {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col bg-neutral-800 pb-1">
           <div className="mb-2 flex items-center justify-between px-6">
-            <h1 className="text-2xl font-bold text-neutral-200">도스페이</h1>
+            <h1 className="font-bold text-2xl text-neutral-200">도스페이</h1>
           </div>
           <DynamicGroupShoppingBanner />
           <QuickAccessButtons />

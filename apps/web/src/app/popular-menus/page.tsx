@@ -75,12 +75,12 @@ export default function PopularMenus() {
     <StackLayout>
       <StackLayoutNavbar isLightBackground />
       <div className="flex flex-col bg-neutral-800 px-5">
-        <h2 className="mb-4 text-xl font-bold text-neutral-300">또래 인기</h2>
+        <h2 className="mb-4 font-bold text-neutral-300 text-xl">또래 인기</h2>
         <div className="mb-6 flex flex-col rounded-xl bg-neutral-700 p-4">
           <span className="font-medium text-blue-500">
             312만명이 한도를 확인했어요
           </span>
-          <h2 className="text-lg font-bold text-neutral-300">
+          <h2 className="font-bold text-lg text-neutral-300">
             내 대출 한도 알아보기
           </h2>
           <div className="flex flex-col items-center justify-center py-5">
@@ -92,7 +92,7 @@ export default function PopularMenus() {
             <span className="text-xs">
               {session?.user.name}님 신용 {1000}점
             </span>
-            <span className="text-lg font-bold text-blue-500">
+            <span className="font-bold text-blue-500 text-lg">
               최대 한도 ? 억
             </span>
           </div>
@@ -118,7 +118,7 @@ export default function PopularMenus() {
                     <div className="font-semibold text-neutral-300">
                       {item.title}
                     </div>
-                    <div className="text-sm text-neutral-500">
+                    <div className="text-neutral-500 text-sm">
                       {item.subtitle}
                     </div>
                   </div>
@@ -140,7 +140,7 @@ export default function PopularMenus() {
         </div>
       </div>
       <div className="my-6 flex justify-center">
-        <Link href="/all" className="link text-sm text-neutral-400">
+        <Link href="/all" className="link text-neutral-400 text-sm">
           전체 메뉴 보기
         </Link>
       </div>

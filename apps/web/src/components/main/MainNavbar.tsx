@@ -17,7 +17,7 @@ export default function MainNavbar() {
   };
 
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50">
+    <div className="navbar sticky top-0 z-50 bg-base-100">
       <div className="flex-1">
         <button className="btn btn-ghost text-3xl normal-case" type="button">
           doss
@@ -34,7 +34,7 @@ export default function MainNavbar() {
         </button>
         <div className="indicator">
           {hasUnreadAlarms && (
-            <span className="indicator-item badge badge-error right-1 top-1 h-2 p-1"></span>
+            <span className="indicator-item badge badge-error top-1 right-1 h-2 p-1" />
           )}
           <button
             className="btn btn-square btn-ghost"

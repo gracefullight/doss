@@ -34,7 +34,7 @@ export default function GroupShoppingBanner() {
       <div className="flex items-center gap-4">
         <MoneyCircle />
         <div className="flex flex-col">
-          <span className="text-sm text-neutral-500">공동구매 구경하고</span>
+          <span className="text-neutral-500 text-sm">공동구매 구경하고</span>
           <div className="font-medium text-neutral-300">매일 6원 받기</div>
         </div>
       </div>
