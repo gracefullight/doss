@@ -1,7 +1,7 @@
 import { getToken } from "next-auth/jwt";
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { pathToRegexp } from "path-to-regexp";
+import { match } from "path-to-regexp";
 
 import { PATH_SIGNIN } from "~/constants";
 import type { MiddlewareFactory } from "./stackMiddlewares";
@@ -18,12 +18,10 @@ export const withAuthorization: MiddlewareFactory = (next) => {
     "/stock",
   ];
 
-  const exactPathPatterns = exactMatchPaths.map((pattern) =>
-    pathToRegexp(pattern),
-  );
+  const exactPathPatterns = exactMatchPaths.map((pattern) => match(pattern));
 
   const prefixMatchPatterns = prefixMatchPaths.map((pattern) =>
-    pathToRegexp(pattern, undefined, { end: false }),
+    match(pattern, { end: false }),
   );
 
   const allPathPatterns = [...exactPathPatterns, ...prefixMatchPatterns];
@@ -33,7 +31,7 @@ export const withAuthorization: MiddlewareFactory = (next) => {
       nextUrl: { pathname },
     } = req;
 
-    if (allPathPatterns.some((pattern) => pattern.test(pathname))) {
+    if (allPathPatterns.some((matcher) => matcher(pathname))) {
       const token = await getToken({ req });
       if (!token) {
         const nextUrl = new URL(PATH_SIGNIN, req.url);

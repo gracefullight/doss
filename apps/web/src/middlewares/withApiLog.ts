@@ -1,6 +1,8 @@
-import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
-import { pathToRegexp } from "path-to-regexp";
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import { match } from "path-to-regexp";
 import pino from "pino";
+
 import type { MiddlewareFactory } from "./stackMiddlewares";
 
 const logger = pino({
@@ -8,7 +10,7 @@ const logger = pino({
     target: "pino-pretty",
     options: { colorize: true },
   },
-  level: process.env.LOG_LEVEL || "info",
+  level: process.env.LOG_LEVEL ?? "info",
 });
 
 export const withApiLog: MiddlewareFactory = (next) => {
@@ -16,11 +18,11 @@ export const withApiLog: MiddlewareFactory = (next) => {
   const excludeLoggingPaths = ["/api/trpc"];
 
   const loggingPathPatterns = loggingPaths.map((pattern) =>
-    pathToRegexp(pattern, undefined, { end: false }),
+    match(pattern, { end: false }),
   );
 
   const excludeLoggingPathPatterns = excludeLoggingPaths.map((pattern) =>
-    pathToRegexp(pattern, undefined, { end: false }),
+    match(pattern, { end: false }),
   );
 
   return async (req: NextRequest, ev: NextFetchEvent) => {
@@ -29,8 +31,8 @@ export const withApiLog: MiddlewareFactory = (next) => {
     } = req;
 
     const shouldLog =
-      loggingPathPatterns.some((pattern) => pattern.test(pathname)) &&
-      !excludeLoggingPathPatterns.some((pattern) => pattern.test(pathname)) &&
+      loggingPathPatterns.some((matcher) => matcher(pathname)) &&
+      !excludeLoggingPathPatterns.some((matcher) => matcher(pathname)) &&
       logger.isLevelEnabled("info");
 
     if (shouldLog) {
