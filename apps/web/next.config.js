@@ -1,8 +1,8 @@
-import withPWAInit from "@ducanh2912/next-pwa";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 // @ts-ignore
 import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 import { withSentryConfig } from "@sentry/nextjs";
+import withSerwistInit from "@serwist/next";
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
@@ -96,18 +96,15 @@ const config = {
   },
 };
 
-// ? https://ducanh-next-pwa.vercel.app/docs/next-pwa/configuring
-/** @type {import("@ducanh2912/next-pwa").PluginOptions} */
-const pwaConfig = {
-  dest: "public",
-  reloadOnOnline: true,
-};
+const withSerwist = withSerwistInit({
+  swSrc: "app/sw.ts",
+  swDest: "public/sw.js",
+});
 
-const withPWA = withPWAInit(pwaConfig);
 const withBA = withBundleAnalyzer({ enabled: false, openAnalyzer: false });
 
 export default withSentryConfig(
-  withPWA(withBA(config)),
+  withSerwist(withBA(config)),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options

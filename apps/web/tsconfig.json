@@ -4,7 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "lib": ["dom", "dom.iterable", "ES2022", "WebWorker"],
+    "types": ["@serwist/next/typings"]
   },
   "include": [".", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "public/*.js"]
